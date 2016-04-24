@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0071)https://ics-creative.github.io/ParticleJS/docs/examples/first-step.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>ParticleJS - 初めてのParticleJS</title>
+  <script src="./ParticleJS - 初めてのParticleJS_files/highlight.min.js"></script>
+  <link rel="stylesheet" href="./ParticleJS - 初めてのParticleJS_files/default.min.css">
+
+  <style>
+    iframe {
+      width: 960px;
+      height: 540px;
+      border: 0;
+    }
+
+    #code-box {
+      padding: 0px;
+      width: 960px;
+      overflow: auto;
+    }
+
+    #code-box pre {
+      padding: 0px;
+      margin: 0px;
+    }
+
+    #canvas-box {
+      padding: 0px;
+      margin: 0px;
+    }
+
+  </style>
+
+</head>
+<body>
+<div class="container">
+  <div id="canvas-box">
+    <iframe src="./ParticleJS - 初めてのParticleJS_files/first-step.html">
+    </iframe>
+  </div>
+  <div id="code-box">
+    <pre id="mycode"><code class="js hljs javascript">&lt;!DOCTYPE html&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>ParticleJS - 初めてのParticleJS<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- CreateJSのライブラリー読み込み --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://code.createjs.com/createjs-2015.11.26.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- パーティクルシステムのライブラリー読み込み --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://cdn.rawgit.com/ics-creative/ParticleJS/release/0.1.3/libs/particlejs.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- JS --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+    <span class="hljs-keyword">var</span> particleSystem = <span class="hljs-literal">null</span>;
+    <span class="hljs-keyword">var</span> stage = <span class="hljs-literal">null</span>;
+
+    <span class="hljs-comment">//  ウィンドウのロードが終わり次第、初期化コードを呼び出す。</span>
+    <span class="hljs-built_in">window</span>.addEventListener(<span class="hljs-string">"load"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// Stageオブジェクトを作成します。表示リストのルートになります。</span>
+      stage = <span class="hljs-keyword">new</span> createjs.Stage(<span class="hljs-string">"myCanvas"</span>);
+
+      <span class="hljs-comment">// パーティクルシステム作成します。</span>
+      particleSystem = <span class="hljs-keyword">new</span> particlejs.ParticleSystem();
+
+      <span class="hljs-comment">// パーティクルシステムの描画コンテナーを表示リストに登録します。</span>
+      stage.addChild(particleSystem.container);
+
+      <span class="hljs-comment">// Particle Develop( http://ics-web.jp/projects/particle-develop/ ) から書きだしたパーティクルの設定を読み込む</span>
+      particleSystem.importFromJson(
+        <span class="hljs-comment">// パラメーターJSONのコピー＆ペースト ここから--</span>
+        {
+          <span class="hljs-string">"bgColor"</span>: <span class="hljs-string">"#00000"</span>,
+          <span class="hljs-string">"width"</span>: <span class="hljs-number">500</span>,
+          <span class="hljs-string">"height"</span>: <span class="hljs-number">500</span>,
+          <span class="hljs-string">"emitFrequency"</span>: <span class="hljs-string">"100"</span>,
+          <span class="hljs-string">"startX"</span>: <span class="hljs-number">480</span>,
+          <span class="hljs-string">"startXVariance"</span>: <span class="hljs-number">400</span>,
+          <span class="hljs-string">"startY"</span>: <span class="hljs-number">250</span>,
+          <span class="hljs-string">"startYVariance"</span>: <span class="hljs-number">50</span>,
+          <span class="hljs-string">"initialDirection"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-string">"initialDirectionVariance"</span>: <span class="hljs-string">"360"</span>,
+          <span class="hljs-string">"initialSpeed"</span>: <span class="hljs-string">"5"</span>,
+          <span class="hljs-string">"initialSpeedVariance"</span>: <span class="hljs-string">"3.7"</span>,
+          <span class="hljs-string">"friction"</span>: <span class="hljs-string">"0.038"</span>,
+          <span class="hljs-string">"accelerationSpeed"</span>: <span class="hljs-string">"0.0"</span>,
+          <span class="hljs-string">"accelerationDirection"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-string">"startScale"</span>: <span class="hljs-number">1</span>,
+          <span class="hljs-string">"startScaleVariance"</span>: <span class="hljs-number">0.79</span>,
+          <span class="hljs-string">"finishScale"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-string">"finishScaleVariance"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-string">"lifeSpan"</span>: <span class="hljs-string">"50"</span>,
+          <span class="hljs-string">"lifeSpanVariance"</span>: <span class="hljs-string">"196"</span>,
+          <span class="hljs-string">"startAlpha"</span>: <span class="hljs-string">"1"</span>,
+          <span class="hljs-string">"startAlphaVariance"</span>: <span class="hljs-string">"0"</span>,
+          <span class="hljs-string">"finishAlpha"</span>: <span class="hljs-string">"0.35"</span>,
+          <span class="hljs-string">"finishAlphaVariance"</span>: <span class="hljs-number">0.5</span>,
+          <span class="hljs-string">"shapeIdList"</span>: [
+            <span class="hljs-string">"blur_circle"</span>,
+            <span class="hljs-string">"circle"</span>
+          ],
+          <span class="hljs-string">"startColor"</span>: {
+            <span class="hljs-string">"hue"</span>: <span class="hljs-number">222</span>,
+            <span class="hljs-string">"hueVariance"</span>: <span class="hljs-string">"55"</span>,
+            <span class="hljs-string">"saturation"</span>: <span class="hljs-string">"71"</span>,
+            <span class="hljs-string">"saturationVariance"</span>: <span class="hljs-string">"78"</span>,
+            <span class="hljs-string">"luminance"</span>: <span class="hljs-string">"83"</span>,
+            <span class="hljs-string">"luminanceVariance"</span>: <span class="hljs-string">"16"</span>
+          },
+          <span class="hljs-string">"blendMode"</span>: <span class="hljs-literal">true</span>,
+          <span class="hljs-string">"alphaCurveType"</span>: <span class="hljs-string">"1"</span>
+        }
+        <span class="hljs-comment">// パラメーターJSONのコピー＆ペースト ここまで---</span>
+      );
+
+      <span class="hljs-comment">// フレームレートの設定</span>
+      createjs.Ticker.framerate = <span class="hljs-number">60</span>;
+      <span class="hljs-comment">// requestAnimationFrameに従った呼び出し</span>
+      createjs.Ticker.timingMode = createjs.Ticker.RAF;
+      <span class="hljs-comment">// 定期的に呼ばれる関数を登録</span>
+      createjs.Ticker.addEventListener(<span class="hljs-string">"tick"</span>, handleTick);
+    });
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleTick</span>(<span class="hljs-params"></span>) </span>{
+      <span class="hljs-comment">// パーティクルの発生・更新</span>
+      particleSystem.update();
+
+      <span class="hljs-comment">// 描画を更新する</span>
+      stage.update();
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- CSS --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+    <span class="hljs-selector-tag">canvas</span> {
+      <span class="hljs-attribute">background-color</span>: black;
+    }
+
+    * {
+      <span class="hljs-attribute">margin</span>: <span class="hljs-number">0px</span>;
+      <span class="hljs-attribute">padding</span>: <span class="hljs-number">0px</span>;
+    }
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">width</span>=<span class="hljs-string">"960"</span> <span class="hljs-attr">height</span>=<span class="hljs-string">"540"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"myCanvas"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></span></code></pre>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </div>
+</div>
+
+
+</body></html>
