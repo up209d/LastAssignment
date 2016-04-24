@@ -5,7 +5,8 @@
 }
 
 body {
-    background: url(../assets/images/paper.png) repeat;
+    background: url(../assets/images/bg.jpg);
+    background-size: cover;
 }
 
 #view-port {

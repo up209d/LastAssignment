@@ -1,7 +1,7 @@
 var viewPort = document.getElementById('view-port');
 var cloudContainer = document.getElementById('cloud-way');
 
-var renderer = PIXI.autoDetectRenderer(cloudContainer.width,cloudContainer.height,{view: cloudContainer, transparent:false, backgroundColor : 0x1099bb });
+var renderer = PIXI.autoDetectRenderer(cloudContainer.width,cloudContainer.height,{view: cloudContainer, transparent:true, backgroundColor : 0x1099bb });
 
 var stage = new PIXI.Container();
 
@@ -21,7 +21,7 @@ var cloudTextures = ['assets/images/cloud.png','assets/images/cloud2.png'];
 
 var clouds = [];
 var cloudIndex = 0;
-var cloudCount = 1;
+var cloudCount = 3;
 var frameCount = 0;
 
 function Cloud() {
@@ -40,13 +40,13 @@ function Cloud() {
     this.object.velocityX = 0;
     this.object.velocityY = 0.01;
 
-    this.object.scale.x = 0.5;
-    this.object.scale.y = 0.5;
+    this.object.scale.x = this.random*0.5+0.5;
+    this.object.scale.y = this.random*0.5+0.5;
 
     this.object.alpha = 0.0;
     
     this.object.life= 0;
-    this.object.maxLife = 200;
+    this.object.maxLife = Math.random()*200+200;
     this.object.dieing= false;
     
     
@@ -106,7 +106,7 @@ Cloud.prototype.move = function() {
         
     } else {
         
-        this.object.alpha += 0.1;
+        this.object.alpha += 0.05;
         
         if (this.object.alpha > 0.9) {
             
@@ -126,7 +126,7 @@ function animate() {
     requestAnimationFrame(animate);
     frameCount++;
     
-    if ((frameCount%5) == 0) {
+    if ((frameCount%60) == 0) {
         
         for (var i=0;i<cloudCount;i++) {
             new Cloud();        
