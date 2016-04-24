@@ -1,60 +1,106 @@
-// forked from tonkotsuboy's "荒ぶる男心" http://jsdo.it/tonkotsuboy/66dI
-// forked from nyamogera's "揺れる乙女心" http://jsdo.it/nyamogera/wPWDm
-// forked from nyamogera's "光るトゲトゲ" http://jsdo.it/nyamogera/EDOu
-"use strict";
+var viewPort = document.getElementById('view-port');
+var cloudContainer = document.getElementById('cloud-way');
 
-var emitter = new particlejs.ParticleSystem();
-var stage = new createjs.Stage("myCanvas");
+var renderer = PIXI.autoDetectRenderer(cloudContainer.width,cloudContainer.height,{view: cloudContainer, backgroundColor : 0x1099bb });
 
-window.addEventListener("load", function () {
+var stage = new PIXI.Container();
 
-    stage.addChild(emitter.container);
-    createjs.Ticker.framerate = 60;
-    createjs.Ticker.timingMode = createjs.Ticker.RAF;
-    createjs.Ticker.addEventListener("tick", handleTick);
+var cloudTextures = ['assets/images/cloud.png','assets/images/cloud2.png'];
 
-    emitter.importFromJson({
-        "emitFrequency": "10",
-        "startX": 400,
-        "startXVariance": 0,
-        "startY": 400,
-        "startYVariance": 0,
-        "initialDirection": 0,
-        "initialDirectionVariance": "90",
-        "initialSpeed": 10.0,
-        "initialSpeedVariance": 0.1,
-        "friction": "0.063",
-        "accelerationSpeed": 0,
-        "accelerationDirection": "275.8",
-        "startScale": 1,
-        "startScaleVariance": 5,
-        "finishScale": "5",
-        "finishScaleVariance": "5",
-        "lifeSpan": 100,
-        "lifeSpanVariance": "50",
-        "startAlpha": "1",
-        "startAlphaVariance": "0",
-        "finishAlpha": "0",
-        "finishAlphaVariance": "0",
-        "shapeIdList": ["heart"],
-        "startColor": {
-            "hue": 0,
-            "hueVariance": 90,
-            "saturation": "91",
-            "saturationVariance": 0,
-            "luminance": "56",
-            "luminanceVariance": "16"
-        },
-        "blendMode": true,
-        "alphaCurveType": "0"
-    });
 
-    emitter.startX = 465 / 2;
-    emitter.startY = 465 / 2;
-});
+// Clouds object
 
-function handleTick() {
-    emitter.update();
-    stage.update();
+var clouds = {};
+var cloudIndex = 0;
+var cloudCount = 5;
+var frameCount = 0;
+
+function Cloud() {
+    this.object = new PIXI.Sprite.fromImage(cloudTextures[Math.floor(Math.random()*10)%2]);
+    
+    this.random = Math.random();
+    
+    //Init the transform of cloud
+
+    this.object.anchor.x = 0.5;
+    this.object.anchor.y = 0.0;
+
+    this.object.position.x = Math.random()*200+400;
+    this.object.position.y = Math.random()*200+400;
+    
+    this.object.velocityX = 0;
+    this.object.velocityY = 0.1;
+
+    this.object.scale.x = 1;
+    this.object.scale.y = 1;
+
+    this.object.alpha = 0.0;
+    
+    this.object.life= 0;
+    this.object.maxLife = Math.random()*100+100;
+    
+    // Add to object collection
+    clouds[cloudIndex] = this;
+    
+    this.object.id = cloudIndex;
+    cloudIndex++;
+    
+    stage.addChild(this.object);
+    
 }
+
+Cloud.prototype.move = function() {
+    
+    //Check Life
+    this.object.life++;
+    
+    if (this.object.life >= this.object.maxLife) {
+        stage.removeChild(this.object);
+        delete clouds[this.object.id];
+        delete this;
+    }
+    
+    
+    time = new Date();
+    
+    //Animation here
+    this.object.position.x += this.object.velocityX;
+    this.object.position.y += this.object.velocityY;
+    this.object.scale.x += 0.01;
+    this.object.scale.y += 0.01;
+    
+    if (this.object.alpha < 0.9) {
+        this.object.alpha += 0.08;        
+    }
+    
+
+
+    
+    
+}
+
+
+
+
+function animate() {
+    requestAnimationFrame(animate);
+    frameCount++;
+    
+    if ((frameCount%30) == 0) {
+        
+        for (var i=0;i<cloudCount;i++) {
+            new Cloud();        
+        }
+        
+    }
+    
+    for (var index in clouds) {
+        clouds[index].move();
+    }
+    
+    renderer.render(stage);
+}
+
+
+animate();
 
