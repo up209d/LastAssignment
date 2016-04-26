@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+    background: url(../assets/images/bg.jpg);
+    background-size: cover;
+}
+
+#view-port {
+    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+#cloud-way {
+    
+    border: 10px solid rgba(0,0,0,0.1);
+    margin:auto;
+    
+}
