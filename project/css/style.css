@@ -1,3 +1,20 @@
+/* Import Font
+
+Heading 3D font
+kg_summer_sunshineregular
+    
+
+Heading Font
+always_foreverbold
+
+
+Content Font
+dk_pimpernelregular
+
+*/
+
+@import url('../assets/fonts/webfonts/stylesheet.css');
+
 * {
   margin: 0;
   padding: 0;

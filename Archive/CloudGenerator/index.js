@@ -46,7 +46,7 @@ function Cloud() {
     this.object.alpha = 0.0;
     
     this.object.life= 0;
-    this.object.maxLife = Math.random()*200+200;
+    this.object.maxLife = Math.random()*300+300;
     this.object.dieing= false;
     
     
@@ -181,7 +181,7 @@ function animate() {
     requestAnimationFrame(animate);
     frameCount++;
     
-    if ((frameCount%60) == 0) {
+    if ((frameCount%30) == 0) {
         
         for (var i=0;i<cloudCount;i++) {
             new Cloud();        
