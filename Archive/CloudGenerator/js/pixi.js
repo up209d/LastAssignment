@@ -18301,7 +18301,7 @@ Sprite.fromFrame = function (frameId)
  */
 Sprite.fromImage = function (imageId, crossorigin, scaleMode)
 {
-    return new Sprite(Texture.fromImage(imageId, crossorigin, scaleMode));
+    return new Sprite(Texture.fromImage(imageId));
 };
 
 },{"../const":22,"../display/Container":23,"../math":33,"../renderers/canvas/utils/CanvasTinter":48,"../textures/Texture":72,"../utils":77}],68:[function(require,module,exports){
@@ -20731,7 +20731,7 @@ Texture.fromImage = function (imageUrl, crossorigin, scaleMode)
 
     if (!texture)
     {
-        texture = new Texture(BaseTexture.fromImage(imageUrl, crossorigin, scaleMode));
+        texture = new Texture(BaseTexture.fromImage(imageUrl));
         utils.TextureCache[imageUrl] = texture;
     }
 
@@ -23423,7 +23423,7 @@ TilingSprite.fromFrame = function (frameId,width,height)
  */
 TilingSprite.fromImage = function (imageId, width, height, crossorigin, scaleMode)
 {
-    return new TilingSprite(core.Texture.fromImage(imageId, crossorigin, scaleMode),width,height);
+    return new TilingSprite(core.Texture.fromImage(imageId),width,height);
 };
 
 },{"../core":29,"../core/renderers/canvas/utils/CanvasTinter":48}],83:[function(require,module,exports){

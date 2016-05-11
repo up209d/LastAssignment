@@ -1,70 +1,134 @@
-var frameCount = 0;
+function init() {
+    bg = new Background(stage);
+    TVNoiseText = new TVNoise();
+    var Bunny = function() {
 
-var viewPort = document.getElementById('view-port');
+        this.each = new PIXI.Sprite.fromImage('assets/images/glow.png');
+        this.each.anchor.x = 0.5;
+        this.each.anchor.y = 0.5;
+        this.each.position.x = window.innerWidth/2;
+        this.each.position.y = window.innerHeight/2;
 
-viewPort.width = window.innerWidth;
-viewPort.height = window.innerHeight;
+        Bunny.prototype.rotate = function() {
 
-var renderer = new PIXI.autoDetectRenderer(
-    viewPort.width,
-    viewPort.height,
-    
-    {
-        view: viewPort,
-        transparent: false,
-        backgroundColor: 0x445599
-        
+            this.each.rotation += 0.1;
+            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now()*0.0005))+1)+1;
+
+        }
+
+    }
+    var Sketch = function() {
+
+        this.textures = [];
+        this.currentFrame = 0;
+
+        for (i=0;i<=9;i++) {
+
+            this.textures.push(PIXI.Texture.fromImage('assets/images/Sketch/Sketch_0000' + i + '.png'));
+
+        }
+
+        this.movie = new PIXI.extras.MovieClip(this.textures);
+        this.movie.anchor.set(0.5);
+        this.movie.position.set(window.innerWidth/2,window.innerHeight/2);
+
+        Sketch.prototype.playing = function() {
+
+            this.movie.gotoAndStop(this.currentFrame);
+            this.currentFrame++;
+            //console.log(this.currentFrame);
+
+        }
+
+    }
+    var sketch = new Sketch();
+    var bunny = new Bunny();
+    var bunnyPot = new PIXI.Container();
+    bunnyPot.addChild(bunny.each);
+
+    function bunnyFollow(eventData) {
+        var bunnyTimeline = new TimelineMax();
+        bunnyTimeline.to(bunny.each.position,1,{x:eventData.data.global.x,y:eventData.data.global.y});
+        bunnyTimeline.play();
+        // console.log(eventData.data.global);
+    }
+    //bg.bg.on('mousemove',bunnyFollow);
+    function animateBunny() {
+
+        requestAnimationFrame(animateBunny);
+        bunny.rotate();
+
+    }
+    stage.addChild(bunnyPot);
+    // stage.addChild(MaskContainer);
+    for (i=0;i<=10;i++) {
+        for(j=0;j<=10;j++) {
+            stage.addChild(TVNoiseText.noiseAnimations[i][j]);
+        }
+    }
+    LoadingObject.bg.mask = bunny.each;
+    stage.addChild(sketch.movie);
+    sketch.movie.animationSpeed = 0.3;
+    sketch.movie.play();
+    var stop = false;
+    var updatingRender,updatingObject;
+
+    function UpdateOnResizing() {
+        stop = false;
+        updatingRender = setTimeout(function() {
+            viewPort.width = window.innerWidth;
+            viewPort.height = window.innerHeight;
+
+            renderer = PIXI.autoDetectRenderer(
+                viewPort.width,
+                viewPort.height,
+
+                {
+                    view: viewPort,
+                    transparent: false,
+                    backgroundColor: 0x445599
+
+                });
+            CenterPosition.update();
+            //console.log (renderer);
+
+            updatingObject = setTimeout(function() {
+                TVNoiseText.update();
+                sketch.movie.position.set(window.innerWidth/2,window.innerHeight/2);
+            },250);
+
+
+        },100);
+
+    }
+
+    window.addEventListener ('resize', function(){
+        stop =  true;
+        clearTimeout(updatingRender);
+        clearTimeout(updatingObject);
+        UpdateOnResizing();
     });
 
+    var xxx=0;
 
-window.onresize = function() {
-    
-    viewPort.width = window.innerWidth;
-    viewPort.height = window.innerHeight;
-    
+    function RenderAnimation() {
+
+        requestAnimationFrame(RenderAnimation);
+        frameCount = frameCount > 1000000 ? 0 : frameCount+1;
+        //console.log(frameCount)
+        if (frameCount%5 == 0) {
+
+        }
+        if (!stop) {
+            renderer.render(stage);
+        }
+        // console.log(1000/(performance.now() - xxx));
+        // xxx = performance.now();
+    }
+
+    TVNoiseText.noising();
+    //animateCloud();
+    //animateBunny();
+    RenderAnimation();
+
 }
-
-
-
-var Bunny = function(each) {
-    
-    this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
-    this.each.anchor.x = 0.5;
-    this.each.anchor.y = 0.5;
-    this.each.position.x = window.innerWidth/2;
-    this.each.position.y = window.innerHeight/2;
-
-        
-}
-
-Bunny.prototype.rotate = function() {
-    
-    this.each.rotation += 0.1;
-    
-}
-
-
-var bunny = new Bunny();
-
-var bunnyPot = new PIXI.Container();
-
-bunnyPot.addChild(bunny.each);
-
-
-function animate() {
-    
-    requestAnimationFrame(animate);
-    frameCount = frameCount > 1000 ? 0 : frameCount+1;
-    bunny.rotate();
-    renderer.render(bunnyPot);
-    
-}
-
-
-var Loader = new PIXI.loaders.Loader();
-
-Loader
-    .add('bunny','assets/images/bunny.png')
-    .on('progress',function(){})
-    .once('complete',animate)
-    .load();

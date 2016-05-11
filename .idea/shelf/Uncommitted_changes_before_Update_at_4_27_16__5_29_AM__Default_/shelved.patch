@@ -1,0 +1,268 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision c3bb0a637777486505fd113d000dabd10c29acde)
++++ .idea/workspace.xml	(revision )
+@@ -2,7 +2,7 @@
+ <project version="4">
+   <component name="ChangeListManager">
+     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
+-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.html" afterPath="$PROJECT_DIR$/project/index.html" />
++      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
+     </list>
+     <ignored path="LastAssignment.iws" />
+@@ -25,12 +25,12 @@
+   <component name="FileEditorManager">
+     <splitter split-orientation="horizontal" split-proportion="0.5">
+       <split-first>
+-        <leaf>
++        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+             <entry file="file://$PROJECT_DIR$/project/index.html">
+               <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="270">
+-                  <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
++                <state relative-caret-position="600">
++                  <caret line="157" column="5" selection-start-line="144" selection-start-column="4" selection-end-line="157" selection-end-column="5" />
+                   <folding />
+                 </state>
+               </provider>
+@@ -39,12 +39,12 @@
+         </leaf>
+       </split-first>
+       <split-second>
+-        <leaf>
++        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+             <entry file="file://$PROJECT_DIR$/project/index.js">
+               <provider selected="true" editor-type-id="text-editor">
+-                <state relative-caret-position="459">
+-                  <caret line="173" column="8" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
++                <state relative-caret-position="639">
++                  <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+                   <folding />
+                 </state>
+               </provider>
+@@ -55,13 +55,15 @@
+     </splitter>
+   </component>
+   <component name="Git.Settings">
++    <option name="UPDATE_CHANGES_POLICY" value="SHELVE" />
++    <option name="UPDATE_TYPE" value="REBASE" />
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+   <component name="IdeDocumentHistory">
+     <option name="CHANGED_PATHS">
+       <list>
+-        <option value="$PROJECT_DIR$/project/index.js" />
+         <option value="$PROJECT_DIR$/project/index.html" />
++        <option value="$PROJECT_DIR$/project/index.js" />
+       </list>
+     </option>
+   </component>
+@@ -73,8 +75,8 @@
+     <detection-done>true</detection-done>
+   </component>
+   <component name="ProjectFrameBounds">
+-    <option name="width" value="1920" />
+-    <option name="height" value="1080" />
++    <option name="width" value="1600" />
++    <option name="height" value="900" />
+   </component>
+   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+     <OptionsSetting value="true" id="Add" />
+@@ -135,8 +137,8 @@
+           </PATH>
+         </subPane>
+       </pane>
+-      <pane id="Scope" />
+       <pane id="Scratches" />
++      <pane id="Scope" />
+     </panes>
+   </component>
+   <component name="PropertiesComponent">
+@@ -156,32 +158,33 @@
+       <option name="number" value="Default" />
+       <option name="presentableId" value="Default" />
+       <updated>1461544422889</updated>
+-      <workItem from="1461544424236" duration="1438000" />
++      <workItem from="1461544424236" duration="1960000" />
++      <workItem from="1461698889709" duration="55000" />
+     </task>
+     <servers />
+   </component>
+   <component name="TimeTrackingManager">
+-    <option name="totallyTimeSpent" value="1438000" />
++    <option name="totallyTimeSpent" value="2015000" />
+   </component>
+   <component name="ToolWindowManager">
+-    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
+-    <editor active="true" />
++    <frame x="0" y="0" width="1600" height="900" extended-state="0" />
++    <editor active="false" />
+     <layout>
+-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20695102" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
++      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2488917" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
++      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
++      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
++      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
++      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+     </layout>
+@@ -213,18 +216,34 @@
+     <watches-manager />
+   </component>
+   <component name="editorHistoryManager">
++    <entry file="file://$PROJECT_DIR$/project/index.html">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="2355">
++          <caret line="157" column="5" selection-start-line="144" selection-start-column="4" selection-end-line="157" selection-end-column="5" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
+     <entry file="file://$PROJECT_DIR$/project/index.js">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="459">
+-          <caret line="173" column="8" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="8" />
++        <state relative-caret-position="0">
++          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+           <folding />
+         </state>
+       </provider>
+     </entry>
+     <entry file="file://$PROJECT_DIR$/project/index.html">
+       <provider selected="true" editor-type-id="text-editor">
+-        <state relative-caret-position="270">
+-          <caret line="132" column="14" selection-start-line="132" selection-start-column="14" selection-end-line="132" selection-end-column="14" />
++        <state relative-caret-position="600">
++          <caret line="157" column="5" selection-start-line="144" selection-start-column="4" selection-end-line="157" selection-end-column="5" />
++          <folding />
++        </state>
++      </provider>
++    </entry>
++    <entry file="file://$PROJECT_DIR$/project/index.js">
++      <provider selected="true" editor-type-id="text-editor">
++        <state relative-caret-position="639">
++          <caret line="158" column="1" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+           <folding />
+         </state>
+       </provider>
+\ No newline at end of file
+Index: project/index.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- project/index.js	(revision c3bb0a637777486505fd113d000dabd10c29acde)
++++ project/index.js	(revision )
+@@ -1,7 +1,7 @@
+ var viewPort = document.getElementById('view-port');
+ var cloudContainer = document.getElementById('cloud-way');
+ 
+-var renderer = PIXI.autoDetectRenderer(cloudContainer.width,cloudContainer.height,{view: cloudContainer, transparent:true, backgroundColor : 0x1099bb });
++var renderer = new PIXI.CanvasRenderer(cloudContainer.width,cloudContainer.height,{view: cloudContainer, transparent:true, backgroundColor : 0x1099bb });
+ 
+ var stage = new PIXI.Container();
+ 
+@@ -119,62 +119,23 @@
+ 
+ }
+ 
+-Mini3d = function() {
+-    this.view = new PIXI.DisplayObjectContainer,
+-        this.children = [],
+-        this.focalLength = 400,
+-        this.position3d = {
+-            x: 0,
+-            y: 0,
+-            z: 0
+-        },
+-        this.rotation3d = {
+-            x: 0,
+-            y: 0,
+-            z: 0
+-        }
+-},
+ 
+-Mini3d.constructor = Mini3d,
++ctx = renderer.view.getContext('2d');
+ 
+-Mini3d.prototype.addChild = function(t) {
+-    t.position3d || (t.position3d = {
+-        x: 0,
+-        y: 0,
+-        z: 0
+-    }),
+-        t.anchor.set(.5),
+-        this.view.addChild(t),
+-        this.children.push(t)
+-},
++function noise(ctx) {
+ 
+-Mini3d.prototype.update = function() {
+-    for (var t, e, i, n, o, s, a, h, l, u, c = Math.sin(this.rotation3d.x), d = Math.cos(this.rotation3d.x), p = Math.sin(this.rotation3d.y), f = Math.cos(this.rotation3d.y), m = Math.sin(this.rotation3d.z), v = Math.cos(this.rotation3d.z), g = 0; g < this.children.length; g++) {
+-        var y = this.children[g];
+-        t = y.position3d.x - this.position3d.x,
+-            e = y.position3d.y - this.position3d.y,
+-            i = y.position3d.z - this.position3d.z,
+-            n = d * e - c * i,
+-            o = c * e + d * i,
+-            a = f * o - p * t,
+-            s = p * o + f * t,
+-            h = v * s - m * n,
+-            l = m * s + v * n,
+-            u = this.focalLength / (this.focalLength + a),
+-            t = h * u,
+-            e = l * u,
+-            i = a,
+-            y.scale.x = y.scale.y = u * y.scaleRatio,
+-            y.scale.x *= y.scaleOffset.x,
+-            y.scale.y *= y.scaleOffset.y,
+-            y.depth = -y.position3d.z,
+-            y.position.x = t,
+-            y.position.y = e
+-    }
+-    this.view.children.sort(r)
+-}
++    var w = ctx.canvas.width,
++        h = ctx.canvas.height,
++        idata = ctx.createImageData(w, h),
++        buffer32 = new Uint32Array(idata.data.buffer),
++        len = buffer32.length,
++        i = 0;
+ 
++    for(; i < len;)
++        buffer32[i++] = ((50 * Math.random())|0) << 24;
+ 
++    ctx.putImageData(idata, 0, 0);
++}
+ 
+ 
+ function animate() {
+@@ -194,6 +155,7 @@
+     }
+     
+     renderer.render(stage);
++
+ }
+ 
+ 

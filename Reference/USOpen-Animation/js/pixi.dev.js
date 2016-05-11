@@ -2155,7 +2155,7 @@ PIXI.Sprite.fromFrame = function(frameId)
  */
 PIXI.Sprite.fromImage = function(imageId, crossorigin, scaleMode)
 {
-    var texture = PIXI.Texture.fromImage(imageId, crossorigin, scaleMode);
+    var texture = PIXI.Texture.fromImage(imageId);
     return new PIXI.Sprite(texture);
 };
 
@@ -13688,17 +13688,18 @@ PIXI.Texture.prototype._updateWebGLuvs = function()
  * @static
  * @method fromImage
  * @param imageUrl {String} The image url of the texture
- * @param crossorigin {Boolean} Whether requests should be treated as crossorigin
- * @param scaleMode {Number} Should be one of the PIXI.scaleMode consts
  * @return Texture
  */
-PIXI.Texture.fromImage = function(imageUrl, crossorigin, scaleMode)
+PIXI.Texture.fromImage = function (imageUrl
+    :
+    String
+    )
 {
     var texture = PIXI.TextureCache[imageUrl];
 
     if(!texture)
     {
-        texture = new PIXI.Texture(PIXI.BaseTexture.fromImage(imageUrl, crossorigin, scaleMode));
+        texture = new PIXI.Texture(PIXI.BaseTexture.fromImage(imageUrl));
         PIXI.TextureCache[imageUrl] = texture;
     }
 

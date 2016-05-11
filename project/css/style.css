@@ -22,11 +22,15 @@ dk_pimpernelregular
 }
 
 body {
-    background: url(../assets/images/paper.png) repeat;
+    font-family: 'kg_summer_sunshineregular';
+    /*  background: url(../assets/images/paper.png) repeat; */
 }
 
 #view-port {
-    
-    display: block;    
+display: block;
+position:absolute;
+z-index: 999;
+top:0;
+left:0;
 }
 
