@@ -1,6 +1,7 @@
 function init() {
     bg = new Background(stage);
     TVNoiseText = new TVNoise();
+
     var Bunny = function() {
 
         this.each = new PIXI.Sprite.fromImage('assets/images/glow.png');
@@ -20,7 +21,7 @@ function init() {
     var Sketch = function(DisplayContainer,TextureSketch,TextureColor,TextureMaskColor,AnimationSpeed) {
         this.textures = [];
         this.currentFrame = 0;
-        for (i=0;i<=9;i++) {
+        for (i=0;i<=2;i++) {
             this.textures.push(PIXI.Texture.fromImage('assets/images/Sketch/Sketch_0000' + i + '.png'));
         }
         this.movie = new PIXI.extras.MovieClip(this.textures);
@@ -35,6 +36,9 @@ function init() {
     }
 
     var sketch = new Sketch(stage);
+    sketch.movie.animationSpeed = 0.18;
+    sketch.movie.play();
+
 
     var bunny = new Bunny();
 
@@ -61,9 +65,8 @@ function init() {
         }
     }
     LoadingObject.bg.mask = bunny.each;
-    sketch.movie.animationSpeed = 0.3;
-    sketch.movie.play();
-    var stop = false;
+
+
     var updatingRender,updatingObject;
 
     function UpdateOnResizing() {
@@ -104,24 +107,8 @@ function init() {
 
     var xxx=0;
 
-    function RenderAnimation() {
-
-        requestAnimationFrame(RenderAnimation);
-        frameCount = frameCount > 1000000 ? 0 : frameCount+1;
-        //console.log(frameCount)
-        if (frameCount%5 == 0) {
-
-        }
-        if (!stop) {
-            renderer.render(stage);
-        }
-        // console.log(1000/(performance.now() - xxx));
-        // xxx = performance.now();
-    }
-
     TVNoiseText.noising();
     //animateCloud();
     //animateBunny();
-    RenderAnimation();
 
 }

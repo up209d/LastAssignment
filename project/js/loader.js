@@ -1,3 +1,64 @@
+var LoadingAnimation = function(DisplayContainer) {
+
+    this.textMargin = 5;
+
+    this.titleSize = 28;
+    this.titleFont = 'kg_summer_sunshineregular';
+    this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: 28});
+    this.title.anchor.x = this.title.anchor.y = 0.5;
+    this.title.position.x = window.innerWidth/2;
+    this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
+
+    this.progressTextSize = 48;
+    this.progressTextFont = 'kg_summer_sunshineregular';
+    this.progressText = new PIXI.Text('0%',{fontFamily : 'kg_summer_sunshineregular',fontSize: 48});
+    this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
+    this.progressText.position.x = window.innerWidth/2;
+    this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+
+    this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading_bg.png');
+    this.bg.anchor.set(0.5);
+    this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
+    this.bg.alpha = 0.9;
+
+    this.objects = new PIXI.Container();
+
+    this.objects.addChild(this.bg);
+    this.objects.addChild(this.title);
+    this.objects.addChild(this.progressText);
+
+    DisplayContainer.addChild(this.objects);
+
+    LoadingAnimation.prototype.relocate = function() {
+
+        this.title.position.x = window.innerWidth/2;
+        this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
+        this.progressText.position.x = window.innerWidth/2;
+        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+
+    };
+
+    LoadingAnimation.prototype.loading = function(percent) {
+
+        this.updateCount = typeof this.updateCount == 'undefined' ? 0 : (this.updateCount >= 3 ? 0 : this.updateCount+1 );
+
+
+        this.title.text = "Loading";
+
+        for (i=0;i<this.updateCount;i++) {
+
+            this.title.text = this.title.text + ".";
+            // console.log(this.title.text);
+
+        }
+
+        this.progressText.text = Math.floor(percent)+"%";
+
+    }
+
+
+}
+
 /**
  * Created by UP on 5/4/16.
  */
@@ -83,87 +144,39 @@ var filesLoader = [
 
 ];
 
-
-var LoadingAnimation = function(DisplayContainer) {
-
-    this.textMargin = 5;
-
-    this.titleSize = 28;
-    this.titleFont = this.titleSize + 'px "kg_summer_sunshineregular"';
-    this.title = new PIXI.Text('Loading',{font: this.titleFont,fill: '#000000'});
-    this.title.anchor.x = this.title.anchor.y = 0.5;
-    this.title.position.x = window.innerWidth/2;
-    this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
-
-    this.progressTextSize = 48;
-    this.progressTextFont = this.progressTextSize + 'px "kg_summer_sunshineregular"';
-    this.progressText = new PIXI.Text('0%',{font: this.progressTextFont,fill: '#000000'});
-    this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
-    this.progressText.position.x = window.innerWidth/2;
-    this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
-
-    this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading_bg.png');
-    this.bg.anchor.set(0.5);
-    this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
-    this.bg.alpha = 0.9;
-
-    this.objects = new PIXI.Container();
-
-    this.objects.addChild(this.bg);
-    this.objects.addChild(this.title);
-    this.objects.addChild(this.progressText);
-
-    DisplayContainer.addChild(this.objects);
-
-    LoadingAnimation.prototype.relocate = function() {
-
-        this.title.position.x = window.innerWidth/2;
-        this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
-        this.progressText.position.x = window.innerWidth/2;
-        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
-
-    };
-
-    LoadingAnimation.prototype.loading = function(percent) {
-
-        this.updateCount = typeof this.updateCount == 'undefined' ? 0 : (this.updateCount >= 3 ? 0 : this.updateCount+1 );
-
-
-        this.title.text = "Loading";
-
-        for (i=0;i<this.updateCount;i++) {
-
-            this.title.text = this.title.text + ".";
-            // console.log(this.title.text);
-
-        }
-
-        this.progressText.text = Math.floor(percent)+"%";
-
-    }
-
-    LoadingAnimation.prototype.bgmoving = function() {
-
-
-        
-    };
-
+var designerObjectLoader = [];
+for (i=0;i<=9;i++) {
+    designerObjectLoader.push({name: 'designerSketch_'+i, url: 'assets/images/Sketch/Sketch_0000' + i + '.png'});
 }
 
-LoadingObject = new LoadingAnimation(stage);
-window.addEventListener("resize",function(){LoadingObject.relocate();});
+designerObjectLoader.push(
+    {
+        name: 'designerColorBefore',
+        url: 'assets/images/Sketch/Sketch_00000.png'
 
+    });
+
+designerObjectLoader.push({
+
+    name: 'designerColorAfter',
+    url: 'assets/images/Sketch/Sketch_00000.png'
+
+});
+
+var LoadingObject = new LoadingAnimation(stage);
+
+window.addEventListener("resize",function(){LoadingObject.relocate();});
 
 var Loader = new PIXI.loaders.Loader();
 var resourceTexture;
 
 Loader
     .add(filesLoader)
-
+    .add(designerObjectLoader)
     .on('progress',function(e){
 
         LoadingObject.loading(e.progress);
-        // console.log(e.progress);
+        console.log(e.progress);
 
     })
     .once('complete',function(e){
@@ -174,8 +187,7 @@ Loader
     .load(function(loader, resources){
 
         resourceTexture = resources;
-        
-
+        console.log(resourceTexture);
         init();
         
     });

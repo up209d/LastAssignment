@@ -16,7 +16,7 @@ var Background = function(DisplayContainer) {
     this.bgContainer = new PIXI.Container();
     this.bgContainer.addChild(this.bg);
 
-    DisplayContainer.addChild(this.bgContainer);
+    DisplayContainer.addChildAt(this.bgContainer,0);
 
     Background.prototype.bgMoving = function(eventData) {
 
