@@ -17,32 +17,27 @@ function init() {
         }
 
     }
-    var Sketch = function() {
-
+    var Sketch = function(DisplayContainer,TextureSketch,TextureColor,TextureMaskColor,AnimationSpeed) {
         this.textures = [];
         this.currentFrame = 0;
-
         for (i=0;i<=9;i++) {
-
             this.textures.push(PIXI.Texture.fromImage('assets/images/Sketch/Sketch_0000' + i + '.png'));
-
         }
-
         this.movie = new PIXI.extras.MovieClip(this.textures);
         this.movie.anchor.set(0.5);
         this.movie.position.set(window.innerWidth/2,window.innerHeight/2);
-
+        DisplayContainer.addChild(this.movie);
         Sketch.prototype.playing = function() {
-
             this.movie.gotoAndStop(this.currentFrame);
             this.currentFrame++;
             //console.log(this.currentFrame);
-
         }
-
     }
-    var sketch = new Sketch();
+
+    var sketch = new Sketch(stage);
+
     var bunny = new Bunny();
+
     var bunnyPot = new PIXI.Container();
     bunnyPot.addChild(bunny.each);
 
@@ -52,12 +47,11 @@ function init() {
         bunnyTimeline.play();
         // console.log(eventData.data.global);
     }
+
     //bg.bg.on('mousemove',bunnyFollow);
     function animateBunny() {
-
         requestAnimationFrame(animateBunny);
         bunny.rotate();
-
     }
     stage.addChild(bunnyPot);
     // stage.addChild(MaskContainer);
@@ -67,7 +61,6 @@ function init() {
         }
     }
     LoadingObject.bg.mask = bunny.each;
-    stage.addChild(sketch.movie);
     sketch.movie.animationSpeed = 0.3;
     sketch.movie.play();
     var stop = false;
