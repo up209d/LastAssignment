@@ -19,7 +19,8 @@ var LoadingAnimation = function(DisplayContainer) {
     this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading_bg.png');
     this.bg.anchor.set(0.5);
     this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
-    this.bg.alpha = 0.9;
+    this.bg.alpha = 0;
+    this.bg.rotation = -0.5;
 
     this.objects = new PIXI.Container();
 
@@ -40,6 +41,8 @@ var LoadingAnimation = function(DisplayContainer) {
 
     LoadingAnimation.prototype.loading = function(percent) {
 
+        TweenMax.to(this.bg, 0.2, {alpha: percent/100});
+
         this.updateCount = typeof this.updateCount == 'undefined' ? 0 : (this.updateCount >= 3 ? 0 : this.updateCount+1 );
 
 
@@ -53,6 +56,12 @@ var LoadingAnimation = function(DisplayContainer) {
         }
 
         this.progressText.text = Math.floor(percent)+"%";
+
+    }
+
+    LoadingAnimation.prototype.done = function() {
+
+        DisplayContainer.removeChild(this.objects);
 
     }
 
@@ -144,24 +153,46 @@ var filesLoader = [
 
 ];
 
+var transitionColorObjectLoader_Water = [];
+for (i=0;i<90;i++) {
+    transitionColorObjectLoader_Water.push({name: 'transitionColor_Water_'+i, url: 'assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-'+i+'.jpg'});
+}
+
+var transitionColorObjectLoader_Splash = [];
+for (i=0;i<90;i++) {
+    transitionColorObjectLoader_Splash.push({name: 'transitionColor_Splash_'+i, url: 'assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-'+i+'.png'});
+}
+
+var transitionColorObjectLoader_Cursor = [];
+for (i=0;i<90;i++) {
+    transitionColorObjectLoader_Cursor.push({name: 'transitionColor_Cursor_'+i, url: 'assets/images/All/Clip/Cursor/Cursor_'+i+'.png'});
+}
+
+
 var designerObjectLoader = [];
-for (i=0;i<=9;i++) {
-    designerObjectLoader.push({name: 'designerSketch_'+i, url: 'assets/images/Sketch/Sketch_0000' + i + '.png'});
+for (i=0;i<5;i++) {
+    designerObjectLoader.push({name: 'designerSketch_'+i, url: 'assets/images/All/GD-Sketch_0' + i + '.png'});
 }
 
 designerObjectLoader.push(
     {
+        name: 'designerSketch',
+        url: 'assets/images/All/GD-Sketch.png'
+    },
+    {
         name: 'designerColorBefore',
-        url: 'assets/images/Sketch/Sketch_00000.png'
+        url: 'assets/images/All/GD-Color-Before.png'
+    },
+    {
+       name: 'designerColorAfter',
+        url: 'assets/images/All/GD-Color-After.png'
+    },
+    {
+        name: 'designerHeadCenter',
+        url: 'assets/images/All/GD-Head-Center.png'
+    }
+    );
 
-    });
-
-designerObjectLoader.push({
-
-    name: 'designerColorAfter',
-    url: 'assets/images/Sketch/Sketch_00000.png'
-
-});
 
 var LoadingObject = new LoadingAnimation(stage);
 
@@ -172,16 +203,25 @@ var resourceTexture;
 
 Loader
     .add(filesLoader)
+    .add(transitionColorObjectLoader_Water)
+    .add(transitionColorObjectLoader_Splash)
+    .add(transitionColorObjectLoader_Cursor)
     .add(designerObjectLoader)
+    .add([
+        'assets/images/All/GD-Head-Center.png',
+        'assets/images/All/GD-Sketch.png'
+
+    ])
     .on('progress',function(e){
 
         LoadingObject.loading(e.progress);
+        console.log(e);
         console.log(e.progress);
 
     })
     .once('complete',function(e){
 
-        // console.log(e);
+        LoadingObject.done();
 
     })
     .load(function(loader, resources){

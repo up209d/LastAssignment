@@ -9714,7 +9714,7 @@ Container.prototype.updateTransform = function ()
 Container.prototype.containerUpdateTransform = Container.prototype.updateTransform;
 
 /**
-* RetrieveDs the bounds of the Container as a rectangle. The bounds calculation takes all visible children into consideration.
+* Retrieves the bounds of the Container as a rectangle. The bounds calculation takes all visible children into consideration.
  *
  * @return {PIXI.Rectangle} The rectangular bounding area
  */
@@ -17125,14 +17125,6 @@ function FilterManager(renderer)
     // know about sprites!
     this.quad = new Quad(this.gl, renderer.state.attribState);
 
-    var rootState = new FilterState();
-    rootState.sourceFrame = rootState.destinationFrame = this.renderer.rootRenderTarget.size;
-    rootState.renderTarget = renderer.rootRenderTarget;
-
-    this.stack = [rootState];
-
-    this.stackIndex = 0;
-
     this.shaderCache = {};
     // todo add default!
     this.pool = {};
@@ -17146,11 +17138,28 @@ FilterManager.prototype.pushFilter = function(target, filters)
 {
     var renderer = this.renderer;
 
+    var filterData = this.renderer._activeRenderTarget.filterStack;
+
+    if(!filterData)
+    {
+        // add new stack
+        var filterState = new FilterState();
+        filterState.sourceFrame = filterState.destinationFrame = this.renderer._activeRenderTarget.size;
+        filterState.renderTarget = renderer._activeRenderTarget;
+
+        this.renderer._activeRenderTarget.filterData = filterData = {
+            index:0,
+            stack:[filterState]
+        };
+    }
+
+    this.filterData = filterData;
+
     // get the current filter state..
-    var currentState = this.stack[++this.stackIndex];
+    var currentState = filterData.stack[++filterData.index];
     if(!currentState)
     {
-        currentState = this.stack[this.stackIndex] = new FilterState();
+        currentState = filterData.stack[filterData.index] = new FilterState();
     }
 
     // for now we go off the filter of the first resolution..
@@ -17166,7 +17175,7 @@ FilterManager.prototype.pushFilter = function(target, filters)
     sourceFrame.width = (((targetBounds.width + padding*2) * resolution) | 0) / resolution;
     sourceFrame.height = (((targetBounds.height + padding*2)* resolution) | 0) / resolution;
 
-    sourceFrame.fit(this.stack[0].destinationFrame);
+    sourceFrame.fit(filterData.stack[0].destinationFrame);
 
     destinationFrame.width = sourceFrame.width;
     destinationFrame.height = sourceFrame.height;
@@ -17190,8 +17199,10 @@ FilterManager.prototype.pushFilter = function(target, filters)
 
 FilterManager.prototype.popFilter = function()
 {
-    var lastState = this.stack[this.stackIndex-1];
-    var currentState = this.stack[this.stackIndex];
+    var filterData = this.filterData;
+
+    var lastState = filterData.stack[filterData.index-1];
+    var currentState = filterData.stack[filterData.index];
 
     this.quad.map(currentState.renderTarget.size, currentState.sourceFrame).upload();
 
@@ -17199,7 +17210,7 @@ FilterManager.prototype.popFilter = function()
 
     if(filters.length === 1)
     {
-        filters[0].apply(this, currentState.renderTarget, lastState.renderTarget, true);
+        filters[0].apply(this, currentState.renderTarget, lastState.renderTarget, false);
         this.freePotRenderTarget(currentState.renderTarget);
     }
     else
@@ -17217,13 +17228,13 @@ FilterManager.prototype.popFilter = function()
             flop = t;
         }
 
-        filters[i].apply(this, flip, lastState.renderTarget, true);
+        filters[i].apply(this, flip, lastState.renderTarget, false);
 
         this.freePotRenderTarget(flip);
         this.freePotRenderTarget(flop);
     }
 
-    this.stackIndex--;
+    filterData.index--;
 };
 
 FilterManager.prototype.applyFilter = function (filter, input, output, clear)
@@ -17295,7 +17306,7 @@ FilterManager.prototype.syncUniforms = function (shader, filter)
 
     if(shader.uniforms.data.filterArea)
     {
-        var currentState = this.stack[this.stackIndex];
+        var currentState = this.filterData.stack[this.filterData.index];
         var filterArea = shader.uniforms.filterArea;
 
         filterArea[0] = currentState.renderTarget.size.width;
@@ -17361,7 +17372,7 @@ FilterManager.prototype.syncUniforms = function (shader, filter)
 
 FilterManager.prototype.getRenderTarget = function()
 {
-    var currentState = this.stack[this.stackIndex];
+    var currentState = this.filterData.stack[this.filterData.index];
     var renderTarget = this.getPotRenderTarget(this.renderer.gl, currentState.sourceFrame.width, currentState.sourceFrame.height, currentState.resolution);
     renderTarget.setFrame(currentState.destinationFrame, currentState.sourceFrame);
 
@@ -17383,13 +17394,13 @@ FilterManager.prototype.returnRenderTarget = function(renderTarget)
 // thia returns a matrix that will normalise map filter cords in the filter to screen space
 FilterManager.prototype.calculateScreenSpaceMatrix = function (outputMatrix)
 {
-    var currentState = this.stack[this.stackIndex];
+    var currentState = this.filterData.stack[this.filterData.index];
     return filterTransforms.calculateScreenSpaceMatrix(outputMatrix,  currentState.sourceFrame, currentState.renderTarget.size);
 };
 
 FilterManager.prototype.calculateNormalisedScreenSpaceMatrix = function (outputMatrix)
 {
-    var currentState = this.stack[this.stackIndex];
+    var currentState = this.filterData.stack[this.filterData.index];
 
 
 
@@ -17399,7 +17410,7 @@ FilterManager.prototype.calculateNormalisedScreenSpaceMatrix = function (outputM
 // this will map the filter coord so that a texture can be used based on the transform of a sprite
 FilterManager.prototype.calculateSpriteMatrix = function (outputMatrix, sprite)
 {
-    var currentState = this.stack[this.stackIndex];
+    var currentState = this.filterData.stack[this.filterData.index];
     return filterTransforms.calculateSpriteMatrix(outputMatrix, currentState.sourceFrame, currentState.renderTarget.size, sprite);
 };
 
@@ -18149,14 +18160,7 @@ var RenderTarget = function(gl, width, height, scaleMode, resolution, root)
      *
      * @member {object[]}
      */
-    this.filterStack = [
-        {
-            renderTarget:this,
-            filter:[],
-            bounds:this.size
-        }
-    ];
-
+    this.filterData = null;
 
     /**
      * The scale mode.
@@ -19034,7 +19038,7 @@ CanvasSpriteRenderer.prototype.render = function (sprite)
         width = texture._frame.width,
         height = texture._frame.height;
 
-    if (texture.orig.width <= 0 || texture.orig.height <= 0)
+    if (texture.orig.width <= 0 || texture.orig.height <= 0 || !texture.baseTexture.source)
     {
         return;
     }
@@ -23178,7 +23182,12 @@ var utils = module.exports = {
             var success = !!(gl && gl.getContextAttributes().stencil);
             if (gl)
             {
-                gl.getExtension('WEBGL_lose_context').loseContext();
+                var loseContext = gl.getExtension('WEBGL_lose_context');
+
+                if(loseContext)
+                {
+                    loseContext.loseContext();
+                }
             }
             gl = null;
 
@@ -26248,7 +26257,7 @@ var core = require('../../core');
  * ```
  * @author Clément Chenebault <clement@goodboydigital.com>
  * @class
- * @extends PIXI.AbstractFilter
+ * @extends PIXI.Filter
  * @memberof PIXI.filters
  */
 function ColorMatrixFilter()

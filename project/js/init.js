@@ -33,7 +33,7 @@ var renderer = new PIXI.autoDetectRenderer(
     {
         view: viewPort,
         transparent: false,
-        backgroundColor: 0x445599
+        backgroundColor: 0xffffff
 
     });
 

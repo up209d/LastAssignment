@@ -26,6 +26,7 @@
 <script src="js/objects/background.js"></script>
 <script src="js/objects/cloud.js"></script>
 <script src="js/objects/tvnoise.js"></script>
+<script src="js/objects/transitioncolor.js"></script>
 
 
 <script src="index.js"></script>
@@ -302,5 +303,22 @@ originOne.rotation += 1;
 maskRender.clear();
 maskRender.render(bunny.each);
 
+
+// MOVIE CLIP ALSO HAVE onComplete Event
+
+.onComplete default is null
+
+we can make callback here to run after a movieclip play once time
+
+
+// FUNCTION IN EVENT FIRING
+
+this.object.on('mousedown',function(event){
+    //Always can call the this.object by call event.target
+});
+
+// MASK LAYER has no relation to Origin Sprite Layer
+// So if mask in under other mask but is the mask for over sprite layer
+// it is still under the other mask
 
 -->

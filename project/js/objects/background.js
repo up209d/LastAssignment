@@ -1,7 +1,7 @@
 var Background = function(DisplayContainer) {
 
     this.paper = resourceTexture.paper.texture;
-
+    
     this.bg = new PIXI.extras.TilingSprite(this.paper,window.innerWidth,window.innerHeight);
     this.bg.anchor.x = 0.5;
     this.bg.anchor.y = 0.5;
@@ -16,7 +16,8 @@ var Background = function(DisplayContainer) {
     this.bgContainer = new PIXI.Container();
     this.bgContainer.addChild(this.bg);
 
-    DisplayContainer.addChildAt(this.bgContainer,0);
+    //DisplayContainer.addChildAt(this.bgContainer,0);
+    DisplayContainer.addChild(this.bgContainer);
 
     Background.prototype.bgMoving = function(eventData) {
 
