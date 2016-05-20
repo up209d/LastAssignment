@@ -1,9 +1,16 @@
-TVNoise = function() {
+TVNoise = function(DisplayContainer,alpha,NoiseTotalWidth,NoiseTotalHeight) {
+
+    NoiseTotalWidth = typeof NoiseTotalWidth !== 'undefined' ? NoiseTotalWidth : DisplayContainer.width;
+    NoiseTotalHeight = typeof NoiseTotalHeight !== 'undefined' ? NoiseTotalHeight : DisplayContainer.height;
+
+    alpha = typeof alpha !== 'undefined' ? alpha : 35;
+
+    this.alpha = alpha;
 
     this.noiseTexture = document.createElement('canvas');
 
-    this.noiseTexture.width = Math.floor(window.innerWidth/10);
-    this.noiseTexture.height = Math.floor(window.innerHeight/10);
+    this.noiseTexture.width = Math.floor(NoiseTotalWidth/10);
+    this.noiseTexture.height = Math.floor(NoiseTotalHeight/10);
 
     this.context2d = this.noiseTexture.getContext('2d');
 
@@ -18,7 +25,7 @@ TVNoise = function() {
             j = 0;
 
         for(; j < buffer32.length;)
-            buffer32[j++] = ((35 * Math.random())|0) << 24;
+            buffer32[j++] = ((this.alpha * Math.random())|0) << 24;
 
         this.context2d.putImageData(idata, 0, 0);
 
@@ -38,16 +45,27 @@ TVNoise = function() {
             this.noiseAnimations[i][j] = new PIXI.extras.MovieClip(this.noisetextures);
             this.noiseAnimations[i][j].anchor.set(0);
             this.noiseAnimations[i][j].position.set(this.noiseTexture.width*i,this.noiseTexture.height*j);
+            this.noiseAnimations[i][j].gotoAndPlay(Math.ceil(Math.random() * 15));
         }
     }
 
-    TVNoise.prototype.update = function() {
+    for (i=0;i<=10;i++) {
+        for(j=0;j<=10;j++) {
+            DisplayContainer.addChild(this.noiseAnimations[i][j]);
+        }
+    }
+
+    TVNoise.prototype.update = function(NewNoiseTotalWidth,NewNoiseTotalHeight) {
 
         this.noisetextures = new Array();
         console.log();
 
-        this.noiseTexture.width = Math.floor(window.innerWidth/10);
-        this.noiseTexture.height = Math.floor(window.innerHeight/10);
+        NewNoiseTotalWidth = typeof NewNoiseTotalWidth !== 'undefined' ? NewNoiseTotalWidth : NoiseTotalWidth;
+        NewNoiseTotalHeight = typeof NewNoiseTotalHeight !== 'undefined' ? NewNoiseTotalHeight : NoiseTotalHeight;
+
+
+        this.noiseTexture.width = Math.floor(NewNoiseTotalWidth/10);
+        this.noiseTexture.height = Math.floor(NewNoiseTotalHeight/10);
 
         // Rendering 15 frame of noise to play
 
@@ -58,7 +76,7 @@ TVNoise = function() {
                 j = 0;
 
             for(; j < buffer32.length;)
-                buffer32[j++] = ((35 * Math.random())|0) << 24;
+                buffer32[j++] = ((this.alpha * Math.random())|0) << 24;
 
             this.context2d.putImageData(idata, 0, 0);
 

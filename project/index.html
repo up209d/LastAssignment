@@ -8,10 +8,11 @@
 
 <link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" />
     
-<script src="js/pixiv4/pixi.js"></script>
+<script src="js/pixiv4/pixi.min.js"></script>
 <script src="js/gsap/TweenMax.min.js"></script>
 <script src="js/jquery-2.2.3.min.js"></script>
 <script src="js/webfont.js"></script>
+<script src="js/howler.min.js"></script>
 
 </head>
 <body>
@@ -27,6 +28,7 @@
 <script src="js/objects/cloud.js"></script>
 <script src="js/objects/tvnoise.js"></script>
 <script src="js/objects/transitioncolor.js"></script>
+<script src="js/objects/person.js"></script>
 
 
 <script src="index.js"></script>
@@ -321,4 +323,8 @@ this.object.on('mousedown',function(event){
 // So if mask in under other mask but is the mask for over sprite layer
 // it is still under the other mask
 
+
+// TWEENMAX MULTI OBJECT
+// TweenMax can control multi object at once by simple put Array object in
+// Exp: TweenMax.to([object1,object2], duration, {fromvalue}, {toValue});
 -->

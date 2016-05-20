@@ -8477,6 +8477,7 @@ module.exports = function () {
 
 },{"../../Resource":31,"../../b64":32}],36:[function(require,module,exports){
 var core = require('../core');
+var  Device = require('ismobilejs');
 
 // add some extra variables to the container..
 Object.assign(
@@ -8495,6 +8496,11 @@ Object.assign(
  */
 function AccessibilityManager(renderer)
 {
+	if(Device.tablet || Device.phone)
+	{
+		this.createTouchHook();
+	}
+
 	// first we create a div that will sit over the pixi element. This is where the div overlays will go.
     var div = document.createElement('div');
 
@@ -8565,7 +8571,7 @@ function AccessibilityManager(renderer)
      * @private
      */
    	this.isActive = false;
-
+   	this.isMobileAccessabillity = false;
 
    	// let listen for tab.. once pressed we can fire up and show the accessibility layer
    	window.addEventListener('keydown', this._onKeyDown, false);
@@ -8575,13 +8581,37 @@ function AccessibilityManager(renderer)
 AccessibilityManager.prototype.constructor = AccessibilityManager;
 module.exports = AccessibilityManager;
 
+AccessibilityManager.prototype.createTouchHook = function()
+{
+	var hookDiv = document.createElement('button');
+	hookDiv.style.width = 1 + 'px';
+    hookDiv.style.height = 1 + 'px';
+    hookDiv.style.position = 'absolute';
+    hookDiv.style.top = -1000+'px';
+    hookDiv.style.left = -1000+'px';
+    hookDiv.style.zIndex = 2;
+    hookDiv.style.backgroundColor = '#FF0000';
+    hookDiv.title = 'HOOK DIV';
+
+    hookDiv.addEventListener('focus', function(){
+
+    	this.isMobileAccessabillity = true;
+    	this.activate();
+    	document.body.removeChild(hookDiv);
+
+    }.bind(this));
+
+    document.body.appendChild(hookDiv);
+
+};
+
 /**
  * Activating will cause the Accessibility layer to be shown. This is called when a user preses the tab key
  * @private
  */
 AccessibilityManager.prototype.activate = function()
 {
-	if(this.isActive)
+	if(this.isActive )
 	{
 		return;
 	}
@@ -8602,7 +8632,8 @@ AccessibilityManager.prototype.activate = function()
  */
 AccessibilityManager.prototype.deactivate = function()
 {
-	if(!this.isActive)
+
+	if(!this.isActive || this.isMobileAccessabillity)
 	{
 		return;
 	}
@@ -8656,8 +8687,8 @@ AccessibilityManager.prototype.updateAccessibleObjects = function(displayObject)
 AccessibilityManager.prototype.update = function()
 {
 	if(!this.renderer.renderingToScreen) {
-    return;
-  }
+    	return;
+  	}
 
 	// update children...
 	this.updateAccessibleObjects(this.renderer._lastObjectRendered);
@@ -8893,7 +8924,7 @@ AccessibilityManager.prototype.destroy = function ()
 core.WebGLRenderer.registerPlugin('accessibility', AccessibilityManager);
 core.CanvasRenderer.registerPlugin('accessibility', AccessibilityManager);
 
-},{"../core":58,"./accessibleTarget":37}],37:[function(require,module,exports){
+},{"../core":58,"./accessibleTarget":37,"ismobilejs":12}],37:[function(require,module,exports){
 /**
  * Default property values of accessible objects
  * used by {@link PIXI.accessibility.AccessibilityManager}.
@@ -8909,11 +8940,11 @@ core.CanvasRenderer.registerPlugin('accessibility', AccessibilityManager);
  *      );
  */
 var accessibleTarget = {
-    
+
     /**
-     *  Flag for if the object is accessible. If true AccessibilityManager will overlay a 
+     *  Flag for if the object is accessible. If true AccessibilityManager will overlay a
      *   shadow div with attributes set
-     * 
+     *
      * @member {boolean}
      */
     accessible:false,
@@ -8921,14 +8952,14 @@ var accessibleTarget = {
     /**
      * Sets the title attribute of the shadow div
      * If accessibleTitle AND accessibleHint has not been this will default to 'displayObject [tabIndex]'
-     * 
+     *
      * @member {string}
      */
     accessibleTitle:null,
 
     /**
      * Sets the aria-label attribute of the shadow div
-     * 
+     *
      * @member {string}
      */
     accessibleHint:null,
@@ -15105,9 +15136,11 @@ CanvasRenderer.prototype.render = function (displayObject, renderTexture, clear,
 
     var context = this.context;
 
+    if(!renderTexture)
+    {
+        this._lastObjectRendered = displayObject;
+    }
 
-
-    this._lastObjectRendered = displayObject;
 
 
 
@@ -17295,7 +17328,7 @@ FilterManager.prototype.applyFilter = function (filter, input, output, clear)
     this.quad.draw();
 };
 
-// thia returns a matrix that will normalise map filter cords in the filter to screen space
+// this returns a matrix that will normalise map filter cords in the filter to screen space
 FilterManager.prototype.syncUniforms = function (shader, filter)
 {
     var uniformData = filter.uniformData;
@@ -17303,10 +17336,11 @@ FilterManager.prototype.syncUniforms = function (shader, filter)
 
     // 0 is reserverd for the pixi texture so we start at 1!
     var textureCount = 1;
+    var currentState;
 
     if(shader.uniforms.data.filterArea)
     {
-        var currentState = this.filterData.stack[this.filterData.index];
+        currentState = this.filterData.stack[this.filterData.index];
         var filterArea = shader.uniforms.filterArea;
 
         filterArea[0] = currentState.renderTarget.size.width;
@@ -17315,6 +17349,21 @@ FilterManager.prototype.syncUniforms = function (shader, filter)
         filterArea[3] = currentState.sourceFrame.y;
 
         shader.uniforms.filterArea = filterArea;
+    }
+
+    // use this to clamp displaced texture coords so they belong to filterArea
+    // see displacementFilter fragment shader for an example
+    if(shader.uniforms.data.filterClamp)
+    {
+        currentState = this.filterData.stack[this.filterData.index];
+        var filterClamp = shader.uniforms.filterClamp;
+
+        filterClamp[0] = 0.5 / currentState.renderTarget.size.width;
+        filterClamp[1] = 0.5 / currentState.renderTarget.size.height;
+        filterClamp[2] = (currentState.sourceFrame.width - 0.5) / currentState.renderTarget.size.width;
+        filterClamp[3] = (currentState.sourceFrame.height - 0.5) / currentState.renderTarget.size.height;
+
+        shader.uniforms.filterClamp = filterClamp;
     }
 
     var val;
@@ -18618,12 +18667,12 @@ Object.defineProperties(Sprite.prototype, {
     width: {
         get: function ()
         {
-            return Math.abs(this.scale.x) * this.texture.orig.width;
+            return Math.abs(this.scale.x) * (this.texture.trim || this.texture.orig).width;
         },
         set: function (value)
         {
             var sign = utils.sign(this.scale.x) || 1;
-            this.scale.x = sign * value / this.texture.orig.width;
+            this.scale.x = sign * value / (this.texture.trim || this.texture.orig).width;
             this._width = value;
         }
     },
@@ -18637,12 +18686,12 @@ Object.defineProperties(Sprite.prototype, {
     height: {
         get: function ()
         {
-            return  Math.abs(this.scale.y) * this.texture.orig.height;
+            return  Math.abs(this.scale.y) * (this.texture.trim || this.texture.orig).height;
         },
         set: function (value)
         {
             var sign = utils.sign(this.scale.y) || 1;
-            this.scale.y = sign * value / this.texture.orig.height;
+            this.scale.y = sign * value / (this.texture.trim || this.texture.orig).height;
             this._height = value;
         }
     },
@@ -18698,12 +18747,12 @@ Sprite.prototype._onTextureUpdate = function ()
     // so if _width is 0 then width was not set..
     if (this._width)
     {
-        this.scale.x = utils.sign(this.scale.x) * this._width / this.texture.orig.width;
+        this.scale.x = utils.sign(this.scale.x) * this._width / (this.texture.trim || this.texture.orig).width;
     }
 
     if (this._height)
     {
-        this.scale.y = utils.sign(this.scale.y) * this._height / this.texture.orig.height;
+        this.scale.y = utils.sign(this.scale.y) * this._height / (this.texture.trim || this.texture.orig).height;
     }
 };
 
@@ -21291,15 +21340,13 @@ function BaseTexture(source, scaleMode, resolution)
      */
     this.mipmap = CONST.MIPMAP_TEXTURES;
 
-
     /**
      *
-     * Set this to true if a mipmap of this texture needs to be generated. This value needs to be set before the texture is used
-     * Also the texture must be a power of two size to work
+     * WebGL Texture wrap mode
      *
      * @member {boolean}
      */
-    this.wrap = CONST.MIPMAP_TEXTURES;
+    this.wrapMode = CONST.WRAP_MODES.DEFAULT;
 
     /**
      * A map of renderer IDs to webgl textures
@@ -23655,19 +23702,19 @@ core.RenderTexture.prototype.getImage = function(target)
 core.RenderTexture.prototype.getBase64 = function(target)
 {
     warn('RenderTexture.getBase64 is now deprecated, please use renderer.extract.base64(target)');
-    this.legacyRenderer.extract.base64(target);
+    return this.legacyRenderer.extract.base64(target);
 };
 
 core.RenderTexture.prototype.getCanvas = function(target)
 {
     warn('RenderTexture.getCanvas is now deprecated, please use renderer.extract.canvas(target)');
-    this.legacyRenderer.extract.canvas(target);
+    return this.legacyRenderer.extract.canvas(target);
 };
 
 core.RenderTexture.prototype.getPixels = function(target)
 {
     warn('RenderTexture.getPixels is now deprecated, please use renderer.extract.pixels(target)');
-    this.legacyRenderer.pixels(target);
+    return this.legacyRenderer.pixels(target);
 };
 
 
@@ -23885,7 +23932,7 @@ core.utils.canUseNewCanvasBlendModes = function() {
 };
 
 
-},{"./core":58,"./core/const":40,"./extras":123,"./filters":135,"./mesh":150,"./particles":153}],114:[function(require,module,exports){
+},{"./core":58,"./core/const":40,"./extras":123,"./filters":135,"./mesh":151,"./particles":154}],114:[function(require,module,exports){
 var core = require('../../core'),
     tempRect = new core.Rectangle();
 
@@ -25147,6 +25194,8 @@ TilingSprite.prototype._renderWebGL = function (renderer)
     glData.shader.uniforms.uColor = color;
 
     renderer.bindTexture(this._texture, 0);
+
+    renderer.state.setBlendMode( this.blendMode );
     glData.quad.draw();
 };
 
@@ -25644,7 +25693,7 @@ DisplayObject.prototype._getCachedBounds = function ()
 {
     this._cachedSprite._currentBounds = null;
 
-    return this._cachedSprite.getBounds(core.math.Matrix.IDENTITY);
+    return this._cachedSprite.getBounds(core.Matrix.IDENTITY);
 };
 
 /**
@@ -26797,7 +26846,7 @@ function DisplacementFilter(sprite, scale)
         // vertex shader
         "#define GLSLIFY 1\nattribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nuniform mat3 otherMatrix;\n\nvarying vec2 vMapCoord;\nvarying vec2 vTextureCoord;\n\nvoid main(void)\n{\n   gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n   vTextureCoord = aTextureCoord;\n   vMapCoord = ( otherMatrix * vec3( aTextureCoord, 1.0)  ).xy;\n}\n",
         // fragment shader
-        "#define GLSLIFY 1\nvarying vec2 vMapCoord;\nvarying vec2 vTextureCoord;\n\nuniform vec2 scale;\n\nuniform sampler2D uSampler;\nuniform sampler2D mapSampler;\n\nvoid main(void)\n{\n   vec4 map =  texture2D(mapSampler, vMapCoord);\n\n   map -= 0.5;\n   map.xy *= scale;\n\n   gl_FragColor = texture2D(uSampler, vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y));\n}\n"
+        "#define GLSLIFY 1\nvarying vec2 vMapCoord;\nvarying vec2 vTextureCoord;\n\nuniform vec2 scale;\n\nuniform sampler2D uSampler;\nuniform sampler2D mapSampler;\n\nuniform vec4 filterClamp;\n\nvoid main(void)\n{\n   vec4 map =  texture2D(mapSampler, vMapCoord);\n\n   map -= 0.5;\n   map.xy *= scale;\n\n   gl_FragColor = texture2D(uSampler, clamp(vec2(vTextureCoord.x + map.x, vTextureCoord.y + map.y), filterClamp.xy, filterClamp.zw));\n}\n"
 
     );
 
@@ -26955,7 +27004,7 @@ var core = require('../../core');
  * This greyscales the palette of your Display Objects.
  *
  * @class
- * @extends PIXI.AbstractFilter
+ * @extends PIXI.Filter
  * @memberof PIXI.filters
  */
 function GrayFilter()
@@ -26968,7 +27017,7 @@ function GrayFilter()
     );
 
     this.uniforms.gray = 1;
-    
+
     this.glShaderKey = 'gray';
 }
 
@@ -27029,14 +27078,15 @@ module.exports = {
     BlurFilter:         require('./blur/BlurFilter'),
     BlurXFilter:        require('./blur/BlurXFilter'),
     BlurYFilter:        require('./blur/BlurYFilter'),
-   
+
     ColorMatrixFilter:  require('./colormatrix/ColorMatrixFilter'),
     TwistFilter:        require('./twist/TwistFilter'),
     GrayFilter:         require('./gray/GrayFilter'),
-    GodrayFilter:         require('./godray/GodrayFilter')
+    GodrayFilter:       require('./godray/GodrayFilter'),
+    VoidFilter:         require('./void/VoidFilter')
 };
 
-},{"./blur/BlurFilter":125,"./blur/BlurXFilter":126,"./blur/BlurYFilter":127,"./colormatrix/ColorMatrixFilter":131,"./displacement/DisplacementFilter":132,"./godray/GodrayFilter":133,"./gray/GrayFilter":134,"./twist/TwistFilter":136}],136:[function(require,module,exports){
+},{"./blur/BlurFilter":125,"./blur/BlurXFilter":126,"./blur/BlurYFilter":127,"./colormatrix/ColorMatrixFilter":131,"./displacement/DisplacementFilter":132,"./godray/GodrayFilter":133,"./gray/GrayFilter":134,"./twist/TwistFilter":136,"./void/VoidFilter":137}],136:[function(require,module,exports){
 var core = require('../../core');
 
 
@@ -27135,6 +27185,34 @@ Object.defineProperties(TwistFilter.prototype, {
 });
 
 },{"../../core":58}],137:[function(require,module,exports){
+var core = require('../../core');
+// @see https://github.com/substack/brfs/issues/25
+
+
+/**
+ * Does nothing. Very handy.
+ *
+ * @class
+ * @extends PIXI.Filter
+ * @memberof PIXI.filters
+ */
+function VoidFilter()
+{
+    core.Filter.call(this,
+        // vertex shader
+        "#define GLSLIFY 1\nattribute vec2 aVertexPosition;\nattribute vec2 aTextureCoord;\n\nuniform mat3 projectionMatrix;\nvarying vec2 vTextureCoord;\n\nvoid main(void){\n    gl_Position = vec4((projectionMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);\n    vTextureCoord = aTextureCoord;\n}\n",
+        // fragment shader
+        "#define GLSLIFY 1\nvarying vec2 vTextureCoord;\n\nuniform sampler2D uSampler;\n\nvoid main(void)\n{\n   gl_FragColor = texture2D(uSampler, vTextureCoord);\n}\n"
+    );
+
+    this.glShaderKey = 'void';
+}
+
+VoidFilter.prototype = Object.create(core.Filter.prototype);
+VoidFilter.prototype.constructor = VoidFilter;
+module.exports = VoidFilter;
+
+},{"../../core":58}],138:[function(require,module,exports){
 (function (global){
 // run the polyfills
 require('./polyfill');
@@ -27168,7 +27246,7 @@ Object.assign(core, require('./deprecation'));
 global.PIXI = core;
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./accessibility":38,"./core":58,"./deprecation":113,"./extract":115,"./extras":123,"./filters":135,"./interaction":140,"./loaders":143,"./mesh":150,"./particles":153,"./polyfill":159}],138:[function(require,module,exports){
+},{"./accessibility":38,"./core":58,"./deprecation":113,"./extract":115,"./extras":123,"./filters":135,"./interaction":141,"./loaders":144,"./mesh":151,"./particles":154,"./polyfill":160}],139:[function(require,module,exports){
 var core = require('../core');
 
 /**
@@ -27217,7 +27295,7 @@ InteractionData.prototype.getLocalPosition = function (displayObject, point, glo
     return displayObject.worldTransform.applyInverse(globalPos || this.global, point);
 };
 
-},{"../core":58}],139:[function(require,module,exports){
+},{"../core":58}],140:[function(require,module,exports){
 var core = require('../core'),
     InteractionData = require('./InteractionData');
 
@@ -27570,7 +27648,15 @@ InteractionManager.prototype.dispatchEvent = function ( displayObject, eventStri
  */
 InteractionManager.prototype.mapPositionToPoint = function ( point, x, y )
 {
-    var rect = this.interactionDOMElement.getBoundingClientRect();
+    var rect;
+    // IE 11 fix
+    if(!this.interactionDOMElement.parentElement)
+    {
+        rect = { x: 0, y: 0, width: 0, height: 0 };
+    } else {
+        rect = this.interactionDOMElement.getBoundingClientRect();
+    }
+
     point.x = ( ( x - rect.left ) * (this.interactionDOMElement.width  / rect.width  ) ) / this.resolution;
     point.y = ( ( y - rect.top  ) * (this.interactionDOMElement.height / rect.height ) ) / this.resolution;
 };
@@ -28157,7 +28243,7 @@ InteractionManager.prototype.destroy = function () {
 core.WebGLRenderer.registerPlugin('interaction', InteractionManager);
 core.CanvasRenderer.registerPlugin('interaction', InteractionManager);
 
-},{"../core":58,"./InteractionData":138,"./interactiveTarget":141}],140:[function(require,module,exports){
+},{"../core":58,"./InteractionData":139,"./interactiveTarget":142}],141:[function(require,module,exports){
 /**
  * @file        Main export of the PIXI interactions library
  * @author      Mat Groves <mat@goodboydigital.com>
@@ -28174,7 +28260,7 @@ module.exports = {
     interactiveTarget:  require('./interactiveTarget')
 };
 
-},{"./InteractionData":138,"./InteractionManager":139,"./interactiveTarget":141}],141:[function(require,module,exports){
+},{"./InteractionData":139,"./InteractionManager":140,"./interactiveTarget":142}],142:[function(require,module,exports){
 /**
  * Default property values of interactive objects
  * Used by {@link PIXI.interaction.InteractionManager} to automatically give all DisplayObjects these properties
@@ -28263,7 +28349,7 @@ var interactiveTarget = {
 
 module.exports = interactiveTarget;
 
-},{}],142:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 var Resource = require('resource-loader').Resource,
     core = require('../core'),
     extras = require('../extras'),
@@ -28387,7 +28473,7 @@ module.exports = function ()
     };
 };
 
-},{"../core":58,"../extras":123,"path":3,"resource-loader":33}],143:[function(require,module,exports){
+},{"../core":58,"../extras":123,"path":3,"resource-loader":33}],144:[function(require,module,exports){
 /**
  * @file        Main export of the PIXI loaders library
  * @author      Mat Groves <mat@goodboydigital.com>
@@ -28408,7 +28494,7 @@ module.exports = {
     Resource:           require('resource-loader').Resource
 };
 
-},{"./bitmapFontParser":142,"./loader":144,"./spritesheetParser":145,"./textureParser":146,"resource-loader":33}],144:[function(require,module,exports){
+},{"./bitmapFontParser":143,"./loader":145,"./spritesheetParser":146,"./textureParser":147,"resource-loader":33}],145:[function(require,module,exports){
 var ResourceLoader = require('resource-loader'),
     textureParser = require('./textureParser'),
     spritesheetParser = require('./spritesheetParser'),
@@ -28470,7 +28556,7 @@ var Resource = ResourceLoader.Resource;
 
 Resource.setExtensionXhrType('fnt', Resource.XHR_RESPONSE_TYPE.DOCUMENT);
 
-},{"./bitmapFontParser":142,"./spritesheetParser":145,"./textureParser":146,"resource-loader":33}],145:[function(require,module,exports){
+},{"./bitmapFontParser":143,"./spritesheetParser":146,"./textureParser":147,"resource-loader":33}],146:[function(require,module,exports){
 var Resource = require('resource-loader').Resource,
     path = require('path'),
     core = require('../core'),
@@ -28587,7 +28673,7 @@ module.exports = function ()
     };
 };
 
-},{"../core":58,"async":1,"path":3,"resource-loader":33}],146:[function(require,module,exports){
+},{"../core":58,"async":1,"path":3,"resource-loader":33}],147:[function(require,module,exports){
 var core = require('../core');
 
 module.exports = function ()
@@ -28609,7 +28695,7 @@ module.exports = function ()
     };
 };
 
-},{"../core":58}],147:[function(require,module,exports){
+},{"../core":58}],148:[function(require,module,exports){
 var core = require('../core'),
     glCore = require('pixi-gl-core'),
     Shader = require('./webgl/MeshShader'),
@@ -29146,7 +29232,7 @@ Mesh.DRAW_MODES = {
     TRIANGLES: 1
 };
 
-},{"../core":58,"./webgl/MeshShader":151,"pixi-gl-core":14}],148:[function(require,module,exports){
+},{"../core":58,"./webgl/MeshShader":152,"pixi-gl-core":14}],149:[function(require,module,exports){
 var Mesh = require('./Mesh');
 
 /**
@@ -29271,7 +29357,7 @@ Plane.prototype._onTextureUpdate = function ()
     }
 };
 
-},{"./Mesh":147}],149:[function(require,module,exports){
+},{"./Mesh":148}],150:[function(require,module,exports){
 var Mesh = require('./Mesh');
 var core = require('../core');
 
@@ -29486,7 +29572,7 @@ Rope.prototype.updateTransform = function ()
     this.containerUpdateTransform();
 };
 
-},{"../core":58,"./Mesh":147}],150:[function(require,module,exports){
+},{"../core":58,"./Mesh":148}],151:[function(require,module,exports){
 /**
  * @file        Main export of the PIXI extras library
  * @author      Mat Groves <mat@goodboydigital.com>
@@ -29504,7 +29590,7 @@ module.exports = {
     MeshShader:     require('./webgl/MeshShader')
 };
 
-},{"./Mesh":147,"./Plane":148,"./Rope":149,"./webgl/MeshShader":151}],151:[function(require,module,exports){
+},{"./Mesh":148,"./Plane":149,"./Rope":150,"./webgl/MeshShader":152}],152:[function(require,module,exports){
 var Shader = require('../../core/Shader');
 
 /**
@@ -29551,7 +29637,7 @@ MeshShader.prototype.constructor = MeshShader;
 module.exports = MeshShader;
 
 
-},{"../../core/Shader":39}],152:[function(require,module,exports){
+},{"../../core/Shader":39}],153:[function(require,module,exports){
 var core = require('../core');
 
 /**
@@ -29883,7 +29969,7 @@ ParticleContainer.prototype.destroy = function () {
     this._buffers = null;
 };
 
-},{"../core":58}],153:[function(require,module,exports){
+},{"../core":58}],154:[function(require,module,exports){
 /**
  * @file        Main export of the PIXI extras library
  * @author      Mat Groves <mat@goodboydigital.com>
@@ -29899,7 +29985,7 @@ module.exports = {
     ParticleRenderer: 			 require('./webgl/ParticleRenderer')
 };
 
-},{"./ParticleContainer":152,"./webgl/ParticleRenderer":155}],154:[function(require,module,exports){
+},{"./ParticleContainer":153,"./webgl/ParticleRenderer":156}],155:[function(require,module,exports){
 var glCore = require('pixi-gl-core'),
     createIndicesForQuads = require('../../core/utils/createIndicesForQuads');
 
@@ -30120,7 +30206,7 @@ ParticleBuffer.prototype.destroy = function ()
     this.staticBuffer.destroy();
 };
 
-},{"../../core/utils/createIndicesForQuads":108,"pixi-gl-core":14}],155:[function(require,module,exports){
+},{"../../core/utils/createIndicesForQuads":108,"pixi-gl-core":14}],156:[function(require,module,exports){
 var core = require('../../core'),
     ParticleShader = require('./ParticleShader'),
     ParticleBuffer = require('./ParticleBuffer');
@@ -30552,7 +30638,7 @@ ParticleRenderer.prototype.destroy = function ()
     this.tempMatrix = null;
 };
 
-},{"../../core":58,"./ParticleBuffer":154,"./ParticleShader":156}],156:[function(require,module,exports){
+},{"../../core":58,"./ParticleBuffer":155,"./ParticleShader":157}],157:[function(require,module,exports){
 var Shader = require('../../core/Shader');
 
 /**
@@ -30618,7 +30704,7 @@ ParticleShader.prototype.constructor = ParticleShader;
 
 module.exports = ParticleShader;
 
-},{"../../core/Shader":39}],157:[function(require,module,exports){
+},{"../../core/Shader":39}],158:[function(require,module,exports){
 // References:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/sign
 
@@ -30634,7 +30720,7 @@ if (!Math.sign)
     };
 }
 
-},{}],158:[function(require,module,exports){
+},{}],159:[function(require,module,exports){
 // References:
 // https://github.com/sindresorhus/object-assign
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
@@ -30644,7 +30730,7 @@ if (!Object.assign)
     Object.assign = require('object-assign');
 }
 
-},{"object-assign":13}],159:[function(require,module,exports){
+},{"object-assign":13}],160:[function(require,module,exports){
 require('./Object.assign');
 require('./requestAnimationFrame');
 require('./Math.sign');
@@ -30662,7 +30748,7 @@ if(!window.Uint16Array){
   window.Uint16Array = Array;
 }
 
-},{"./Math.sign":157,"./Object.assign":158,"./requestAnimationFrame":160}],160:[function(require,module,exports){
+},{"./Math.sign":158,"./Object.assign":159,"./requestAnimationFrame":161}],161:[function(require,module,exports){
 (function (global){
 // References:
 // http://paulirish.com/2011/requestanimationframe-for-smart-animating/
@@ -30732,6 +30818,6 @@ if (!global.cancelAnimationFrame) {
 }
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{}]},{},[137])(137)
+},{}]},{},[138])(138)
 });
 //# sourceMappingURL=pixi.js.map

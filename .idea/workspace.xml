@@ -2,8 +2,345 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/js/howler.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/js/howler.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/js/objects/person.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_73.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_74.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_75.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_77.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_78.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_79.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_81.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_82.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_83.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_84.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_86.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_87.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_88.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_89.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/Cursor/Cursor_9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-0.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-0.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-1.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-10.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-10.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-11.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-12.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-13.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-14.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-15.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-16.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-17.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-18.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-19.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-2.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-20.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-21.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-21.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-22.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-22.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-23.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-23.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-24.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-24.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-25.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-25.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-26.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-26.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-27.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-27.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-28.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-28.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-29.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-29.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-3.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-30.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-30.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-31.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-31.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-32.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-32.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-33.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-33.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-34.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-34.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-35.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-35.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-36.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-36.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-37.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-37.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-38.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-38.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-39.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-39.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-4.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-40.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-40.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-41.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-41.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-42.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-42.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-43.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-43.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-44.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-44.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-45.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-45.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-46.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-46.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-47.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-47.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-48.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-48.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-49.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-49.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-5.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-5.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-50.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-50.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-51.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-51.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-52.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-52.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-53.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-53.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-54.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-54.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-55.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-55.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-56.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-56.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-57.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-57.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-58.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-58.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-59.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-59.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-6.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-60.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-60.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-61.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-61.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-62.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-62.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-63.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-63.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-64.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-64.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-65.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-65.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-66.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-66.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-67.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-67.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-68.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-68.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-69.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-69.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-7.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-70.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-70.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-71.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-71.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-72.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-72.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-73.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-73.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-74.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-74.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-75.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-75.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-76.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-76.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-77.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-77.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-78.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-78.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-79.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-79.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-8.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-80.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-80.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-81.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-81.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-82.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-82.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-83.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-83.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-84.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-84.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-85.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-85.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-86.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-86.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-87.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-87.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-88.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-88.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-89.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-89.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-9.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Clip/TransitionMask-Color/TransitionMask-Color-9.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Flexible-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Flexible.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Head-Center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch_00.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch_01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch_02.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch_03.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GD-Sketch_04.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GDS-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GDS-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/GDS-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Health-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Health.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Intelligent-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Intelligent.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MD-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MD-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MD-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MDS-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MDS-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/MDS-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Organize-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Organize.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SC-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SC-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SC-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SCS-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SCS-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SCS-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SM-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SM-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SM-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SMS-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SMS-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/SMS-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/ST-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/ST-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/ST-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Social-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Social.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Success-Color.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/Success.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TC-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TC-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TC-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TCS-Color-After.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TCS-Color-Before.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/All/TCS-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/loading_bg.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/paper.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/paper.png" afterPath="$PROJECT_DIR$/project/assets/images/paper.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.html" afterPath="$PROJECT_DIR$/project/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/init.js" afterPath="$PROJECT_DIR$/project/js/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/loader.js" afterPath="$PROJECT_DIR$/project/js/loader.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/background.js" afterPath="$PROJECT_DIR$/project/js/objects/background.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" afterPath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/tvnoise.js" afterPath="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js.map" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js.map" />
     </list>
     <ignored path="LastAssignment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,14 +361,14 @@
     <favorites_list name="LastAssignment" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.42890084">
+    <splitter split-orientation="horizontal" split-proportion="0.49269792">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="647">
-                  <caret line="321" column="35" selection-start-line="321" selection-start-column="35" selection-end-line="321" selection-end-column="35" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -44,10 +381,22 @@
           <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/init.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="380">
-                  <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+                <state relative-caret-position="1125">
+                  <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="477">
+                  <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
+                  <folding>
+                    <element signature="e#0#36#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -56,8 +405,18 @@
           <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/loader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
+                <state relative-caret-position="90">
+                  <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="stylesheet.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project/assets/fonts/webfonts/stylesheet.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -66,8 +425,8 @@
           <file leaf-file-name="tvnoise.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                <state relative-caret-position="300">
+                  <caret line="20" column="17" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -76,8 +435,8 @@
           <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+                <state relative-caret-position="30">
+                  <caret line="2" column="64" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="64" />
                   <folding />
                 </state>
               </provider>
@@ -100,8 +459,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="326">
-                  <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+                <state relative-caret-position="465">
+                  <caret line="298" column="4" selection-start-line="298" selection-start-column="4" selection-end-line="298" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -110,8 +469,8 @@
           <file leaf-file-name="transitioncolor.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="345">
-                  <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+                <state relative-caret-position="690">
+                  <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
                   <folding />
                 </state>
               </provider>
@@ -120,7 +479,7 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="369">
+                <state relative-caret-position="495">
                   <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
                   <folding />
                 </state>
@@ -150,13 +509,16 @@
         <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" />
         <option value="$PROJECT_DIR$/project/js/objects/cloud.js" />
         <option value="$PROJECT_DIR$/project/css/style.css" />
+        <option value="$PROJECT_DIR$/project/js/howler.js" />
+        <option value="$PROJECT_DIR$/project/js/howler.min.js" />
         <option value="$PROJECT_DIR$/project/js/init.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
         <option value="$PROJECT_DIR$/project/js/objects/background.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
-        <option value="$PROJECT_DIR$/project/index.js" />
-        <option value="$PROJECT_DIR$/project/js/loader.js" />
         <option value="$PROJECT_DIR$/project/index.html" />
+        <option value="$PROJECT_DIR$/project/js/loader.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
+        <option value="$PROJECT_DIR$/project/index.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/person.js" />
       </list>
     </option>
   </component>
@@ -215,6 +577,78 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="objects" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LastAssignment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -227,6 +661,7 @@
     <property name="FullScreen" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/UP/Desktop/LastAssignment/project/js/loader.js" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -286,6 +721,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -312,34 +750,44 @@
       <workItem from="1463211113280" duration="12117000" />
       <workItem from="1463404488286" duration="5849000" />
       <workItem from="1463445415368" duration="7000" />
-      <workItem from="1463565047439" duration="159000" />
+      <workItem from="1463565047439" duration="50616000" />
+      <workItem from="1463740149353" duration="3870000" />
     </task>
+    <task id="LOCAL-00001" summary="Change">
+      <created>1463565396489</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1463565396489</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118632000" />
+    <option name="totallyTimeSpent" value="172959000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1760608" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1923077" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24952501" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45793268" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17908654" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -353,43 +801,17 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Change" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/project/index.js</url>
-          <line>102</line>
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="50" selection-start-line="18" selection-start-column="50" selection-end-line="18" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/cloud.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5160">
-          <caret line="344" column="5" selection-start-line="344" selection-start-column="5" selection-end-line="344" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
@@ -722,14 +1144,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/test.html" />
+    <entry file="file://$PROJECT_DIR$/project/js/howler.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="12281" selection-start-line="9" selection-start-column="12281" selection-end-line="9" selection-end-column="12281" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/howler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="622">
+          <caret line="1351" column="5" selection-start-line="1351" selection-start-column="5" selection-end-line="1351" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/init.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="76" column="0" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/assets/fonts/webfonts/stylesheet.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/test.html" />
+    <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="64" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/cloud.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5160">
@@ -738,72 +1221,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/css/style.css">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        <state relative-caret-position="690">
+          <caret line="46" column="37" selection-start-line="46" selection-start-column="37" selection-end-line="46" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
+    <entry file="file://$PROJECT_DIR$/project/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="74" selection-start-line="23" selection-start-column="74" selection-end-line="23" selection-end-column="74" />
+        <state relative-caret-position="495">
+          <caret line="33" column="7" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+        <state relative-caret-position="465">
+          <caret line="298" column="4" selection-start-line="298" selection-start-column="4" selection-end-line="298" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="50" column="42" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/init.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        <state relative-caret-position="477">
+          <caret line="165" column="10" selection-start-line="165" selection-start-column="10" selection-end-line="165" selection-end-column="10" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="647">
-          <caret line="321" column="35" selection-start-line="321" selection-start-column="35" selection-end-line="321" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#0#36#0" expanded="false" />
           </folding>
         </state>
       </provider>

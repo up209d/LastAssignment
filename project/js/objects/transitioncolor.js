@@ -1,34 +1,27 @@
 var transitionColor = function(stage,object,type) {
 
     type = typeof type !== "undefined" ? type : 'water';
-    console.log(type);
+    //console.log(type);
 
     this.textures = [];
 
     switch (type) {
         case 'water': {
-            for (i=0;i<transitionColorObjectLoader_Water.length;i++) {
-                this.textures.push(resourceTexture['transitionColor_Water_'+i].texture);
+            for (i=0;i<90;i++) {
+                this.textures.push(resourceTexture[assetsClipPath+'Water-'+i+'.jpg'].texture);
             }
             break;
         }
         case 'splash': {
-            for (i=0;i<transitionColorObjectLoader_Splash.length;i++) {
-                this.textures.push(resourceTexture['transitionColor_Splash_'+i].texture);
-            }
-            break;
-        }
-
-        case 'cursor': {
-            for (i=0;i<transitionColorObjectLoader_Cursor.length;i++) {
-                this.textures.push(resourceTexture['transitionColor_Cursor_'+i].texture);
+            for (i=0;i<90;i++) {
+                this.textures.push(resourceTexture[assetsClipPath+'Splash-'+i+'.png'].texture);
             }
             break;
         }
 
         default: {
-            for (i=0;i<transitionColorObjectLoader_Water.length;i++) {
-                this.textures.push(resourceTexture['transitionColor_Water_'+i].texture);
+            for (i=0;i<90;i++) {
+                this.textures.push(resourceTexture[assetsClipPath+'Water-'+i+'.png'].texture);
             }
             break;
         }
@@ -51,7 +44,7 @@ var transitionColor = function(stage,object,type) {
     object.mask = this.object;
 
 
-    this.object.animationSpeed = 0.5;
+    this.object.animationSpeed = 0.75;
     this.object.loop = false;
 
     this.object.interactive = true;
@@ -60,9 +53,15 @@ var transitionColor = function(stage,object,type) {
     //     e.target.gotoAndPlay(0);
     // });
 
-    this.object.gotoAndPlay(0);
+    this.object.gotoAndStop(0);
 
     // Callback each time stop playing
     this.object.onComplete = function(e){this}
+
+    transitionColor.prototype.play = function(frame) {
+        frame = typeof frame == 'undefined' ? 0 : frame > this.object.totalFrames ? this.object.totalFrames : frame;
+        //console.log(frame);
+        this.object.gotoAndPlay(frame);
+    }
 
 }
