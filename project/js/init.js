@@ -1,8 +1,8 @@
 // Init JS File is used to create variable with non DOM on HTML
 // Just Window and Document
-
-
 TweenMax.lagSmoothing(1000,16);
+
+var PixiV4 = true;
 
 var CenterPoint = function() {
 
@@ -60,7 +60,7 @@ var CenterPosition = new CenterPoint();
 
 // Throttle back to 30 fps for animation stable
 var stop = true;
-TweenMax.ticker.fps(120);
+TweenMax.ticker.fps(60);
 TweenMax.ticker.addEventListener('tick', function(){
     if (!stop) {
         RenderAnimation();
@@ -79,7 +79,7 @@ function RenderAnimation() {
 WebFont.load({
     custom:{
         families: ['kg_summer_sunshineregular','always_foreverbold','dk_pimpernelregular'],
-        urls: ['/assets/fonts/webfonts/stylesheet.css']
+        urls: ['./assets/fonts/webfonts/stylesheet.css']
 
     },
     active: function(){
@@ -91,3 +91,18 @@ WebFont.load({
     }
 });
 
+
+function debounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    }.call(this);
+};

@@ -1,10 +1,13 @@
 var Background = function(DisplayContainer) {
 
-    this.paper = resourceTexture[assetsPath+'paper.png'].texture;
+    var self = this;
+
+    this.paper = resourceTexture[assetsPath+'paper3.png'].texture;
     
     this.bg = new PIXI.extras.TilingSprite(this.paper,window.innerWidth,window.innerHeight);
     this.bg.anchor.x = 0.5;
     this.bg.anchor.y = 0.5;
+    this.bg.alpha = 0.05;
 
     this.bg.width = window.innerWidth*8;
     this.bg.height =  window.innerHeight*8;

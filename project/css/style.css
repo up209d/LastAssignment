@@ -34,3 +34,14 @@ top:0;
 left:0;
 }
 
+
+.rangemom {
+    position: absolute;
+    z-index: 9999;
+    width: 1200px;
+}
+
+.range {
+    width: 1200px;
+    display: block;
+}

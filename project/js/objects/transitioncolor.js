@@ -1,4 +1,11 @@
-var transitionColor = function(stage,object,type) {
+var transitionColor = function(stage,object,type,autoplay,timeout) {
+
+    var self = this;
+
+    //console.log('Now creating mask');
+    autoplay = typeof autoplay !== 'undefined' ? autoplay : true;
+
+    timeout = typeof timeout !== 'undefined' ? timeout : 0;
 
     type = typeof type !== "undefined" ? type : 'water';
     //console.log(type);
@@ -12,6 +19,7 @@ var transitionColor = function(stage,object,type) {
             }
             break;
         }
+
         case 'splash': {
             for (i=0;i<90;i++) {
                 this.textures.push(resourceTexture[assetsClipPath+'Splash-'+i+'.png'].texture);
@@ -19,15 +27,21 @@ var transitionColor = function(stage,object,type) {
             break;
         }
 
+        case 'cursor': {
+            for (i=0;i<90;i++) {
+                this.textures.push(resourceTexture[assetsClipPath+'Cursor-'+i+'.png'].texture);
+            }
+            break;
+        }
+
         default: {
             for (i=0;i<90;i++) {
-                this.textures.push(resourceTexture[assetsClipPath+'Water-'+i+'.png'].texture);
+                this.textures.push(resourceTexture[assetsClipPath+'Cursor-'+i+'.png'].texture);
             }
             break;
         }
     }
-
-
+    
     this.object = new PIXI.extras.MovieClip(this.textures);
 
     this.object.anchor.set(0.5);
@@ -46,6 +60,7 @@ var transitionColor = function(stage,object,type) {
 
     this.object.animationSpeed = 0.75;
     this.object.loop = false;
+    this.object.gotoAndStop(0);
 
     this.object.interactive = true;
 
@@ -53,7 +68,10 @@ var transitionColor = function(stage,object,type) {
     //     e.target.gotoAndPlay(0);
     // });
 
-    this.object.gotoAndStop(0);
+    if (autoplay) {
+        setTimeout(function(){self.object.gotoAndPlay(0);},timeout);
+    }
+
 
     // Callback each time stop playing
     this.object.onComplete = function(e){this}

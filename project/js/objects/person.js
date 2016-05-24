@@ -53,7 +53,7 @@ var Person = function(
     this.Sketch.loop = true;
     this.Sketch.play();
 
-    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'splash');
+    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'cursor');
 
     Prefix = 'GD';
 
@@ -105,7 +105,7 @@ var Person = function(
     // });
 
 
-    //this.Container.addChild(this.ColorBefore);
+    this.Container.addChild(this.ColorBefore);
     //this.Container.addChild(this.ColorAfter);
     this.Container.addChild(this.Sketch);
     //this.Container.addChild(this.Head);
@@ -133,7 +133,7 @@ var Person = function(
     // so the 'whole person object' will be use as 'this' in the function
     this.Container.on('mousedown',function(e){
         this.Animation.play(0);
-        console.log(this);
+        console.log(this.Container);
     }.bind(this));
     // It is different from bind and call, their role is similar as they
     // specify which is used to be 'this', bind will not run the function
@@ -149,13 +149,13 @@ var Person = function(
 
     this.Animation = new TimelineMax({delay: 0.5,paused: true});
     this.Animation
-        //.add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},1)
+        .add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},1)
         //.add(function(){PersonObject.ColorAfter_TransitionMask.play();},1.5)
         .add(function(){PersonObject.Sketch_TransitionMask.play(0);},0)
-        .add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:0,y:0,ease: Back.easeOut},0),0)
+        .add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
         .add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
 
-    this.Floating = new TimelineMax();
+    this.Floating = new TimelineMax({paused:true});
     this.Floating
         .add(TweenMax.to([this.Container.position],Math.random()*2+2,{y: this.Container.position.y+Math.random()*50+50,ease: Sine.easeInOut, repeat:-1, yoyo:true}),1);
 
@@ -166,6 +166,5 @@ var Person = function(
         //console.log(this.Container.position.y);
     }
 
-
-    DisplayContainer.addChild(this.Container);
+    //DisplayContainer.addChild(this.Container);
 }

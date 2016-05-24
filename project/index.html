@@ -6,8 +6,7 @@
 <meta name="Description" content="" />
 <meta name="Keywords"  content="" />
 
-<link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" />
-    
+<link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" /><script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
 <script src="js/pixiv4/pixi.min.js"></script>
 <script src="js/gsap/TweenMax.min.js"></script>
 <script src="js/jquery-2.2.3.min.js"></script>
@@ -16,6 +15,29 @@
 
 </head>
 <body>
+<div class="rangemom" style="display:none;">
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func1(this.value,this.value)" onchange="func1(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func2(this.value,this.value)" onchange="func2(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func3(this.value,this.value)" onchange="func3(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func4(this.value,this.value)" onchange="func4(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func5(this.value,this.value)" onchange="func5(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func6(this.value,this.value)" onchange="func6(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func7(this.value,this.value)" onchange="func7(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func8(this.value,this.value)" onchange="func8(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func9(this.value,this.value)" onchange="func9(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func10(this.value,this.value)" onchange="func10(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func11(this.value,this.value)" onchange="func11(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func12(this.value,this.value)" onchange="func12(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func13(this.value,this.value)" onchange="func13(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func14(this.value,this.value)" onchange="func14(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func15(this.value,this.value)" onchange="func15(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func16(this.value,this.value)" onchange="func16(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func17(this.value,this.value)" onchange="func17(this.value,this.value)" />
+    <input Class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func18(this.value,this.value)" onchange="func18(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func19(this.value,this.value)" onchange="func19(this.value,this.value)" />
+    <input class="range" type="range" width="1000" min="-2000" max="2000" value="0" oninput="func20(this.value,this.value)" onchange="func20(this.value,this.value)" />
+</div>
+
 <div style="font-family: 'kg_summer_sunshineregular';display: block;opacity: 0;position: absolute;top:0;left:0;width:0;height:0;">&nobreak;</div>
 <div style="font-family: 'always_foreverbold';display: block;opacity: 0;position: absolute;top:0;left:0;width:0;height:0;">&nobreak;</div>
 <div style="font-family: 'dk_pimpernelregular';display: block;opacity: 0;position: absolute;top:0;left:0;width:0;height:0;">&nobreak;</div>
@@ -29,13 +51,15 @@
 <script src="js/objects/tvnoise.js"></script>
 <script src="js/objects/transitioncolor.js"></script>
 <script src="js/objects/person.js"></script>
+<script src="js/objects/thing.js"></script>
 
 
 <script src="index.js"></script>
 
+
+
 </body>
 </html>
-
 <!--
 
 

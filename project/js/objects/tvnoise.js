@@ -20,12 +20,43 @@ TVNoise = function(DisplayContainer,alpha,NoiseTotalWidth,NoiseTotalHeight) {
 
     for (i=0;i<15;i++) {
 
-        idata = this.context2d.createImageData(this.noiseTexture.width,this.noiseTexture.height),
-            buffer32 = new Uint32Array(idata.data.buffer),
-            j = 0;
+        var idata = this.context2d.createImageData(this.noiseTexture.width,this.noiseTexture.height);
+        var buf = new ArrayBuffer(idata.data.length);
+        var buf8 = new Uint8ClampedArray(buf);
+        var data = new Uint32Array(buf);
 
-        for(; j < buffer32.length;)
-            buffer32[j++] = ((this.alpha * Math.random())|0) << 24;
+        for (var y = 0; y < this.noiseTexture.height; ++y) {
+            for (var x = 0; x < this.noiseTexture.width; ++x) {
+                var value = x * y & 0xff;
+
+                data[y * this.noiseTexture.width + x] =
+                    ((Math.random()*this.alpha)   << 24) |    // alpha
+                    (0 << 16) |    // blue
+                    (50 <<  8) |    // green
+                    50;            // red
+            }
+        }
+
+        idata.data.set(buf8);
+
+
+        //     buffer32 = new Uint32Array(idata.data.buffer),
+        //     j = 0;
+        //
+        // for(; j < buffer32.length;) {
+        //     buffer32[j++] = ((Math.random()*this.alpha) << 24) |
+        //                     (0 << 16) |
+        //                     (0 << 8) |
+        //                     (0);
+        //    }
+
+            //((this.alpha * Math.random())|0) << 24
+
+            //(255   << 24) |	// alpha
+            //(value << 16) |	// blue
+            //(value <<  8) |	// green
+            //value;		// red
+
 
         this.context2d.putImageData(idata, 0, 0);
 

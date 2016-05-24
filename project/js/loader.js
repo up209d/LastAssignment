@@ -2,42 +2,54 @@ var LoadingAnimation = function(DisplayContainer) {
 
     this.textMargin = 5;
 
-    // FOR V3 FONT
-    // this.titleSize = 28;
-    // this.titleFont = 'kg_summer_sunshineregular';
-    // this.title = new PIXI.Text('Loading',{font: this.titleSize + 'px "'+this.titleFont+'"'});
-    // this.title.anchor.x = this.title.anchor.y = 0.5;
-    // this.title.position.x = window.innerWidth/2;
-    // this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
-    //
-    // this.progressTextSize = 48;
-    // this.progressText = new PIXI.Text('0%',{font: this.progressTextSize + 'px "'+this.titleFont+'"'});
-    // this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
-    // this.progressText.position.x = window.innerWidth/2;
-    // this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+    // FOR V4 FONT
 
-    this.titleSize = 28;
-    this.titleFont = 'kg_summer_sunshineregular';
-    this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: 28});
-    this.title.anchor.x = this.title.anchor.y = 0.5;
-    this.title.position.x = window.innerWidth/2;
-    this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
+    if (PixiV4) {
 
-    this.progressTextSize = 48;
-    this.progressTextFont = 'kg_summer_sunshineregular';
-    this.progressText = new PIXI.Text('0%',{fontFamily : 'kg_summer_sunshineregular',fontSize: 48});
-    this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
-    this.progressText.position.x = window.innerWidth/2;
-    this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+        this.titleSize = 28;
+        this.titleFont = 'kg_summer_sunshineregular';
+        this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: 28});
+        this.title.anchor.x = this.title.anchor.y = 0.5;
+        this.title.position.x = window.innerWidth/2;
+        this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
 
-    this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading-bg.png');
-    this.bg.anchor.set(0.5);
-    this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
-    this.bg.alpha = 0;
-    this.bg.rotation = -0.5;
+        this.progressTextSize = 48;
+        this.progressTextFont = 'kg_summer_sunshineregular';
+        this.progressText = new PIXI.Text('0%',{fontFamily : 'kg_summer_sunshineregular',fontSize: 48});
+        this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
+        this.progressText.position.x = window.innerWidth/2;
+        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+
+        this.bgPaper = new PIXI.extras.TilingSprite(PIXI.Texture.fromImage(assetsPath+'paper.png'),window.innerWidth,window.innerHeight);
+
+        this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading-bg.png');
+        this.bg.anchor.set(0.5);
+        this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
+        this.bg.alpha = 0;
+        this.bg.rotation = 0;
+        this.bg.blendMode = PIXI.BLEND_MODES.MULTIPLY;
+
+    } else {
+
+        //FOR V3 FONT
+        this.titleSize = 28;
+        this.titleFont = 'kg_summer_sunshineregular';
+        this.title = new PIXI.Text('Loading',{font: this.titleSize + 'px "'+this.titleFont+'"'});
+        this.title.anchor.x = this.title.anchor.y = 0.5;
+        this.title.position.x = window.innerWidth/2;
+        this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
+
+        this.progressTextSize = 48;
+        this.progressText = new PIXI.Text('0%',{font: this.progressTextSize + 'px "'+this.titleFont+'"'});
+        this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
+        this.progressText.position.x = window.innerWidth/2;
+        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+
+    }
+
 
     this.objects = new PIXI.Container();
-
+    this.objects.addChild(this.bgPaper);
     this.objects.addChild(this.bg);
     this.objects.addChild(this.title);
     this.objects.addChild(this.progressText);
@@ -56,19 +68,15 @@ var LoadingAnimation = function(DisplayContainer) {
     LoadingAnimation.prototype.loading = function(percent) {
 
         TweenMax.to(this.bg, 0.2, {alpha: percent/100});
-
         this.updateCount = typeof this.updateCount == 'undefined' ? 0 : (this.updateCount >= 3 ? 0 : this.updateCount+1 );
-
-
+        
         this.title.text = "Loading";
-
         for (i=0;i<this.updateCount;i++) {
 
             this.title.text = this.title.text + ".";
             // console.log(this.title.text);
 
         }
-
         this.progressText.text = Math.floor(percent)+"%";
 
     }
@@ -228,6 +236,9 @@ var filesLoader = [
     assetsPath+'glow.png',
     assetsPath+'loading-bg.png',
     assetsPath+'paper.png',
+    assetsPath+'paper2.png',
+    assetsPath+'paper3.png',
+    assetsPath+'ShakingDisplacement.png',
 
     // MovieClip Frames
     assetsClipPath+'Cursor-0.png',
@@ -499,7 +510,18 @@ var filesLoader = [
     assetsClipPath+'Water-87.jpg',
     assetsClipPath+'Water-88.jpg',
     assetsClipPath+'Water-89.jpg',
-    assetsClipPath+'Water-9.jpg'
+    assetsClipPath+'Water-9.jpg',
+
+    'assets/Test/hole.png',
+    'assets/Test/diss.jpg',
+    'assets/Test/dis.png',
+    'assets/Test/dis2.jpeg',
+    'assets/Test/dis3.jpg',
+    'assets/Test/dis4.jpeg',
+    'assets/Test/dis4.png',
+    'assets/Test/displacement.jpg',
+    'assets/Test/ripple.png',
+    'assets/Test/wave.png'
 
 ];
 
@@ -526,6 +548,7 @@ Loader
     })
     .load(function(loader, resources){
         resourceTexture = resources;
+        console.log('Resource Texture: ');
         console.log(resourceTexture);
         init();
     });

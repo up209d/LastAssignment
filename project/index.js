@@ -1,12 +1,13 @@
 function init() {
 
+    console.log('Initing');
+
     var scene = new PIXI.Container();
 
     bg = new Background(stage);
 
     FullScreenNoise = new PIXI.Container();
-    FullScreenNoise.interactive = false;
-    TVNoiseText = new TVNoise(FullScreenNoise,30,window.innerWidth,window.innerHeight);
+    TVNoiseText = new TVNoise(FullScreenNoise,33,window.innerWidth,window.innerHeight);
 
 
     var Bunny = function(DisplayContainer) {
@@ -25,7 +26,6 @@ function init() {
     }
 
     var bunnyPot = new PIXI.Container();
-    bunnyPot.interactive = false;
     var bunny = new Bunny(bunnyPot);
 
 
@@ -35,10 +35,11 @@ function init() {
         //console.log(eventData);
         var bunnyTimeline = new TimelineMax();
         bunnyTimeline.smoothChildTiming = true;
-        bunnyTimeline.to(bunny.each.position,2,{x:eventData.clientX,y:eventData.clientY,ease: Back.easeOut});
+        bunnyTimeline.to(bunny.each.position,0.5,{x:eventData.clientX,y:eventData.clientY,ease: Back.easeOut});
 
         bunnyTimeline.play();
-    }
+    };
+
 
     window.onmousemove = bunnyFollow;
 
@@ -146,111 +147,6 @@ function init() {
         true
     );
 
-    // TVNoiseText.noiseAnimations.forEach(
-    //     function(e){
-    //         e.forEach(function(e){
-    //             e.blendMode = PIXI.BLEND_MODES.SCREEN;
-    //         });
-    //     }
-    // );
-
-    // var Sketch = function(DisplayContainer,TextureSketch,TextureColor,TextureMaskColor,AnimationSpeed) {
-    //     this.textures = [];
-    //     this.currentFrame = 0;
-    //     for (i=0;i<=2;i++) {
-    //         this.textures.push(PIXI.Texture.fromImage('assets/images/Sketch/Sketch_0000' + i + '.png'));
-    //     }
-    //     this.movie = new PIXI.extras.MovieClip(this.textures);
-    //     this.movie.anchor.set(0.5);
-    //     this.movie.position.set(window.innerWidth/2,window.innerHeight/2);
-    //     DisplayContainer.addChild(this.movie);
-    //     Sketch.prototype.playing = function() {
-    //         this.movie.gotoAndStop(this.currentFrame);
-    //         this.currentFrame++;
-    //         //console.log(this.currentFrame);
-    //     }
-    // }
-    //
-    //
-    //
-    // var colorA = new PIXI.Sprite(resourceTexture.designerColorAfter.texture);
-    // colorA.anchor.set(0.5);
-    // colorA.position.set(window.innerWidth/2,window.innerHeight/2);
-    // colorA.scale.set(0.75);
-    // colorA.alpha = 0.9;
-    // stage.addChild(colorA);
-    //
-    //
-    // var color = new PIXI.Sprite(resourceTexture.designerColorBefore.texture);
-    // color.anchor.set(0.5);
-    // color.position.set(window.innerWidth/2,window.innerHeight/2);
-    // color.scale.set(0.75);
-    // color.alpha = 0.9;
-    // stage.addChild(color);
-    //
-    // var nocolor = new PIXI.Sprite(resourceTexture.designerSketch.texture);
-    // nocolor.anchor.set(0.5);
-    // nocolor.position.set(window.innerWidth/2,window.innerHeight/2);
-    // nocolor.scale.set(0.75);
-    // stage.addChild(nocolor);
-    //
-    // // var head = new PIXI.Sprite(resourceTexture.designerHeadCenter.texture);
-    // // head.scale.set(0.5);
-    // // head.anchor.set(0.5,1);
-    // // head.position.set(window.innerWidth/2+65,window.innerHeight/2-50);
-    // // head.rotation = -0.05;
-    // // TweenMax.to(head,2,{rotation: 0.05,repeat: -1,yoyo: true, ease: Cubic.easeInOut});
-    // // stage.addChild(head);
-    //
-    // var transitionSketchMask = new transitionColor(stage,nocolor,'splash');
-    // transitionSketchMask.object.animationSpeed = 0.85;
-    // //transitionSketchMask.object.gotoAndStop(transitionSketchMask.object.totalFrames-1);
-    //
-    // var trasitionColorMask = new transitionColor(stage,colorA,'water');
-    //
-    //     trasitionColorMask.object.on('mousedown',function(e){
-    //         trasitionColorMask.object.gotoAndPlay(0);
-    //         transitionSketchMask.object.gotoAndPlay(0);
-    //     });
-    //
-    // trasitionColorMask.object.on('touchstart',function(e){
-    //     trasitionColorMask.object.gotoAndPlay(0);
-    //     transitionSketchMask.object.gotoAndPlay(0);
-    // });
-
-    // TweenMax.to(colorA.scale,5,{x:1,y:1,ease: Back.easeOut});
-    // TweenMax.to(nocolor.scale,5,{x:1,y:1,ease: Back.easeOut});
-
-
-
-    // var underDis = new PIXI.Container();
-    // var picture = new PIXI.Sprite.fromImage('assets/images/All/GD-Color-Before.png');
-    // underDis.addChild(picture);
-    // stage.addChild(underDis);
-    //
-    // var displacement = new PIXI.Sprite.fromImage('assets/images/Test/dis.png');
-    // var displacementFilter = new PIXI.filters.DisplacementFilter(displacement);
-    //
-    //
-    // GraphicDesigner.Container.filters = [displacementFilter];
-    //
-    //
-    // console.log(GraphicDesigner);
-    //
-    // stage.addChild(displacement);
-    //
-    // function filterRun() {
-    //
-    //     requestAnimationFrame(filterRun);
-    //     displacement.position.x += 10;
-    //
-    // }
-    //
-    // filterRun();
-    //
-    // underDis.mask = bunny.each;
-
-
     scene.interactive = true;
     bunnyPot.interactive = false;
     FullScreenNoise.interactive = false;
@@ -308,8 +204,61 @@ function init() {
     scene.pivot.set(window.innerWidth/2,window.innerHeight/2);
     scene.position.set(window.innerWidth/2,window.innerHeight/2);
     scene.scale.set(1);
+    // Test Pivot Rotation Point
+    // TweenMax.to(scene,10,{rotation:1000,repeat:0});
 
-   //TweenMax.to(scene,10,{rotation:1000,repeat:0});
+    // testCont =  new PIXI.Container();
+    //
+    // DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/wave.png'].texture);
+    //
+    //
+    // Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
+    //
+    // DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
+    // DisplacmentFilter.scale.set(0);
+    //
+    // Skt.filters = [DisplacmentFilter];
+    // bg.bgContainer.filters = [DisplacmentFilter];
+    //
+    // Skt.anchor.set(0.5);
+    // Skt.position.set(window.innerWidth/2,window.innerHeight/2);
+    //
+    // DisSprite.anchor.set(0.5);
+    // DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
+    // DisSprite.scale.set(1);
+    //
+    // //DisplacmentFilter.scale.set(10);
+    // TweenMax.to(DisplacmentFilter.scale,2,{x:100,y:100,ease: Sine.easeOut,yoyo:true,repeat:-1});
+    // TweenMax.to(DisSprite.scale,4,{x:50,y:50,repeat:-1,ease: Back.easeOut});
+    // //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
+    //
+    // DisplacmentFilter.padding = 200;
+    //
+    //
+    // function DisSpriteRotation() {
+    //
+    //     requestAnimationFrame(DisSpriteRotation);
+    //     //DisSprite.rotation += 0.05;
+    //
+    // }
+    //
+    // DisSpriteRotation();
+    //
+    // testCont.addChild(DisSprite);
+    // testCont.addChild(Skt);
+    //stage.addChild(testCont);
+
+
+    Clock = new Thing(
+
+        stage,
+        resourceTexture[assetsPath+'Flexible.png'].texture,
+        resourceTexture[assetsPath+'Flexible-Color.png'].texture,
+        window.innerWidth/2,
+        window.innerHeight/2,
+        0.5
+    );
+
 
     var updatingRender,updatingObject;
 
@@ -349,9 +298,116 @@ function init() {
         UpdateOnResizing();
     });
 
-    var xxx=0;
-
     //animateCloud();
     animateBunny();
 
+    console.log('Inited');
 }
+
+
+
+
+
+
+
+function func1(x,y) {
+    Clock.ColorFilter.matrix[0] = x/2000;
+    console.log(x/2000);
+}
+
+function func2(x,y) {
+    Clock.ColorFilter.matrix[1] = x/2000;
+    console.log(x/2000);
+}
+
+function func3(x,y) {
+    Clock.ColorFilter.matrix[2] = x/2000;
+    console.log(x/2000);
+}
+
+function func4(x,y) {
+    Clock.ColorFilter.matrix[3] = x/2000;
+    console.log(x/2000);
+}
+
+function func5(x,y) {
+    Clock.ColorFilter.matrix[4] = x/2000;
+    console.log(x/2000);
+}
+
+function func6(x,y) {
+    Clock.ColorFilter.matrix[5] = x/2000;
+    console.log(x/2000);
+}
+
+function func7(x,y) {
+    Clock.ColorFilter.matrix[6] = x/2000;
+    console.log(x/2000);
+}
+
+function func8(x,y) {
+    Clock.ColorFilter.matrix[7] = x/2000;
+    console.log(x/2000);
+}
+
+function func9(x,y) {
+    Clock.ColorFilter.matrix[8] = x/2000;
+    console.log(x/2000);
+}
+
+function func10(x,y) {
+    Clock.ColorFilter.matrix[9] = x/2000;
+    console.log(x/2000);
+}
+
+function func11(x,y) {
+    Clock.ColorFilter.matrix[10] = x/2000;
+    console.log(x/2000);
+}
+
+function func12(x,y) {
+    Clock.ColorFilter.matrix[11] = x/2000;
+    console.log(x/2000);
+}
+
+function func13(x,y) {
+    Clock.ColorFilter.matrix[12] = x/2000;
+    console.log(x/2000);
+}
+
+function func14(x,y) {
+    Clock.ColorFilter.matrix[13] = x/2000;
+    console.log(x/2000);
+}
+
+function func15(x,y) {
+    Clock.ColorFilter.matrix[14] = x/2000;
+    console.log(x/2000);
+}
+
+function func16(x,y) {
+    Clock.ColorFilter.matrix[15] = x/2000;
+    console.log(x/2000);
+}
+
+function func17(x,y) {
+    Clock.ColorFilter.matrix[16] = x/2000;
+    console.log(x/2000);
+}
+
+function func18(x,y) {
+    Clock.ColorFilter.matrix[17] = x/2000;
+    console.log(x/2000);
+}
+
+function func19(x,y) {
+    Clock.ColorFilter.matrix[18] = x/2000;
+    console.log(x/2000);
+}
+
+function func20(x,y) {
+    Clock.ColorFilter.matrix[19] = x/2000;
+    console.log(x/2000);
+}
+
+
