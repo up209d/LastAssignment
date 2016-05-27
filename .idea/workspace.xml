@@ -2,29 +2,205 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/js/objects/text.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/js/objects/thing.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project/temp.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/bunny.png" afterPath="$PROJECT_DIR$/project/assets/images/bunny.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/Test/Dis3.jpg" afterPath="$PROJECT_DIR$/project/assets/Test/Dis3.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/Test/dis2.jpeg" afterPath="$PROJECT_DIR$/project/assets/Test/dis2.jpeg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/Test/dis2.jpg" afterPath="$PROJECT_DIR$/project/assets/Test/dis2.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/Test/displace.jpg" afterPath="$PROJECT_DIR$/project/assets/Test/displace.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/Test/wave.png" afterPath="$PROJECT_DIR$/project/assets/Test/wave.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Organize.png" afterPath="$PROJECT_DIR$/project/assets/images/Organize.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ShakingDisplacement.png" afterPath="$PROJECT_DIR$/project/assets/images/ShakingDisplacement.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-0.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-1.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-10.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-11.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-12.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-13.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-14.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-14.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-15.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-15.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-16.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-17.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-17.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-18.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-19.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-19.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-2.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-20.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-20.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-21.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-21.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-22.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-22.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-23.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-23.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-24.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-24.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-25.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-25.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-26.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-26.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-27.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-27.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-28.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-28.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-29.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-29.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-3.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-30.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-30.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-31.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-31.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-32.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-32.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-33.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-33.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-34.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-34.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-35.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-35.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-36.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-36.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-37.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-37.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-38.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-38.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-39.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-39.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-4.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-40.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-40.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-41.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-41.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-42.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-42.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-43.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-43.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-44.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-44.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-45.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-45.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-46.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-46.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-47.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-47.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-48.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-48.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-49.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-49.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-5.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-50.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-50.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-51.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-51.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-52.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-52.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-53.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-53.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-54.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-54.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-55.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-55.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-56.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-56.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-57.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-57.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-58.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-58.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-59.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-59.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-6.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-60.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-60.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-61.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-61.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-62.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-62.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-63.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-63.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-64.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-64.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-65.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-65.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-66.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-66.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-67.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-67.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-68.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-68.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-69.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-69.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-7.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-70.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-70.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-71.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-71.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-72.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-72.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-73.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-73.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-74.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-74.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-75.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-75.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-76.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-76.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-77.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-77.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-78.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-78.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-79.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-79.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-8.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-80.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-80.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-81.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-81.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-82.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-82.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-83.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-83.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-84.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-84.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-85.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-85.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-86.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-86.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-87.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-87.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-88.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-88.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-89.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-89.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Cursor-9.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Cursor-9.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-0.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-1.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-10.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-10.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-11.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-11.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-12.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-12.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-13.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-13.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-14.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-14.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-15.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-15.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-16.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-16.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-17.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-17.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-18.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-18.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-19.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-19.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-2.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-20.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-20.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-21.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-21.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-22.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-22.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-23.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-23.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-24.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-24.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-25.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-25.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-26.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-26.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-27.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-27.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-28.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-28.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-29.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-29.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-3.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-30.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-30.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-31.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-31.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-32.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-32.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-33.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-33.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-34.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-34.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-35.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-35.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-36.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-36.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-37.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-37.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-38.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-38.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-39.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-39.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-4.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-40.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-40.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-41.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-41.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-42.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-42.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-43.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-43.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-44.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-44.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-45.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-45.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-46.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-46.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-47.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-47.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-48.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-48.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-49.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-49.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-5.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-5.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-50.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-50.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-51.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-51.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-52.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-52.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-53.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-53.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-54.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-54.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-55.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-55.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-56.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-56.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-57.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-57.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-58.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-58.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-59.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-59.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-6.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-6.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-60.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-60.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-61.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-61.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-62.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-62.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-63.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-63.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-64.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-64.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-65.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-65.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-66.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-66.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-67.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-67.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-68.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-68.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-69.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-69.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-7.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-70.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-70.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-71.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-71.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-72.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-72.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-73.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-73.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-74.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-74.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-75.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-75.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-76.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-76.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-77.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-77.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-78.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-78.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-79.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-79.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-8.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-80.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-80.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-81.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-81.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-82.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-82.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-83.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-83.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-84.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-84.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-85.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-85.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-86.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-86.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-87.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-87.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-88.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-88.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-89.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-89.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clips/Splash-9.png" afterPath="$PROJECT_DIR$/project/assets/images/clips/Splash-9.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/paper.png" afterPath="$PROJECT_DIR$/project/assets/images/paper.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/css/style.css" afterPath="$PROJECT_DIR$/project/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.html" afterPath="$PROJECT_DIR$/project/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/init.js" afterPath="$PROJECT_DIR$/project/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/loader.js" afterPath="$PROJECT_DIR$/project/js/loader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/background.js" afterPath="$PROJECT_DIR$/project/js/objects/background.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/person.js" afterPath="$PROJECT_DIR$/project/js/objects/person.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/text.js" afterPath="$PROJECT_DIR$/project/js/objects/text.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/thing.js" afterPath="$PROJECT_DIR$/project/js/objects/thing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" afterPath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/tvnoise.js" afterPath="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js.map" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.min.js.map" />
     </list>
     <ignored path="LastAssignment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,14 +221,14 @@
     <favorites_list name="LastAssignment" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.46810147">
+    <splitter split-orientation="horizontal" split-proportion="0.50115293">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="105">
-                  <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+                <state relative-caret-position="150">
+                  <caret line="10" column="27" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="27" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -66,8 +242,8 @@
           <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/init.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="930">
-                  <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+                <state relative-caret-position="1840">
+                  <caret line="126" column="16" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="16" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -75,21 +251,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="loader.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/loader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
+                <state relative-caret-position="-525">
+                  <caret line="19" column="104" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="104" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="person.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="495">
-                  <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+                <state relative-caret-position="334">
+                  <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
                   <folding>
                     <element signature="e#0#36#0" expanded="false" />
                   </folding>
@@ -100,7 +276,7 @@
           <file leaf-file-name="tvnoise.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-270">
+                <state relative-caret-position="210">
                   <caret line="14" column="56" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="56" />
                   <folding />
                 </state>
@@ -110,8 +286,8 @@
           <file leaf-file-name="background.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="135">
-                  <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+                <state relative-caret-position="23">
+                  <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -134,18 +310,8 @@
           <file leaf-file-name="transitioncolor.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/project/index.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="420">
-                  <caret line="259" column="6" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
+                <state relative-caret-position="1125">
+                  <caret line="84" column="62" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
                   <folding />
                 </state>
               </provider>
@@ -154,21 +320,29 @@
           <file leaf-file-name="thing.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="134">
-                  <caret line="37" column="74" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
+                <state relative-caret-position="254">
+                  <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="text.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="text.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="60">
-                  <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="false" />
-                  </folding>
+                <state relative-caret-position="280">
+                  <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/project/index.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="315">
+                  <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -176,8 +350,8 @@
           <file leaf-file-name="temp.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/temp.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
+                <state relative-caret-position="269">
+                  <caret line="26" column="99" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
                   <folding />
                 </state>
               </provider>
@@ -212,23 +386,23 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
         <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js.map" />
         <option value="$PROJECT_DIR$/project/js/objects/cloud.js" />
         <option value="$PROJECT_DIR$/project/js/howler.js" />
         <option value="$PROJECT_DIR$/project/js/howler.min.js" />
         <option value="$PROJECT_DIR$/project/css/style.css" />
         <option value="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/person.js" />
-        <option value="$PROJECT_DIR$/project/index.html" />
-        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
         <option value="$PROJECT_DIR$/project/temp.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/background.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
-        <option value="$PROJECT_DIR$/project/index.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/text.js" />
-        <option value="$PROJECT_DIR$/project/js/init.js" />
+        <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
         <option value="$PROJECT_DIR$/project/js/loader.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
+        <option value="$PROJECT_DIR$/project/js/init.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/background.js" />
+        <option value="$PROJECT_DIR$/project/index.html" />
+        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/text.js" />
+        <option value="$PROJECT_DIR$/project/index.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/person.js" />
       </list>
     </option>
   </component>
@@ -483,7 +657,7 @@
       <workItem from="1463817131107" duration="21140000" />
       <workItem from="1463846111805" duration="3346000" />
       <workItem from="1463898681021" duration="1161000" />
-      <workItem from="1463914497322" duration="23995000" />
+      <workItem from="1463914497322" duration="77779000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1463565396489</created>
@@ -496,7 +670,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231040000" />
+    <option name="totallyTimeSpent" value="284824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
@@ -505,11 +679,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1760608" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33293268" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24952501" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2560096" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28966346" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -518,7 +693,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -840,13 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31197" column="34" selection-start-line="31197" selection-start-column="34" selection-end-line="31197" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js.map">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="602">
@@ -884,10 +1051,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
+    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-270">
-          <caret line="14" column="56" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="56" />
+        <state relative-caret-position="178">
+          <caret line="16892" column="10" selection-start-line="16892" selection-start-column="10" selection-end-line="16892" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/temp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="26" column="99" selection-start-line="26" selection-start-column="99" selection-end-line="26" selection-end-column="99" />
           <folding />
         </state>
       </provider>
@@ -900,50 +1075,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/temp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="105" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="259" column="6" selection-start-line="259" selection-start-column="6" selection-end-line="259" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="37" column="74" selection-start-line="37" selection-start-column="74" selection-end-line="37" selection-end-column="74" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+        <state relative-caret-position="150">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="27" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -953,41 +1088,79 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="254">
+          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="52" column="53" selection-start-line="52" selection-start-column="53" selection-end-line="52" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="56" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-525">
+          <caret line="19" column="104" selection-start-line="16" selection-start-column="8" selection-end-line="19" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="84" column="62" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="23" column="91" selection-start-line="23" selection-start-column="91" selection-end-line="23" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="54" column="15" selection-start-line="54" selection-start-column="15" selection-end-line="54" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/js/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="930">
-          <caret line="62" column="22" selection-start-line="62" selection-start-column="22" selection-end-line="62" selection-end-column="22" />
+        <state relative-caret-position="1840">
+          <caret line="126" column="16" selection-start-line="126" selection-start-column="4" selection-end-line="126" selection-end-column="16" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="334">
+          <caret line="133" column="6" selection-start-line="133" selection-start-column="6" selection-end-line="133" selection-end-column="6" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>

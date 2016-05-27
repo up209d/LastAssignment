@@ -1,5 +1,33 @@
 // Init JS File is used to create variable with non DOM on HTML
 // Just Window and Document
+
+// Polyfill Animation Request
+// http://www.paulirish.com/2011/requestanimationframe-for-smart-animating/
+(function() {
+    var lastTime = 0;
+    var vendors = ['webkit', 'moz'];
+    for(var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x]+'RequestAnimationFrame'];
+        window.cancelAnimationFrame =
+            window[vendors[x]+'CancelAnimationFrame'] || window[vendors[x]+'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
 TweenMax.lagSmoothing(1000,16);
 
 var PixiV4 = true;
@@ -36,7 +64,9 @@ var renderer = new PIXI.autoDetectRenderer(
     {
         view: viewPort,
         transparent: false,
-        backgroundColor: 0xffffff
+        backgroundColor: 0xffffff,
+        autoResize: false,
+        resolution: 1
 
     });
 
@@ -59,8 +89,9 @@ var CenterPosition = new CenterPoint();
 // }
 
 // Throttle back to 30 fps for animation stable
+var fps = 60;
 var stop = true;
-TweenMax.ticker.fps(60);
+TweenMax.ticker.fps(fps);
 TweenMax.ticker.addEventListener('tick', function(){
     if (!stop) {
         RenderAnimation();
@@ -106,3 +137,33 @@ function debounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     }.call(this);
 };
+
+
+PIXI.extras.MovieClip.prototype.playFromTo = function (beginFrame,endFrame,speed,delay) {
+
+    speed = typeof speed !== 'undefined' ? speed : 1;
+    delay = typeof delay !== 'undefined' ? delay : 0;
+    beginFrame = typeof beginFrame !== 'undefined' ? beginFrame : 0;
+    endFrame = typeof endFrame !== 'undefined' ? endFrame : movieClip.totalFrames;
+
+    var self = this;
+
+    this.tween = {
+        value: beginFrame
+    }
+
+    if (typeof this.tweenHandle !== 'undefined') {
+        this.tweenHandle.pause();
+    }
+
+    this.tweenHandle = new TweenMax.fromTo(this.tween,Math.abs((endFrame-beginFrame)/(fps*speed)),
+        {   value: beginFrame   },
+        {   value: endFrame     ,
+            ease: Linear.easeNone,
+            onUpdate: function(){
+                this.gotoAndStop(Math.ceil(this.tween.value));
+            }.bind(this),
+            delay: delay/1000
+        });
+
+}

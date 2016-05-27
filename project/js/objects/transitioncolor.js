@@ -1,4 +1,4 @@
-var transitionColor = function(stage,object,type,autoplay,timeout) {
+var transitionColor = function(DisplayContainer,object,type,autoplay,timeout) {
 
     var self = this;
 
@@ -28,6 +28,7 @@ var transitionColor = function(stage,object,type,autoplay,timeout) {
         }
 
         case 'cursor': {
+            //console.log('Here');
             for (i=0;i<90;i++) {
                 this.textures.push(resourceTexture[assetsClipPath+'Cursor-'+i+'.png'].texture);
             }
@@ -52,13 +53,13 @@ var transitionColor = function(stage,object,type,autoplay,timeout) {
     } else {
         this.object.scale.set(object.height/this.object.height);
     }
-    
-    stage.addChild(this.object);
+
+    DisplayContainer.addChild(this.object);
 
     object.mask = this.object;
 
 
-    this.object.animationSpeed = 0.75;
+    this.object.animationSpeed = 1;
     this.object.loop = false;
     this.object.gotoAndStop(0);
 
@@ -69,7 +70,9 @@ var transitionColor = function(stage,object,type,autoplay,timeout) {
     // });
 
     if (autoplay) {
-        setTimeout(function(){self.object.gotoAndPlay(0);},timeout);
+        setTimeout(function(){
+            self.object.gotoAndPlay(0);
+        },timeout);
     }
 
 
@@ -77,9 +80,17 @@ var transitionColor = function(stage,object,type,autoplay,timeout) {
     this.object.onComplete = function(e){this}
 
     transitionColor.prototype.play = function(frame) {
-        frame = typeof frame == 'undefined' ? 0 : frame > this.object.totalFrames ? this.object.totalFrames : frame;
+        frame = typeof frame == 'undefined' ? this.object.currentFrame : frame > this.object.totalFrames ? this.object.totalFrames : frame;
         //console.log(frame);
-        this.object.gotoAndPlay(frame);
+        this.object.playFromTo(frame,this.object.totalFrames-1,1,0);
     }
+
+    transitionColor.prototype.playReverse = function(frame) {
+        frame = typeof frame == 'undefined' ? this.object.currentFrame : frame < 0 ? 0 : frame;
+        //console.log(frame);
+        this.object.playFromTo(frame,0,1,0);
+    }
+
+    
 
 }

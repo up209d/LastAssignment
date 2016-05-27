@@ -2,10 +2,9 @@ var LoadingAnimation = function(DisplayContainer) {
 
     this.textMargin = 5;
 
-    // FOR V4 FONT
-
     if (PixiV4) {
 
+        // FOR V4 FONT
         this.titleSize = 28;
         this.titleFont = 'kg_summer_sunshineregular';
         this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: 28});
@@ -20,14 +19,6 @@ var LoadingAnimation = function(DisplayContainer) {
         this.progressText.position.x = window.innerWidth/2;
         this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
 
-        this.bgPaper = new PIXI.extras.TilingSprite(PIXI.Texture.fromImage(assetsPath+'paper.png'),window.innerWidth,window.innerHeight);
-
-        this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading-bg.png');
-        this.bg.anchor.set(0.5);
-        this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
-        this.bg.alpha = 0;
-        this.bg.rotation = 0;
-        this.bg.blendMode = PIXI.BLEND_MODES.MULTIPLY;
 
     } else {
 
@@ -46,6 +37,15 @@ var LoadingAnimation = function(DisplayContainer) {
         this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
 
     }
+
+    this.bgPaper = new PIXI.extras.TilingSprite(PIXI.Texture.fromImage(assetsPath+'paper.png'),window.innerWidth,window.innerHeight);
+
+    this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading-bg.png');
+    this.bg.anchor.set(0.5);
+    this.bg.position.set(window.innerWidth/2,window.innerHeight/2);
+    this.bg.alpha = 0;
+    this.bg.rotation = 0;
+    this.bg.blendMode = PIXI.BLEND_MODES.MULTIPLY;
 
 
     this.objects = new PIXI.Container();
@@ -239,6 +239,7 @@ var filesLoader = [
     assetsPath+'paper2.png',
     assetsPath+'paper3.png',
     assetsPath+'ShakingDisplacement.png',
+    assetsPath+'ShakingDisplacementAround.png',
 
     // MovieClip Frames
     assetsClipPath+'Cursor-0.png',
@@ -515,11 +516,14 @@ var filesLoader = [
     'assets/Test/hole.png',
     'assets/Test/diss.jpg',
     'assets/Test/dis.png',
+    'assets/Test/dis2.jpg',
     'assets/Test/dis2.jpeg',
-    'assets/Test/dis3.jpg',
+    'assets/Test/Dis3.jpg',
     'assets/Test/dis4.jpeg',
     'assets/Test/dis4.png',
     'assets/Test/displacement.jpg',
+    'assets/Test/displace.jpg',
+    'assets/Test/displace.png',
     'assets/Test/ripple.png',
     'assets/Test/wave.png'
 

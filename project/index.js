@@ -4,7 +4,7 @@ function init() {
 
     var scene = new PIXI.Container();
 
-    bg = new Background(stage);
+    Bg = new Background(scene);
 
     FullScreenNoise = new PIXI.Container();
     TVNoiseText = new TVNoise(FullScreenNoise,33,window.innerWidth,window.innerHeight);
@@ -14,14 +14,14 @@ function init() {
         this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
         this.each.anchor.x = 0.5;
         this.each.anchor.y = 0.5;
-        this.each.alpha = 1;
+        this.each.alpha = 0.5;
         this.each.position.x = window.innerWidth/2;
         this.each.position.y = window.innerHeight/2;
         this.each.interactive = false;
         DisplayContainer.addChild(this.each);
         Bunny.prototype.rotate = function() {
             this.each.rotation += 0.1;
-            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now()*0.0005)*2)+1.5);
+            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now()*0.0005)*1)+0.5);
         }
     }
 
@@ -51,103 +51,133 @@ function init() {
         // TweenMax.to(transitionSketchMask.object,0.2,{width:nocolor.width,height:nocolor.height});
     }
 
+    circleScene = {
+        circleRadius: 1200,
+        circlePI: 3.14,
+        circlePosition: []
+    }
+    
+
+    for (i=0;i<12;i++) {
+        circleScene.circlePosition.push({
+            x: Math.round(Math.cos(circleScene.circlePI*(i/6))*circleScene.circleRadius),
+            y: Math.round(Math.sin(circleScene.circlePI*(i/6))*circleScene.circleRadius)
+        });
+    }
+
     GraphicDesigner =  new Person(
         'GD',
         scene,
-        300,
-        300,
+        window.innerWidth/2+circleScene.circlePosition[10].x,
+        window.innerHeight/2+circleScene.circlePosition[10].y,
         true
     );
 
     GraphicDesignerSleep =  new Person(
         'GDS',
         scene,
-        800,
-        300,
+        window.innerWidth/2+circleScene.circlePosition[8].x,
+        window.innerHeight/2+circleScene.circlePosition[8].y,
         true
     );
 
     Model =  new Person(
         'MD',
         scene,
-        1300,
-        300,
+        window.innerWidth/2+circleScene.circlePosition[3].x,
+        window.innerHeight/2+circleScene.circlePosition[3].y,
         true
     );
 
     ModelWork =  new Person(
         'MDS',
         scene,
-        1800,
-        300,
+        window.innerWidth/2+circleScene.circlePosition[7].x,
+        window.innerHeight/2+circleScene.circlePosition[7].y,
         true
     );
 
     Science =  new Person(
         'SC',
         scene,
-        300,
-        600,
+        window.innerWidth/2+circleScene.circlePosition[11].x,
+        window.innerHeight/2+circleScene.circlePosition[11].y,
         true
     );
 
     ScienceSleep =  new Person(
         'SCS',
         scene,
-        800,
-        600,
+        window.innerWidth/2+circleScene.circlePosition[5].x,
+        window.innerHeight/2+circleScene.circlePosition[5].y,
         true
     );
 
     Sale =  new Person(
         'SM',
         scene,
-        1300,
-        600,
+        window.innerWidth/2+circleScene.circlePosition[4].x,
+        window.innerHeight/2+circleScene.circlePosition[4].y,
         true
     );
 
     SaleDinner =  new Person(
         'SMS',
         scene,
-        1800,
-        600,
+        window.innerWidth/2+circleScene.circlePosition[0].x,
+        window.innerHeight/2+circleScene.circlePosition[0].y,
         true
     );
 
     Student =  new Person(
         'ST',
         scene,
-        300,
-        900,
+        window.innerWidth/2+circleScene.circlePosition[2].x,
+        window.innerHeight/2+circleScene.circlePosition[2].y,
         true
     );
 
     StudentWake =  new Person(
         'STS',
         scene,
-        800,
-        900,
+        window.innerWidth/2+circleScene.circlePosition[1].x,
+        window.innerHeight/2+circleScene.circlePosition[1].y,
         true
     );
 
     Teacher =  new Person(
         'TC',
         scene,
-        1300,
-        900,
+        window.innerWidth/2+circleScene.circlePosition[6].x,
+        window.innerHeight/2+circleScene.circlePosition[6].y,
         true
     );
 
     TeacherCook =  new Person(
         'TCS',
         scene,
-        1800,
-        900,
+        window.innerWidth/2+circleScene.circlePosition[9].x,
+        window.innerHeight/2+circleScene.circlePosition[9].y,
         true
     );
 
+    TweenMax.to(circleScene,10,{circleRadius: 1200, onUpdate: function(){
+
+        for (i=0;i<12;i++) {
+            circleScene.circlePosition[i].x = Math.round(Math.cos(circleScene.circlePI*(i/6))*circleScene.circleRadius);
+            circleScene.circlePosition[i].y = Math.round(Math.sin(circleScene.circlePI*(i/6))*circleScene.circleRadius);
+        }
+
+    }});
+
     scene.interactive = true;
+    scene.isDragging = false;
+    scene.boundArea = {
+        top: (circleScene.circleRadius+window.innerHeight/2),
+        right: window.innerWidth/2 - circleScene.circleRadius,
+        bottom: window.innerHeight/2 - circleScene.circleRadius,
+        left: (circleScene.circleRadius+window.innerWidth/2)
+    };
     bunnyPot.interactive = false;
     FullScreenNoise.interactive = false;
 
@@ -166,31 +196,73 @@ function init() {
     //
     scene.moving = function(e){
 
-        newX = scene.position.x + e.data.originalEvent.movementX*5;
-        newY = scene.position.y + e.data.originalEvent.movementY*5;
+        if (this.isDragging) {
 
-        TweenMax.to(scene.position,0.25,{
-            x:newX,
-            y:newY,
-            ease: Sine.easeOut,
-            onComplete: function(){
-                if (newX<0) {
-                    TweenMax.to(scene.position,0.5,{x:0,ease: Sine.easeOut});
-                }
+            this.newX = scene.position.x + e.data.originalEvent.movementX*20;
+            this.newY = scene.position.y + e.data.originalEvent.movementY*20;
+
+            if (typeof this.tweenHandle !== 'undefined') {
+                this.tweenHandle.paused();
             }
-        });
 
+            this.tweenHandle = TweenMax.to(this.position,1.5,{
+                x:this.newX,
+                y:this.newY,
+                ease: Sine.easeOut,
+                onUpdate: debounce(function(){
+                    if (!this.isDragging) {
+                        if (this.newX<this.boundArea.right) {
+                            this.tweenHandle.pause();
+                            this.tweenHandle = new TweenMax.to(this.position,0.5,{x:this.boundArea.right,ease: Back.easeOut});
+                        }
+                        if (this.newX>this.boundArea.left) {
+                            this.tweenHandle.pause();
+                            this.tweenHandle = new TweenMax.to(this.position,0.5,{x:this.boundArea.left,ease: Back.easeOut});
+                        }
+                        if (this.newY>this.boundArea.top) {
+                            this.tweenHandle.pause();
+                            this.tweenHandle = new TweenMax.to(this.position,0.5,{y:this.boundArea.top,ease: Back.easeOut});
+                        }
+                        if (this.newY<this.boundArea.bottom) {
+                            this.tweenHandle.pause();
+                            this.tweenHandle = new TweenMax.to(this.position,0.5,{y:this.boundArea.bottom,ease: Back.easeOut});
+                        }
+                    }
+                }.bind(this),150)
+            });
+
+        } else {
+
+            if (this.position.x<this.boundArea.right) {
+                this.tweenHandle.pause();
+                this.tweenHandle = new TweenMax.to(this.position,1,{x:this.boundArea.right,ease: Back.easeOut});
+            }
+            if (this.position.x>this.boundArea.left) {
+                this.tweenHandle.pause();
+                this.tweenHandle = new TweenMax.to(this.position,1,{x:this.boundArea.left,ease: Back.easeOut});
+            }
+            if (this.position.y>this.boundArea.top) {
+                this.tweenHandle.pause();
+                this.tweenHandle = new TweenMax.to(this.position,1,{y:this.boundArea.top,ease: Back.easeOut});
+            }
+            if (this.position.y<this.boundArea.bottom) {
+                this.tweenHandle.pause();
+                this.tweenHandle = new TweenMax.to(this.position,1,{y:this.boundArea.bottom,ease: Back.easeOut});
+            }
+
+        }
 
     }
 
+    scene.on('mousemove',scene.moving);
+
     scene.on('mousedown',function(e){
-        //console.log(e.data.originalEvent.movementX);
-        scene.on('mousemove',scene.moving);
+        scene.isDragging = true;
+    });
 
-        scene.on('mouseup',function(e){
-            scene.off('mousemove',scene.moving);
-        });
-
+    scene.on('mouseup',function(e){
+        scene.isDragging = false;
+        scene.moving();
     });
     
 
@@ -205,86 +277,200 @@ function init() {
     scene.position.set(window.innerWidth/2,window.innerHeight/2);
     scene.scale.set(1);
     // Test Pivot Rotation Point
-    // TweenMax.to(scene,10,{rotation:1000,repeat:0});
+    //TweenMax.to(scene,10,{rotation:1000,repeat:0});
 
-    // testCont =  new PIXI.Container();
-    //
-    // DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/wave.png'].texture);
-    //
-    //
-    // Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
-    //
-    // DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
-    // DisplacmentFilter.scale.set(0);
-    //
-    // Skt.filters = [DisplacmentFilter];
-    // bg.bgContainer.filters = [DisplacmentFilter];
-    //
-    // Skt.anchor.set(0.5);
-    // Skt.position.set(window.innerWidth/2,window.innerHeight/2);
-    //
-    // DisSprite.anchor.set(0.5);
-    // DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
-    // DisSprite.scale.set(1);
-    //
-    // //DisplacmentFilter.scale.set(10);
-    // TweenMax.to(DisplacmentFilter.scale,2,{x:100,y:100,ease: Sine.easeOut,yoyo:true,repeat:-1});
-    // TweenMax.to(DisSprite.scale,4,{x:50,y:50,repeat:-1,ease: Back.easeOut});
-    // //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
-    //
-    // DisplacmentFilter.padding = 200;
-    //
-    //
-    // function DisSpriteRotation() {
-    //
-    //     requestAnimationFrame(DisSpriteRotation);
-    //     //DisSprite.rotation += 0.05;
-    //
-    // }
-    //
-    // DisSpriteRotation();
-    //
-    // testCont.addChild(DisSprite);
-    // testCont.addChild(Skt);
-    //stage.addChild(testCont);
-
+    Success = new Thing(
+        scene,
+        resourceTexture[assetsPath+'Success.png'].texture,
+        resourceTexture[assetsPath+'Success-Color.png'].texture,
+        window.innerWidth/2+150,
+        window.innerHeight/2-150,
+        0.5,
+        true,
+        0
+    );
 
     Clock = new Thing(
 
-        stage,
+        scene,
         resourceTexture[assetsPath+'Flexible.png'].texture,
         resourceTexture[assetsPath+'Flexible-Color.png'].texture,
+        window.innerWidth/2+300,
+        window.innerHeight/2-150,
+        0.5,
+        true,
+        500
+    );
+
+    Intelligent = new Thing(
+        scene,
+        resourceTexture[assetsPath+'Intelligent.png'].texture,
+        resourceTexture[assetsPath+'Intelligent-Color.png'].texture,
+        window.innerWidth/2+450,
+        window.innerHeight/2-150,
+        0.5,
+        true,
+        1000
+    );
+
+    Health = new Thing(
+        scene,
+        resourceTexture[assetsPath+'Health.png'].texture,
+        resourceTexture[assetsPath+'Health-Color.png'].texture,
+        window.innerWidth/2-150,
+        window.innerHeight/2+150,
+        0.5,
+        true,
+        0
+    );
+
+    Organize = new Thing(
+        scene,
+        resourceTexture[assetsPath+'Organize.png'].texture,
+        resourceTexture[assetsPath+'Organize-Color.png'].texture,
+        window.innerWidth/2-300,
+        window.innerHeight/2+150,
+        0.5,
+        true,
+        500
+    );
+
+
+    Social = new Thing(
+        scene,
+        resourceTexture[assetsPath+'Social.png'].texture,
+        resourceTexture[assetsPath+'Social-Color.png'].texture,
+        window.innerWidth/2-450,
+        window.innerHeight/2+150,
+        0.5,
+        true,
+        1000
+    );
+    
+    
+    vs = new Text(
+        scene,
+        'vs.',
+        '3d',
+        80,
         window.innerWidth/2,
         window.innerHeight/2,
         0.5
     );
 
+    nightOwlText = new Text(
+        scene,
+        'Night Owl',
+        '3d',
+        140,
+        window.innerWidth/2-300,
+        window.innerHeight/2-100,
+        0.5
+    );
+
+    earlyBirdText = new Text(
+        scene,
+        'Early Bird',
+        '3d',
+        140,
+        window.innerWidth/2+300,
+        window.innerHeight/2+100,
+        0.5
+    );
+
+
+
+
+    testCont =  new PIXI.Container();
+
+    DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
+
+
+    Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
+
+    DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
+    DisplacmentFilter.scale.set(0);
+
+    Skt.filters = [DisplacmentFilter];
+    stage.filters = [DisplacmentFilter];
+
+    Skt.anchor.set(0.5);
+    Skt.position.set(window.innerWidth/2,window.innerHeight/2);
+
+    DisSprite.anchor.set(0.5);
+    DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
+    DisSprite.scale.set(1);
+    //DisplacmentFilter.scale.set(10);
+    // TweenMax.fromTo(DisplacmentFilter.scale,1,{x:0,y:0},{x:50,y:50,ease: Sine.easeInOut,repeat:-1,yoyo:true});
+    // TweenMax.fromTo(DisSprite.scale,2,{x:0,y:0},{x:3,y:3,repeat:-1,ease: Sine.easeOut});
+    //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
+
+    window.addEventListener('click',function(e){
+        //console.log(e);
+        DisSprite.position.set(e.clientX,e.clientY);
+        TweenMax.fromTo(DisplacmentFilter.scale,0.5,{x:0,y:0},{x:30,y:30,ease: Sine.easeIn,repeat:1,yoyo:true});
+        TweenMax.fromTo(DisSprite.scale,1,{x:0.1,y:0.1},{x:1.0,y:1.0,repeat:0,ease: Sine.easeOut});
+    });
+
+    DisplacmentFilter.padding = 200;
+    //Quick Hack fix bug for v4
+    DisplacmentFilter.glShaderKey = 6789;
+
+    //console.log(DisplacmentFilter);
+
+
+    function DisSpriteRotation() {
+
+        requestAnimationFrame(DisSpriteRotation);
+        //DisSprite.rotation += 0.05;
+
+    }
+
+    DisSpriteRotation();
+
+    testCont.addChild(DisSprite);
+    //testCont.addChild(Skt);
+    stage.addChild(testCont);
+
+
+
+
 
     var updatingRender,updatingObject;
 
     function UpdateOnResizing() {
-        stop = false;
         updatingRender = setTimeout(function() {
             viewPort.width = window.innerWidth;
             viewPort.height = window.innerHeight;
 
-            renderer = PIXI.autoDetectRenderer(
+            newRenderer = PIXI.autoDetectRenderer(
                 viewPort.width,
                 viewPort.height,
 
                 {
                     view: viewPort,
                     transparent: false,
-                    backgroundColor: 0x445599
+                    backgroundColor: 0xffffff,
+                    autoResize: false,
+                    resolution: 1
 
                 });
+
+            renderer = newRenderer;
+
             CenterPosition.update();
             //console.log (renderer);
 
             updatingObject = setTimeout(function() {
                 TVNoiseText.update(window.innerWidth,window.innerHeight);
-                //sketch.movie.position.set(window.innerWidth/2,window.innerHeight/2);
-            },250);
+                stop = false;
+            },500);
+
+            TweenMax.ticker.addEventListener('tick', function(){
+                if (!stop) {
+                    RenderAnimation();
+                }
+            });
 
 
         },100);
@@ -295,6 +481,7 @@ function init() {
         stop =  true;
         clearTimeout(updatingRender);
         clearTimeout(updatingObject);
+        TweenMax.ticker.removeEventListener('tick');
         UpdateOnResizing();
     });
 

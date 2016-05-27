@@ -16890,6 +16890,7 @@ function Filter(vertexSrc, fragmentSrc, uniforms)
     if(!SOURCE_KEY_MAP[this.vertexSrc + this.fragmentSrc])
     {
         SOURCE_KEY_MAP[this.vertexSrc + this.fragmentSrc] = utils.uid();
+        //console.log(SOURCE_KEY_MAP);
     }
 
     this.glShaderKey = SOURCE_KEY_MAP[this.vertexSrc + this.fragmentSrc];

@@ -28,17 +28,40 @@ var Person = function(
     this.ColorBefore.anchor.set(0.5);
     this.ColorBefore.position.set(0,0);
     this.ColorBefore.scale.set(1);
-    this.ColorBefore.alpha = 0.9;
+    this.ColorBefore.alpha = 0.25;
 
-    this.ColorBefore_TransitionMask = new transitionColor(this.Container,this.ColorBefore,'water');
+    this.ColorBefore_TransitionMask = new transitionColor(this.Container,this.ColorBefore,'cursor',false);
 
-    this.ColorAfter = new PIXI.Sprite(resourceTexture[assetsPath+Prefix+'-Color-After.png'].texture);
+    this.ColorBeforeFilter = new PIXI.filters.ColorMatrixFilter();
+
+    this.ColorBeforeFilter.matrix = [
+        0.25,0.25,0.25,0,0,
+        0.25,0.25,0.25,0,0,
+        0.25,0.25,0.25,0,0,
+          0,  0,  0,1,0
+    ];
+
+    this.ColorBefore.filters = [this.ColorBeforeFilter];
+
+    this.ColorAfter = new PIXI.Sprite(resourceTexture[assetsPath+Prefix+'-Color-Before.png'].texture);
     this.ColorAfter.anchor.set(0.5);
     this.ColorAfter.position.set(0,0);
     this.ColorAfter.scale.set(1);
-    this.ColorAfter.alpha = 0.0;
+    this.ColorAfter.alpha = 1;
 
-    this.ColorAfter_TransitionMask = new transitionColor(this.Container,this.ColorAfter,'splash');
+    this.ColorAfterFilter = new PIXI.filters.ColorMatrixFilter();
+
+    this.ColorAfterFilter.matrix = [
+        1,0,0,0,0,
+        0,1,0,0,0,
+        0,0,1,0,0,
+        0,0,0,1,0
+    ];
+
+    this.ColorAfter.filters = [this.ColorAfterFilter];
+
+
+    this.ColorAfter_TransitionMask = new transitionColor(this.Container,this.ColorAfter,'water',false);
 
     this.Sketch = new PIXI.extras.MovieClip([
         resourceTexture[assetsPath+Prefix+'-Sketch-0.png'].texture,
@@ -51,9 +74,9 @@ var Person = function(
     this.Sketch.scale.set(1);
     this.Sketch.alpha = 1;
     this.Sketch.loop = true;
-    this.Sketch.play();
+    this.Sketch.stop();
 
-    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'cursor');
+    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'cursor',false);
 
     Prefix = 'GD';
 
@@ -106,7 +129,7 @@ var Person = function(
 
 
     this.Container.addChild(this.ColorBefore);
-    //this.Container.addChild(this.ColorAfter);
+    this.Container.addChild(this.ColorAfter);
     this.Container.addChild(this.Sketch);
     //this.Container.addChild(this.Head);
 
@@ -132,9 +155,32 @@ var Person = function(
     // event function, but when we bind(this)(this here mean 'this person')
     // so the 'whole person object' will be use as 'this' in the function
     this.Container.on('mousedown',function(e){
-        this.Animation.play(0);
-        console.log(this.Container);
+        debounce(function(){
+            PersonObject.ColorAfter_TransitionMask.playReverse();
+            PersonObject.ColorAfter_TransitionMask.playReverse();
+            PersonObject.ColorAfter_TransitionMask.playReverse();
+            console.log(PersonObject.Container);
+        },500);
+
     }.bind(this));
+
+    this.Container.on('mouseover',function(e){
+        debounce(function(){
+            console.log('Forward');
+            TweenMax.fromTo(PersonObject.Container.scale,0.5,{x:"+=0",y:"+=0"},{x:"+=0.005",y:"+=0.005",ease: Sine.easeOut,yoyo:true,repeat:1});
+            PersonObject.ColorAfter_TransitionMask.play();
+            PersonObject.Sketch.play();
+        },100);
+    });
+
+    this.Container.on('mouseout',function(e){
+        debounce(function(){
+            console.log('Backward');
+            PersonObject.ColorAfter_TransitionMask.playReverse();
+            PersonObject.Sketch.stop();
+        },100);
+    });
+
     // It is different from bind and call, their role is similar as they
     // specify which is used to be 'this', bind will not run the function
     // but call will run the function immediately
@@ -143,15 +189,14 @@ var Person = function(
     this.Container.pivot.set(0,0);
     this.Container.rotation = 0;
     //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
-    this.Container.scale.set(0.5);
+    this.Container.scale.set(0.75);
     //TweenMax.to(this.Container, 100,{rotation: 500, repeat: -1});
     this.Container.position.set(xPos,yPos);
 
-    this.Animation = new TimelineMax({delay: 0.5,paused: true});
-    this.Animation
-        .add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},1)
-        //.add(function(){PersonObject.ColorAfter_TransitionMask.play();},1.5)
+    this.AnimationIn = new TimelineMax({delay: 0.5,paused: true});
+    this.AnimationIn
         .add(function(){PersonObject.Sketch_TransitionMask.play(0);},0)
+        .add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},0)
         .add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
         .add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
 
@@ -161,10 +206,10 @@ var Person = function(
 
 
     if (autoplay) {
-        this.Animation.play();
-        this.Floating.play();
+        this.AnimationIn.play();
+        //this.Floating.play();
         //console.log(this.Container.position.y);
     }
 
-    //DisplayContainer.addChild(this.Container);
+    DisplayContainer.addChild(this.Container);
 }

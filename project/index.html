@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8" />
-<title>Night Owl vs. Early Bird</title>
-<meta name="Description" content="" />
-<meta name="Keywords"  content="" />
+    <meta charset="UTF-8" />
+    <title>Night Owl vs. Early Bird</title>
+    <meta name="Description" content="" />
+    <meta name="Keywords"  content="" />
 
-<link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" /><script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
-<script src="js/pixiv4/pixi.min.js"></script>
-<script src="js/gsap/TweenMax.min.js"></script>
-<script src="js/jquery-2.2.3.min.js"></script>
-<script src="js/webfont.js"></script>
-<script src="js/howler.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" /><script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
+
+    <script src="js/pixiv4/pixi.js"></script>
+    <script src="js/gsap/TweenMax.min.js"></script>
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <script src="js/webfont.js"></script>
+    <script src="js/howler.min.js"></script>
+    <script src="js/stats.js"></script>
+
+    <script>
+        window.addEventListener('load',function(){
+            var stats = new Stats();
+            stats.showPanel( 0 ); // 0: fps, 1: ms, 2: mb, 3+: custom
+            document.body.appendChild( stats.dom );
+
+            function animateStats() {
+
+                stats.begin();
+
+                // monitored code goes here
+
+                stats.end();
+
+                requestAnimationFrame( animateStats );
+
+            }
+
+            requestAnimationFrame( animateStats );
+        });
+    </script>
 
 </head>
 <body>
@@ -52,7 +76,7 @@
 <script src="js/objects/transitioncolor.js"></script>
 <script src="js/objects/person.js"></script>
 <script src="js/objects/thing.js"></script>
-
+<script src="js/objects/text.js"></script>
 
 <script src="index.js"></script>
 
@@ -351,4 +375,57 @@ this.object.on('mousedown',function(event){
 // TWEENMAX MULTI OBJECT
 // TweenMax can control multi object at once by simple put Array object in
 // Exp: TweenMax.to([object1,object2], duration, {fromvalue}, {toValue});
+
+
+
+// PIXI NEW CUSTOM FILTER BY GL SHADER
+function VignetteFilter(options) {
+  var opts = options || {};
+  PIXI.Filter.call(this,vertexShader,fragShader);
+  this.uniforms.amount = opts.amount || 0.5;
+  this.uniforms.size = opts.size || 0.5;
+  this.uniforms.mappedMatrix = new PIXI.Matrix();
+}
+
+VignetteFilter.prototype = Object.create(PIXI.Filter.prototype);VignetteFilter.prototype.constructor = VignetteFilter;Object.defineProperties(VignetteFilter.prototype, {size: { get: function () {return this.uniforms.size;},set: function (value) {this.uniforms.size = value;}},amount: {get: function () {return this.uniforms.amount;},set: function (value) {this.uniforms.amount = value;}}});
+
+VignetteFilter.prototype.apply = function (filterManager, input, output)
+{
+    filterManager.calculateNormalizedScreenSpaceMatrix(this.uniforms.mappedMatrix);
+     // draw the filter...
+    filterManager.applyFilter(this, input, output);
+};
+
+// In this case doesnt have vertexShader
+var vertexShader = null;
+
+var fragShader = [
+    "uniform sampler2D uSampler;",
+    "uniform float size;",
+    "uniform float amount;",
+    "varying vec2 vTextureCoord;",
+    "uniform mat3 mappedMatrix;",
+    "void main() {",
+    "vec4 color = texture2D(uSampler, vTextureCoord);",
+    "vec3 mapCoord = vec3(vTextureCoord, 1.0) * mappedMatrix;",
+    "float dist = distance(mapCoord.xy, vec2(0.5, 0.5));",
+    "color.rgb *= smoothstep(0.8, size * 0.799, dist * (amount + size));",
+    "gl_FragColor = color;",
+    "}"
+].join('');
+
+filters = [];
+function addFilter(f){
+    filters.push(f);
+    stage.filters = filters;
+}
+
+function removeFilter(f){
+    filters.splice(filters.indexOf(f),1);
+    if (filters.length <= 0)
+      stage.filters = undefined;
+  else
+    stage.filters = filters;
+}
+
 -->
