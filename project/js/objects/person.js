@@ -7,17 +7,25 @@ var Person = function(
     DisplayContainer,
     xPos,
     yPos,
-    autoplay
+    autoplay,
+    scale,
+    xPosHead,
+    yPosHead
     ) {
 
     var PersonObject = this;
 
     autoplay = typeof autoplay == 'undefined' ? false : autoplay;
 
+    scale = typeof scale == 'undefined' ? 1 : scale;
+
     Prefix = typeof Prefix == 'undefined' ? 'GD' : Prefix;
 
     xPos = typeof xPos !== 'undefined' ? xPos : window.innerWidth/2;
     yPos = typeof yPos !== 'undefined' ? yPos : window.innerHeight/2;
+
+    xPosHead = typeof xPosHead !== 'undefined' ? xPosHead : 0;
+    yPosHead = typeof yPosHead !== 'undefined' ? yPosHead : 0;
 
     this.Container = new PIXI.Container();
 
@@ -100,15 +108,17 @@ var Person = function(
 
     this.Head = new PIXI.Sprite(this.Emotions.normal);
     this.Head.anchor.set(0.5,1);
-    this.Head.position.set(50,-40);
-    this.Head.scale.set(1);
+    this.Head.position.set(xPosHead,yPosHead);
+    this.Head.scale.set(0);
     this.Head.alpha = 1;
 
     PersonObject.Head.interactive = true;
 
     PersonObject.Head.on('mousedown',function(e){
         //console.log();
-        PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
+        debounce(function(){
+            PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
+        },250);
     });
 
     // console.log(PersonObject.Head);
@@ -139,7 +149,8 @@ var Person = function(
     this.Container.addChild(this.ColorBefore);
     this.Container.addChild(this.ColorAfter);
     this.Container.addChild(this.Sketch);
-    //this.Container.addChild(this.Head);
+    //PersonObject.Container.addChild(PersonObject.Head);
+
 
     // Pivot has the negative value as the x position and y position
     // while position positive value is move to right bottom
@@ -167,6 +178,11 @@ var Person = function(
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
+            TweenMax.fromTo([PersonObject.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut,
+                onStart:function(){
+                    PersonObject.Container.addChild(PersonObject.Head);
+                }},0);
+            TweenMax.fromTo([PersonObject.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1},0);
             console.log(PersonObject.Container);
         },500);
 
@@ -184,8 +200,15 @@ var Person = function(
     this.Container.on('mouseout',function(e){
         debounce(function(){
             console.log('Backward');
+
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.Sketch.stop();
+
+            TweenMax.fromTo([PersonObject.Head.scale],0.5,{x:1,y:1},{x:0,y:0,delay:0.25,ease: Sine.easeOut,
+                onComplete:function(){
+                    PersonObject.Container.removeChild(PersonObject.Head);
+                }},0);
+
         },100);
     });
 
@@ -197,7 +220,7 @@ var Person = function(
     this.Container.pivot.set(0,0);
     this.Container.rotation = 0;
     //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
-    this.Container.scale.set(0.75);
+    this.Container.scale.set(scale);
     //TweenMax.to(this.Container, 100,{rotation: 500, repeat: -1});
     this.Container.position.set(xPos,yPos);
 
@@ -205,8 +228,8 @@ var Person = function(
     this.AnimationIn
         .add(function(){PersonObject.Sketch_TransitionMask.play(0);},0)
         .add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},0)
-        .add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
-        .add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
+        //.add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
+        //.add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
 
     this.Floating = new TimelineMax({paused:true});
     this.Floating

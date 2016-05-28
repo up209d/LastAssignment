@@ -52,7 +52,7 @@ function init() {
     }
 
     circleScene = {
-        circleRadius: 1200,
+        circleRadius: 800,
         circlePI: 3.14,
         circlePosition: []
     }
@@ -70,7 +70,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[10].x,
         window.innerHeight/2+circleScene.circlePosition[10].y,
-        true
+        true,
+        0.5,
+        50,
+        -40
     );
 
     GraphicDesignerSleep =  new Person(
@@ -78,7 +81,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[8].x,
         window.innerHeight/2+circleScene.circlePosition[8].y,
-        true
+        true,
+        0.5,
+        -140,
+        80
     );
 
     Model =  new Person(
@@ -86,7 +92,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[3].x,
         window.innerHeight/2+circleScene.circlePosition[3].y,
-        true
+        true,
+        0.5,
+        -10,
+        -55
     );
 
     ModelWork =  new Person(
@@ -94,7 +103,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[7].x,
         window.innerHeight/2+circleScene.circlePosition[7].y,
-        true
+        true,
+        0.5,
+        -10,
+        -40
     );
 
     Science =  new Person(
@@ -102,7 +114,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[11].x,
         window.innerHeight/2+circleScene.circlePosition[11].y,
-        true
+        true,
+        0.5,
+        0,
+        -30
     );
 
     ScienceSleep =  new Person(
@@ -110,7 +125,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[5].x,
         window.innerHeight/2+circleScene.circlePosition[5].y,
-        true
+        true,
+        0.5,
+        -5,
+        -60
     );
 
     Sale =  new Person(
@@ -118,7 +136,8 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[4].x,
         window.innerHeight/2+circleScene.circlePosition[4].y,
-        true
+        true,
+        0.5,14,-60
     );
 
     SaleDinner =  new Person(
@@ -126,7 +145,10 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[0].x,
         window.innerHeight/2+circleScene.circlePosition[0].y,
-        true
+        true,
+        0.5,
+        20,
+        -55
     );
 
     Student =  new Person(
@@ -134,7 +156,8 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[2].x,
         window.innerHeight/2+circleScene.circlePosition[2].y,
-        true
+        true,
+        0.5,55,-35
     );
 
     StudentWake =  new Person(
@@ -142,7 +165,8 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[1].x,
         window.innerHeight/2+circleScene.circlePosition[1].y,
-        true
+        true,
+        0.5,-60,25
     );
 
     Teacher =  new Person(
@@ -150,7 +174,8 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[6].x,
         window.innerHeight/2+circleScene.circlePosition[6].y,
-        true
+        true,
+        0.5,10,-45
     );
 
     TeacherCook =  new Person(
@@ -158,7 +183,8 @@ function init() {
         scene,
         window.innerWidth/2+circleScene.circlePosition[9].x,
         window.innerHeight/2+circleScene.circlePosition[9].y,
-        true
+        true,
+        0.5,30,-65
     );
 
     TweenMax.to(circleScene,10,{circleRadius: 1200, onUpdate: function(){
@@ -279,36 +305,46 @@ function init() {
     // Test Pivot Rotation Point
     //TweenMax.to(scene,10,{rotation:1000,repeat:0});
 
+    scene_center = new PIXI.Container();
+
+
     vs = new Text(
-        scene,
+        scene_center,
         'vs.',
         '3d',
-        80,
+        60,
         window.innerWidth/2,
         window.innerHeight/2,
         0.5
     );
 
     nightOwlText = new Text(
-        scene,
+        scene_center,
         'Night Owl',
         '3d',
-        140,
+        100,
         window.innerWidth/2-300,
         window.innerHeight/2-100,
         0.5
     );
 
     earlyBirdText = new Text(
-        scene,
+        scene_center,
         'Early Bird',
         '3d',
-        140,
+        100,
         window.innerWidth/2+300,
         window.innerHeight/2+100,
         0.5
     );
 
+
+    scene.addChild(scene_center);
+
+    scene_center.pivot.set(window.innerWidth/2,window.innerHeight/2);
+    scene_center.position.set(window.innerWidth/2,window.innerHeight/2);
+
+    TweenMax.to(scene_center,5,{rotation:2*Math.PI,ease: Sine.easeOut});
 
     Success = new Thing(
         scene,
@@ -436,7 +472,7 @@ function init() {
     stage.addChild(testCont);
 
 
-
+    TweenMax.fromTo(scene.scale,5,{x:3,y:3},{x:1,y:1,ease: Back.easeOut});
 
 
     var updatingRender,updatingObject;
