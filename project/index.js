@@ -279,6 +279,37 @@ function init() {
     // Test Pivot Rotation Point
     //TweenMax.to(scene,10,{rotation:1000,repeat:0});
 
+    vs = new Text(
+        scene,
+        'vs.',
+        '3d',
+        80,
+        window.innerWidth/2,
+        window.innerHeight/2,
+        0.5
+    );
+
+    nightOwlText = new Text(
+        scene,
+        'Night Owl',
+        '3d',
+        140,
+        window.innerWidth/2-300,
+        window.innerHeight/2-100,
+        0.5
+    );
+
+    earlyBirdText = new Text(
+        scene,
+        'Early Bird',
+        '3d',
+        140,
+        window.innerWidth/2+300,
+        window.innerHeight/2+100,
+        0.5
+    );
+
+
     Success = new Thing(
         scene,
         resourceTexture[assetsPath+'Success.png'].texture,
@@ -346,37 +377,9 @@ function init() {
         true,
         1000
     );
-    
-    
-    vs = new Text(
-        scene,
-        'vs.',
-        '3d',
-        80,
-        window.innerWidth/2,
-        window.innerHeight/2,
-        0.5
-    );
 
-    nightOwlText = new Text(
-        scene,
-        'Night Owl',
-        '3d',
-        140,
-        window.innerWidth/2-300,
-        window.innerHeight/2-100,
-        0.5
-    );
+    
 
-    earlyBirdText = new Text(
-        scene,
-        'Early Bird',
-        '3d',
-        140,
-        window.innerWidth/2+300,
-        window.innerHeight/2+100,
-        0.5
-    );
 
 
 

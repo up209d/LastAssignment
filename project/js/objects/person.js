@@ -34,6 +34,13 @@ var Person = function(
 
     this.ColorBeforeFilter = new PIXI.filters.ColorMatrixFilter();
 
+    // * * *
+    // Any Sprite with Mask we cannot use normal filter for Sprite anymore
+    // But we can use blendMode for the filter apply to the masked Sprite
+    // like ColorMatrixFilter.blendMode so we can use blendMode easily
+
+    this.ColorBeforeFilter.blendMode = PIXI.BLEND_MODES.MULTIPLY;
+
     this.ColorBeforeFilter.matrix = [
         0.25,0.25,0.25,0,0,
         0.25,0.25,0.25,0,0,
@@ -50,6 +57,7 @@ var Person = function(
     this.ColorAfter.alpha = 1;
 
     this.ColorAfterFilter = new PIXI.filters.ColorMatrixFilter();
+    this.ColorAfterFilter.blendMode = PIXI.BLEND_MODES.MULTIPLY;
 
     this.ColorAfterFilter.matrix = [
         1,0,0,0,0,
@@ -167,7 +175,7 @@ var Person = function(
     this.Container.on('mouseover',function(e){
         debounce(function(){
             console.log('Forward');
-            TweenMax.fromTo(PersonObject.Container.scale,0.5,{x:"+=0",y:"+=0"},{x:"+=0.005",y:"+=0.005",ease: Sine.easeOut,yoyo:true,repeat:1});
+            TweenMax.fromTo(PersonObject.Container.scale,0.3,{x:"+=0",y:"+=0"},{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
             PersonObject.ColorAfter_TransitionMask.play();
             PersonObject.Sketch.play();
         },100);

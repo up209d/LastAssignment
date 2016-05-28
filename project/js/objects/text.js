@@ -50,7 +50,7 @@ var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale) {
 
     this.DisplacementFilter = new PIXI.filters.DisplacementFilter(this.DisplacementSprite);
     this.DisplacementFilter.padding = 100;
-    TweenMax.fromTo(this.DisplacementFilter.scale,1/6,{x:scale*0.5,y:scale*0.5},{x:scale*6,y:scale*6,ease:SteppedEase.config(1),yoyo:true,repeat:-1});
+    TweenMax.fromTo(this.DisplacementFilter.scale,1/8,{x:scale*1,y:scale*1},{x:scale*8,y:scale*8,ease:SteppedEase.config(3),yoyo:true,repeat:-1,delay:Math.abs(Math.random()*0.5+0.3)});
     //console.log(this.DisplacementFilter);
     this.DisplacementFilter.glShaderKey += Math.floor(Math.random()*100000+5000);
 

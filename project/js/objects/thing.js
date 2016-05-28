@@ -14,12 +14,12 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     this.Sketch = new PIXI.Sprite(Sketch);
     this.Sketch.anchor.set(0.5);
-    this.Sketch.position.set(xPos,yPos);
+    this.Sketch.position.set(0,0);
     TweenMax.fromTo(this.Sketch,1,{alpha:0},{alpha:1,ease: Sine.easeOut});
 
     this.Color = new PIXI.Sprite(Color);
     this.Color.anchor.set(0.5);
-    this.Color.position.set(xPos,yPos);
+    this.Color.position.set(0,0);
 
 
     this.ColorMask = new transitionColor(this.Container,this.Color,'water',false);
@@ -43,34 +43,34 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     this.DisplacementFilter = new PIXI.filters.DisplacementFilter(this.DisplacementSprite);
     this.DisplacementFilter.padding = 100;
-    TweenMax.fromTo(this.DisplacementFilter.scale,1/15,{x:scale*0.5,y:scale*0.5},{x:scale*6,y:scale*6,ease:SteppedEase.config(1),yoyo:true,repeat:-1});
+    TweenMax.fromTo(this.DisplacementFilter.scale,1/8,{x:scale*0.5,y:scale*0.5},{x:scale*5,y:scale*5,ease:SteppedEase.config(10),yoyo:true,repeat:-1});
     //console.log(this.DisplacementFilter);
     this.DisplacementFilter.glShaderKey += Math.floor(Math.random()*100000+5000);
 
-    this.DisplacementSpriteAround = new PIXI.Sprite(resourceTexture[assetsPath+'ShakingDisplacementAround.png'].texture);
-    this.DisplacementSpriteAround.anchor.set(0.5);
-    this.DisplacementSpriteAround.position.set(xPos,yPos);
-    this.DisplacementSpriteAround.alpha = 0.5;
-
-    if (this.Sketch.width>=this.Sketch.height) {
-
-        this.DisplacementSpriteAround.scale.set(this.Sketch.width/this.DisplacementSpriteAround.width);
-
-    } else {
-
-        this.DisplacementSpriteAround.scale.set(this.Sketch.height/this.DisplacementSpriteAround.height);
-
-    }
-
-    this.DisplacementFilterAround = new PIXI.filters.DisplacementFilter(this.DisplacementSpriteAround);
-    this.DisplacementFilterAround.padding = 100;
-    TweenMax.fromTo(this.DisplacementFilterAround.scale,1/(Math.random()*4+2),{x:scale*0.5,y:scale*0.5},{x:scale*5,y:scale*5,ease:SteppedEase.config(1),yoyo:true,repeat:-1});
-    //console.log(this.DisplacementFilterAround);
-    this.DisplacementFilterAround.glShaderKey += Math.floor(Math.random()*1000+500);
+    // this.DisplacementSpriteAround = new PIXI.Sprite(resourceTexture[assetsPath+'ShakingDisplacementAround.png'].texture);
+    // this.DisplacementSpriteAround.anchor.set(0.5);
+    // this.DisplacementSpriteAround.position.set(xPos,yPos);
+    // this.DisplacementSpriteAround.alpha = 0.5;
+    //
+    // if (this.Sketch.width>=this.Sketch.height) {
+    //
+    //     this.DisplacementSpriteAround.scale.set(this.Sketch.width/this.DisplacementSpriteAround.width);
+    //
+    // } else {
+    //
+    //     this.DisplacementSpriteAround.scale.set(this.Sketch.height/this.DisplacementSpriteAround.height);
+    //
+    // }
+    //
+    // this.DisplacementFilterAround = new PIXI.filters.DisplacementFilter(this.DisplacementSpriteAround);
+    // this.DisplacementFilterAround.padding = 100;
+    // TweenMax.fromTo(this.DisplacementFilterAround.scale,1/(Math.random()*4+2),{x:scale*0.5,y:scale*0.5},{x:scale*5,y:scale*5,ease:SteppedEase.config(1),yoyo:true,repeat:-1});
+    // //console.log(this.DisplacementFilterAround);
+    // this.DisplacementFilterAround.glShaderKey += Math.floor(Math.random()*1000+500);
 
 
     this.Container.filters = [this.DisplacementFilter];
-    this.Sketch.filters = [this.DisplacementFilterAround];
+    // this.Sketch.filters = [this.DisplacementFilterAround];
 
     // this.ColorFilter =  new PIXI.filters.ColorMatrixFilter();
     //
@@ -94,9 +94,9 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     this.Stage.addChild(this.Container);
     this.Stage.addChild(this.DisplacementSprite);
-    this.Stage.addChild(this.DisplacementSpriteAround);
+    //this.Stage.addChild(this.DisplacementSpriteAround);
 
-    this.Stage.pivot.set(xPos,yPos);
+    this.Stage.pivot.set(0,0);
     this.Stage.position.set(xPos,yPos);
     this.Stage.scale.set(scale);
 
@@ -126,7 +126,7 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     this.Stage.interactive = true;
     this.Stage.on('mousedown',function(){this.show();}.bind(this));
-    DisplayContainer.addChild(this.Stage);
+    //DisplayContainer.addChild(this.Stage);
 
 
 }
