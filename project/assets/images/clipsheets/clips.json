@@ -1,0 +1,11 @@
+{
+    "sheets": [
+        { 
+            "coordinatesFileName": "clips.plist",
+            "textureFileName": "clips.png",
+            "width": 4000.0,
+            "height": 2828.0
+        }
+    ],
+    "signature": "06e5680e7a4093e5edd8629ddb4dba1ee5a9bc1d"
+}

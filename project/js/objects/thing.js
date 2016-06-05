@@ -43,7 +43,7 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     this.DisplacementFilter = new PIXI.filters.DisplacementFilter(this.DisplacementSprite);
     this.DisplacementFilter.padding = 100;
-    TweenMax.fromTo(this.DisplacementFilter.scale,1/8,{x:scale*0.5,y:scale*0.5},{x:scale*5,y:scale*5,ease:SteppedEase.config(10),yoyo:true,repeat:-1});
+    TweenMax.fromTo(this.DisplacementFilter.scale,1/8,{x:scale*0.5,y:scale*0.5},{x:scale*6,y:scale*6,ease:SteppedEase.config(10),yoyo:true,repeat:-1});
     //console.log(this.DisplacementFilter);
     this.DisplacementFilter.glShaderKey += Math.floor(Math.random()*100000+5000);
 
@@ -68,8 +68,12 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     // //console.log(this.DisplacementFilterAround);
     // this.DisplacementFilterAround.glShaderKey += Math.floor(Math.random()*1000+500);
 
+    if (!browserDetection.isHandheld()) {
+        this.Container.filters = [this.DisplacementFilter];
+    } else {
+        this.DisplacementSprite.renderable = false;
+    }
 
-    this.Container.filters = [this.DisplacementFilter];
     // this.Sketch.filters = [this.DisplacementFilterAround];
 
     // this.ColorFilter =  new PIXI.filters.ColorMatrixFilter();
@@ -100,33 +104,40 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     this.Stage.position.set(xPos,yPos);
     this.Stage.scale.set(scale);
 
-    Thing.prototype.show = function(delay) {
+    self.show = fThrottle(function(delay) {
+
         delay = typeof delay !== 'undefined' ? delay : 0;
 
+        console.log(delay);
+
+        this.ColorMask.object.gotoAndStop(0);
+        this.SketchMask.object.gotoAndStop(0);
+
         debounce(function(){
+            this.ColorMask.object.gotoAndPlay(0);
+        }.bind(this),500);
 
-            this.ColorMask.object.gotoAndStop(0);
-            this.SketchMask.object.gotoAndStop(0);
+        debounce(function(){
+            this.SketchMask.object.gotoAndPlay(0);
+        }.bind(this),0);
 
-            debounce(function(){
-                this.ColorMask.object.gotoAndPlay(0);
-            }.bind(this),500);
+    },250);
 
-            debounce(function(){
-                this.SketchMask.object.gotoAndPlay(0);
-            }.bind(this),0);
-
-        }.bind(this),delay);
-    }
 
     if (autoplay) {
         this.show(delayTime);
     }
 
-
     this.Stage.interactive = true;
-    this.Stage.on('mousedown',function(){this.show();}.bind(this));
-    //DisplayContainer.addChild(this.Stage);
+
+    this.Stage.on('mousedown',function(){
+
+        this.show(100);
+
+    }.bind(this));
+
+
+    DisplayContainer.addChild(this.Stage);
 
 
 }

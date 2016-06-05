@@ -9,7 +9,7 @@ var Background = function(DisplayContainer) {
     this.bg.anchor.y = 0.5;
     //this.bg.alpha = 0.05;
 
-    this.bg.width = window.innerWidth*4;
+    this.bg.width = window.innerWidth*8;
     this.bg.height =  window.innerHeight*4;
 
     this.bg.position.x = window.innerWidth/2;

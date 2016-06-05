@@ -1,0 +1,11 @@
+{
+    "sheets": [
+        { 
+            "coordinatesFileName": "water.plist",
+            "textureFileName": "water.png",
+            "width": 2250.0,
+            "height": 2500.0
+        }
+    ],
+    "signature": "09a01724392613441a21d77b3c2d93636f63aa9b"
+}

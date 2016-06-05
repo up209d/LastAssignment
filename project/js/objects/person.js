@@ -56,7 +56,9 @@ var Person = function(
           0,  0,  0,1,0
     ];
 
-    this.ColorBefore.filters = [this.ColorBeforeFilter];
+    if (!browserDetection.isHandheld()) {
+        this.ColorBefore.filters = [this.ColorBeforeFilter];
+    }
 
     this.ColorAfter = new PIXI.Sprite(resourceTexture[assetsPath+Prefix+'-Color-Before.png'].texture);
     this.ColorAfter.anchor.set(0.5);
@@ -74,8 +76,9 @@ var Person = function(
         0,0,0,1,0
     ];
 
-    this.ColorAfter.filters = [this.ColorAfterFilter];
-
+    if (!browserDetection.isHandheld()) {
+        this.ColorAfter.filters = [this.ColorAfterFilter];
+    }
 
     this.ColorAfter_TransitionMask = new transitionColor(this.Container,this.ColorAfter,'water',false);
 
@@ -178,56 +181,52 @@ var Person = function(
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
-            TweenMax.fromTo([PersonObject.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut,
-                onStart:function(){
-                    PersonObject.Container.addChild(PersonObject.Head);
-                }},0);
-            TweenMax.fromTo([PersonObject.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1},0);
-            console.log(PersonObject.Container);
+            // TweenMax.fromTo([PersonObject.Head.scale],1,{x:0.5,y:0.5},{x:1,y:1,ease: Back.easeOut,
+            //     onStart:function(){
+            //         PersonObject.Container.addChild(PersonObject.Head);
+            //     }},0);
+            // TweenMax.fromTo([PersonObject.Head],0.5,{alpha:0},{alpha: 1, ease: Sine.easeOut},0);
+            // TweenMax.fromTo([PersonObject.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1},0);
+            // //console.log(PersonObject.Container);
         },500);
 
     }.bind(this));
 
-    this.Container.on('mouseover',function(e){
-        debounce(function(){
-            console.log('Forward');
-            TweenMax.fromTo(PersonObject.Container.scale,0.3,{x:"+=0",y:"+=0"},{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
-            PersonObject.ColorAfter_TransitionMask.play();
-            PersonObject.Sketch.play();
-        },100);
-    });
+    this.Container.on('mouseover',fDebounce(function(e){
 
-    this.Container.on('mouseout',function(e){
-        debounce(function(){
-            console.log('Backward');
+        //console.log('Forward');
+        TweenMax.fromTo(PersonObject.Container.scale,0.3,{x:"+=0",y:"+=0"},{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
+        PersonObject.ColorAfter_TransitionMask.play();
+        PersonObject.Sketch.play();
 
-            PersonObject.ColorAfter_TransitionMask.playReverse();
-            PersonObject.Sketch.stop();
+    },200));
 
-            TweenMax.fromTo([PersonObject.Head.scale],0.5,{x:1,y:1},{x:0,y:0,delay:0.25,ease: Sine.easeOut,
-                onComplete:function(){
-                    PersonObject.Container.removeChild(PersonObject.Head);
-                }},0);
+    this.Container.on('mouseout',fDebounce(function(e){
 
-        },100);
-    });
+        //console.log('Backward');
+
+        PersonObject.ColorAfter_TransitionMask.playReverse();
+        PersonObject.Sketch.stop();
+
+        // TweenMax.fromTo([PersonObject.Head.scale],0.5,{x:1,y:1},{x:0.5,y:0.5,delay:0.25,ease: Sine.easeOut,
+        //     onComplete:function(){
+        //         PersonObject.Container.removeChild(PersonObject.Head);
+        //     }},0);
+        // TweenMax.fromTo([PersonObject.Head],0.5,{alpha:1},{alpha: 0,delay:0.25, ease: Sine.easeOut},0);
+
+    },200));
 
     // It is different from bind and call, their role is similar as they
     // specify which is used to be 'this', bind will not run the function
     // but call will run the function immediately
 
-
-    this.Container.pivot.set(0,0);
-    this.Container.rotation = 0;
-    //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
-    this.Container.scale.set(scale);
-    //TweenMax.to(this.Container, 100,{rotation: 500, repeat: -1});
-    this.Container.position.set(xPos,yPos);
-
     this.AnimationIn = new TimelineMax({delay: 0.5,paused: true});
     this.AnimationIn
         .add(function(){PersonObject.Sketch_TransitionMask.play(0);},0)
-        .add(function(){PersonObject.ColorBefore_TransitionMask.play(0);},0)
+        .add(function(){
+            PersonObject.ColorBefore_TransitionMask.play(0);
+            PersonObject.ColorBefore_TransitionMask.moving(0);
+        },0)
         //.add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
         //.add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
 
@@ -242,5 +241,15 @@ var Person = function(
         //console.log(this.Container.position.y);
     }
 
-    DisplayContainer.addChild(this.Container);
+    this.Stage = new PIXI.Container();
+    this.Stage.pivot.set(0,0);
+    this.Stage.rotation = 0;
+    //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
+    this.Stage.scale.set(scale);
+    //TweenMax.to(this.Container, 100,{rotation: 500, repeat: -1});
+    this.Stage.position.set(xPos,yPos);
+
+    this.Stage.addChild(this.Container);
+    DisplayContainer.addChild(this.Stage);
+
 }

@@ -26,6 +26,18 @@
         window.cancelAnimationFrame = function(id) {
             clearTimeout(id);
         };
+
+    browserDetection = new MobileDetect(window.navigator.userAgent);
+    console.log(browserDetection);
+
+    browserDetection.isHandheld = function() {
+        if (browserDetection.mobile() || browserDetection.phone() || browserDetection.tablet()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }());
 
 TweenMax.lagSmoothing(1000,16);
@@ -66,10 +78,12 @@ var renderer = new PIXI.autoDetectRenderer(
         transparent: false,
         backgroundColor: 0xffffff,
         autoResize: false,
-        resolution: 1
+        resolution: 1,
+        antialias: true
 
     });
 
+PIXI.SCALE_MODES.DEFAULT = PIXI.SCALE_MODES.LINEAR;
 
 var CenterPosition = new CenterPoint();
 
@@ -138,6 +152,51 @@ function debounce(func, wait, immediate) {
     }.call(this);
 };
 
+function fDebounce(func, wait, immediate) {
+    var timeout;
+    return function() {
+        var context = this, args = arguments;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    }
+};
+
+// Throttle use for  limit the function call
+// Once the function call the next coming function is bypass by wait=true;
+// So the next coming functions can only run when the previous
+// function run after a certain time of timeout
+
+// It s different from debounce that in debounce when the next function is triggered
+// the previous one which is waiting in the timeout queue will be cancelled and the next function
+// will add again to the timeout queue to wait for running
+
+// in brief, throttle run func right away and prevent next func make them do nothing until time up
+// while debounce wait amount of time to run func, every time new func jump in, debounce will cancel the old one
+// and start wait for the new func again
+
+function fThrottle(func, delay) {
+    var wait = false;
+    return function() {
+        var context = this, args = arguments;
+        console.log(args);
+        if (!wait) {
+            func.apply(context, args);
+            wait = true;
+            setTimeout(function(){
+                wait = false;
+            },delay)
+        }
+    }
+}
+
+
+// EXP this.object.playFromTo(frame,this.object.totalFrames-1,1,0);
 
 PIXI.extras.MovieClip.prototype.playFromTo = function (beginFrame,endFrame,speed,delay) {
 
@@ -160,6 +219,7 @@ PIXI.extras.MovieClip.prototype.playFromTo = function (beginFrame,endFrame,speed
         {   value: beginFrame   },
         {   value: endFrame     ,
             ease: Linear.easeNone,
+            immediateRender: false,
             onUpdate: function(){
                 this.gotoAndStop(Math.ceil(this.tween.value));
             }.bind(this),

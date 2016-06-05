@@ -4,24 +4,34 @@ function init() {
 
     var scene = new PIXI.Container();
 
+    // Pivot value is not depend on any width and height of container
+    // it s simple value that for container rotate around
+    // when it set to x y value so the container position now start from that point
+    // container itself doesnt have width and height, so it s always full window width height
+    // pivot 0 0 will be the 0 0 position of window.
+    // pivot half screen so the container will move back to half screen offset
+    // that why we have to set position is half screen move forward to compensate.
+    scene.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene.position.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene.scale.set(3);
+    // Test Pivot Rotation Point
+    //TweenMax.to(scene,10,{rotation:1000,repeat:0});
+
+
     Bg = new Background(scene);
 
-    FullScreenNoise = new PIXI.Container();
-    TVNoiseText = new TVNoise(FullScreenNoise,33,window.innerWidth,window.innerHeight);
-
-
-    var Bunny = function(DisplayContainer) {
+    var Bunny = function (DisplayContainer) {
         this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
         this.each.anchor.x = 0.5;
         this.each.anchor.y = 0.5;
         this.each.alpha = 0.5;
-        this.each.position.x = window.innerWidth/2;
-        this.each.position.y = window.innerHeight/2;
+        this.each.position.x = window.innerWidth / 2;
+        this.each.position.y = window.innerHeight / 2;
         this.each.interactive = false;
         DisplayContainer.addChild(this.each);
-        Bunny.prototype.rotate = function() {
+        Bunny.prototype.rotate = function () {
             this.each.rotation += 0.1;
-            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now()*0.0005)*1)+0.5);
+            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now() * 0.0005) * 1) + 0.5);
         }
     }
 
@@ -35,7 +45,12 @@ function init() {
         //console.log(eventData);
         var bunnyTimeline = new TimelineMax();
         bunnyTimeline.smoothChildTiming = true;
-        bunnyTimeline.to(bunny.each.position,0.5,{x:eventData.clientX,y:eventData.clientY,ease: Back.easeOut});
+        bunnyTimeline.to(bunny.each.position, 1.5, {
+            x: eventData.clientX,
+            y: eventData.clientY,
+            immediateRender: false,
+            ease: Back.easeOut
+        });
 
         bunnyTimeline.play();
     };
@@ -52,160 +67,159 @@ function init() {
     }
 
     circleScene = {
-        circleRadius: 800,
+        circleRadius: 1200,
         circlePI: 3.14,
         circlePosition: []
     }
-    
 
-    for (i=0;i<12;i++) {
+    Bg.bg.width += circleScene.circleRadius*2;
+    Bg.bg.height +=  circleScene.circleRadius;
+
+
+    for (i = 0; i < 12; i++) {
         circleScene.circlePosition.push({
-            x: Math.round(Math.cos(circleScene.circlePI*(i/6))*circleScene.circleRadius),
-            y: Math.round(Math.sin(circleScene.circlePI*(i/6))*circleScene.circleRadius)
+            x: Math.round(Math.cos(circleScene.circlePI * (i / 6)) * circleScene.circleRadius),
+            y: Math.round(Math.sin(circleScene.circlePI * (i / 6)) * circleScene.circleRadius)
         });
     }
 
-    GraphicDesigner =  new Person(
+    GraphicDesigner = new Person(
         'GD',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[10].x,
-        window.innerHeight/2+circleScene.circlePosition[10].y,
+        window.innerWidth / 2 + circleScene.circlePosition[10].x,
+        window.innerHeight / 2 + circleScene.circlePosition[10].y,
         true,
         0.5,
-        50,
-        -40
+        50, -40
     );
 
-    GraphicDesignerSleep =  new Person(
+    GraphicDesignerSleep = new Person(
         'GDS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[8].x,
-        window.innerHeight/2+circleScene.circlePosition[8].y,
+        window.innerWidth / 2 + circleScene.circlePosition[8].x,
+        window.innerHeight / 2 + circleScene.circlePosition[8].y,
         true,
-        0.5,
-        -140,
+        0.5, -140,
         80
     );
 
-    Model =  new Person(
+    Model = new Person(
         'MD',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[3].x,
-        window.innerHeight/2+circleScene.circlePosition[3].y,
+        window.innerWidth / 2 + circleScene.circlePosition[3].x,
+        window.innerHeight / 2 + circleScene.circlePosition[3].y,
         true,
-        0.5,
-        -10,
-        -55
+        0.5, -10, -55
     );
 
-    ModelWork =  new Person(
+    ModelWork = new Person(
         'MDS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[7].x,
-        window.innerHeight/2+circleScene.circlePosition[7].y,
+        window.innerWidth / 2 + circleScene.circlePosition[7].x,
+        window.innerHeight / 2 + circleScene.circlePosition[7].y,
         true,
-        0.5,
-        -10,
-        -40
+        0.5, -10, -40
     );
 
-    Science =  new Person(
+    Science = new Person(
         'SC',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[11].x,
-        window.innerHeight/2+circleScene.circlePosition[11].y,
+        window.innerWidth / 2 + circleScene.circlePosition[11].x,
+        window.innerHeight / 2 + circleScene.circlePosition[11].y,
         true,
         0.5,
-        0,
-        -30
+        0, -30
     );
 
-    ScienceSleep =  new Person(
+    ScienceSleep = new Person(
         'SCS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[5].x,
-        window.innerHeight/2+circleScene.circlePosition[5].y,
+        window.innerWidth / 2 + circleScene.circlePosition[5].x,
+        window.innerHeight / 2 + circleScene.circlePosition[5].y,
         true,
-        0.5,
-        -5,
-        -60
+        0.5, -5, -60
     );
 
-    Sale =  new Person(
+    Sale = new Person(
         'SM',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[4].x,
-        window.innerHeight/2+circleScene.circlePosition[4].y,
+        window.innerWidth / 2 + circleScene.circlePosition[4].x,
+        window.innerHeight / 2 + circleScene.circlePosition[4].y,
         true,
-        0.5,14,-60
+        0.5, 14, -60
     );
 
-    SaleDinner =  new Person(
+    SaleDinner = new Person(
         'SMS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[0].x,
-        window.innerHeight/2+circleScene.circlePosition[0].y,
+        window.innerWidth / 2 + circleScene.circlePosition[0].x,
+        window.innerHeight / 2 + circleScene.circlePosition[0].y,
         true,
         0.5,
-        20,
-        -55
+        20, -55
     );
 
-    Student =  new Person(
+    Student = new Person(
         'ST',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[2].x,
-        window.innerHeight/2+circleScene.circlePosition[2].y,
+        window.innerWidth / 2 + circleScene.circlePosition[2].x,
+        window.innerHeight / 2 + circleScene.circlePosition[2].y,
         true,
-        0.5,55,-35
+        0.5, 55, -35
     );
 
-    StudentWake =  new Person(
+    StudentWake = new Person(
         'STS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[1].x,
-        window.innerHeight/2+circleScene.circlePosition[1].y,
+        window.innerWidth / 2 + circleScene.circlePosition[1].x,
+        window.innerHeight / 2 + circleScene.circlePosition[1].y,
         true,
-        0.5,-60,25
+        0.5, -60, 25
     );
 
-    Teacher =  new Person(
+    Teacher = new Person(
         'TC',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[6].x,
-        window.innerHeight/2+circleScene.circlePosition[6].y,
+        window.innerWidth / 2 + circleScene.circlePosition[6].x,
+        window.innerHeight / 2 + circleScene.circlePosition[6].y,
         true,
-        0.5,10,-45
+        0.5, 10, -45
     );
 
-    TeacherCook =  new Person(
+    TeacherCook = new Person(
         'TCS',
         scene,
-        window.innerWidth/2+circleScene.circlePosition[9].x,
-        window.innerHeight/2+circleScene.circlePosition[9].y,
+        window.innerWidth / 2 + circleScene.circlePosition[9].x,
+        window.innerHeight / 2 + circleScene.circlePosition[9].y,
         true,
-        0.5,30,-65
+        0.5, 30, -65
     );
 
-    TweenMax.to(circleScene,10,{circleRadius: 1200, onUpdate: function(){
+    TweenMax.to(circleScene, 10, {
+        circleRadius: 1200,
+        onUpdate: function () {
 
-        for (i=0;i<12;i++) {
-            circleScene.circlePosition[i].x = Math.round(Math.cos(circleScene.circlePI*(i/6))*circleScene.circleRadius);
-            circleScene.circlePosition[i].y = Math.round(Math.sin(circleScene.circlePI*(i/6))*circleScene.circleRadius);
+            for (i = 0; i < 12; i++) {
+                circleScene.circlePosition[i].x = Math.round(Math.cos(circleScene.circlePI * (i / 6)) * circleScene.circleRadius);
+                circleScene.circlePosition[i].y = Math.round(Math.sin(circleScene.circlePI * (i / 6)) * circleScene.circleRadius);
+            }
+
         }
-
-    }});
+    });
 
     scene.interactive = true;
+    scene.buttonMode = true;
+    scene.defaultCursor = 'pointer';
+
     scene.isDragging = false;
     scene.boundArea = {
-        top: (circleScene.circleRadius+window.innerHeight/2),
-        right: window.innerWidth/2 - circleScene.circleRadius,
-        bottom: window.innerHeight/2 - circleScene.circleRadius,
-        left: (circleScene.circleRadius+window.innerWidth/2)
+        top: (circleScene.circleRadius + window.innerHeight / 2),
+        right: window.innerWidth / 2 - circleScene.circleRadius,
+        bottom: window.innerHeight / 2 - circleScene.circleRadius,
+        left: (circleScene.circleRadius + window.innerWidth / 2)
     };
     bunnyPot.interactive = false;
-    FullScreenNoise.interactive = false;
+
 
     // In order to click through interactive false Sprite
     // The mother container of them has to be set at
@@ -215,95 +229,140 @@ function init() {
 
     stage.addChild(scene);
     stage.addChild(bunnyPot);
-    stage.addChild(FullScreenNoise);
 
 
     // stage.interactive = true;
-    //
-    scene.moving = function(e){
+
+    scene.moving = function (e) {
 
         if (this.isDragging) {
 
-            this.newX = scene.position.x + e.data.originalEvent.movementX*20;
-            this.newY = scene.position.y + e.data.originalEvent.movementY*20;
+            if (e.type == 'mousemove') {
+                // this.newX = this.position.x + e.data.originalEvent.movementX * 10;
+                // this.newY = this.position.y + e.data.originalEvent.movementY * 10;
+                this.newX = this.position.x - (this.startX - e.data.getLocalPosition(this).x)/2;
+                this.newY = this.position.y - (this.startY - e.data.getLocalPosition(this).y)/2;
+            } else if (e.type == 'touchmove') {
+                this.newX = this.position.x - (this.startX - e.data.getLocalPosition(this).x);
+                this.newY = this.position.y - (this.startY - e.data.getLocalPosition(this).y);
+            } else {
+                this.newX = this.position.x;
+                this.newY = this.position.y;
+            }
+
+            // console.log(this.newX+'---'+this.newY);
 
             if (typeof this.tweenHandle !== 'undefined') {
                 this.tweenHandle.paused();
             }
 
-            this.tweenHandle = TweenMax.to(this.position,1.5,{
-                x:this.newX,
-                y:this.newY,
+            this.tweenHandle = TweenMax.to([this.position], 1, {
+                x: this.newX,
+                y: this.newY,
+                immediateRender: false,
                 ease: Sine.easeOut,
-                onUpdate: debounce(function(){
+                onUpdate: debounce(function () {
                     if (!this.isDragging) {
-                        if (this.newX<this.boundArea.right) {
+                        if (this.newX < this.boundArea.right) {
                             this.tweenHandle.pause();
-                            this.tweenHandle = new TweenMax.to(this.position,0.5,{x:this.boundArea.right,ease: Back.easeOut});
+                            this.tweenHandle = new TweenMax.to(this.position, 2, {
+                                x: this.boundArea.right,
+                                ease: Back.easeOut,
+                                immediateRender: false
+                            });
                         }
-                        if (this.newX>this.boundArea.left) {
+                        if (this.newX > this.boundArea.left) {
                             this.tweenHandle.pause();
-                            this.tweenHandle = new TweenMax.to(this.position,0.5,{x:this.boundArea.left,ease: Back.easeOut});
+                            this.tweenHandle = new TweenMax.to(this.position, 2, {
+                                x: this.boundArea.left,
+                                ease: Back.easeOut,
+                                immediateRender: false
+                            });
                         }
-                        if (this.newY>this.boundArea.top) {
+                        if (this.newY > this.boundArea.top) {
                             this.tweenHandle.pause();
-                            this.tweenHandle = new TweenMax.to(this.position,0.5,{y:this.boundArea.top,ease: Back.easeOut});
+                            this.tweenHandle = new TweenMax.to(this.position, 2, {
+                                y: this.boundArea.top,
+                                ease: Back.easeOut,
+                                immediateRender: false
+                            });
                         }
-                        if (this.newY<this.boundArea.bottom) {
+                        if (this.newY < this.boundArea.bottom) {
                             this.tweenHandle.pause();
-                            this.tweenHandle = new TweenMax.to(this.position,0.5,{y:this.boundArea.bottom,ease: Back.easeOut});
+                            this.tweenHandle = new TweenMax.to(this.position, 2, {
+                                y: this.boundArea.bottom,
+                                ease: Back.easeOut,
+                                immediateRender: false
+                            });
                         }
                     }
-                }.bind(this),150)
+                }.bind(this), 150)
             });
 
         } else {
 
-            if (this.position.x<this.boundArea.right) {
+            if (this.position.x < this.boundArea.right) {
                 this.tweenHandle.pause();
-                this.tweenHandle = new TweenMax.to(this.position,1,{x:this.boundArea.right,ease: Back.easeOut});
+                this.tweenHandle = new TweenMax.to(this.position, 2, {
+                    x: this.boundArea.right,
+                    ease: Back.easeOut,
+                    immediateRender: false
+                });
             }
-            if (this.position.x>this.boundArea.left) {
+            if (this.position.x > this.boundArea.left) {
                 this.tweenHandle.pause();
-                this.tweenHandle = new TweenMax.to(this.position,1,{x:this.boundArea.left,ease: Back.easeOut});
+                this.tweenHandle = new TweenMax.to(this.position, 2, {
+                    x: this.boundArea.left,
+                    ease: Back.easeOut,
+                    immediateRender: false
+                });
             }
-            if (this.position.y>this.boundArea.top) {
+            if (this.position.y > this.boundArea.top) {
                 this.tweenHandle.pause();
-                this.tweenHandle = new TweenMax.to(this.position,1,{y:this.boundArea.top,ease: Back.easeOut});
+                this.tweenHandle = new TweenMax.to(this.position, 2, {
+                    y: this.boundArea.top,
+                    ease: Back.easeOut,
+                    immediateRender: false
+                });
             }
-            if (this.position.y<this.boundArea.bottom) {
+            if (this.position.y < this.boundArea.bottom) {
                 this.tweenHandle.pause();
-                this.tweenHandle = new TweenMax.to(this.position,1,{y:this.boundArea.bottom,ease: Back.easeOut});
+                this.tweenHandle = new TweenMax.to(this.position, 2, {
+                    y: this.boundArea.bottom,
+                    ease: Back.easeOut,
+                    immediateRender: false
+                });
             }
 
         }
 
     }
 
-    scene.on('mousemove',scene.moving);
+    scene.on('mousemove', scene.moving);
 
-    scene.on('mousedown',function(e){
+    scene.on('mousedown', function (e) {
         scene.isDragging = true;
+        scene.startX = e.data.getLocalPosition(scene).x;
+        scene.startY = e.data.getLocalPosition(scene).y;
     });
 
-    scene.on('mouseup',function(e){
+    scene.on('touchstart', function (e) {
+        scene.isDragging = true;
+        scene.startX = e.data.getLocalPosition(scene).x;
+        scene.startY = e.data.getLocalPosition(scene).y;
+    });
+
+    scene.on('touchmove', scene.moving);
+
+    scene.on('mouseup', function (e) {
         scene.isDragging = false;
-        scene.moving();
+        scene.moving(e);
     });
-    
 
-    // Pivot value is not depend on any width and height of container
-    // it s simple value that for container rotate around
-    // when it set to x y value so the container position now start from that point
-    // container itself doesnt have width and height, so it s always full window width height
-    // pivot 0 0 will be the 0 0 position of window.
-    // pivot half screen so the container will move back to half screen offset
-    // that why we have to set position is half screen move forward to compensate.
-    scene.pivot.set(window.innerWidth/2,window.innerHeight/2);
-    scene.position.set(window.innerWidth/2,window.innerHeight/2);
-    scene.scale.set(1);
-    // Test Pivot Rotation Point
-    //TweenMax.to(scene,10,{rotation:1000,repeat:0});
+    scene.on('touchend', function (e) {
+        scene.isDragging = false;
+    });
+
 
     scene_center = new PIXI.Container();
 
@@ -312,173 +371,297 @@ function init() {
         scene_center,
         'vs.',
         '3d',
-        60,
-        window.innerWidth/2,
-        window.innerHeight/2,
-        0.5
+        66,
+        window.innerWidth / 2,
+        window.innerHeight / 2,
+        0.75
     );
 
-    nightOwlText = new Text(
+    OwlText = new Thing(
         scene_center,
-        'Night Owl',
-        '3d',
-        100,
-        window.innerWidth/2-300,
-        window.innerHeight/2-100,
-        0.5
+        resourceTexture[assetsPath + 'OwlText.png'].texture,
+        resourceTexture[assetsPath + 'OwlText-Color.png'].texture,
+        window.innerWidth / 2 - 400,
+        window.innerHeight / 2 + 20,
+        0.75,
+        true,
+        0
     );
 
-    earlyBirdText = new Text(
+
+    Owl = new Thing(
         scene_center,
-        'Early Bird',
-        '3d',
-        100,
-        window.innerWidth/2+300,
-        window.innerHeight/2+100,
-        0.5
+        resourceTexture[assetsPath + 'Owl.png'].texture,
+        resourceTexture[assetsPath + 'Owl-Color.png'].texture,
+        window.innerWidth / 2 - 500,
+        window.innerHeight / 2 -120,
+        0.75,
+        true,
+        0
     );
 
 
-    scene.addChild(scene_center);
+    BirdText = new Thing(
+        scene_center,
+        resourceTexture[assetsPath + 'BirdText.png'].texture,
+        resourceTexture[assetsPath + 'BirdText-Color.png'].texture,
+        window.innerWidth / 2 + 400,
+        window.innerHeight / 2 + 20,
+        0.75,
+        true,
+        0
+    );
 
-    scene_center.pivot.set(window.innerWidth/2,window.innerHeight/2);
-    scene_center.position.set(window.innerWidth/2,window.innerHeight/2);
 
-    TweenMax.to(scene_center,5,{rotation:2*Math.PI,ease: Sine.easeOut});
+    Bird = new Thing(
+        scene_center,
+        resourceTexture[assetsPath + 'Bird.png'].texture,
+        resourceTexture[assetsPath + 'Bird-Color.png'].texture,
+        window.innerWidth / 2 + 500,
+        window.innerHeight / 2 - 100,
+        0.75,
+        true,
+        0
+    );
 
     Success = new Thing(
-        scene,
-        resourceTexture[assetsPath+'Success.png'].texture,
-        resourceTexture[assetsPath+'Success-Color.png'].texture,
-        window.innerWidth/2+150,
-        window.innerHeight/2-150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Success.png'].texture,
+        resourceTexture[assetsPath + 'Success-Color.png'].texture,
+        window.innerWidth / 2 -150,
+        window.innerHeight / 2 - 200,
+        0.4,
         true,
         0
     );
 
     Clock = new Thing(
 
-        scene,
-        resourceTexture[assetsPath+'Flexible.png'].texture,
-        resourceTexture[assetsPath+'Flexible-Color.png'].texture,
-        window.innerWidth/2+300,
-        window.innerHeight/2-150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Flexible.png'].texture,
+        resourceTexture[assetsPath + 'Flexible-Color.png'].texture,
+        window.innerWidth / 2,
+        window.innerHeight / 2 - 200,
+        0.4,
         true,
         500
     );
 
     Intelligent = new Thing(
-        scene,
-        resourceTexture[assetsPath+'Intelligent.png'].texture,
-        resourceTexture[assetsPath+'Intelligent-Color.png'].texture,
-        window.innerWidth/2+450,
-        window.innerHeight/2-150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Intelligent.png'].texture,
+        resourceTexture[assetsPath + 'Intelligent-Color.png'].texture,
+        window.innerWidth / 2 + 150,
+        window.innerHeight / 2 - 200,
+        0.4,
         true,
         1000
     );
 
     Health = new Thing(
-        scene,
-        resourceTexture[assetsPath+'Health.png'].texture,
-        resourceTexture[assetsPath+'Health-Color.png'].texture,
-        window.innerWidth/2-150,
-        window.innerHeight/2+150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Health.png'].texture,
+        resourceTexture[assetsPath + 'Health-Color.png'].texture,
+        window.innerWidth / 2 +150,
+        window.innerHeight / 2 + 200,
+        0.4,
         true,
         0
     );
 
     Organize = new Thing(
-        scene,
-        resourceTexture[assetsPath+'Organize.png'].texture,
-        resourceTexture[assetsPath+'Organize-Color.png'].texture,
-        window.innerWidth/2-300,
-        window.innerHeight/2+150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Organize.png'].texture,
+        resourceTexture[assetsPath + 'Organize-Color.png'].texture,
+        window.innerWidth / 2,
+        window.innerHeight / 2 + 200,
+        0.4,
         true,
         500
     );
 
 
     Social = new Thing(
-        scene,
-        resourceTexture[assetsPath+'Social.png'].texture,
-        resourceTexture[assetsPath+'Social-Color.png'].texture,
-        window.innerWidth/2-450,
-        window.innerHeight/2+150,
-        0.5,
+        scene_center,
+        resourceTexture[assetsPath + 'Social.png'].texture,
+        resourceTexture[assetsPath + 'Social-Color.png'].texture,
+        window.innerWidth / 2 - 150,
+        window.innerHeight / 2 + 200,
+        0.4,
         true,
         1000
     );
 
-    
 
+    //scene.addChild(scene_center);
 
+    scene_center.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene_center.position.set(window.innerWidth / 2, window.innerHeight / 2);
 
-
-
-    testCont =  new PIXI.Container();
-
-    DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
-
-
-    Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
-
-    DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
-    DisplacmentFilter.scale.set(0);
-
-    Skt.filters = [DisplacmentFilter];
-    stage.filters = [DisplacmentFilter];
-
-    Skt.anchor.set(0.5);
-    Skt.position.set(window.innerWidth/2,window.innerHeight/2);
-
-    DisSprite.anchor.set(0.5);
-    DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
-    DisSprite.scale.set(1);
-    //DisplacmentFilter.scale.set(10);
-    // TweenMax.fromTo(DisplacmentFilter.scale,1,{x:0,y:0},{x:50,y:50,ease: Sine.easeInOut,repeat:-1,yoyo:true});
-    // TweenMax.fromTo(DisSprite.scale,2,{x:0,y:0},{x:3,y:3,repeat:-1,ease: Sine.easeOut});
-    //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
-
-    window.addEventListener('click',function(e){
-        //console.log(e);
-        DisSprite.position.set(e.clientX,e.clientY);
-        TweenMax.fromTo(DisplacmentFilter.scale,0.5,{x:0,y:0},{x:30,y:30,ease: Sine.easeIn,repeat:1,yoyo:true});
-        TweenMax.fromTo(DisSprite.scale,1,{x:0.1,y:0.1},{x:1.0,y:1.0,repeat:0,ease: Sine.easeOut});
+    TweenMax.from(scene_center, 2, {
+        alpha: 0,
+        ease: Sine.easeOut
     });
 
-    DisplacmentFilter.padding = 200;
-    //Quick Hack fix bug for v4
-    DisplacmentFilter.glShaderKey = 6789;
+    intro = new Text(
+        scene,
+        'Are you the kind of person who gets up early for a fresh' +
+        ' start of the day or do you stay up late at night to' +
+        ' finish your work?',
+        'normal',
+        80,
+        window.innerWidth/2,
+        window.innerHeight/2,
+        0.5
+    );
 
-    //console.log(DisplacmentFilter);
+    intro.Content.style.wordWrap = true;
+    intro.Content.style.wordWrapWidth = window.innerWidth*0.5;
+    intro.Content.style.align = 'center';
+    intro.Content.style.lineHeight = 90;
+    intro.Content.style.padding = 40;
+    intro.Content.scale.y = ((intro.Content.style.padding/2) + intro.size)/intro.size;
+    intro.Content.position.y += (intro.Content.style.padding/2) + intro.size;
 
+    intro.Stage.interactive = true;
 
-    function DisSpriteRotation() {
+    intro.Stage.click = intro.Stage.tap = function(e) {
+        TweenMax.to(e.target,1,{alpha:0,onComplete: function(){
+            this.parent.removeChild(this);
+        }.bind(this)});
+        e.target.parent.addChild(scene_center);
+        TweenMax.fromTo(scene_center,2,{alpha:0},{alpha:1});
 
-        requestAnimationFrame(DisSpriteRotation);
-        //DisSprite.rotation += 0.05;
+        TweenMax.fromTo(scene.scale, 5, {
+            x: 3,
+            y: 3
+        }, {
+            x: 1,
+            y: 1,
+            ease: Back.easeOut
+        });
+
 
     }
 
-    DisSpriteRotation();
+    intro.mask = new transitionColor(intro.Container,intro.Content,'water',true);
+    intro.mask.object.animationSpeed = 0.5;
 
-    testCont.addChild(DisSprite);
-    //testCont.addChild(Skt);
-    stage.addChild(testCont);
+    intro.mask.interactive = false;
+    intro.mask.object.interactive = false;
+
+    TweenMax.fromTo(intro.Stage,2,{alpha:0},{alpha:1});
+    TweenMax.from(intro.Stage.scale,5,{x:0.1,y:0.1,ease: Elastic.easeOut});
+
+    // testCont =  new PIXI.Container();
+    //
+    // DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
+    //
+    //
+    // Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
+    //
+    // DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
+    // DisplacmentFilter.scale.set(0);
+    //
+    // Skt.filters = [DisplacmentFilter];
+    // stage.filters = [DisplacmentFilter];
+    //
+    // Skt.anchor.set(0.5);
+    // Skt.position.set(window.innerWidth/2,window.innerHeight/2);
+    //
+    // DisSprite.anchor.set(0.5);
+    // DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
+    // DisSprite.scale.set(1);
+    // //DisplacmentFilter.scale.set(10);
+    // // TweenMax.fromTo(DisplacmentFilter.scale,1,{x:0,y:0},{x:50,y:50,ease: Sine.easeInOut,repeat:-1,yoyo:true});
+    // // TweenMax.fromTo(DisSprite.scale,2,{x:0,y:0},{x:3,y:3,repeat:-1,ease: Sine.easeOut});
+    // //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
+    //
+    // window.addEventListener('click',function(e){
+    //     //console.log(e);
+    //     DisSprite.position.set(e.clientX,e.clientY);
+    //     TweenMax.fromTo(DisplacmentFilter.scale,0.5,{x:0,y:0},{x:30,y:30,ease: Sine.easeIn,repeat:1,yoyo:true});
+    //     TweenMax.fromTo(DisSprite.scale,1,{x:0.1,y:0.1},{x:1.0,y:1.0,repeat:0,ease: Sine.easeOut});
+    // });
+    //
+    // DisplacmentFilter.padding = 200;
+    // //Quick Hack fix bug for v4
+    // DisplacmentFilter.glShaderKey = 6789;
+    //
+    // //console.log(DisplacmentFilter);
+    //
+    //
+    // function DisSpriteRotation() {
+    //
+    //     requestAnimationFrame(DisSpriteRotation);
+    //     //DisSprite.rotation += 0.05;
+    //
+    // }
+    //
+    // DisSpriteRotation();
+    //
+    // testCont.addChild(DisSprite);
+    // //testCont.addChild(Skt);
+    // stage.addChild(testCont);
 
 
-    TweenMax.fromTo(scene.scale,5,{x:3,y:3},{x:1,y:1,ease: Back.easeOut});
 
+    // testSprite = new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
+    // testSprite.anchor.set(0);
+    // testSprite.position.set(0);
+    //
+    // stage.addChild(testSprite);
+    //
+    // testTexture = new PIXI.Texture(
+    //     resourceTexture['assets/images/clipsheets/clips.png'].texture
+    // );
+    //
+    // testMask = new PIXI.Sprite(testTexture);
+    // testMask.scale.set(2.5);
+    // testMask.alpha = 1;
+    // testMask.position.set(0,0);
+    //
+    // testSprite.mask = testMask;
+    //
+    // col_count = 20;
+    // row_count = 14;
+    //
+    // frameWidth = 200*testMask.scale.x;
+    // frameHeight = 200*testMask.scale.y;
+    //
+    // testTimeline = new TimelineMax({
+    //     repeat: -1
+    // });
+    //
+    //
+    // stepEase = new SteppedEase(col_count-1);
+    //
+    // for (i=0;i<row_count;i++) {
+    //     testTimeline.add(
+    //         TweenMax.fromTo(testMask.position,
+    //             1/4,
+    //             {
+    //                 x:0*testMask.scale.x,
+    //                 y:-frameHeight*i
+    //             },
+    //             {
+    //                 x:-frameWidth*(col_count-1),
+    //                 y:-frameHeight*i,
+    //                 immediateRender: false,
+    //                 ease: stepEase
+    //             })
+    //     );
+    // }
+    //
+    //
+    // stage.addChild(testMask);
 
-    var updatingRender,updatingObject;
+    TVNoiseText = new TilingTVNoise(stage, 22, window.innerWidth, window.innerHeight);
+
+    var updatingRender, updatingObject;
 
     function UpdateOnResizing() {
-        updatingRender = setTimeout(function() {
+        updatingRender = setTimeout(function () {
             viewPort.width = window.innerWidth;
             viewPort.height = window.innerHeight;
 
@@ -500,24 +683,24 @@ function init() {
             CenterPosition.update();
             //console.log (renderer);
 
-            updatingObject = setTimeout(function() {
-                TVNoiseText.update(window.innerWidth,window.innerHeight);
+            updatingObject = setTimeout(function () {
+                TVNoiseText.update(window.innerWidth, window.innerHeight);
                 stop = false;
-            },500);
+            }, 500);
 
-            TweenMax.ticker.addEventListener('tick', function(){
+            TweenMax.ticker.addEventListener('tick', function () {
                 if (!stop) {
                     RenderAnimation();
                 }
             });
 
 
-        },100);
+        }, 100);
 
     }
 
-    window.addEventListener ('resize', function(){
-        stop =  true;
+    window.addEventListener('resize', function () {
+        stop = true;
         clearTimeout(updatingRender);
         clearTimeout(updatingObject);
         TweenMax.ticker.removeEventListener('tick');
@@ -536,104 +719,102 @@ function init() {
 
 
 
-function func1(x,y) {
-    Clock.ColorFilter.matrix[0] = x/2000;
-    console.log(x/2000);
+function func1(x, y) {
+    Clock.ColorFilter.matrix[0] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func2(x,y) {
-    Clock.ColorFilter.matrix[1] = x/2000;
-    console.log(x/2000);
+function func2(x, y) {
+    Clock.ColorFilter.matrix[1] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func3(x,y) {
-    Clock.ColorFilter.matrix[2] = x/2000;
-    console.log(x/2000);
+function func3(x, y) {
+    Clock.ColorFilter.matrix[2] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func4(x,y) {
-    Clock.ColorFilter.matrix[3] = x/2000;
-    console.log(x/2000);
+function func4(x, y) {
+    Clock.ColorFilter.matrix[3] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func5(x,y) {
-    Clock.ColorFilter.matrix[4] = x/2000;
-    console.log(x/2000);
+function func5(x, y) {
+    Clock.ColorFilter.matrix[4] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func6(x,y) {
-    Clock.ColorFilter.matrix[5] = x/2000;
-    console.log(x/2000);
+function func6(x, y) {
+    Clock.ColorFilter.matrix[5] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func7(x,y) {
-    Clock.ColorFilter.matrix[6] = x/2000;
-    console.log(x/2000);
+function func7(x, y) {
+    Clock.ColorFilter.matrix[6] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func8(x,y) {
-    Clock.ColorFilter.matrix[7] = x/2000;
-    console.log(x/2000);
+function func8(x, y) {
+    Clock.ColorFilter.matrix[7] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func9(x,y) {
-    Clock.ColorFilter.matrix[8] = x/2000;
-    console.log(x/2000);
+function func9(x, y) {
+    Clock.ColorFilter.matrix[8] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func10(x,y) {
-    Clock.ColorFilter.matrix[9] = x/2000;
-    console.log(x/2000);
+function func10(x, y) {
+    Clock.ColorFilter.matrix[9] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func11(x,y) {
-    Clock.ColorFilter.matrix[10] = x/2000;
-    console.log(x/2000);
+function func11(x, y) {
+    Clock.ColorFilter.matrix[10] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func12(x,y) {
-    Clock.ColorFilter.matrix[11] = x/2000;
-    console.log(x/2000);
+function func12(x, y) {
+    Clock.ColorFilter.matrix[11] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func13(x,y) {
-    Clock.ColorFilter.matrix[12] = x/2000;
-    console.log(x/2000);
+function func13(x, y) {
+    Clock.ColorFilter.matrix[12] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func14(x,y) {
-    Clock.ColorFilter.matrix[13] = x/2000;
-    console.log(x/2000);
+function func14(x, y) {
+    Clock.ColorFilter.matrix[13] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func15(x,y) {
-    Clock.ColorFilter.matrix[14] = x/2000;
-    console.log(x/2000);
+function func15(x, y) {
+    Clock.ColorFilter.matrix[14] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func16(x,y) {
-    Clock.ColorFilter.matrix[15] = x/2000;
-    console.log(x/2000);
+function func16(x, y) {
+    Clock.ColorFilter.matrix[15] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func17(x,y) {
-    Clock.ColorFilter.matrix[16] = x/2000;
-    console.log(x/2000);
+function func17(x, y) {
+    Clock.ColorFilter.matrix[16] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func18(x,y) {
-    Clock.ColorFilter.matrix[17] = x/2000;
-    console.log(x/2000);
+function func18(x, y) {
+    Clock.ColorFilter.matrix[17] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func19(x,y) {
-    Clock.ColorFilter.matrix[18] = x/2000;
-    console.log(x/2000);
+function func19(x, y) {
+    Clock.ColorFilter.matrix[18] = x / 2000;
+    console.log(x / 2000);
 }
 
-function func20(x,y) {
-    Clock.ColorFilter.matrix[19] = x/2000;
-    console.log(x/2000);
+function func20(x, y) {
+    Clock.ColorFilter.matrix[19] = x / 2000;
+    console.log(x / 2000);
 }
-
-

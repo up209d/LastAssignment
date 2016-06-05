@@ -71,7 +71,7 @@ var LoadingAnimation = function(DisplayContainer) {
 
         TweenMax.to(this.bg, 0.2, {alpha: percent/100});
         this.updateCount = typeof this.updateCount == 'undefined' ? 0 : (this.updateCount >= 3 ? 0 : this.updateCount+1 );
-        
+
         this.title.text = "Loading";
         for (i=0;i<this.updateCount;i++) {
 
@@ -135,10 +135,19 @@ loader.on('complete', ...); // called once when the queued resources all load.
 
 var assetsPath = 'assets/images/';
 var assetsClipPath = 'assets/images/clips/';
+var assetsClipSheetsPath = 'assets/images/clipsheets/'
 
 var filesLoader = [
 
     // Normal Images Resource
+    assetsPath+'Owl.png',
+    assetsPath+'Owl-Color.png',
+    assetsPath+'OwlText.png',
+    assetsPath+'OwlText-Color.png',
+    assetsPath+'Bird.png',
+    assetsPath+'Bird-Color.png',
+    assetsPath+'BirdText.png',
+    assetsPath+'BirdText-Color.png',
     assetsPath+'Cloud.png',
     assetsPath+'Flexible-Color.png',
     assetsPath+'Flexible.png',
@@ -515,6 +524,7 @@ var filesLoader = [
     assetsClipPath+'Water-89.jpg',
     assetsClipPath+'Water-9.jpg',
 
+    //assetsClipSheetsPath+'clips.png',
     'assets/Test/hole.png',
     'assets/Test/diss.jpg',
     'assets/Test/dis.png',
@@ -542,7 +552,6 @@ var Loader = new PIXI.loaders.Loader();
 var resourceTexture;
 
 Loader
-
     .add(filesLoader)
     .on('progress',function(e){
         LoadingObject.loading(e.progress);
