@@ -72,6 +72,8 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
         this.Container.filters = [this.DisplacementFilter];
     } else {
         this.DisplacementSprite.renderable = false;
+        this.DisplacementSprite.visible = false;
+        this.Color.blendMode = PIXI.BLEND_MODES.MULTIPLY;
     }
 
     // this.Sketch.filters = [this.DisplacementFilterAround];
@@ -104,37 +106,99 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     this.Stage.position.set(xPos,yPos);
     this.Stage.scale.set(scale);
 
-    self.show = fThrottle(function(delay) {
+    self.show = new TimelineMax({
+            paused:true,
+            delay: 0
+        });
 
-        delay = typeof delay !== 'undefined' ? delay : 0;
-
-        console.log(delay);
-
-        this.ColorMask.object.gotoAndStop(0);
-        this.SketchMask.object.gotoAndStop(0);
-
-        debounce(function(){
-            this.ColorMask.object.gotoAndPlay(0);
-        }.bind(this),500);
-
-        debounce(function(){
+    self.show.call(
+        function(){
+            this.ColorMask.object.gotoAndStop(0);
             this.SketchMask.object.gotoAndPlay(0);
-        }.bind(this),0);
+        },null,this
+    );
 
-    },250);
+    self.show.call(
+        function(){
+            this.ColorMask.object.gotoAndPlay(0);
+        },
+        null,this,0.5
+    );
 
+    self.zoomInRight = new TimelineMax({
+        paused: true
+    });
+
+    self.zoomInRight
+        .add(
+            TweenMax.fromTo(this.Container.scale,2,{
+                x:0,
+                y:0
+            },{
+                x:1,
+                y:1,
+                ease: Sine.easeOut,
+                immediateRender:false,
+                onStart: function(){
+                    this.Container.pivot.set(this.Sketch.width/2,this.Sketch.height/2);
+                    this.Container.position.set(this.Sketch.width/2,this.Sketch.height/2);
+                }.bind(this)
+            }),0)
+        .add(
+            TweenMax.fromTo(this.Container,3,{
+                rotation: "-=0.5"
+            },{
+                rotation: "+=0.5",
+                immediateRender: false,
+                ease: Elastic.easeOut.config(1,0.2)
+            }),0
+        );
+
+    self.zoomInLeft = new TimelineMax({
+        paused: true,
+        repeat: -1,
+        repeatDelay: 0.5
+    });
+
+    self.zoomInLeft
+        .add(
+            TweenMax.fromTo(this.Container.scale,2,{
+                x:0,
+                y:0
+            },{
+                x:1,
+                y:1,
+                ease: Sine.easeOut,
+                immediateRender:false,
+                onStart: function(){
+                    this.Container.pivot.set(-this.Sketch.width/2,this.Sketch.height/2);
+                    this.Container.position.set(-this.Sketch.width/2,this.Sketch.height/2);
+                }.bind(this)
+            }),0)
+        .add(
+            TweenMax.fromTo(this.Container,3,{
+                rotation: "-=0.5"
+            },{
+                rotation: "+=0.5",
+                immediateRender: false,
+                ease: Elastic.easeOut.config(1,0.2)
+            }),0
+        );
 
     if (autoplay) {
-        this.show(delayTime);
+        self.show.restart(true);
     }
 
     this.Stage.interactive = true;
 
-    this.Stage.on('mousedown',function(){
+    ['click','tap'].forEach(function(e){
+        self.Stage.on(e,function(){
 
-        this.show(100);
+            self.zoomInLeft.play(0);
+            self.show.play(0);
 
-    }.bind(this));
+        });
+    });
 
 
     DisplayContainer.addChild(this.Stage);

@@ -1,7 +1,7 @@
 /**
  * Created by UP on 5/25/16.
  */
-var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale) {
+var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale,letterspacing) {
 
     var self = this;
 
@@ -20,20 +20,46 @@ var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale) {
             break;
         }
         case 'normal': {
-            this.font = 'dk_pimpernelregular';
+            this.font = 'kg_first_time_in_foreverRg';
             break;
         }
         default: {
-            this.font = 'kg_summer_sunshineregular';
+            this.font = 'dk_pimpernelregular';
             break;
         }
     }
 
 
+    switch (letterspacing) {
+        case 'wide': {
+            this.charcode = 8202;
+            content = content.split('').join(String.fromCharCode(this.charcode));
+            break;
+        }
+
+        case 'wider': {
+            this.charcode = 8201;
+            content = content.split('').join(String.fromCharCode(this.charcode));
+            break;
+        }
+
+        case 'widest': {
+            this.charcode = 8195;
+            content = content.split('').join(String.fromCharCode(this.charcode));
+            break;
+        }
+
+        default: {
+            break;
+        }
+    }
+
+
+
     this.Container = new PIXI.Container();
     this.Stage = new PIXI.Container();
 
-    this.Content = new PIXI.Text(content,{fontFamily: this.font,fontSize: this.size});
+    this.Content = new PIXI.Text(content,{fontFamily: this.font,fontSize: this.size},1.5);
     this.Content.anchor.set(0.5);
 
     this.Container.addChild(this.Content);
@@ -61,8 +87,9 @@ var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale) {
         this.Container.filters = [this.DisplacementFilter];
     } else {
         this.DisplacementSprite.renderable = false;
+        this.DisplacementSprite.visible = false;
     }
-    
+
     this.Stage.addChild(this.DisplacementSprite);
     this.Stage.addChild(this.Container);
 

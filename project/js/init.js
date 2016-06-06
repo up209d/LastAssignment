@@ -123,7 +123,7 @@ function RenderAnimation() {
 
 WebFont.load({
     custom:{
-        families: ['kg_summer_sunshineregular','always_foreverbold','dk_pimpernelregular'],
+        families: ['kg_summer_sunshineregular','kg_first_time_in_foreverRg','always_foreverbold','dk_pimpernelregular'],
         urls: ['./assets/fonts/webfonts/stylesheet.css']
 
     },
@@ -184,7 +184,6 @@ function fThrottle(func, delay) {
     var wait = false;
     return function() {
         var context = this, args = arguments;
-        console.log(args);
         if (!wait) {
             func.apply(context, args);
             wait = true;
@@ -194,6 +193,27 @@ function fThrottle(func, delay) {
         }
     }
 }
+
+// fDelay call delay value dynamically by the func's first param it applies
+// exp: self.show = fDelay(function(delay){});
+
+function fDelay(func, immediate) {
+    var timeout;
+    immediate = typeof immediate !== 'undefined' ? immediate : false;
+    return function() {
+        var context = this, args = arguments;
+        args[0] = typeof args[0] !== 'undefined' ? args[0] : 100;
+        var later = function() {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, args[0]);
+        if (callNow) func.apply(context, args);
+    }
+};
+
 
 
 // EXP this.object.playFromTo(frame,this.object.totalFrames-1,1,0);

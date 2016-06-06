@@ -20,6 +20,18 @@ function init() {
 
     Bg = new Background(scene);
 
+    Particle = new FloatThing(
+        scene,
+        [
+            resourceTexture[assetsPath+'Flexible.png'].texture,
+            resourceTexture[assetsPath+'Health.png'].texture,
+            resourceTexture[assetsPath+'Success.png'].texture,
+            resourceTexture[assetsPath+'Intelligent.png'].texture,
+            resourceTexture[assetsPath+'Social.png'].texture,
+            resourceTexture[assetsPath+'Organize.png'].texture
+        ]
+    );
+
     var Bunny = function (DisplayContainer) {
         this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
         this.each.anchor.x = 0.5;
@@ -503,25 +515,29 @@ function init() {
         ease: Sine.easeOut
     });
 
+    intro_p = 'Are you the kind of person who gets up early for a fresh ' +
+        'start of the day'
+
+    intro_p2 = 'or do you stay up late at night to ' +
+        'finish your work?'
+
     intro = new Text(
         scene,
-        'Are you the kind of person who gets up early for a fresh' +
-        ' start of the day or do you stay up late at night to' +
-        ' finish your work?',
+        intro_p,
         'normal',
         80,
         window.innerWidth/2,
         window.innerHeight/2,
-        0.5
+        0.15
     );
 
     intro.Content.style.wordWrap = true;
-    intro.Content.style.wordWrapWidth = window.innerWidth*0.5;
     intro.Content.style.align = 'center';
-    intro.Content.style.lineHeight = 90;
-    intro.Content.style.padding = 40;
-    intro.Content.scale.y = ((intro.Content.style.padding/2) + intro.size)/intro.size;
-    intro.Content.position.y += (intro.Content.style.padding/2) + intro.size;
+    intro.Content.style.lineHeight = 100;
+    // intro.Content.style.padding = 40;
+    // intro.Content.scale.y = ((intro.Content.style.padding/2) + intro.size)/intro.size;
+    // intro.Content.position.y += (intro.Content.style.padding/2) + intro.size;
+    intro.Content.style.wordWrapWidth = 0.7*(window.innerWidth*intro.Content.scale.y);
 
     intro.Stage.interactive = true;
 
@@ -553,59 +569,65 @@ function init() {
     TweenMax.fromTo(intro.Stage,2,{alpha:0},{alpha:1});
     TweenMax.from(intro.Stage.scale,5,{x:0.1,y:0.1,ease: Elastic.easeOut});
 
-    // testCont =  new PIXI.Container();
-    //
-    // DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
-    //
-    //
-    // Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
-    //
-    // DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
-    // DisplacmentFilter.scale.set(0);
-    //
-    // Skt.filters = [DisplacmentFilter];
-    // stage.filters = [DisplacmentFilter];
-    //
-    // Skt.anchor.set(0.5);
-    // Skt.position.set(window.innerWidth/2,window.innerHeight/2);
-    //
-    // DisSprite.anchor.set(0.5);
-    // DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
-    // DisSprite.scale.set(1);
-    // //DisplacmentFilter.scale.set(10);
-    // // TweenMax.fromTo(DisplacmentFilter.scale,1,{x:0,y:0},{x:50,y:50,ease: Sine.easeInOut,repeat:-1,yoyo:true});
-    // // TweenMax.fromTo(DisSprite.scale,2,{x:0,y:0},{x:3,y:3,repeat:-1,ease: Sine.easeOut});
-    // //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
-    //
-    // window.addEventListener('click',function(e){
-    //     //console.log(e);
-    //     DisSprite.position.set(e.clientX,e.clientY);
-    //     TweenMax.fromTo(DisplacmentFilter.scale,0.5,{x:0,y:0},{x:30,y:30,ease: Sine.easeIn,repeat:1,yoyo:true});
-    //     TweenMax.fromTo(DisSprite.scale,1,{x:0.1,y:0.1},{x:1.0,y:1.0,repeat:0,ease: Sine.easeOut});
-    // });
-    //
-    // DisplacmentFilter.padding = 200;
-    // //Quick Hack fix bug for v4
-    // DisplacmentFilter.glShaderKey = 6789;
-    //
-    // //console.log(DisplacmentFilter);
-    //
-    //
-    // function DisSpriteRotation() {
-    //
-    //     requestAnimationFrame(DisSpriteRotation);
-    //     //DisSprite.rotation += 0.05;
-    //
-    // }
-    //
-    // DisSpriteRotation();
-    //
-    // testCont.addChild(DisSprite);
-    // //testCont.addChild(Skt);
-    // stage.addChild(testCont);
+
+    if (browserDetection.is("WebKit")) {
+        testCont =  new PIXI.Container();
+
+        DisSprite =  new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
 
 
+        Skt = new PIXI.Sprite(resourceTexture[assetsPath+'GDS-Color-After.png'].texture);
 
+        DisplacmentFilter = new PIXI.filters.DisplacementFilter(DisSprite);
+        DisplacmentFilter.scale.set(0);
+
+        Skt.filters = [DisplacmentFilter];
+        scene.filters = [DisplacmentFilter];
+
+        Skt.anchor.set(0.5);
+        Skt.position.set(window.innerWidth/2,window.innerHeight/2);
+
+        DisSprite.anchor.set(0.5);
+        DisSprite.position.set(window.innerWidth/2,window.innerHeight/2);
+        DisSprite.scale.set(1);
+        //DisplacmentFilter.scale.set(10);
+        // TweenMax.fromTo(DisplacmentFilter.scale,1,{x:0,y:0},{x:50,y:50,ease: Sine.easeInOut,repeat:-1,yoyo:true});
+        // TweenMax.fromTo(DisSprite.scale,2,{x:0,y:0},{x:3,y:3,repeat:-1,ease: Sine.easeOut});
+        //TweenMax.to(Skt.position,1,{x:window.innerWidth/2-200,y:window.innerHeight/2-200,reapeat:-1})
+
+        ['click','touchend'].forEach(function(each){
+            window.addEventListener(each,function(e){
+                //console.log(e);
+                var posX = typeof e.clientX !== 'undefined' ? e.clientX : typeof e.changedTouches[0].clientX !== 'undefined' ? e.changedTouches[0].clientX : 0;
+                var posY = typeof e.clientY !== 'undefined' ? e.clientY : typeof e.changedTouches[0].clientY !== 'undefined' ? e.changedTouches[0].clientY : 0;
+                DisSprite.position.set(posX,posY);
+                TweenMax.fromTo(DisplacmentFilter.scale,0.5,{x:0,y:0},{x:30,y:30,ease: Sine.easeIn,repeat:1,yoyo:true});
+                TweenMax.fromTo(DisSprite.scale,1,{x:0.1,y:0.1},{x:1.0,y:1.0,repeat:0,ease: Sine.easeOut});
+            });
+        });
+
+        DisplacmentFilter.padding = 200;
+        //Quick Hack fix bug for v4
+        DisplacmentFilter.glShaderKey = 6789;
+
+        //console.log(DisplacmentFilter);
+
+
+        function DisSpriteRotation() {
+
+            requestAnimationFrame(DisSpriteRotation);
+            //DisSprite.rotation += 0.05;
+
+        }
+
+        DisSpriteRotation();
+
+        testCont.addChild(DisSprite);
+        //testCont.addChild(Skt);
+        stage.addChild(testCont);
+    }
+
+    
     // testSprite = new PIXI.Sprite(resourceTexture['assets/Test/ripple.png'].texture);
     // testSprite.anchor.set(0);
     // testSprite.position.set(0);

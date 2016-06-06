@@ -57,7 +57,11 @@ var Person = function(
     ];
 
     if (!browserDetection.isHandheld()) {
-        this.ColorBefore.filters = [this.ColorBeforeFilter];
+        if(this.ColorBefore.filters) {
+            this.ColorBefore.filters.push(this.ColorBeforeFilter);
+        } else {
+            this.ColorBefore.filters = [this.ColorBeforeFilter];
+        }
     }
 
     this.ColorAfter = new PIXI.Sprite(resourceTexture[assetsPath+Prefix+'-Color-Before.png'].texture);
@@ -77,7 +81,13 @@ var Person = function(
     ];
 
     if (!browserDetection.isHandheld()) {
-        this.ColorAfter.filters = [this.ColorAfterFilter];
+        if(this.ColorAfter.filters) {
+            this.ColorAfter.filters.push(this.ColorAfterFilter);
+        } else {
+            this.ColorAfter.filters = [this.ColorAfterFilter];
+        }
+    } else {
+        this.ColorAfter.blendMode = PIXI.BLEND_MODES.MULTIPLY;
     }
 
     this.ColorAfter_TransitionMask = new transitionColor(this.Container,this.ColorAfter,'water',false);

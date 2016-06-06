@@ -93,6 +93,7 @@ var transitionColor = function(DisplayContainer,object,type,autoplay,timeout) {
 
 
     this.object = new PIXI.extras.MovieClip(this.textures);
+    this.maskFilter = new PIXI.SpriteMaskFilter(this.object);
     // console.log(object);
     this.object.anchor.set(0.5);
     //this.object.position.set(object.position.x-(object.width*object.anchor.x)+(object.width/2),object.position.y-(object.height*object.anchor.y)+(object.height/2));
@@ -107,6 +108,7 @@ var transitionColor = function(DisplayContainer,object,type,autoplay,timeout) {
 
     if (browserDetection.isHandheld()) {
         this.object.renderable = false;
+        this.object.visible = false;
     } else {
         object.mask = this.object;
     }
