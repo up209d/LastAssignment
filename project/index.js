@@ -2,35 +2,7 @@ function init() {
 
     console.log('Initing');
 
-    var scene = new PIXI.Container();
-
-    // Pivot value is not depend on any width and height of container
-    // it s simple value that for container rotate around
-    // when it set to x y value so the container position now start from that point
-    // container itself doesnt have width and height, so it s always full window width height
-    // pivot 0 0 will be the 0 0 position of window.
-    // pivot half screen so the container will move back to half screen offset
-    // that why we have to set position is half screen move forward to compensate.
-    scene.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
-    scene.position.set(window.innerWidth / 2, window.innerHeight / 2);
-    scene.scale.set(3);
-    // Test Pivot Rotation Point
-    //TweenMax.to(scene,10,{rotation:1000,repeat:0});
-
-
-    Bg = new Background(scene);
-
-    Particle = new FloatThing(
-        scene,
-        [
-            resourceTexture[assetsPath+'Flexible.png'].texture,
-            resourceTexture[assetsPath+'Health.png'].texture,
-            resourceTexture[assetsPath+'Success.png'].texture,
-            resourceTexture[assetsPath+'Intelligent.png'].texture,
-            resourceTexture[assetsPath+'Social.png'].texture,
-            resourceTexture[assetsPath+'Organize.png'].texture
-        ]
-    );
+    // ---- BEGIN BUNNY ----
 
     var Bunny = function (DisplayContainer) {
         this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
@@ -67,7 +39,6 @@ function init() {
         bunnyTimeline.play();
     };
 
-
     window.onmousemove = bunnyFollow;
 
     //bg.bg.on('mousemove',bunnyFollow);
@@ -78,15 +49,25 @@ function init() {
         // TweenMax.to(transitionSketchMask.object,0.2,{width:nocolor.width,height:nocolor.height});
     }
 
+    bunnyPot.interactive = false;
+
+
+    // In order to click through interactive false Sprite
+    // The mother container of them has to be set at
+    // interactive false
+
+    stage.addChild(bunnyPot);
+
+    // stage.interactive = true;
+
+
+    // ---- END BUNNY ----
+
     circleScene = {
         circleRadius: 1200,
         circlePI: 3.14,
         circlePosition: []
     }
-
-    Bg.bg.width += circleScene.circleRadius*2;
-    Bg.bg.height +=  circleScene.circleRadius;
-
 
     for (i = 0; i < 12; i++) {
         circleScene.circlePosition.push({
@@ -95,155 +76,56 @@ function init() {
         });
     }
 
-    GraphicDesigner = new Person(
-        'GD',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[10].x,
-        window.innerHeight / 2 + circleScene.circlePosition[10].y,
-        true,
-        0.5,
-        50, -40
-    );
+    scene = new PIXI.Container();
 
-    GraphicDesignerSleep = new Person(
-        'GDS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[8].x,
-        window.innerHeight / 2 + circleScene.circlePosition[8].y,
-        true,
-        0.5, -140,
-        80
-    );
+    Bg = new Background(scene);
+    Bg.bg.width += circleScene.circleRadius*2;
+    Bg.bg.height +=  circleScene.circleRadius;
 
-    Model = new Person(
-        'MD',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[3].x,
-        window.innerHeight / 2 + circleScene.circlePosition[3].y,
-        true,
-        0.5, -10, -55
-    );
+    scene_navigation = new PIXI.Container();
+    scene_navigation.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene_navigation.position.set(window.innerWidth / 2, window.innerHeight / 2);
 
-    ModelWork = new Person(
-        'MDS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[7].x,
-        window.innerHeight / 2 + circleScene.circlePosition[7].y,
-        true,
-        0.5, -10, -40
-    );
+    scene_navigation_center = new PIXI.Container();
+    scene_navigation_center.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene_navigation_center.position.set(window.innerWidth / 2, window.innerHeight / 2);
 
-    Science = new Person(
-        'SC',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[11].x,
-        window.innerHeight / 2 + circleScene.circlePosition[11].y,
-        true,
-        0.5,
-        0, -30
-    );
+    scene_navigation_bound = new PIXI.Container();
+    scene_navigation_bound.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene_navigation_bound.position.set(window.innerWidth / 2, window.innerHeight / 2);
 
-    ScienceSleep = new Person(
-        'SCS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[5].x,
-        window.innerHeight / 2 + circleScene.circlePosition[5].y,
-        true,
-        0.5, -5, -60
-    );
+    scene_navigation.addChild(scene_navigation_bound);
+    scene_navigation.addChild(scene_navigation_center);
+    scene.addChild(scene_navigation);
 
-    Sale = new Person(
-        'SM',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[4].x,
-        window.innerHeight / 2 + circleScene.circlePosition[4].y,
-        true,
-        0.5, 14, -60
-    );
-
-    SaleDinner = new Person(
-        'SMS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[0].x,
-        window.innerHeight / 2 + circleScene.circlePosition[0].y,
-        true,
-        0.5,
-        20, -55
-    );
-
-    Student = new Person(
-        'ST',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[2].x,
-        window.innerHeight / 2 + circleScene.circlePosition[2].y,
-        true,
-        0.5, 55, -35
-    );
-
-    StudentWake = new Person(
-        'STS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[1].x,
-        window.innerHeight / 2 + circleScene.circlePosition[1].y,
-        true,
-        0.5, -60, 25
-    );
-
-    Teacher = new Person(
-        'TC',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[6].x,
-        window.innerHeight / 2 + circleScene.circlePosition[6].y,
-        true,
-        0.5, 10, -45
-    );
-
-    TeacherCook = new Person(
-        'TCS',
-        scene,
-        window.innerWidth / 2 + circleScene.circlePosition[9].x,
-        window.innerHeight / 2 + circleScene.circlePosition[9].y,
-        true,
-        0.5, 30, -65
-    );
-
-    TweenMax.to(circleScene, 10, {
-        circleRadius: 1200,
-        onUpdate: function () {
-
-            for (i = 0; i < 12; i++) {
-                circleScene.circlePosition[i].x = Math.round(Math.cos(circleScene.circlePI * (i / 6)) * circleScene.circleRadius);
-                circleScene.circlePosition[i].y = Math.round(Math.sin(circleScene.circlePI * (i / 6)) * circleScene.circleRadius);
-            }
-
-        }
-    });
+    stage.addChild(scene);
+    stage.interactive = false;
 
     scene.interactive = true;
     scene.buttonMode = true;
     scene.defaultCursor = 'pointer';
-
     scene.isDragging = false;
+
     scene.boundArea = {
         top: (circleScene.circleRadius + window.innerHeight / 2),
         right: window.innerWidth / 2 - circleScene.circleRadius,
         bottom: window.innerHeight / 2 - circleScene.circleRadius,
         left: (circleScene.circleRadius + window.innerWidth / 2)
     };
-    bunnyPot.interactive = false;
 
-
-    // In order to click through interactive false Sprite
-    // The mother container of them has to be set at
-    // interactive false
-
-    stage.interactive = false;
-
-    stage.addChild(scene);
-    stage.addChild(bunnyPot);
-
-
-    // stage.interactive = true;
+    // Pivot value is not depend on any width and height of container
+    // it s simple value that for container rotate around
+    // when it set to x y value so the container position now start from that point
+    // container itself doesnt have width and height, so it s always full window width height
+    // pivot 0 0 will be the 0 0 position of window.
+    // pivot half screen so the container will move back to half screen offset
+    // that why we have to set position is half screen move forward to compensate.
+    scene.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene.position.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene.scale.set(3);
+    // Test Pivot Rotation Point
+    //TweenMax.to(scene_navigation_center,100,{rotation:1000,repeat:0});
+    //TweenMax.to(stage,100,{rotation:1000,repeat:0});
 
     scene.moving = function (e) {
 
@@ -376,11 +258,142 @@ function init() {
     });
 
 
-    scene_center = new PIXI.Container();
+    GraphicDesigner = new Person(
+        'GD',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[10].x,
+        window.innerHeight / 2 + circleScene.circlePosition[10].y,
+        true,
+        0.5,
+        50, -40,
+        {
+            onClickTap: fThrottle(function(){
+                TweenMax.to(scene_navigation,1,{
+                    alpha:0,
+                    delay:0.5,
+                    onComplete: function(){
+                        scene.addChild(this.Stage);
+                    }.bind(this)
+                });
+                Particle = new FloatThing(
+                    stage,
+                    'stuff',
+                    50,
+                    window.innerWidth*0.8,
+                    window.innerHeight*0.8
+                );
+            },1500),
+            onHover: function(){
+
+            }
+        }
+    );
+
+    GraphicDesignerSleep = new Person(
+        'GDS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[8].x,
+        window.innerHeight / 2 + circleScene.circlePosition[8].y,
+        true,
+        0.5, -140,
+        80
+    );
+
+    Model = new Person(
+        'MD',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[3].x,
+        window.innerHeight / 2 + circleScene.circlePosition[3].y,
+        true,
+        0.5, -10, -55
+    );
+
+    ModelWork = new Person(
+        'MDS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[7].x,
+        window.innerHeight / 2 + circleScene.circlePosition[7].y,
+        true,
+        0.5, -10, -40
+    );
+
+    Science = new Person(
+        'SC',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[11].x,
+        window.innerHeight / 2 + circleScene.circlePosition[11].y,
+        true,
+        0.5,
+        0, -30
+    );
+
+    ScienceSleep = new Person(
+        'SCS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[5].x,
+        window.innerHeight / 2 + circleScene.circlePosition[5].y,
+        true,
+        0.5, -5, -60
+    );
+
+    Sale = new Person(
+        'SM',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[4].x,
+        window.innerHeight / 2 + circleScene.circlePosition[4].y,
+        true,
+        0.5, 14, -60
+    );
+
+    SaleDinner = new Person(
+        'SMS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[0].x,
+        window.innerHeight / 2 + circleScene.circlePosition[0].y,
+        true,
+        0.5,
+        20, -55
+    );
+
+    Student = new Person(
+        'ST',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[2].x,
+        window.innerHeight / 2 + circleScene.circlePosition[2].y,
+        true,
+        0.5, 55, -35
+    );
+
+    StudentWake = new Person(
+        'STS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[1].x,
+        window.innerHeight / 2 + circleScene.circlePosition[1].y,
+        true,
+        0.5, -60, 25
+    );
+
+    Teacher = new Person(
+        'TC',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[6].x,
+        window.innerHeight / 2 + circleScene.circlePosition[6].y,
+        true,
+        0.5, 10, -45
+    );
+
+    TeacherCook = new Person(
+        'TCS',
+        scene_navigation_bound,
+        window.innerWidth / 2 + circleScene.circlePosition[9].x,
+        window.innerHeight / 2 + circleScene.circlePosition[9].y,
+        true,
+        0.5, 30, -65
+    );
 
 
     vs = new Text(
-        scene_center,
+        scene_navigation_center,
         'vs.',
         '3d',
         66,
@@ -390,7 +403,7 @@ function init() {
     );
 
     OwlText = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'OwlText.png'].texture,
         resourceTexture[assetsPath + 'OwlText-Color.png'].texture,
         window.innerWidth / 2 - 400,
@@ -402,7 +415,7 @@ function init() {
 
 
     Owl = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Owl.png'].texture,
         resourceTexture[assetsPath + 'Owl-Color.png'].texture,
         window.innerWidth / 2 - 500,
@@ -414,7 +427,7 @@ function init() {
 
 
     BirdText = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'BirdText.png'].texture,
         resourceTexture[assetsPath + 'BirdText-Color.png'].texture,
         window.innerWidth / 2 + 400,
@@ -426,7 +439,7 @@ function init() {
 
 
     Bird = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Bird.png'].texture,
         resourceTexture[assetsPath + 'Bird-Color.png'].texture,
         window.innerWidth / 2 + 500,
@@ -437,7 +450,7 @@ function init() {
     );
 
     Success = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Success.png'].texture,
         resourceTexture[assetsPath + 'Success-Color.png'].texture,
         window.innerWidth / 2 -150,
@@ -448,8 +461,7 @@ function init() {
     );
 
     Clock = new Thing(
-
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Flexible.png'].texture,
         resourceTexture[assetsPath + 'Flexible-Color.png'].texture,
         window.innerWidth / 2,
@@ -460,7 +472,7 @@ function init() {
     );
 
     Intelligent = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Intelligent.png'].texture,
         resourceTexture[assetsPath + 'Intelligent-Color.png'].texture,
         window.innerWidth / 2 + 150,
@@ -471,7 +483,7 @@ function init() {
     );
 
     Health = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Health.png'].texture,
         resourceTexture[assetsPath + 'Health-Color.png'].texture,
         window.innerWidth / 2 +150,
@@ -482,7 +494,7 @@ function init() {
     );
 
     Organize = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Organize.png'].texture,
         resourceTexture[assetsPath + 'Organize-Color.png'].texture,
         window.innerWidth / 2,
@@ -494,7 +506,7 @@ function init() {
 
 
     Social = new Thing(
-        scene_center,
+        scene_navigation_center,
         resourceTexture[assetsPath + 'Social.png'].texture,
         resourceTexture[assetsPath + 'Social-Color.png'].texture,
         window.innerWidth / 2 - 150,
@@ -503,17 +515,6 @@ function init() {
         true,
         1000
     );
-
-
-    //scene.addChild(scene_center);
-
-    scene_center.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
-    scene_center.position.set(window.innerWidth / 2, window.innerHeight / 2);
-
-    TweenMax.from(scene_center, 2, {
-        alpha: 0,
-        ease: Sine.easeOut
-    });
 
     intro_p = 'Are you the kind of person who gets up early for a fresh ' +
         'start of the day'
@@ -545,9 +546,7 @@ function init() {
         TweenMax.to(e.target,1,{alpha:0,onComplete: function(){
             this.parent.removeChild(this);
         }.bind(this)});
-        e.target.parent.addChild(scene_center);
-        TweenMax.fromTo(scene_center,2,{alpha:0},{alpha:1});
-
+        TweenMax.fromTo(scene_navigation_center,2,{alpha:0},{alpha:1});
         TweenMax.fromTo(scene.scale, 5, {
             x: 3,
             y: 3
@@ -556,8 +555,6 @@ function init() {
             y: 1,
             ease: Back.easeOut
         });
-
-
     }
 
     intro.mask = new transitionColor(intro.Container,intro.Content,'water',true);
@@ -678,7 +675,7 @@ function init() {
     //
     // stage.addChild(testMask);
 
-    TVNoiseText = new TilingTVNoise(stage, 22, window.innerWidth, window.innerHeight);
+    //TVNoiseText = new TilingTVNoise(stage, 22, window.innerWidth, window.innerHeight);
 
     var updatingRender, updatingObject;
 
@@ -706,7 +703,7 @@ function init() {
             //console.log (renderer);
 
             updatingObject = setTimeout(function () {
-                TVNoiseText.update(window.innerWidth, window.innerHeight);
+                //TVNoiseText.update(window.innerWidth, window.innerHeight);
                 stop = false;
             }, 500);
 

@@ -10,10 +10,19 @@ var Person = function(
     autoplay,
     scale,
     xPosHead,
-    yPosHead
+    yPosHead,
+    callback
     ) {
 
     var PersonObject = this;
+
+    callback = typeof callback !== 'undefined' ? callback : {
+        onClickTap : function(){},
+        onHover: function(){}
+    };
+
+    callback.onClickTap = typeof callback.onClickTap !== 'undefined' ? callback.onClickTap.bind(PersonObject) : function(){};
+    callback.onHover = typeof callback.onHover !== 'undefined' ? callback.onHover.bind(PersonObject) : function(){};
 
     autoplay = typeof autoplay == 'undefined' ? false : autoplay;
 
@@ -127,12 +136,10 @@ var Person = function(
 
     PersonObject.Head.interactive = true;
 
-    PersonObject.Head.on('mousedown',function(e){
+    PersonObject.Head.on('mousedown',fDebounce(function(e){
         //console.log();
-        debounce(function(){
-            PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
-        },250);
-    });
+        PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
+    },250));
 
     // console.log(PersonObject.Head);
     //
@@ -186,11 +193,14 @@ var Person = function(
     // in this case below this.Container without bind will be use as 'this' in the
     // event function, but when we bind(this)(this here mean 'this person')
     // so the 'whole person object' will be use as 'this' in the function
-    this.Container.on('mousedown',function(e){
-        debounce(function(){
+    ['click','tap'].forEach(function(e){
+        this.Container.on(e,fDebounce(function(e){
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
             PersonObject.ColorAfter_TransitionMask.playReverse();
+
+            callback.onClickTap();
+
             // TweenMax.fromTo([PersonObject.Head.scale],1,{x:0.5,y:0.5},{x:1,y:1,ease: Back.easeOut,
             //     onStart:function(){
             //         PersonObject.Container.addChild(PersonObject.Head);
@@ -198,17 +208,16 @@ var Person = function(
             // TweenMax.fromTo([PersonObject.Head],0.5,{alpha:0},{alpha: 1, ease: Sine.easeOut},0);
             // TweenMax.fromTo([PersonObject.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1},0);
             // //console.log(PersonObject.Container);
-        },500);
-
+            
+        }.bind(this),500));
     }.bind(this));
 
     this.Container.on('mouseover',fDebounce(function(e){
-
         //console.log('Forward');
         TweenMax.fromTo(PersonObject.Container.scale,0.3,{x:"+=0",y:"+=0"},{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
         PersonObject.ColorAfter_TransitionMask.play();
         PersonObject.Sketch.play();
-
+        callback.onHover();
     },200));
 
     this.Container.on('mouseout',fDebounce(function(e){
@@ -254,11 +263,13 @@ var Person = function(
     this.Stage = new PIXI.Container();
     this.Stage.pivot.set(0,0);
     this.Stage.rotation = 0;
-    //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
-    this.Stage.scale.set(scale);
-    //TweenMax.to(this.Container, 100,{rotation: 500, repeat: -1});
-    this.Stage.position.set(xPos,yPos);
 
+    //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
+    //TweenMax.to(this.Stage, 100,{rotation: 500, repeat: -1});
+    //TweenMax.to(this.Stage, 100,{rotation: 500, repeat: -1});
+
+    this.Stage.scale.set(scale);
+    this.Stage.position.set(xPos,yPos);
     this.Stage.addChild(this.Container);
     DisplayContainer.addChild(this.Stage);
 

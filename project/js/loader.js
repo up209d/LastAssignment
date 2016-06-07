@@ -537,7 +537,10 @@ var filesLoader = [
     'assets/Test/displace.jpg',
     'assets/Test/displace.png',
     'assets/Test/ripple.png',
-    'assets/Test/wave.png'
+    'assets/Test/wave.png',
+
+    // Sprite Sheet
+    assetsClipSheetsPath+'stuff.json'
 
 ];
 

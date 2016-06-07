@@ -155,9 +155,7 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
         );
 
     self.zoomInLeft = new TimelineMax({
-        paused: true,
-        repeat: -1,
-        repeatDelay: 0.5
+        paused: true
     });
 
     self.zoomInLeft

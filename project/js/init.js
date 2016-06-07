@@ -61,6 +61,9 @@ var NVE = NVE || {}; // NVE == Night Owl vs. Early Bird
 
 // Root Container
 var stage = new PIXI.Container();
+stage.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
+stage.position.set(window.innerWidth / 2, window.innerHeight / 2);
+
 
 var frameCount = 0;
 
@@ -246,4 +249,15 @@ PIXI.extras.MovieClip.prototype.playFromTo = function (beginFrame,endFrame,speed
             delay: delay/1000
         });
 
+}
+
+
+function convertObj(Obj) {
+    var result = [];
+    for (var value in Obj) {
+        if (Obj.hasOwnProperty(value)) {
+            result.push(Obj[value]);
+        }
+    }
+    return result;
 }

@@ -104,10 +104,13 @@ var transitionColor = function(DisplayContainer,object,type,autoplay,timeout) {
         this.object.scale.set(object.height/this.object.height);
     }
 
+
+    this.object.renderable = false;
     DisplayContainer.addChild(this.object);
 
+
+
     if (browserDetection.isHandheld()) {
-        this.object.renderable = false;
         this.object.visible = false;
     } else {
         object.mask = this.object;
