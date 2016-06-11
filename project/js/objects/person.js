@@ -16,25 +16,33 @@ var Person = function(
 
     var PersonObject = this;
 
+    PIXI.Container.call(this);
+
     callback = typeof callback !== 'undefined' ? callback : {
         onClickTap : function(){},
-        onHover: function(){}
+        onHoverIn: function(){},
+        onHoverOut: function(){}
     };
 
-    callback.onClickTap = typeof callback.onClickTap !== 'undefined' ? callback.onClickTap.bind(PersonObject) : function(){};
-    callback.onHover = typeof callback.onHover !== 'undefined' ? callback.onHover.bind(PersonObject) : function(){};
+    callback.onClickTap = typeof callback.onClickTap !== 'undefined' ? callback.onClickTap.bind(this) : function(){};
+    callback.onHoverIn = typeof callback.onHoverIn !== 'undefined' ? callback.onHoverIn.bind(this) : function(){};
+    callback.onHoverOut = typeof callback.onHoverOut !== 'undefined' ? callback.onHoverOut.bind(this) : function(){};
 
     autoplay = typeof autoplay == 'undefined' ? false : autoplay;
 
     scale = typeof scale == 'undefined' ? 1 : scale;
 
     Prefix = typeof Prefix == 'undefined' ? 'GD' : Prefix;
+    this.Prefix = Prefix;
 
     xPos = typeof xPos !== 'undefined' ? xPos : window.innerWidth/2;
     yPos = typeof yPos !== 'undefined' ? yPos : window.innerHeight/2;
 
     xPosHead = typeof xPosHead !== 'undefined' ? xPosHead : 0;
     yPosHead = typeof yPosHead !== 'undefined' ? yPosHead : 0;
+
+    this.xPosHead = xPosHead;
+    this.yPosHead = yPosHead;
 
     this.Container = new PIXI.Container();
 
@@ -71,6 +79,9 @@ var Person = function(
         } else {
             this.ColorBefore.filters = [this.ColorBeforeFilter];
         }
+    } else {
+        this.ColorBefore.renderable = false;
+        this.ColorBefore.visible = false;
     }
 
     this.ColorAfter = new PIXI.Sprite(resourceTexture[assetsPath+Prefix+'-Color-Before.png'].texture);
@@ -114,63 +125,17 @@ var Person = function(
     this.Sketch.loop = true;
     this.Sketch.stop();
 
-    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'cursor',false);
-
-    Prefix = 'GD';
-
-    this.Emotions = {
-        normal        :   resourceTexture[assetsPath+Prefix+'-Head-Center.png'].texture,
-        angry         :   resourceTexture[assetsPath+Prefix+'-Head-Center-Angry.png'].texture,
-        happy         :   resourceTexture[assetsPath+Prefix+'-Head-Center-Happy.png'].texture,
-        touchedhard   :   resourceTexture[assetsPath+Prefix+'-Head-Touched-Hard.png'].texture,
-        touchedlight  :   resourceTexture[assetsPath+Prefix+'-Head-Touched-Light.png'].texture,
-        upleft        :   resourceTexture[assetsPath+Prefix+'-Head-Up-Left.png'].texture,
-        upright       :   resourceTexture[assetsPath+Prefix+'-Head-Up-Right.png'].texture
+    if (browserDetection.isHandheld()) {
+        this.Sketch.play();
     }
 
-    this.Head = new PIXI.Sprite(this.Emotions.normal);
-    this.Head.anchor.set(0.5,1);
-    this.Head.position.set(xPosHead,yPosHead);
-    this.Head.scale.set(0);
-    this.Head.alpha = 1;
+    this.Sketch_TransitionMask = new transitionColor(this.Container,this.Sketch,'cursor',false);
 
-    PersonObject.Head.interactive = true;
-
-    PersonObject.Head.on('mousedown',fDebounce(function(e){
-        //console.log();
-        PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
-    },250));
-
-    // console.log(PersonObject.Head);
-    //
-    // PersonObject.Head.on('mousedown',function(e){
-    //     //console.log();
-    //     PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
-    // });
-    //
-    // PersonObject.Head.on('touchstart',function(e){
-    //     //console.log();
-    //     PersonObject.Head.texture = PersonObject.Emotions.touchedlight;
-    // });
-    // PersonObject.Head.on('mouseup',function(e){
-    //     //console.log();
-    //     PersonObject.Head.texture = PersonObject.Emotions.normal;
-    // });
-    // PersonObject.Head.on('touchend',function(e){
-    //     //console.log();
-    //     PersonObject.Head.texture = PersonObject.Emotions.normal;
-    // });
-    //
-    // window.addEventListener('mousemove',function(e){
-    //     console.log(e);
-    // });
-
+    this.animationSpeed = 1;
 
     this.Container.addChild(this.ColorBefore);
     this.Container.addChild(this.ColorAfter);
     this.Container.addChild(this.Sketch);
-    //PersonObject.Container.addChild(PersonObject.Head);
-
 
     // Pivot has the negative value as the x position and y position
     // while position positive value is move to right bottom
@@ -195,44 +160,26 @@ var Person = function(
     // so the 'whole person object' will be use as 'this' in the function
     ['click','tap'].forEach(function(e){
         this.Container.on(e,fDebounce(function(e){
-            PersonObject.ColorAfter_TransitionMask.playReverse();
-            PersonObject.ColorAfter_TransitionMask.playReverse();
-            PersonObject.ColorAfter_TransitionMask.playReverse();
-
+            // PersonObject.ColorAfter_TransitionMask.playReverse();
+            // PersonObject.ColorAfter_TransitionMask.playReverse();
+            // PersonObject.ColorAfter_TransitionMask.playReverse();
             callback.onClickTap();
-
-            // TweenMax.fromTo([PersonObject.Head.scale],1,{x:0.5,y:0.5},{x:1,y:1,ease: Back.easeOut,
-            //     onStart:function(){
-            //         PersonObject.Container.addChild(PersonObject.Head);
-            //     }},0);
-            // TweenMax.fromTo([PersonObject.Head],0.5,{alpha:0},{alpha: 1, ease: Sine.easeOut},0);
-            // TweenMax.fromTo([PersonObject.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1},0);
-            // //console.log(PersonObject.Container);
-            
         }.bind(this),500));
     }.bind(this));
 
     this.Container.on('mouseover',fDebounce(function(e){
-        //console.log('Forward');
-        TweenMax.fromTo(PersonObject.Container.scale,0.3,{x:"+=0",y:"+=0"},{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
-        PersonObject.ColorAfter_TransitionMask.play();
+        // console.log('Forward');
+        TweenMax.to(PersonObject.Container.scale,0.3,{x:"+=0.009",y:"+=0.009",ease: Sine.easeOut,yoyo:true,repeat:1});
+        PersonObject.ColorAfter_TransitionMask.play(undefined,this.animationSpeed,undefined);
         PersonObject.Sketch.play();
-        callback.onHover();
+        callback.onHoverIn.apply(this);
     },200));
 
     this.Container.on('mouseout',fDebounce(function(e){
-
-        //console.log('Backward');
-
-        PersonObject.ColorAfter_TransitionMask.playReverse();
+        // console.log('Backward');
+        PersonObject.ColorAfter_TransitionMask.playReverse(undefined,this.animationSpeed,undefined);
         PersonObject.Sketch.stop();
-
-        // TweenMax.fromTo([PersonObject.Head.scale],0.5,{x:1,y:1},{x:0.5,y:0.5,delay:0.25,ease: Sine.easeOut,
-        //     onComplete:function(){
-        //         PersonObject.Container.removeChild(PersonObject.Head);
-        //     }},0);
-        // TweenMax.fromTo([PersonObject.Head],0.5,{alpha:1},{alpha: 0,delay:0.25, ease: Sine.easeOut},0);
-
+        callback.onHoverOut.apply(this);
     },200));
 
     // It is different from bind and call, their role is similar as they
@@ -240,37 +187,444 @@ var Person = function(
     // but call will run the function immediately
 
     this.AnimationIn = new TimelineMax({delay: 0.5,paused: true});
-    this.AnimationIn
-        .add(function(){PersonObject.Sketch_TransitionMask.play(0);},0)
-        .add(function(){
-            PersonObject.ColorBefore_TransitionMask.play(0);
-            PersonObject.ColorBefore_TransitionMask.moving(0);
-        },0)
-        //.add(TweenMax.fromTo([this.Head.scale],1,{x:0,y:0},{x:1,y:1,ease: Back.easeOut},0),0)
-        //.add(TweenMax.fromTo([this.Head],2,{rotation:-0.05},{rotation: 0.05, ease: Sine.easeInOut, delay:0,yoyo: true, repeat:-1}),0);
+
+    if (browserDetection.isHandheld()) {
+        this.AnimationIn.add(
+            TweenMax.fromTo(
+                [
+                    PersonObject.ColorAfter,
+                    PersonObject.ColorBefore,
+                    PersonObject.Sketch
+                ],2,
+                {
+                    alpha:0
+                },
+                {
+                    alpha:1
+                }
+            ),0);
+    } else {
+        this.AnimationIn
+            .add(function(){PersonObject.Sketch_TransitionMask.play(0,this.animationSpeed);},0)
+            .add(function(){
+                PersonObject.ColorBefore_TransitionMask.play(0,0.5);
+                PersonObject.ColorBefore_TransitionMask.moving(0);
+            },0);
+    }
 
     this.Floating = new TimelineMax({paused:true});
     this.Floating
         .add(TweenMax.to([this.Container.position],Math.random()*2+2,{y: this.Container.position.y+Math.random()*50+50,ease: Sine.easeInOut, repeat:-1, yoyo:true}),1);
 
-
     if (autoplay) {
         this.AnimationIn.play();
-        //this.Floating.play();
-        //console.log(this.Container.position.y);
     }
 
     this.Stage = new PIXI.Container();
-    this.Stage.pivot.set(0,0);
-    this.Stage.rotation = 0;
+    this.Stage.addChild(this.Container);
+    this.addChild(this.Stage);
+
+    this.pivot.set(0,0);
+    this.rotation = 0;
 
     //TweenMax.to(this.Container,10,{rotation:5,repeat:-1});
     //TweenMax.to(this.Stage, 100,{rotation: 500, repeat: -1});
-    //TweenMax.to(this.Stage, 100,{rotation: 500, repeat: -1});
 
-    this.Stage.scale.set(scale);
-    this.Stage.position.set(xPos,yPos);
-    this.Stage.addChild(this.Container);
-    DisplayContainer.addChild(this.Stage);
+    this.scale.set(scale);
+    this.position.set(xPos,yPos);
+
+    DisplayContainer.addChild(this);
 
 }
+
+Person.prototype = Object.create(PIXI.Container.prototype);
+Person.prototype.constructor = Person;
+
+var PersonHead;
+PersonHead = function (PersonObject,
+                       emotionsOffset,
+                       rotation
+                       ) {
+
+    PIXI.Container.call(this);
+
+    var self = this;
+    PersonObject.PersonHead = this;
+
+    emotionsOffset = typeof emotionsOffset !== 'undefined' ?
+
+    {
+        normal: {
+            x: typeof emotionsOffset.normal !== 'undefined' ? emotionsOffset.normal.x : 0,
+            y: typeof emotionsOffset.normal !== 'undefined' ? emotionsOffset.normal.y : 0
+        },
+        touched: {
+            x: typeof emotionsOffset.touched !== 'undefined' ? emotionsOffset.touched.x : 0,
+            y: typeof emotionsOffset.touched !== 'undefined' ? emotionsOffset.touched.y : 0
+        },
+        upLeft: {
+            x: typeof emotionsOffset.upLeft !== 'undefined' ? emotionsOffset.upLeft.x : 0,
+            y: typeof emotionsOffset.upLeft !== 'undefined' ? emotionsOffset.upLeft.y : 0
+        },
+        up: {
+            x: typeof emotionsOffset.up !== 'undefined' ? emotionsOffset.up.x : 0,
+            y: typeof emotionsOffset.up !== 'undefined' ? emotionsOffset.up.y : 0
+        },
+        upRight: {
+            x: typeof emotionsOffset.upRight !== 'undefined' ? emotionsOffset.upRight.x : 0,
+            y: typeof emotionsOffset.upRight !== 'undefined' ? emotionsOffset.upRight.y : 0
+        },
+        downLeft: {
+            x: typeof emotionsOffset.downLeft !== 'undefined' ? emotionsOffset.downLeft.x : 0,
+            y: typeof emotionsOffset.downLeft !== 'undefined' ? emotionsOffset.downLeft.y : 0
+        },
+        down: {
+            x: typeof emotionsOffset.down !== 'undefined' ? emotionsOffset.down.x : 0,
+            y: typeof emotionsOffset.down !== 'undefined' ? emotionsOffset.down.y : 0
+        },
+        downRight: {
+            x: typeof emotionsOffset.downRight !== 'undefined' ? emotionsOffset.downRight.x : 0,
+            y: typeof emotionsOffset.downRight !== 'undefined' ? emotionsOffset.downRight.y : 0
+        },
+        left: {
+            x: typeof emotionsOffset.left !== 'undefined' ? emotionsOffset.left.x : 0,
+            y: typeof emotionsOffset.left !== 'undefined' ? emotionsOffset.left.y : 0
+        },
+        right: {
+            x: typeof emotionsOffset.right !== 'undefined' ? emotionsOffset.right.x : 0,
+            y: typeof emotionsOffset.right !== 'undefined' ? emotionsOffset.right.y : 0
+        }
+    }
+        :
+    {
+
+        normal: {
+            x: 0,
+            y: 0
+        },
+        touched: {
+            x: 0,
+            y: 0
+        },
+        upLeft: {
+            x: 0,
+            y: 0
+        },
+        up: {
+            x: 0,
+            y: 0
+        },
+        upRight: {
+            x: 0,
+            y: 0
+        },
+        downLeft: {
+            x: 0,
+            y: 0
+        },
+        down: {
+            x: 0,
+            y: 0
+        },
+        downRight: {
+            x: 0,
+            y: 0
+        },
+        left: {
+            x: 0,
+            y: 0
+        },
+        right: {
+            x: 0,
+            y: 0
+        }
+    }
+
+    rotation = typeof rotation !== 'undefined' ? rotation : 0;
+
+    // Set for test
+    // PersonObject.Prefix = 'GD';
+
+    PersonObject.Emotions = {
+        normal: resourceTexture[assetsPath + PersonObject.Prefix + '-Normal.png'].texture,
+        touched: resourceTexture[assetsPath + PersonObject.Prefix + '-Touched.png'].texture,
+        upLeft: resourceTexture[assetsPath + PersonObject.Prefix + '-Up-Left.png'].texture,
+        up: resourceTexture[assetsPath + PersonObject.Prefix + '-Up.png'].texture,
+        upRight: resourceTexture[assetsPath + PersonObject.Prefix + '-Up-Right.png'].texture,
+        downLeft: resourceTexture[assetsPath + PersonObject.Prefix + '-Down-Left.png'].texture,
+        down: resourceTexture[assetsPath + PersonObject.Prefix + '-Down.png'].texture,
+        downRight: resourceTexture[assetsPath + PersonObject.Prefix + '-Down-Right.png'].texture,
+        left: resourceTexture[assetsPath + PersonObject.Prefix + '-Left.png'].texture,
+        right: resourceTexture[assetsPath + PersonObject.Prefix + '-Right.png'].texture
+    }
+
+    PersonObject.Head = new PIXI.Sprite(PersonObject.Emotions.normal);
+    PersonObject.Head.anchor.set(0.5, 1);
+    PersonObject.Head.position.set(PersonObject.xPosHead, PersonObject.yPosHead);
+    PersonObject.Head.pivot.set(emotionsOffset.normal.x, emotionsOffset.normal.y);
+    PersonObject.Head.scale.set(0.5);
+    PersonObject.Head.rotation = rotation;
+    PersonObject.Head.alpha = 0;
+
+    PersonObject.PersonHead.addChild(PersonObject.Head);
+
+    PersonObject.Container.addChild(PersonObject.PersonHead);
+    PersonObject.Head.interactive = true;
+
+
+    // Animation In Person Color and Sketch
+    TweenMax.delayedCall(1, function () {
+        PersonObject.ColorAfter_TransitionMask.play();
+        PersonObject.Sketch.play();
+    });
+
+    TweenMax.to(PersonObject.Head, 1, {alpha: 1, ease: Sine.easeOut});
+    TweenMax.to(PersonObject.Head.scale, 3, {x: 0.8, y: 0.8, ease: Elastic.easeOut});
+    TweenMax.fromTo(PersonObject.Head, 1,
+        {
+            rotation: "-=0.1"
+        },
+        {
+            rotation: "+=0.2",
+            ease: Sine.easeInOut,
+            repeat: -1,
+            yoyo: true,
+            delay: 0.2
+        });
+
+    self.changeable = true;
+
+    ['click', 'tap'].forEach(function (e) {
+        PersonObject.Head.on(e, fThrottle(function (e) {
+            Sounds['Click.mp3'].play();
+            self.changeable = false;
+
+            if (self.rumble.rumbling) {
+                self.rumble.rumbling.paused(true);
+                TweenMax.set(PersonObject.Head.position,{
+                    x:self.originXPos,
+                    y:self.originYPos
+                });
+            }
+
+            PersonObject.Head.texture = PersonObject.Emotions.touched;
+            PersonObject.Head.pivot.set(emotionsOffset['touched'].x, emotionsOffset['touched'].y);
+            self.changeEmotion(2000, 'normal');
+        }, 500));
+    });
+
+    // console.log(PersonObject.Head);
+
+    ['mousemove','touchend','touchmove'].forEach(function(ev){
+        window.addEventListener(ev, fThrottle(function (e) {
+
+            e.clientX = typeof e.clientX !== 'undefined' ? e.clientX : e.changedTouches[0].clientX;
+            e.clientY = typeof e.clientY !== 'undefined' ? e.clientY : e.changedTouches[0].clientY;
+
+            distanceX = PersonObject.Head.worldTransform.tx - e.clientX;
+            distanceY = PersonObject.Head.worldTransform.ty - e.clientY;
+
+            // console.log(PersonObject.Head.worldTransform.tx+'---'+PersonObject.Head.worldTransform.ty);
+
+            angle = 180-Math.atan2(distanceY, distanceX)*(180/Math.PI);
+
+            //angle = Math.floor(67.5 + Math.atan(distanceY/distanceX)*(180/Math.PI));
+            //console.log(angle);
+
+            if (self.changeable) {
+                if ((distanceX<=-200 || distanceX>=200) || (distanceY<=-100 || distanceY>=100)) {
+
+                    if ((angle > 0 && angle <= 22.5) || (angle>337.5 && angle <= 360)) {
+                        self.changeEmotion(0,'right');
+                    }
+
+                    if (angle > 22.5 && angle <= 67.5) {
+                        self.changeEmotion(0,'upRight');
+                    }
+
+                    if (angle > 67.5 && angle <= 112.5) {
+                        self.changeEmotion(0,'up');
+                    }
+
+                    if (angle > 112.5 && angle <= 157.5) {
+                        self.changeEmotion(0,'upLeft');
+                    }
+
+                    if (angle > 157.5 && angle <= 202.5) {
+                        self.changeEmotion(0,'left');
+                    }
+
+                    if (angle > 202.5 && angle <= 247.5) {
+                        self.changeEmotion(0,'downLeft');
+                    }
+
+                    if (angle > 247.5 && angle <= 292.5) {
+                        self.changeEmotion(0,'down');
+                    }
+
+                    if (angle > 292.5 && angle <= 337.5) {
+                        self.changeEmotion(0,'downRight');
+                    }
+                } else {
+                    self.changeEmotion(0,'normal');
+                }
+            }
+
+        },100));
+    });
+
+    self.changeEmotion = fDelay(function (delay, emotion) {
+        emotion = typeof emotion !== 'undefined' ? emotion : 'normal';
+        PersonObject.Head.texture = PersonObject.Emotions[emotion];
+        PersonObject.Head.pivot.set(emotionsOffset[emotion].x, emotionsOffset[emotion].y);
+        self.changeable = true;
+    });
+
+    self.rumble = function(){
+
+        if (!self.rumble.rumbling) {
+            self.originXPos =  PersonObject.Head.position.x;
+            self.originYPos =  PersonObject.Head.position.y;
+        }
+        self.rumble.rumbling = TweenMax.fromTo(PersonObject.Head.position,0.2,{
+            x:self.originXPos-5,
+            y:self.originYPos-5
+        },{
+            x:self.originXPos+10,
+            y:self.originYPos+10,
+            immediateRender: false,
+            ease: Sine.easeInOut,
+            yoyo: true,
+            repeat: -1
+        });
+
+    };
+
+};
+
+PersonHead.prototype = Object.create(PIXI.Container.prototype);
+PersonHead.prototype.constructor = PersonHead;
+
+var PersonDetail = function(object)
+
+    {
+
+        var self = this;
+
+        object = {
+            personObject : object.personObject,
+            type : typeof object.type !== 'undefined' ? object.type : 'Personal Topic',
+            name : typeof object.name !== 'undefined' ? object.name : 'Personal Name',
+            content : typeof object.content !== 'undefined' ? object.content : 'Personal Profile Details',
+            time : typeof object.time !== 'undefined' ? object.time : '0:00 AM',
+            backgroundContent : typeof object.backgroundContent !== 'undefined' ? object.backgroundContent : 'Personal Background Detail'
+        };
+
+        PIXI.Container.call(this);
+
+            console.log(object.personObject);
+
+        this.type = new Thing(
+            this,
+            resourceTexture[assetsPath + object.type + '.png'].texture,
+            resourceTexture[assetsPath + object.type + '-Color.png'].texture,
+            50,
+            -330,
+            0.75,
+            true,
+            1,
+            {
+                onCreate: fDebounce(function(){
+                    this.zoomInRight.play()
+                },1000),
+                onClickTap: fDebounce(function() {
+                    TweenMax.to(this.Stage.scale,0.15,{x:"+=0.1",y:"+=0.1",yoyo:true,repeat:1});
+                    TweenMax.to(this.Stage,0.15,{rotation:"+=0.1",yoyo:true,repeat:1});
+
+                    if (object.personObject.PersonHead) {
+                        object.personObject.PersonHead.rumble();
+                        // console.log(object.personObject.PersonHead);
+                    }
+
+                },250)
+            });
+
+        this.name = new Text(
+            this,
+            object.name,
+            'title',
+            120,
+            0,
+            -150,
+            1,
+            0,
+            false
+        );
+
+        this.name.Content.anchor.set(0,0.5);
+        this.name.Content.style.letterSpacing = 3;
+
+        this.content = new Text(
+            this,
+            object.content,
+            'content',
+            30,
+            0,
+            -75,
+            1,
+            10,
+            false
+        );
+
+        this.content.Content.anchor.set(0,0);
+        this.content.Content.style.wordWrap = true;
+        this.content.Content.style.wordWrapWidth = window.innerWidth/2;
+        this.content.Content.style.lineHeight = 44;
+        this.content.Content.style.letterSpacing = 1;
+
+        // Reset Padding Ratio
+        this.content.Content.scale.y = this.content.Content.height/(this.content.Content.height - (this.content.Content.style.padding*2));
+
+        this.time = new Text(
+            this,
+            object.time,
+            '3d',
+            77,
+            0,
+            400,
+            1,
+            0,
+            false
+        );
+
+        this.backgroundContent = new Text(
+            this,
+            object.backgroundContent,
+            'content',
+            30,
+            0,
+            550,
+            1,
+            10,
+            false
+        );
+
+        this.backgroundContent.Content.style.align = 'center';
+        this.backgroundContent.Content.style.wordWrap = true;
+        this.backgroundContent.Content.style.wordWrapWidth = window.innerWidth;
+        this.backgroundContent.Content.style.lineHeight = 44;
+        this.backgroundContent.Content.style.letterSpacing = 1;
+
+        // Reset Padding Ratio
+        this.backgroundContent.Content.scale.y = this.backgroundContent.Content.height/(this.backgroundContent.Content.height - (this.backgroundContent.Content.style.padding*2));
+
+
+        object.personObject.position.set(window.innerWidth/2,window.innerHeight/2);
+        object.personObject.Stage.position.set(-object.personObject.Stage.width/2+50,0);
+
+        object.personObject.addChild(this);
+
+    };
+
+PersonDetail.prototype = Object.create(PIXI.Container.prototype);
+PersonDetail.prototype.constructor = PersonDetail;

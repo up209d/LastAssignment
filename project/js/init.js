@@ -82,6 +82,7 @@ var renderer = new PIXI.autoDetectRenderer(
         backgroundColor: 0xffffff,
         autoResize: false,
         resolution: 1,
+        forceFXAA: true,
         antialias: true
 
     });
@@ -124,21 +125,6 @@ function RenderAnimation() {
 }
 
 
-WebFont.load({
-    custom:{
-        families: ['kg_summer_sunshineregular','kg_first_time_in_foreverRg','always_foreverbold','dk_pimpernelregular'],
-        urls: ['./assets/fonts/webfonts/stylesheet.css']
-
-    },
-    active: function(){
-        console.log('All Fonts Loaded!');
-        stop = false;
-    },
-    loading: function(){
-        console.log('Loading Custom Fonts ...');
-    }
-});
-
 
 function debounce(func, wait, immediate) {
     var timeout;
@@ -155,6 +141,12 @@ function debounce(func, wait, immediate) {
     }.call(this);
 };
 
+// The Proper way to use debounce is use it with the delayTime is
+// the total time until the last animation delay is actived
+// for exp: x animation in 2s from the beginning after that y start ani at 3s
+// so debounce timeout should be 3 as 3s is the moment all the action inside
+// are triggered, so the will be no conflick if the function in debounce be called again
+
 function fDebounce(func, wait, immediate) {
     var timeout;
     return function() {
@@ -169,6 +161,12 @@ function fDebounce(func, wait, immediate) {
         if (callNow) func.apply(context, args);
     }
 };
+
+// debounce can use like abc = fDebounce(function(){},time)
+// or anyClass.abc = fDebounce ...
+// then call abc(); or anyClass.abc();
+// Another way is attach directly to event
+// exp: window.addEvent...(click,debounce(function(){...},time));
 
 // Throttle use for  limit the function call
 // Once the function call the next coming function is bypass by wait=true;
@@ -197,6 +195,9 @@ function fThrottle(func, delay) {
     }
 }
 
+// The use of debounce and throttle is very important and flexible
+// For example: debounce is target for prevent function recall conflick
+
 // fDelay call delay value dynamically by the func's first param it applies
 // exp: self.show = fDelay(function(delay){});
 
@@ -216,8 +217,6 @@ function fDelay(func, immediate) {
         if (callNow) func.apply(context, args);
     }
 };
-
-
 
 // EXP this.object.playFromTo(frame,this.object.totalFrames-1,1,0);
 

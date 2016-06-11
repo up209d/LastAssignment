@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/paper.png" afterPath="$PROJECT_DIR$/project/assets/images/paper.png" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Angry.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Exp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Happy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Touched-Hard.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Touched-Light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Up-Left.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Up-Right.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reference/bunny mark/index.html" afterPath="$PROJECT_DIR$/Reference/bunny mark/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/css/style.css" afterPath="$PROJECT_DIR$/project/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.html" afterPath="$PROJECT_DIR$/project/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/init.js" afterPath="$PROJECT_DIR$/project/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/loader.js" afterPath="$PROJECT_DIR$/project/js/loader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/floatthing.js" afterPath="$PROJECT_DIR$/project/js/objects/floatthing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/person.js" afterPath="$PROJECT_DIR$/project/js/objects/person.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/text.js" afterPath="$PROJECT_DIR$/project/js/objects/text.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/thing.js" afterPath="$PROJECT_DIR$/project/js/objects/thing.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" afterPath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
@@ -32,14 +43,14 @@
     <favorites_list name="LastAssignment" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47578785">
+    <splitter split-orientation="horizontal" split-proportion="0.46963874">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="490">
-                  <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+                <state relative-caret-position="6675">
+                  <caret line="445" column="30" selection-start-line="445" selection-start-column="30" selection-end-line="445" selection-end-column="30" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                   </folding>
@@ -50,8 +61,8 @@
           <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/init.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="304">
-                  <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+                <state relative-caret-position="2638">
+                  <caret line="229" column="20" selection-start-line="229" selection-start-column="20" selection-end-line="229" selection-end-column="20" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -59,21 +70,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="floatthing.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
+          <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project/js/loader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1076">
-                  <caret line="74" column="48" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
+                <state relative-caret-position="15">
+                  <caret line="408" column="21" selection-start-line="408" selection-start-column="21" selection-end-line="408" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+          <file leaf-file-name="floatthing.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="514">
-                  <caret line="539" column="27" selection-start-line="539" selection-start-column="27" selection-end-line="539" selection-end-column="27" />
+                <state relative-caret-position="184">
+                  <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -82,11 +93,21 @@
           <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="334">
-                  <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+                <state relative-caret-position="452">
+                  <caret line="613" column="78" selection-start-line="613" selection-start-column="78" selection-end-line="613" selection-end-column="78" />
                   <folding>
                     <element signature="e#0#36#0" expanded="false" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pixi.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="110">
+                  <caret line="20464" column="38" selection-start-line="20464" selection-start-column="38" selection-end-line="20464" selection-end-column="38" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -128,8 +149,8 @@
           <file leaf-file-name="transitioncolor.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1710">
-                  <caret line="114" column="12" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
+                <state relative-caret-position="424">
+                  <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
@@ -138,8 +159,8 @@
           <file leaf-file-name="thing.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2355">
-                  <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
+                <state relative-caret-position="419">
+                  <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -148,8 +169,8 @@
           <file leaf-file-name="text.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="765">
-                  <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
+                <state relative-caret-position="975">
+                  <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
                   <folding />
                 </state>
               </provider>
@@ -158,9 +179,11 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="274" column="51" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="51" />
-                  <folding />
+                <state relative-caret-position="240">
+                  <caret line="352" column="100" selection-start-line="352" selection-start-column="100" selection-end-line="352" selection-end-column="100" />
+                  <folding>
+                    <element signature="e#11011#11677#0" expanded="false" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -168,8 +191,8 @@
           <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/css/style.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="615">
-                  <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+                <state relative-caret-position="405">
+                  <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -199,18 +222,18 @@
         <option value="$PROJECT_DIR$/project/js/howler.js" />
         <option value="$PROJECT_DIR$/project/js/howler.min.js" />
         <option value="$PROJECT_DIR$/project/temp.js" />
-        <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
         <option value="$PROJECT_DIR$/project/js/objects/background.js" />
         <option value="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
+        <option value="$PROJECT_DIR$/project/assets/images/clipsheets/stuffs.json" />
+        <option value="$PROJECT_DIR$/project/js/objects/floatthing.js" />
         <option value="$PROJECT_DIR$/project/css/style.css" />
-        <option value="$PROJECT_DIR$/project/js/objects/text.js" />
+        <option value="$PROJECT_DIR$/project/js/init.js" />
         <option value="$PROJECT_DIR$/project/index.html" />
         <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
-        <option value="$PROJECT_DIR$/project/assets/images/clipsheets/stuffs.json" />
         <option value="$PROJECT_DIR$/project/js/loader.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/floatthing.js" />
-        <option value="$PROJECT_DIR$/project/js/init.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
+        <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/text.js" />
         <option value="$PROJECT_DIR$/project/index.js" />
         <option value="$PROJECT_DIR$/project/js/objects/person.js" />
       </list>
@@ -252,6 +275,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -346,76 +371,8 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LastAssignment" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="project" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clipsheets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,7 +382,7 @@
     <property name="FullScreen" value="true" />
     <property name="full.screen.before.presentation.mode" value="true" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/UP/Desktop/LastAssignment/project/js/objects/text.js" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/UP/Desktop/LastAssignment/project/js/objects/person.js" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -525,7 +482,9 @@
       <workItem from="1464786797910" duration="41548000" />
       <workItem from="1465111641557" duration="36344000" />
       <workItem from="1465230731505" duration="39098000" />
-      <workItem from="1465335315854" duration="1932000" />
+      <workItem from="1465335315854" duration="21553000" />
+      <workItem from="1465487764578" duration="30494000" />
+      <workItem from="1465640825563" duration="26813000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1463565396489</created>
@@ -538,7 +497,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="413232000" />
+    <option name="totallyTimeSpent" value="490160000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
@@ -547,11 +506,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1760608" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29638556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18366055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.296875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -560,7 +520,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3325301" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -630,7 +589,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -680,7 +641,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -730,7 +693,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,7 +721,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -782,7 +749,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -808,7 +777,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6435">
           <caret line="429" column="4" selection-start-line="429" selection-start-column="4" selection-end-line="429" selection-end-column="4" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -834,7 +805,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -852,7 +825,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -900,14 +875,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="5054" column="3" selection-start-line="5054" selection-start-column="3" selection-end-line="5054" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/assets/images/clipsheets/stuffs.json" />
     <entry file="file://$PROJECT_DIR$/project/js/objects/tvnoise.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -933,86 +900,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1710">
-          <caret line="114" column="12" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2355">
-          <caret line="157" column="20" selection-start-line="157" selection-start-column="20" selection-end-line="157" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="51" column="18" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
+        <state relative-caret-position="405">
+          <caret line="27" column="20" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="514">
-          <caret line="539" column="27" selection-start-line="539" selection-start-column="27" selection-end-line="539" selection-end-column="27" />
+        <state relative-caret-position="424">
+          <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="490">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+        <state relative-caret-position="6675">
+          <caret line="445" column="30" selection-start-line="445" selection-start-column="30" selection-end-line="445" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="20464" column="38" selection-start-line="20464" selection-start-column="38" selection-end-line="20464" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="408" column="21" selection-start-line="408" selection-start-column="21" selection-end-line="408" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1076">
-          <caret line="74" column="48" selection-start-line="74" selection-start-column="48" selection-end-line="74" selection-end-column="48" />
+        <state relative-caret-position="184">
+          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/js/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="64" column="5" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        <state relative-caret-position="2638">
+          <caret line="229" column="20" selection-start-line="229" selection-start-column="20" selection-end-line="229" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="419">
+          <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="274" column="51" selection-start-line="274" selection-start-column="24" selection-end-line="274" selection-end-column="51" />
-          <folding />
+        <state relative-caret-position="240">
+          <caret line="352" column="100" selection-start-line="352" selection-start-column="100" selection-end-line="352" selection-end-column="100" />
+          <folding>
+            <element signature="e#11011#11677#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="210" column="12" selection-start-line="210" selection-start-column="12" selection-end-line="210" selection-end-column="12" />
+        <state relative-caret-position="452">
+          <caret line="613" column="78" selection-start-line="613" selection-start-column="78" selection-end-line="613" selection-end-column="78" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
           </folding>

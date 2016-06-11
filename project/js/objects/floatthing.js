@@ -131,7 +131,6 @@ var FloatThing = function(
             function(event){
                 event.clientX = typeof event.clientX !== 'undefined' ? event.clientX : event.changedTouches[0].clientX;
                 event.clientY = typeof event.clientY !== 'undefined' ? event.clientY : event.changedTouches[0].clientY;
-
                 self.allSprites.forEach(function(child){
                     if ((child.position.x>(event.clientX-200)) && (child.position.x<(event.clientX+200))) {
                         if ((child.position.y>(event.clientY-200)) && (child.position.y<(event.clientY+200))) {

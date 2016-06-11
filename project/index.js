@@ -4,24 +4,31 @@ function init() {
 
     // ---- BEGIN BUNNY ----
 
-    var Bunny = function (DisplayContainer) {
-        this.each = new PIXI.Sprite.fromImage('assets/images/bunny.png');
-        this.each.anchor.x = 0.5;
-        this.each.anchor.y = 0.5;
-        this.each.alpha = 0.5;
-        this.each.position.x = window.innerWidth / 2;
-        this.each.position.y = window.innerHeight / 2;
-        this.each.interactive = false;
-        DisplayContainer.addChild(this.each);
-        Bunny.prototype.rotate = function () {
-            this.each.rotation += 0.1;
-            this.each.scale.x = this.each.scale.y = (Math.abs(Math.sin(Date.now() * 0.0005) * 1) + 0.5);
-        }
+    var Bunny = function (DisplayContainer)
+    {
+        PIXI.Sprite.call(this,PIXI.Texture.fromImage('assets/images/bunny.png'));
+        // console.log(this);
+        this.anchor.x = 0.5;
+        this.anchor.y = 0.5;
+        this.alpha = 0.5;
+        this.position.x = window.innerWidth / 2;
+        this.position.y = window.innerHeight / 2;
+        this.interactive = false;
+        DisplayContainer.addChild(this);
+    }
+
+    Bunny.prototype = Object.create(PIXI.Sprite.prototype);
+    Bunny.prototype.constructor = Bunny;
+
+    Bunny.prototype.rotate = function () {
+        this.rotation += 0.1;
+        this.scale.x = this.scale.y = (Math.abs(Math.sin(Date.now() * 0.0005) * 1) + 0.5);
     }
 
     var bunnyPot = new PIXI.Container();
-    var bunny = new Bunny(bunnyPot);
+    bunnyPot.interactive = false;
 
+    var bunny = new Bunny(bunnyPot);
 
     // color.mask = bunny.each;
 
@@ -29,13 +36,12 @@ function init() {
         //console.log(eventData);
         var bunnyTimeline = new TimelineMax();
         bunnyTimeline.smoothChildTiming = true;
-        bunnyTimeline.to(bunny.each.position, 1.5, {
+        bunnyTimeline.to(bunny.position, 1.5, {
             x: eventData.clientX,
             y: eventData.clientY,
             immediateRender: false,
             ease: Back.easeOut
         });
-
         bunnyTimeline.play();
     };
 
@@ -49,17 +55,12 @@ function init() {
         // TweenMax.to(transitionSketchMask.object,0.2,{width:nocolor.width,height:nocolor.height});
     }
 
-    bunnyPot.interactive = false;
-
 
     // In order to click through interactive false Sprite
     // The mother container of them has to be set at
     // interactive false
 
-    stage.addChild(bunnyPot);
-
     // stage.interactive = true;
-
 
     // ---- END BUNNY ----
 
@@ -78,6 +79,17 @@ function init() {
 
     scene = new PIXI.Container();
 
+    scene.draggable = true;
+
+    // ['mousedown'].forEach(function(e){
+    //     scene.on(e,fThrottle(function(event){
+    //         console.log(event.target);
+    //         if (event.target) {
+    //             Sounds['Click.mp3'].play();
+    //         }
+    //     },100));
+    // });
+
     Bg = new Background(scene);
     Bg.bg.width += circleScene.circleRadius*2;
     Bg.bg.height +=  circleScene.circleRadius;
@@ -85,6 +97,7 @@ function init() {
     scene_navigation = new PIXI.Container();
     scene_navigation.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
     scene_navigation.position.set(window.innerWidth / 2, window.innerHeight / 2);
+    scene_navigation.alpha = 0;
 
     scene_navigation_center = new PIXI.Container();
     scene_navigation_center.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
@@ -99,6 +112,7 @@ function init() {
     scene.addChild(scene_navigation);
 
     stage.addChild(scene);
+    stage.addChild(bunnyPot);
     stage.interactive = false;
 
     scene.interactive = true;
@@ -234,16 +248,14 @@ function init() {
 
     scene.on('mousemove', scene.moving);
 
-    scene.on('mousedown', function (e) {
-        scene.isDragging = true;
-        scene.startX = e.data.getLocalPosition(scene).x;
-        scene.startY = e.data.getLocalPosition(scene).y;
-    });
-
-    scene.on('touchstart', function (e) {
-        scene.isDragging = true;
-        scene.startX = e.data.getLocalPosition(scene).x;
-        scene.startY = e.data.getLocalPosition(scene).y;
+    ['mousedown','touchstart'].forEach(function(ev){
+        scene.on(ev, function (e) {
+            if (scene.draggable) {
+                scene.isDragging = true;
+                scene.startX = e.data.getLocalPosition(scene).x;
+                scene.startY = e.data.getLocalPosition(scene).y;
+            }
+        });
     });
 
     scene.on('touchmove', scene.moving);
@@ -257,6 +269,90 @@ function init() {
         scene.isDragging = false;
     });
 
+    GraphicDesignerFull = new Person(
+        'GD',
+        stage,
+        0,
+        0,
+        true,
+        0.8,45,-35,
+        {
+            onClickTap: fThrottle(function(){
+                // scene.addChild(scene_navigation);
+                // scene_navigation.renderable=true;
+                // scene_navigation.visivle=true;
+                // TweenMax.to(scene_navigation,1,{
+                //     alpha:1,
+                //     delay:0.5
+                // });
+                // TweenMax.to(GraphicDesignerFull.Stage,1,{
+                //     alpha:0,
+                //     onComplete: function(){
+                //         stage.removeChild(GraphicDesignerFull.Stage);
+                //     }
+                // });
+            },1500),
+            onHoverOut: fThrottle(function(){
+                this.Sketch.play();
+            },1500)
+        }
+    );
+
+    GraphicDesignerFull.Sketch.play();
+    GraphicDesignerFull.animationSpeed = 0.5;
+    GraphicDesignerHead = new PersonHead(GraphicDesignerFull,{
+        normal: {
+            x: 20,
+            y: -30
+        },
+        touched: {
+            x: 10,
+            y: 10
+        },
+        upLeft: {
+            x: -20,
+            y: 5
+        },
+        up: {
+            x: 0,
+            y: 0
+        },
+        upRight: {
+            x: 0,
+            y: 0
+        },
+        downLeft: {
+            x: 30,
+            y: -80
+        },
+        down: {
+            x: 20,
+            y: -80
+        },
+        downRight: {
+            x: -30,
+            y: -80
+        },
+        left: {
+            x: 20,
+            y: -20
+        },
+        right: {
+            x: -20,
+            y: 0
+        }
+    });
+    GraphicDesignerDetail = new PersonDetail(
+        {
+            personObject: GraphicDesignerFull,
+            type: 'Flexible',
+            name: 'Adam Owlen',
+            content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                        '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+            time: '2:00 AM',
+            backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design '
+        }
+    );
 
     GraphicDesigner = new Person(
         'GD',
@@ -272,18 +368,31 @@ function init() {
                     alpha:0,
                     delay:0.5,
                     onComplete: function(){
-                        scene.addChild(this.Stage);
+                        scene_navigation.renderable=false;
+                        scene_navigation.visivle=false;
+                        scene.removeChild(scene_navigation);
                     }.bind(this)
                 });
+
+                scene.draggable = false;
+                Sounds['GD.mp3'].loop = true;
+                Sounds['GD.mp3'].fadeIn(1,3000);
+                Sounds['Moving.mp3'].play();
+
+
+
                 Particle = new FloatThing(
                     stage,
                     'stuff',
-                    50,
-                    window.innerWidth*0.8,
-                    window.innerHeight*0.8
+                    10,
+                    window.innerWidth*0.9,
+                    window.innerHeight*0.9
                 );
             },1500),
-            onHover: function(){
+            onHoverIn: function(){
+
+            },
+            onHoverOut: function(){
 
             }
         }
@@ -516,8 +625,11 @@ function init() {
         1000
     );
 
-    intro_p = 'Are you the kind of person who gets up early for a fresh ' +
-        'start of the day'
+
+    // intro_p = 'Are you the kind of person who gets up early for a fresh ' +
+    //     'start of the day'
+
+    intro_p = " ";
 
     intro_p2 = 'or do you stay up late at night to ' +
         'finish your work?'
@@ -546,7 +658,7 @@ function init() {
         TweenMax.to(e.target,1,{alpha:0,onComplete: function(){
             this.parent.removeChild(this);
         }.bind(this)});
-        TweenMax.fromTo(scene_navigation_center,2,{alpha:0},{alpha:1});
+        TweenMax.fromTo(scene_navigation,3,{alpha:0},{alpha:1});
         TweenMax.fromTo(scene.scale, 5, {
             x: 3,
             y: 3
@@ -579,7 +691,7 @@ function init() {
         DisplacmentFilter.scale.set(0);
 
         Skt.filters = [DisplacmentFilter];
-        scene.filters = [DisplacmentFilter];
+        stage.filters = [DisplacmentFilter];
 
         Skt.anchor.set(0.5);
         Skt.position.set(window.innerWidth/2,window.innerHeight/2);
@@ -837,3 +949,4 @@ function func20(x, y) {
     Clock.ColorFilter.matrix[19] = x / 2000;
     console.log(x / 2000);
 }
+

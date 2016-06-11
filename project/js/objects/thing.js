@@ -2,9 +2,22 @@
  * Created by UP on 5/22/16.
  */
 
-var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, delayTime) {
+var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, delayTime, callback) {
 
     var self = this;
+
+    callback = typeof callback !== 'undefined' ? callback : {
+        onCreate: function(){},
+        onClickTap : function(){},
+        onHoverIn: function(){},
+        onHoverOut: function(){}
+    };
+
+    callback.onCreate = typeof callback.onCreate !== 'undefined' ? callback.onCreate.bind(this) : function(){};
+    callback.onClickTap = typeof callback.onClickTap !== 'undefined' ? callback.onClickTap.bind(this) : function(){};
+    callback.onHoverIn = typeof callback.onHoverIn !== 'undefined' ? callback.onHoverIn.bind(this) : function(){};
+    callback.onHoverOut = typeof callback.onHoverOut !== 'undefined' ? callback.onHoverOut.bind(this) : function(){};
+
 
     scale = typeof scale !== 'undefined' ? scale : 1;
     autoplay = typeof autoplay !== 'undefined' ? autoplay : true;
@@ -184,7 +197,7 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
         );
 
     if (autoplay) {
-        self.show.restart(true);
+        self.show.delay(delayTime).restart(true);
     }
 
     this.Stage.interactive = true;
@@ -192,14 +205,15 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     ['click','tap'].forEach(function(e){
         self.Stage.on(e,function(){
 
-            self.zoomInLeft.play(0);
-            self.show.play(0);
+            // self.zoomInLeft.play(0);
+            // self.show.play(0);
+            callback.onClickTap.apply(self);
 
         });
     });
 
 
     DisplayContainer.addChild(this.Stage);
-
+    callback.onCreate.apply(this);
 
 }

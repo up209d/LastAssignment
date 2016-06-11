@@ -5,7 +5,6 @@
     <title>Night Owl vs. Early Bird</title>
     <meta name="Description" content="" />
     <meta name="Keywords"  content="" />
-
     <link rel="stylesheet" type="text/css" media="screen,print" href="css/style.css" /><script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/0.4.0/trianglify.min.js"></script>
     <script src="js/mobile-detect.js"></script>
     <script src="js/pixiv4/pixi.js"></script>
@@ -15,7 +14,6 @@
     <script src="js/webfont.js"></script>
     <script src="js/howler.min.js"></script>
     <script src="js/stats.js"></script>
-
     <script>
         window.addEventListener('load',function(){
             var stats = new Stats();
@@ -434,4 +432,16 @@ var height = 2 * baseline;
 
 baseline = baseline * 1.5 | 0;
 
+
+// Inherit Class in Javascript
+var Bunny = function() {
+    PIXI.Sprite.call(this,PIXI.Texture.fromImage('bunny.png'));
+}
+
+Bunny.prototype = Object.create(PIXI.Sprite.prototype);
+Bunny.prototype.constructor = Bunny();
+
+// So after that we can do
+var anyBunny = new Bunny();
+and anyBunny will be a sprite.
 -->

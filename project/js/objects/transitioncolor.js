@@ -136,16 +136,20 @@ var transitionColor = function(DisplayContainer,object,type,autoplay,timeout) {
     // Callback each time stop playing
     this.object.onComplete = function(e){this}
 
-    transitionColor.prototype.play = function(frame) {
+    transitionColor.prototype.play = function(frame,speed,delay) {
         frame = typeof frame == 'undefined' ? this.object.currentFrame : frame > this.object.totalFrames ? this.object.totalFrames : frame;
         //console.log(frame);
-        this.object.playFromTo(frame,this.object.totalFrames-1,1,0);
+        speed = typeof speed !== 'undefined' ? speed : 1;
+        delay = typeof delay !== 'undefined' ? delay : 0;
+        this.object.playFromTo(frame,this.object.totalFrames-1,speed,delay);
     }
 
-    transitionColor.prototype.playReverse = function(frame) {
+    transitionColor.prototype.playReverse = function(frame,speed,delay) {
         frame = typeof frame == 'undefined' ? this.object.currentFrame : frame < 0 ? 0 : frame;
         //console.log(frame);
-        this.object.playFromTo(frame,0,1,0);
+        speed = typeof speed !== 'undefined' ? speed : 1;
+        delay = typeof delay !== 'undefined' ? delay : 0;
+        this.object.playFromTo(frame,0,speed,delay);
     }
 
     transitionColor.prototype.moving = function() {

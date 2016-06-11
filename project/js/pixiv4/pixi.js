@@ -20462,7 +20462,7 @@ Text.prototype.determineFontProperties = function (fontStyle)
         var baseline = Math.ceil(context.measureText('M').width);
         var height = 2 * baseline;
 
-        baseline = baseline * 1.6 | 0;
+        baseline = baseline * 1.4 | 0;
 
         canvas.width = width;
         canvas.height = height;
