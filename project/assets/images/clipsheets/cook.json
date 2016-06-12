@@ -1,0 +1,105 @@
+{
+"frames": {
+	"cook-01.png": {
+		"frame": {"x":120, "y":340, "w":92, "h":45},
+		"spriteSourceSize": {"x":46,"y":50,"w":157,"h":120},
+		"sourceSize": {"w":157,"h":120}
+	},
+	"cook-02.png": {
+		"frame": {"x":210, "y":386, "w":67, "h":42},
+		"spriteSourceSize": {"x":24,"y":28,"w":104,"h":94},
+		"sourceSize": {"w":104,"h":94}
+	},
+	"cook-03.png": {
+		"frame": {"x":211, "y":282, "w":45, "h":46},
+		"spriteSourceSize": {"x":33,"y":30,"w":93,"h":91},
+		"sourceSize": {"w":93,"h":91}
+	},
+	"cook-04.png": {
+		"frame": {"x":211, "y":235, "w":46, "h":46},
+		"spriteSourceSize": {"x":17,"y":17,"w":78,"h":79},
+		"sourceSize": {"w":78,"h":79}
+	},
+	"cook-05.png": {
+		"frame": {"x":210, "y":429, "w":52, "h":53},
+		"spriteSourceSize": {"x":10,"y":25,"w":76,"h":105},
+		"sourceSize": {"w":76,"h":105}
+	},
+	"cook-06.png": {
+		"frame": {"x":162, "y":300, "w":36, "h":35},
+		"spriteSourceSize": {"x":19,"y":23,"w":63,"h":70},
+		"sourceSize": {"w":63,"h":70}
+	},
+	"cook-07.png": {
+		"frame": {"x":123, "y":300, "w":38, "h":36},
+		"spriteSourceSize": {"x":18,"y":25,"w":63,"h":77},
+		"sourceSize": {"w":63,"h":77}
+	},
+	"cook-08.png": {
+		"frame": {"x":213, "y":329, "w":35, "h":34},
+		"spriteSourceSize": {"x":20,"y":22,"w":79,"h":75},
+		"sourceSize": {"w":79,"h":75}
+	},
+	"cook-09.png": {
+		"frame": {"x":162, "y":67, "w":73, "h":81},
+		"spriteSourceSize": {"x":46,"y":25,"w":139,"h":119},
+		"sourceSize": {"w":139,"h":119}
+	},
+	"cook-10.png": {
+		"frame": {"x":162, "y":149, "w":71, "h":85},
+		"spriteSourceSize": {"x":25,"y":26,"w":113,"h":139},
+		"sourceSize": {"w":113,"h":139}
+	},
+	"cook-11.png": {
+		"frame": {"x":0, "y":67, "w":161, "h":120},
+		"spriteSourceSize": {"x":25,"y":15,"w":210,"h":148},
+		"sourceSize": {"w":210,"h":148}
+	},
+	"cook-12.png": {
+		"frame": {"x":0, "y":240, "w":134, "h":45},
+		"spriteSourceSize": {"x":18,"y":18,"w":168,"h":99},
+		"sourceSize": {"w":168,"h":99}
+	},
+	"cook-13.png": {
+		"frame": {"x":0, "y":188, "w":149, "h":51},
+		"spriteSourceSize": {"x":17,"y":31,"w":179,"h":102},
+		"sourceSize": {"w":179,"h":102}
+	},
+	"cook-14.png": {
+		"frame": {"x":135, "y":240, "w":75, "h":59},
+		"spriteSourceSize": {"x":21,"y":34,"w":113,"h":117},
+		"sourceSize": {"w":113,"h":117}
+	},
+	"cook-15.png": {
+		"frame": {"x":172, "y":0, "w":68, "h":64},
+		"spriteSourceSize": {"x":24,"y":23,"w":113,"h":119},
+		"sourceSize": {"w":113,"h":119}
+	},
+	"cook-16.png": {
+		"frame": {"x":120, "y":386, "w":89, "h":123},
+		"spriteSourceSize": {"x":24,"y":6,"w":138,"h":149},
+		"sourceSize": {"w":138,"h":149}
+	},
+	"cook-17.png": {
+		"frame": {"x":0, "y":0, "w":171, "h":66},
+		"spriteSourceSize": {"x":23,"y":31,"w":209,"h":120},
+		"sourceSize": {"w":209,"h":120}
+	},
+	"cook-18.png": {
+		"frame": {"x":0, "y":286, "w":122, "h":53},
+		"spriteSourceSize": {"x":16,"y":23,"w":162,"h":102},
+		"sourceSize": {"w":162,"h":102}
+	},
+	"cook-19.png": {
+		"frame": {"x":0, "y":340, "w":119, "h":138},
+		"spriteSourceSize": {"x":60,"y":20,"w":195,"h":176},
+		"sourceSize": {"w":195,"h":176}
+	}
+
+},
+"meta": {
+	"image": "cook.png",
+	"size": {"w": 512, "h": 512},
+	"scale": "1"
+}
+}

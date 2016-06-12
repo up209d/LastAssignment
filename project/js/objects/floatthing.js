@@ -47,6 +47,8 @@ var FloatThing = function(
 
     var TextureArray = convertObj(resourceTexture[assetsClipSheetsPath+Prefix+'.json'].textures);
 
+    // console.log(TextureArray);
+
     for (i=0;i<Count;i++) {
 
         if (Math.floor(Math.random()*2) == 0) {
@@ -111,7 +113,7 @@ var FloatThing = function(
         var eachSprite = new PIXI.Sprite(TextureArray[Math.floor(Math.random()*TextureArray.length)]);
         eachSprite.anchor.set(0.5);
         eachSprite.position.set(HorizontalStart,VerticalStart);
-        eachSprite.scale.set(Math.random()*0.5+0.5);
+        eachSprite.scale.set(Math.random()*0.8+0.2);
         eachSprite.alpha = 1;
         eachSprite.blendMode = PIXI.BLEND_MODES.MULTIPLY;
         self.floating(eachSprite);
@@ -126,50 +128,77 @@ var FloatThing = function(
 
     this.allSprites = this.Container.children.concat(this.ContainerBlur.children);
 
+    this.wavingHandler = self.waving.bind(self);
+
     ['click','touchend'].forEach(function(e){
-        window.addEventListener(e,fThrottle(
-            function(event){
-                event.clientX = typeof event.clientX !== 'undefined' ? event.clientX : event.changedTouches[0].clientX;
-                event.clientY = typeof event.clientY !== 'undefined' ? event.clientY : event.changedTouches[0].clientY;
-                self.allSprites.forEach(function(child){
-                    if ((child.position.x>(event.clientX-200)) && (child.position.x<(event.clientX+200))) {
-                        if ((child.position.y>(event.clientY-200)) && (child.position.y<(event.clientY+200))) {
-                            TweenMax.to(child.scale,0.5,{
-                                x: "+=0.3",
-                                y: "+=0.3",
-                                //delay: (Math.abs(child.position.y-event.clientY)/200)*0.5,
-                                immediateRender: false,
-                                yoyo: true,
-                                repeat: 1,
-                                ease: Back.easeInOut
-                            });
-
-                            var currentPosition = {
-                                x: child.position.x,
-                                y: child.position.y
-                            }
-
-                            TweenMax.to(child.position,0.5,{
-                                x: "+="+((child.position.x-event.clientX)/200)*200,
-                                y: "+="+((child.position.y-event.clientY)/200)*200,
-                                delay: (Math.abs(child.position.x-event.clientX)/200)*0.5,
-                                immediateRender: false,
-                                ease: Sine.easeOut,
-                                onComplete: function(){
-                                    TweenMax.to(child,2,{
-                                        x: currentPosition.x,
-                                        y: currentPosition.y,
-                                        immediateRender: false,
-                                        ease: Back.easeOut.config(0.5)
-                                        //onComplete: self.floating(child)
-                                    })
-                                }
-                            });
-                        }
-                    }
-                });
-            },1000));
+        window.addEventListener(e,self.wavingHandler);
     });
 
     DisplayContainer.addChild(this.Stage);
+}
+
+FloatThing.prototype.waving = fThrottle(
+    function(event){
+        event.clientX = typeof event.clientX !== 'undefined' ? event.clientX : event.changedTouches[0].clientX;
+        event.clientY = typeof event.clientY !== 'undefined' ? event.clientY : event.changedTouches[0].clientY;
+        this.allSprites.forEach(function(child){
+            if ((child.position.x>(event.clientX-200)) && (child.position.x<(event.clientX+200))) {
+                if ((child.position.y>(event.clientY-200)) && (child.position.y<(event.clientY+200))) {
+                    TweenMax.to(child.scale,0.5,{
+                        x: "+=0.3",
+                        y: "+=0.3",
+                        //delay: (Math.abs(child.position.y-event.clientY)/200)*0.5,
+                        immediateRender: false,
+                        yoyo: true,
+                        repeat: 1,
+                        ease: Back.easeInOut
+                    });
+
+                    var currentPosition = {
+                        x: child.position.x,
+                        y: child.position.y
+                    }
+
+                    TweenMax.to(child.position,0.5,{
+                        x: "+="+((child.position.x-event.clientX)/200)*200,
+                        y: "+="+((child.position.y-event.clientY)/200)*200,
+                        delay: (Math.abs(child.position.x-event.clientX)/200)*0.5,
+                        immediateRender: false,
+                        ease: Sine.easeOut,
+                        onComplete: function(){
+                            TweenMax.to(child,2,{
+                                x: currentPosition.x,
+                                y: currentPosition.y,
+                                immediateRender: false,
+                                ease: Back.easeOut.config(0.5)
+                                //onComplete: self.floating(child)
+                            })
+                        }
+                    });
+                }
+            }
+        });
+    },1000);
+
+FloatThing.prototype.removeAll = function() {
+    var self = this;
+    ['click','touchend'].forEach(function(e){
+        window.removeEventListener(e,self.wavingHandler);
+    });
+    try {
+        this.allSprites.forEach(function(e){
+            for (var o in e) {
+                TweenMax.killTweensOf([e,e.position,e.scale,e.anchor,e.pivot]);
+            }
+            e.parent.removeChild(e);
+            e.destroy(false);
+        });
+        TweenMax.killTweensOf([this.Stage,this.Container,this.ContainerBlur]);
+        this.Stage.parent.removeChild(this.Stage);
+        this.Stage.renderable = false;
+        this.Stage.visible = false;
+        this.Stage.destroy(true);
+    } catch (e) {
+        console.log(e);
+    }
 }

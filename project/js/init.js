@@ -260,3 +260,28 @@ function convertObj(Obj) {
     }
     return result;
 }
+
+['scroll','mousewheel','DOMMouseScroll'].forEach(function(e){
+    window.addEventListener(e,function(ev){
+        ev.preventDefault();
+    });
+});
+
+// Set Default Value for avoid undefined params in function
+// ObjIn = setDefault(ObjIn,DefaultObj);
+function setDefault(ObjIn,DefaultObj) {
+    ObjIn = typeof ObjIn !== 'undefined' ? ObjIn : DefaultObj;
+    for (var k in DefaultObj) {
+        if (!ObjIn.hasOwnProperty(k)) {
+            ObjIn[k] = DefaultObj[k];
+        }
+    }
+
+    return ObjIn;
+}
+
+function resetTweenOf(o){
+    if (typeof o == 'object') {
+        TweenMax.killTweensOf(o);
+    }
+};

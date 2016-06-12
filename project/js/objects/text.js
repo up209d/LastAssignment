@@ -36,7 +36,7 @@ var Text = function(DisplayContainer,content,font,size,xPos,yPos,scale,padding,i
     this.Container = new PIXI.Container();
     this.Stage = new PIXI.Container();
 
-    this.Content = new PIXI.Text(content,{fontFamily: this.font,fontSize: this.size},1.5);
+    this.Content = new PIXI.Text(content,{fontFamily: this.font,fontSize: this.size, fill: 0x000000},1.5);
     this.Content.anchor.set(0.5);
 
     this.Content.style.padding = padding;

@@ -33,7 +33,8 @@ function init() {
     // color.mask = bunny.each;
 
     function bunnyFollow(eventData) {
-        //console.log(eventData);
+        eventData.clientX = typeof eventData.clientX !== 'undefined' ? eventData.clientX : eventData.changedTouches[0].clientX;
+        eventData.clientY = typeof eventData.clientY !== 'undefined' ? eventData.clientY : eventData.changedTouches[0].clientY;
         var bunnyTimeline = new TimelineMax();
         bunnyTimeline.smoothChildTiming = true;
         bunnyTimeline.to(bunny.position, 1.5, {
@@ -46,6 +47,7 @@ function init() {
     };
 
     window.onmousemove = bunnyFollow;
+    window.ontouchend = bunnyFollow;
 
     //bg.bg.on('mousemove',bunnyFollow);
     function animateBunny() {
@@ -65,7 +67,7 @@ function init() {
     // ---- END BUNNY ----
 
     circleScene = {
-        circleRadius: 1200,
+        circleRadius: 1600,
         circlePI: 3.14,
         circlePosition: []
     }
@@ -97,7 +99,14 @@ function init() {
     scene_navigation = new PIXI.Container();
     scene_navigation.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
     scene_navigation.position.set(window.innerWidth / 2, window.innerHeight / 2);
-    scene_navigation.alpha = 0;
+
+    // For very big and complex Scene with many things inside,
+    // The lag for very first rendering is inevitable
+    // in PIXI alpha=0 might has some kind of renderable = false
+    // for performance efficence, but when you animate the alpha,
+    // the lag will be significant, so set alpha to not 0 to force the renderer
+    // render that silently so when we animate alpha it will be no longer lag
+    scene_navigation.alpha = 0.000000001;
 
     scene_navigation_center = new PIXI.Container();
     scene_navigation_center.pivot.set(window.innerWidth / 2, window.innerHeight / 2);
@@ -269,90 +278,825 @@ function init() {
         scene.isDragging = false;
     });
 
-    GraphicDesignerFull = new Person(
-        'GD',
-        stage,
-        0,
-        0,
-        true,
-        0.8,45,-35,
-        {
-            onClickTap: fThrottle(function(){
-                // scene.addChild(scene_navigation);
-                // scene_navigation.renderable=true;
-                // scene_navigation.visivle=true;
-                // TweenMax.to(scene_navigation,1,{
-                //     alpha:1,
-                //     delay:0.5
-                // });
-                // TweenMax.to(GraphicDesignerFull.Stage,1,{
-                //     alpha:0,
-                //     onComplete: function(){
-                //         stage.removeChild(GraphicDesignerFull.Stage);
-                //     }
-                // });
-            },1500),
-            onHoverOut: fThrottle(function(){
-                this.Sketch.play();
-            },1500)
-        }
-    );
+    PersonFull = fThrottle(function(ParentObject,Prefix) {
 
-    GraphicDesignerFull.Sketch.play();
-    GraphicDesignerFull.animationSpeed = 0.5;
-    GraphicDesignerHead = new PersonHead(GraphicDesignerFull,{
-        normal: {
-            x: 20,
-            y: -30
-        },
-        touched: {
-            x: 10,
-            y: 10
-        },
-        upLeft: {
-            x: -20,
-            y: 5
-        },
-        up: {
-            x: 0,
-            y: 0
-        },
-        upRight: {
-            x: 0,
-            y: 0
-        },
-        downLeft: {
-            x: 30,
-            y: -80
-        },
-        down: {
-            x: 20,
-            y: -80
-        },
-        downRight: {
-            x: -30,
-            y: -80
-        },
-        left: {
-            x: 20,
-            y: -20
-        },
-        right: {
-            x: -20,
-            y: 0
+        Prefix = setDefault(Prefix,'GD');
+
+        this.data = {
+            Normal: {
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: 0,
+                        y: 0
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 0
+                    },
+                    up: {
+                        x: 0,
+                        y: 0
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 0
+                    },
+                    downLeft: {
+                        x: 0,
+                        y: 0
+                    },
+                    down: {
+                        x: 0,
+                        y: 0
+                    },
+                    downRight: {
+                        x: 0,
+                        y: 0
+                    },
+                    left: {
+                        x: 0,
+                        y: 0
+                    },
+                    right: {
+                        x: 0,
+                        y: 0
+                    }
+                }
+            },
+            GD: {
+                Prefix: 'GD',
+                HeadPos: {
+                    x:45,y:-35,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 20,
+                        y: -30
+                    },
+                    touched: {
+                        x: 10,
+                        y: 10
+                    },
+                    upLeft: {
+                        x: -20,
+                        y: 5
+                    },
+                    up: {
+                        x: 0,
+                        y: 0
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 0
+                    },
+                    downLeft: {
+                        x: 30,
+                        y: -80
+                    },
+                    down: {
+                        x: 20,
+                        y: -80
+                    },
+                    downRight: {
+                        x: -30,
+                        y: -80
+                    },
+                    left: {
+                        x: 20,
+                        y: -20
+                    },
+                    right: {
+                        x: -20,
+                        y: 0
+                    }
+                },
+                type: 'Flexible',
+                name: 'Adam Owlen',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '2:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'stuffs',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            GDS: {
+                Prefix: 'GDS',
+                HeadPos: {
+                    x:-110,y:80,rotation:-Math.PI/5
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 100,
+                        y: -80
+                    },
+                    touched: {
+                        x: 20,
+                        y: -30
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 0
+                    },
+                    up: {
+                        x: 0,
+                        y: 0
+                    },
+                    upRight: {
+                        x: -40,
+                        y: -10
+                    },
+                    downLeft: {
+                        x: 80,
+                        y: -60
+                    },
+                    down: {
+                        x: 40,
+                        y: -30
+                    },
+                    downRight: {
+                        x: -30,
+                        y: -60
+                    },
+                    left: {
+                        x: 40,
+                        y: -30
+                    },
+                    right: {
+                        x: -30,
+                        y: 0
+                    }
+                },
+                type: 'Flexible',
+                name: 'Adam Owlen',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '2:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'space',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            MD: {
+                Prefix: 'MD',
+                HeadPos: {
+                    x:-10,y:-60,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: -10,
+                        y: -5
+                    },
+                    touched: {
+                        x: -40,
+                        y: -10
+                    },
+                    upLeft: {
+                        x: -45,
+                        y: 0
+                    },
+                    up: {
+                        x: -25,
+                        y: 5
+                    },
+                    upRight: {
+                        x: -10,
+                        y: 0
+                    },
+                    downLeft: {
+                        x: -10,
+                        y: -10
+                    },
+                    down: {
+                        x: -30,
+                        y: -20
+                    },
+                    downRight: {
+                        x: -20,
+                        y: -20
+                    },
+                    left: {
+                        x: -20,
+                        y: -5
+                    },
+                    right: {
+                        x: -10,
+                        y: -10
+                    }
+                },
+                type: 'Health',
+                name: 'Lilo Erida',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '6:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'park',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            MDS: {
+                Prefix: 'MDS',
+                HeadPos: {
+                    x:-30,y:-70,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: -70,
+                        y: -40
+                    },
+                    touched: {
+                        x: -70,
+                        y: -40
+                    },
+                    upLeft: {
+                        x: -40,
+                        y: -40
+                    },
+                    up: {
+                        x: -40,
+                        y: -40
+                    },
+                    upRight: {
+                        x: -40,
+                        y: -40
+                    },
+                    downLeft: {
+                        x: -40,
+                        y: -40
+                    },
+                    down: {
+                        x: -40,
+                        y: -40
+                    },
+                    downRight: {
+                        x: -40,
+                        y: -40
+                    },
+                    left: {
+                        x: -40,
+                        y: -40
+                    },
+                    right: {
+                        x: -40,
+                        y: -40
+                    }
+                },
+                type: 'Health',
+                name: 'Lilo Erida',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '6:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'stuffs',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            TC: {
+                Prefix: 'TC',
+                HeadPos: {
+                    x:-20,y:-40,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: 0,
+                        y: 0
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 5
+                    },
+                    up: {
+                        x: 0,
+                        y: 5
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 5
+                    },
+                    downLeft: {
+                        x: 20,
+                        y: 0
+                    },
+                    down: {
+                        x: 0,
+                        y: -20
+                    },
+                    downRight: {
+                        x: -20,
+                        y: -20
+                    },
+                    left: {
+                        x: 0,
+                        y: 0
+                    },
+                    right: {
+                        x: 0,
+                        y: 0
+                    }
+                },
+                type: 'Health',
+                name: 'Lilo Erida',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '6:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'school',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            TCS: {
+                Prefix: 'TCS',
+                HeadPos: {
+                    x:35,y:-70,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: -10,
+                        y: -10
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 5
+                    },
+                    up: {
+                        x: 0,
+                        y: 5
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 5
+                    },
+                    downLeft: {
+                        x: 10,
+                        y: -25
+                    },
+                    down: {
+                        x: 0,
+                        y: -30
+                    },
+                    downRight: {
+                        x: 0,
+                        y: -25
+                    },
+                    left: {
+                        x: 0,
+                        y: -5
+                    },
+                    right: {
+                        x: 0,
+                        y: -5
+                    }
+                },
+                type: 'Health',
+                name: 'Lilo Erida',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '6:00 AM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'cook',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            SC: {
+                Prefix: 'SC',
+                HeadPos: {
+                    x:0,y:-40,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: -40,
+                        y: -10
+                    },
+                    upLeft: {
+                        x: -30,
+                        y: -10
+                    },
+                    up: {
+                        x: -10,
+                        y: 0
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 0
+                    },
+                    downLeft: {
+                        x: 30,
+                        y: -55
+                    },
+                    down: {
+                        x: -35,
+                        y: -85
+                    },
+                    downRight: {
+                        x: -65,
+                        y: -45
+                    },
+                    left: {
+                        x: -10,
+                        y: -20
+                    },
+                    right: {
+                        x: -30,
+                        y: -20
+                    }
+                },
+                type: 'Intelligent',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'school',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            SCS: {
+                Prefix: 'SCS',
+                HeadPos: {
+                    x:10,y:-60,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: 20,
+                        y: -10
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 20
+                    },
+                    up: {
+                        x: 0,
+                        y: 10
+                    },
+                    upRight: {
+                        x: 40,
+                        y: 20
+                    },
+                    downLeft: {
+                        x: 70,
+                        y: -80
+                    },
+                    down: {
+                        x: 10,
+                        y: -90
+                    },
+                    downRight: {
+                        x: -70,
+                        y: -60
+                    },
+                    left: {
+                        x: 50,
+                        y: -20
+                    },
+                    right: {
+                        x: -20,
+                        y: -20
+                    }
+                },
+                type: 'Intelligent',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'space',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            SM: {
+                Prefix: 'SM',
+                HeadPos: {
+                    x:15,y:-60,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: -10,
+                        y: -10
+                    },
+                    upLeft: {
+                        x: 10,
+                        y: 10
+                    },
+                    up: {
+                        x: 10,
+                        y: 5
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 10
+                    },
+                    downLeft: {
+                        x: 70,
+                        y: -80
+                    },
+                    down: {
+                        x: -20,
+                        y: -50
+                    },
+                    downRight: {
+                        x: -40,
+                        y: -60
+                    },
+                    left: {
+                        x: 30,
+                        y: -10
+                    },
+                    right: {
+                        x: -20,
+                        y: -20
+                    }
+                },
+                type: 'Social',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'social',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            SMS: {
+                Prefix: 'SMS',
+                HeadPos: {
+                    x:10,y:-40,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: -20,
+                        y: 20
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 20
+                    },
+                    up: {
+                        x: -10,
+                        y: 40
+                    },
+                    upRight: {
+                        x: -20,
+                        y: 30
+                    },
+                    downLeft: {
+                        x: 70,
+                        y: -80
+                    },
+                    down: {
+                        x: -10,
+                        y: -70
+                    },
+                    downRight: {
+                        x: -90,
+                        y: -60
+                    },
+                    left: {
+                        x: 50,
+                        y: -20
+                    },
+                    right: {
+                        x: -50,
+                        y: -10
+                    }
+                },
+                type: 'Organize',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'stuffs',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            ST: {
+                Prefix: 'ST',
+                HeadPos: {
+                    x:60,y:0,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: 0,
+                        y: 0
+                    },
+                    touched: {
+                        x: 0,
+                        y: 40
+                    },
+                    upLeft: {
+                        x: 0,
+                        y: 20
+                    },
+                    up: {
+                        x: 0,
+                        y: 20
+                    },
+                    upRight: {
+                        x: 0,
+                        y: 20
+                    },
+                    downLeft: {
+                        x: 0,
+                        y: 0
+                    },
+                    down: {
+                        x: 20,
+                        y: 0
+                    },
+                    downRight: {
+                        x: 0,
+                        y: 0
+                    },
+                    left: {
+                        x: 10,
+                        y: -10
+                    },
+                    right: {
+                        x: 0,
+                        y: 20
+                    }
+                },
+                type: 'Organize',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'school',
+                particleCount : 50,
+                particleScreenProption: 0.2
+            },
+            STS: {
+                Prefix: 'STS',
+                HeadPos: {
+                    x:-60,y:0,rotation:0
+                },
+                HeadPivot:{
+                    normal: {
+                        x: -50,
+                        y: -50
+                    },
+                    touched: {
+                        x: -40,
+                        y: -40
+                    },
+                    upLeft: {
+                        x: -100,
+                        y: -250
+                    },
+                    up: {
+                        x: 40,
+                        y: -70
+                    },
+                    upRight: {
+                        x: 50,
+                        y: -220
+                    },
+                    downLeft: {
+                        x: -140,
+                        y: -120
+                    },
+                    down: {
+                        x: -20,
+                        y: -120
+                    },
+                    downRight: {
+                        x: -40,
+                        y: -80
+                    },
+                    left: {
+                        x: -50,
+                        y: -140
+                    },
+                    right: {
+                        x: 0,
+                        y: -80
+                    }
+                },
+                type: 'Organize',
+                name: 'Leo Wilson',
+                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
+                time: '11:00 PM',
+                backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
+                particle : 'decor',
+                particleCount : 200,
+                particleScreenProption: 0.2
+            }
         }
-    });
-    GraphicDesignerDetail = new PersonDetail(
-        {
-            personObject: GraphicDesignerFull,
-            type: 'Flexible',
-            name: 'Adam Owlen',
-            content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
-                        '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-            time: '2:00 AM',
-            backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design '
-        }
-    );
+
+        var option = setDefault(option,this.data[Prefix]);
+
+        Sounds['Appear.mp3'].play();
+
+        TweenMax.to(scene_navigation,1,{
+            alpha:0,
+            delay:0.5,
+            onComplete: function(){
+                scene_navigation.renderable=false;
+                scene_navigation.visible=false;
+                scene.removeChild(scene_navigation);
+            }.bind(Person)
+        });
+
+        scene.draggable = false;
+
+        ParentObject.Full = new Person(
+            option.Prefix,
+            stage,
+            window.innerWidth/2,
+            window.innerHeight/2-100,
+            false,
+            0.8,option.HeadPos.x,option.HeadPos.y,
+            {
+                onClickTap: fThrottle(function(){
+                    // Do smt
+                },1500),
+                onHoverOut: fThrottle(function(){
+                    this.Sketch.play();
+                },1500),
+                onCreate: function(){
+                    GraphicDesignerHead = new PersonHead(this,option.HeadPivot,option.HeadPos.rotation);
+                    GraphicDesignerDetail = new PersonDetail(
+                        {
+                            personObject: this,
+                            type: option.type,
+                            name: option.name,
+                            content: option.content,
+                            time: option.time,
+                            backgroundContent: option.backgroundContent
+                        }
+                    );
+
+                    TweenMax.from(this.position,1.5,{y:"-=2000",ease: Back.easeOut});
+
+                    TweenMax.delayedCall(0.5,function(){
+                        GraphicDesignerHead.show();
+                    });
+
+                    TweenMax.delayedCall(0.5,function(){
+                        this.AnimationIn.play();
+                        this.Sketch.play();
+                        this.animationSpeed = 0.5;
+                    }.bind(this));
+
+                },
+                onDestroy: function(){
+                    scene.addChild(scene_navigation);
+                    scene_navigation.renderable=true;
+                    scene_navigation.visible=true;
+                    TweenMax.to(scene_navigation,1,{
+                        alpha:1,
+                        delay:0.5
+                    });
+                    scene.draggable = true;
+                    if (Particle) {
+                        Particle.removeAll();
+                    }
+                }
+            }
+        );
+
+        Particle = new FloatThing(
+            stage,
+            option.particle,
+            option.particleCount,
+            window.innerWidth*(1-option.particleScreenProption),
+            window.innerHeight*(1-option.particleScreenProption)
+        );
+
+    },3000);
+
+    PersonFull(stage,'GDS');
+
 
     GraphicDesigner = new Person(
         'GD',
@@ -360,41 +1104,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[10].x,
         window.innerHeight / 2 + circleScene.circlePosition[10].y,
         true,
-        0.5,
+        0.55,
         50, -40,
         {
             onClickTap: fThrottle(function(){
-                TweenMax.to(scene_navigation,1,{
-                    alpha:0,
-                    delay:0.5,
-                    onComplete: function(){
-                        scene_navigation.renderable=false;
-                        scene_navigation.visivle=false;
-                        scene.removeChild(scene_navigation);
-                    }.bind(this)
-                });
-
-                scene.draggable = false;
-                Sounds['GD.mp3'].loop = true;
-                Sounds['GD.mp3'].fadeIn(1,3000);
-                Sounds['Moving.mp3'].play();
-
-
-
-                Particle = new FloatThing(
-                    stage,
-                    'stuff',
-                    10,
-                    window.innerWidth*0.9,
-                    window.innerHeight*0.9
-                );
-            },1500),
-            onHoverIn: function(){
-
-            },
-            onHoverOut: function(){
-
-            }
+                PersonFull(this,'GD');
+            },1500)
         }
     );
 
@@ -404,8 +1119,13 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[8].x,
         window.innerHeight / 2 + circleScene.circlePosition[8].y,
         true,
-        0.5, -140,
-        80
+        0.55, -140,
+        80,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'GDS');
+            },1500)
+        }
     );
 
     Model = new Person(
@@ -414,7 +1134,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[3].x,
         window.innerHeight / 2 + circleScene.circlePosition[3].y,
         true,
-        0.5, -10, -55
+        0.55, -10, -55,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'MD');
+            },1500)
+        }
     );
 
     ModelWork = new Person(
@@ -423,7 +1148,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[7].x,
         window.innerHeight / 2 + circleScene.circlePosition[7].y,
         true,
-        0.5, -10, -40
+        0.55, -10, -40,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'MDS');
+            },1500)
+        }
     );
 
     Science = new Person(
@@ -432,8 +1162,13 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[11].x,
         window.innerHeight / 2 + circleScene.circlePosition[11].y,
         true,
-        0.5,
-        0, -30
+        0.55,
+        0, -30,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SC');
+            },1500)
+        }
     );
 
     ScienceSleep = new Person(
@@ -442,7 +1177,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[5].x,
         window.innerHeight / 2 + circleScene.circlePosition[5].y,
         true,
-        0.5, -5, -60
+        0.55, -5, -60,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SCS');
+            },1500)
+        }
     );
 
     Sale = new Person(
@@ -451,7 +1191,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[4].x,
         window.innerHeight / 2 + circleScene.circlePosition[4].y,
         true,
-        0.5, 14, -60
+        0.55, 14, -60,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SM');
+            },1500)
+        }
     );
 
     SaleDinner = new Person(
@@ -460,8 +1205,13 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[0].x,
         window.innerHeight / 2 + circleScene.circlePosition[0].y,
         true,
-        0.5,
-        20, -55
+        0.55,
+        20, -55,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SMS');
+            },1500)
+        }
     );
 
     Student = new Person(
@@ -470,7 +1220,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[2].x,
         window.innerHeight / 2 + circleScene.circlePosition[2].y,
         true,
-        0.5, 55, -35
+        0.55, 55, -35,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'ST');
+            },1500)
+        }
     );
 
     StudentWake = new Person(
@@ -479,7 +1234,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[1].x,
         window.innerHeight / 2 + circleScene.circlePosition[1].y,
         true,
-        0.5, -60, 25
+        0.55, -60, 25,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'STS');
+            },1500)
+        }
     );
 
     Teacher = new Person(
@@ -488,7 +1248,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[6].x,
         window.innerHeight / 2 + circleScene.circlePosition[6].y,
         true,
-        0.5, 10, -45
+        0.55, 10, -45,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'TC');
+            },1500)
+        }
     );
 
     TeacherCook = new Person(
@@ -497,7 +1262,12 @@ function init() {
         window.innerWidth / 2 + circleScene.circlePosition[9].x,
         window.innerHeight / 2 + circleScene.circlePosition[9].y,
         true,
-        0.5, 30, -65
+        0.55, 30, -65,
+        {
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'TCS');
+            },1500)
+        }
     );
 
 
@@ -566,10 +1336,40 @@ function init() {
         window.innerHeight / 2 - 200,
         0.4,
         true,
-        0
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'SCS',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SCS');
+            },1500)
+        }
     );
 
-    Clock = new Thing(
+    Flexible = new Thing(
         scene_navigation_center,
         resourceTexture[assetsPath + 'Flexible.png'].texture,
         resourceTexture[assetsPath + 'Flexible-Color.png'].texture,
@@ -577,7 +1377,37 @@ function init() {
         window.innerHeight / 2 - 200,
         0.4,
         true,
-        500
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'GD',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'GD');
+            },1500)
+        }
     );
 
     Intelligent = new Thing(
@@ -588,7 +1418,37 @@ function init() {
         window.innerHeight / 2 - 200,
         0.4,
         true,
-        1000
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'SC',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SC');
+            },1500)
+        }
     );
 
     Health = new Thing(
@@ -599,7 +1459,37 @@ function init() {
         window.innerHeight / 2 + 200,
         0.4,
         true,
-        0
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'MD',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'MD');
+            },1500)
+        }
     );
 
     Organize = new Thing(
@@ -610,7 +1500,37 @@ function init() {
         window.innerHeight / 2 + 200,
         0.4,
         true,
-        500
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'SMS',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SMS');
+            },1500)
+        }
     );
 
 
@@ -622,14 +1542,44 @@ function init() {
         window.innerHeight / 2 + 200,
         0.4,
         true,
-        1000
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'SM',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                PersonFull(this,'SM');
+            },1500)
+        }
     );
 
 
-    // intro_p = 'Are you the kind of person who gets up early for a fresh ' +
-    //     'start of the day'
+    intro_p = 'Are you the kind of person who gets up early for a fresh ' +
+        'start of the day'
 
-    intro_p = " ";
+    // intro_p = " ";
 
     intro_p2 = 'or do you stay up late at night to ' +
         'finish your work?'
@@ -707,6 +1657,7 @@ function init() {
         ['click','touchend'].forEach(function(each){
             window.addEventListener(each,function(e){
                 //console.log(e);
+                // Sounds['Water.mp3'].play();
                 var posX = typeof e.clientX !== 'undefined' ? e.clientX : typeof e.changedTouches[0].clientX !== 'undefined' ? e.changedTouches[0].clientX : 0;
                 var posY = typeof e.clientY !== 'undefined' ? e.clientY : typeof e.changedTouches[0].clientY !== 'undefined' ? e.changedTouches[0].clientY : 0;
                 DisSprite.position.set(posX,posY);

@@ -2,18 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Angry.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Exp.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center-Happy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Center.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Touched-Hard.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Touched-Light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Up-Left.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/GD-Head-Up-Right.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Archive/Faces/TC-Down-Right-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Right-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Right-2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/clipsheets/Owl-Sketch.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/clipsheets/stuff.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/project/assets/images/clipsheets/stuff.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Normal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Normal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Touched.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Up-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Down-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Down-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Normal.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Left-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Right.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Color-After.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Color-Before.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Down-Left.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-0.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-1.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-2.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Reference/bunny mark/index.html" afterPath="$PROJECT_DIR$/Reference/bunny mark/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/css/style.css" afterPath="$PROJECT_DIR$/project/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.html" afterPath="$PROJECT_DIR$/project/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/init.js" afterPath="$PROJECT_DIR$/project/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/loader.js" afterPath="$PROJECT_DIR$/project/js/loader.js" />
@@ -21,8 +56,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/person.js" afterPath="$PROJECT_DIR$/project/js/objects/person.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/text.js" afterPath="$PROJECT_DIR$/project/js/objects/text.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/thing.js" afterPath="$PROJECT_DIR$/project/js/objects/thing.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" afterPath="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" afterPath="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
     </list>
     <ignored path="LastAssignment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,7 +82,7 @@
           <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="6675">
+                <state relative-caret-position="5955">
                   <caret line="445" column="30" selection-start-line="445" selection-start-column="30" selection-end-line="445" selection-end-column="30" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -61,8 +94,8 @@
           <file leaf-file-name="init.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/init.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2638">
-                  <caret line="229" column="20" selection-start-line="229" selection-start-column="20" selection-end-line="229" selection-end-column="20" />
+                <state relative-caret-position="482">
+                  <caret line="284" column="33" selection-start-line="284" selection-start-column="33" selection-end-line="284" selection-end-column="33" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -73,41 +106,31 @@
           <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/loader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="15">
-                  <caret line="408" column="21" selection-start-line="408" selection-start-column="21" selection-end-line="408" selection-end-column="21" />
+                <state relative-caret-position="135">
+                  <caret line="700" column="30" selection-start-line="700" selection-start-column="26" selection-end-line="700" selection-end-column="30" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="floatthing.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="floatthing.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
+                <state relative-caret-position="-809">
+                  <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="person.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="613" column="78" selection-start-line="613" selection-start-column="78" selection-end-line="613" selection-end-column="78" />
+                <state relative-caret-position="-41">
+                  <caret line="669" column="0" selection-start-line="669" selection-start-column="0" selection-end-line="688" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#36#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="pixi.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="110">
-                  <caret line="20464" column="38" selection-start-line="20464" selection-start-column="38" selection-end-line="20464" selection-end-column="38" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -149,8 +172,8 @@
           <file leaf-file-name="transitioncolor.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="424">
-                  <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
+                <state relative-caret-position="84">
+                  <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -159,8 +182,8 @@
           <file leaf-file-name="thing.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="419">
-                  <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+                <state relative-caret-position="397">
+                  <caret line="227" column="18" selection-start-line="227" selection-start-column="18" selection-end-line="227" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -169,8 +192,8 @@
           <file leaf-file-name="text.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="975">
-                  <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+                <state relative-caret-position="135">
+                  <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -179,10 +202,10 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="240">
-                  <caret line="352" column="100" selection-start-line="352" selection-start-column="100" selection-end-line="352" selection-end-column="100" />
+                <state relative-caret-position="5839">
+                  <caret line="1097" column="25" selection-start-line="1097" selection-start-column="25" selection-end-line="1097" selection-end-column="25" />
                   <folding>
-                    <element signature="e#11011#11677#0" expanded="false" />
+                    <element signature="e#12151#13309#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -225,17 +248,17 @@
         <option value="$PROJECT_DIR$/project/js/objects/background.js" />
         <option value="$PROJECT_DIR$/project/js/objects/tvnoise.js" />
         <option value="$PROJECT_DIR$/project/assets/images/clipsheets/stuffs.json" />
-        <option value="$PROJECT_DIR$/project/js/objects/floatthing.js" />
         <option value="$PROJECT_DIR$/project/css/style.css" />
-        <option value="$PROJECT_DIR$/project/js/init.js" />
         <option value="$PROJECT_DIR$/project/index.html" />
-        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
-        <option value="$PROJECT_DIR$/project/js/loader.js" />
-        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
         <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
         <option value="$PROJECT_DIR$/project/js/objects/text.js" />
-        <option value="$PROJECT_DIR$/project/index.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/transitioncolor.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
+        <option value="$PROJECT_DIR$/project/js/init.js" />
         <option value="$PROJECT_DIR$/project/js/objects/person.js" />
+        <option value="$PROJECT_DIR$/project/js/loader.js" />
+        <option value="$PROJECT_DIR$/project/js/objects/floatthing.js" />
+        <option value="$PROJECT_DIR$/project/index.js" />
       </list>
     </option>
   </component>
@@ -484,7 +507,7 @@
       <workItem from="1465230731505" duration="39098000" />
       <workItem from="1465335315854" duration="21553000" />
       <workItem from="1465487764578" duration="30494000" />
-      <workItem from="1465640825563" duration="26813000" />
+      <workItem from="1465640825563" duration="73326000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1463565396489</created>
@@ -497,7 +520,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490160000" />
+    <option name="totallyTimeSpent" value="536673000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
@@ -506,12 +529,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1760608" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29638556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29638556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18366055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26385543" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22650602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -533,11 +556,11 @@
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2951807" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25301206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1760608" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33293268" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24952501" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29638556" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18366055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -590,7 +613,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -642,7 +665,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -694,7 +717,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -722,7 +745,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -750,7 +773,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -778,7 +801,7 @@
         <state relative-caret-position="6435">
           <caret line="429" column="4" selection-start-line="429" selection-start-column="4" selection-end-line="429" selection-end-column="4" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -806,7 +829,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -826,7 +849,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -900,6 +923,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="20464" column="38" selection-start-line="20464" selection-start-column="38" selection-end-line="20464" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/project/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -910,15 +941,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/transitioncolor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="151" column="50" selection-start-line="151" selection-start-column="50" selection-end-line="151" selection-end-column="50" />
+        <state relative-caret-position="84">
+          <caret line="135" column="38" selection-start-line="135" selection-start-column="38" selection-end-line="135" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="227" column="18" selection-start-line="227" selection-start-column="18" selection-end-line="227" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6675">
+        <state relative-caret-position="5955">
           <caret line="445" column="30" selection-start-line="445" selection-start-column="30" selection-end-line="445" selection-end-column="30" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -926,72 +973,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/pixiv4/pixi.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="20464" column="38" selection-start-line="20464" selection-start-column="38" selection-end-line="20464" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="408" column="21" selection-start-line="408" selection-start-column="21" selection-end-line="408" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="157" column="48" selection-start-line="157" selection-start-column="48" selection-end-line="157" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/js/init.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2638">
-          <caret line="229" column="20" selection-start-line="229" selection-start-column="20" selection-end-line="229" selection-end-column="20" />
+        <state relative-caret-position="482">
+          <caret line="284" column="33" selection-start-line="284" selection-start-column="33" selection-end-line="284" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
+        <state relative-caret-position="-41">
+          <caret line="669" column="0" selection-start-line="669" selection-start-column="0" selection-end-line="688" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="700" column="30" selection-start-line="700" selection-start-column="26" selection-end-line="700" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="216" column="34" selection-start-line="216" selection-start-column="34" selection-end-line="216" selection-end-column="34" />
+        <state relative-caret-position="-809">
+          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="352" column="100" selection-start-line="352" selection-start-column="100" selection-end-line="352" selection-end-column="100" />
+        <state relative-caret-position="5839">
+          <caret line="1097" column="25" selection-start-line="1097" selection-start-column="25" selection-end-line="1097" selection-end-column="25" />
           <folding>
-            <element signature="e#11011#11677#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="613" column="78" selection-start-line="613" selection-start-column="78" selection-end-line="613" selection-end-column="78" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#12151#13309#0" expanded="false" />
           </folding>
         </state>
       </provider>

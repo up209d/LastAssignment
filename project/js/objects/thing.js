@@ -18,12 +18,14 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     callback.onHoverIn = typeof callback.onHoverIn !== 'undefined' ? callback.onHoverIn.bind(this) : function(){};
     callback.onHoverOut = typeof callback.onHoverOut !== 'undefined' ? callback.onHoverOut.bind(this) : function(){};
 
+    this.callback = callback;
 
     scale = typeof scale !== 'undefined' ? scale : 1;
     autoplay = typeof autoplay !== 'undefined' ? autoplay : true;
     delayTime = typeof delayTime !== 'undefined' ? delayTime : 0;
 
     this.Container = new PIXI.Container();
+    this.Container.alpha = 0;
 
     this.Sketch = new PIXI.Sprite(Sketch);
     this.Sketch.anchor.set(0.5);
@@ -111,13 +113,16 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     // Can change any state by access to matrix[0 to 19] here
     this.Stage = new PIXI.Container();
 
-    this.Stage.addChild(this.Container);
     this.Stage.addChild(this.DisplacementSprite);
+    this.Stage.addChild(this.Container);
+
     //this.Stage.addChild(this.DisplacementSpriteAround);
 
     this.Stage.pivot.set(0,0);
     this.Stage.position.set(xPos,yPos);
     this.Stage.scale.set(scale);
+
+
 
     self.show = new TimelineMax({
             paused:true,
@@ -126,6 +131,7 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
 
     self.show.call(
         function(){
+            TweenMax.to(this.Container,0.5,{alpha:1});
             this.ColorMask.object.gotoAndStop(0);
             this.SketchMask.object.gotoAndPlay(0);
         },null,this
@@ -212,6 +218,17 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
         });
     });
 
+    ['mouseover'].forEach(function(e){
+        self.Stage.on(e,function(){
+            self.callback.onHoverIn.apply(this);
+        });
+    });
+
+    ['mouseout'].forEach(function(e){
+        self.Stage.on(e,function(){
+            self.callback.onHoverOut.apply(this);
+        });
+    });
 
     DisplayContainer.addChild(this.Stage);
     callback.onCreate.apply(this);

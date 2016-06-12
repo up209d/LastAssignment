@@ -19,16 +19,23 @@ var Person = function(
     PIXI.Container.call(this);
 
     callback = typeof callback !== 'undefined' ? callback : {
+        onCreate: function(){},
         onClickTap : function(){},
         onHoverIn: function(){},
-        onHoverOut: function(){}
+        onHoverOut: function(){},
+        onDestroy: function(){}
     };
 
+    callback.onCreate = typeof callback.onCreate !== 'undefined' ? callback.onCreate.bind(this) : function(){};
     callback.onClickTap = typeof callback.onClickTap !== 'undefined' ? callback.onClickTap.bind(this) : function(){};
     callback.onHoverIn = typeof callback.onHoverIn !== 'undefined' ? callback.onHoverIn.bind(this) : function(){};
     callback.onHoverOut = typeof callback.onHoverOut !== 'undefined' ? callback.onHoverOut.bind(this) : function(){};
+    callback.onDestroy = typeof callback.onDestroy !== 'undefined' ? callback.onDestroy.bind(this) : function(){};
+
+    this.callback = callback;
 
     autoplay = typeof autoplay == 'undefined' ? false : autoplay;
+    this.autoplay = autoplay;
 
     scale = typeof scale == 'undefined' ? 1 : scale;
 
@@ -159,12 +166,9 @@ var Person = function(
     // event function, but when we bind(this)(this here mean 'this person')
     // so the 'whole person object' will be use as 'this' in the function
     ['click','tap'].forEach(function(e){
-        this.Container.on(e,fDebounce(function(e){
-            // PersonObject.ColorAfter_TransitionMask.playReverse();
-            // PersonObject.ColorAfter_TransitionMask.playReverse();
-            // PersonObject.ColorAfter_TransitionMask.playReverse();
-            callback.onClickTap();
-        }.bind(this),500));
+        this.Container.on(e,function(){
+            callback.onClickTap.apply(this);
+        });
     }.bind(this));
 
     this.Container.on('mouseover',fDebounce(function(e){
@@ -186,7 +190,7 @@ var Person = function(
     // specify which is used to be 'this', bind will not run the function
     // but call will run the function immediately
 
-    this.AnimationIn = new TimelineMax({delay: 0.5,paused: true});
+    this.AnimationIn = new TimelineMax({delay: 0.1,paused: true});
 
     if (browserDetection.isHandheld()) {
         this.AnimationIn.add(
@@ -234,6 +238,8 @@ var Person = function(
     this.position.set(xPos,yPos);
 
     DisplayContainer.addChild(this);
+
+    callback.onCreate.apply(this);
 
 }
 
@@ -372,25 +378,34 @@ PersonHead = function (PersonObject,
     PersonObject.Head.interactive = true;
 
 
-    // Animation In Person Color and Sketch
-    TweenMax.delayedCall(1, function () {
-        PersonObject.ColorAfter_TransitionMask.play();
-        PersonObject.Sketch.play();
-    });
-
-    TweenMax.to(PersonObject.Head, 1, {alpha: 1, ease: Sine.easeOut});
-    TweenMax.to(PersonObject.Head.scale, 3, {x: 0.8, y: 0.8, ease: Elastic.easeOut});
-    TweenMax.fromTo(PersonObject.Head, 1,
-        {
-            rotation: "-=0.1"
-        },
-        {
-            rotation: "+=0.2",
-            ease: Sine.easeInOut,
-            repeat: -1,
-            yoyo: true,
-            delay: 0.2
+    self.show = function(){
+        TweenMax.delayedCall(1, function () {
+            PersonObject.ColorAfter_TransitionMask.play();
+            PersonObject.Sketch.play();
         });
+
+        TweenMax.delayedCall(0, function () {
+            TweenMax.to(PersonObject.Head, 1, {alpha: 1, ease: Sine.easeOut});
+            TweenMax.to(PersonObject.Head.scale, 3, {x: 0.8, y: 0.8, ease: Elastic.easeOut});
+            TweenMax.fromTo(PersonObject.Head, 1,
+                {
+                    rotation: "-=0.1"
+                },
+                {
+                    rotation: "+=0.2",
+                    ease: Sine.easeInOut,
+                    repeat: -1,
+                    // repeatDelay:1,
+                    yoyo: true,
+                    delay: 0.2
+                });
+        });
+    }
+
+    // Animation In Person Color and Sketch
+    if (PersonObject.autoplay) {
+        self.show();
+    }
 
     self.changeable = true;
 
@@ -432,7 +447,7 @@ PersonHead = function (PersonObject,
             //console.log(angle);
 
             if (self.changeable) {
-                if ((distanceX<=-200 || distanceX>=200) || (distanceY<=-100 || distanceY>=100)) {
+                if ((distanceX<=-200 || distanceX>=200) || (distanceY<=-200 || distanceY>=200)) {
 
                     if ((angle > 0 && angle <= 22.5) || (angle>337.5 && angle <= 360)) {
                         self.changeEmotion(0,'right');
@@ -487,11 +502,11 @@ PersonHead = function (PersonObject,
             self.originYPos =  PersonObject.Head.position.y;
         }
         self.rumble.rumbling = TweenMax.fromTo(PersonObject.Head.position,0.2,{
-            x:self.originXPos-5,
-            y:self.originYPos-5
+            x:self.originXPos-3,
+            y:self.originYPos-3
         },{
-            x:self.originXPos+10,
-            y:self.originYPos+10,
+            x:self.originXPos+6,
+            y:self.originYPos+6,
             immediateRender: false,
             ease: Sine.easeInOut,
             yoyo: true,
@@ -522,7 +537,7 @@ var PersonDetail = function(object)
 
         PIXI.Container.call(this);
 
-            console.log(object.personObject);
+        //console.log(object.personObject);
 
         this.type = new Thing(
             this,
@@ -531,22 +546,26 @@ var PersonDetail = function(object)
             50,
             -330,
             0.75,
-            true,
+            false,
             1,
             {
                 onCreate: fDebounce(function(){
-                    this.zoomInRight.play()
+                    this.zoomInRight.play(0)
+                    this.show.play(0);
                 },1000),
-                onClickTap: fDebounce(function() {
-                    TweenMax.to(this.Stage.scale,0.15,{x:"+=0.1",y:"+=0.1",yoyo:true,repeat:1});
+                onClickTap: fThrottle(function() {
+
+                    Sounds['Click.mp3'].play();
+                    // Sounds['GD.mp3'].play();
+
+                    TweenMax.to(this.Stage.scale,0.15,{x:"-=0.1",y:"-=0.1",yoyo:true,repeat:1});
                     TweenMax.to(this.Stage,0.15,{rotation:"+=0.1",yoyo:true,repeat:1});
 
                     if (object.personObject.PersonHead) {
                         object.personObject.PersonHead.rumble();
-                        // console.log(object.personObject.PersonHead);
                     }
 
-                },250)
+                },500)
             });
 
         this.name = new Text(
@@ -578,9 +597,9 @@ var PersonDetail = function(object)
 
         this.content.Content.anchor.set(0,0);
         this.content.Content.style.wordWrap = true;
-        this.content.Content.style.wordWrapWidth = window.innerWidth/2;
+        this.content.Content.style.wordWrapWidth = 500;
         this.content.Content.style.lineHeight = 44;
-        this.content.Content.style.letterSpacing = 1;
+        this.content.Content.style.letterSpacing = 2;
 
         // Reset Padding Ratio
         this.content.Content.scale.y = this.content.Content.height/(this.content.Content.height - (this.content.Content.style.padding*2));
@@ -597,13 +616,35 @@ var PersonDetail = function(object)
             false
         );
 
+        var wtColon = this.time.Content.text;
+        var wtoutColon = this.time.Content.text.replace(/\:/," ");
+
+        Clock_Blink = new TimelineMax({
+            repeat:-1,
+            repeatDelay:0.5,
+            paused: true,
+            onRepeat: function(){
+                this.time.Content.text = this.time.Content.text == wtColon ? wtoutColon : wtColon;
+            }.bind(this)
+        });
+
+        this.time.Content.interactive = true;
+        this.time.Content.on('mouseover',fThrottle(function(){
+            Clock_Blink.paused(false);
+        }.bind(this)),100);
+        this.time.Content.on('mouseout',fThrottle(function(){
+            Clock_Blink.paused(true);
+            this.time.Content.text = this.time.Content.text == wtoutColon ? wtColon : wtColon;
+        }.bind(this)),100);
+
+
         this.backgroundContent = new Text(
             this,
             object.backgroundContent,
             'content',
             30,
             0,
-            550,
+            500,
             1,
             10,
             false
@@ -613,16 +654,57 @@ var PersonDetail = function(object)
         this.backgroundContent.Content.style.wordWrap = true;
         this.backgroundContent.Content.style.wordWrapWidth = window.innerWidth;
         this.backgroundContent.Content.style.lineHeight = 44;
-        this.backgroundContent.Content.style.letterSpacing = 1;
+        this.backgroundContent.Content.style.letterSpacing = 2;
 
         // Reset Padding Ratio
+        this.backgroundContent.Content.anchor.set(0.5,0);
         this.backgroundContent.Content.scale.y = this.backgroundContent.Content.height/(this.backgroundContent.Content.height - (this.backgroundContent.Content.style.padding*2));
 
+        this.Close = new PIXI.Sprite(resourceTexture[assetsPath+'Close.png'].texture);
+        this.Close.scale.set(0.75);
+        this.Close.anchor.set(0.5);
+        this.Close.position.set(0,this.backgroundContent.Stage.position.y+this.backgroundContent.Content.height);
+        object.personObject.addChild(this.Close);
+        this.Close.interactive = true;
 
-        object.personObject.position.set(window.innerWidth/2,window.innerHeight/2);
+        ['click','tap'].forEach(function(e){
+            this.Close.on(e,fThrottle(function(ev){
+                Sounds['Click.mp3'].play();
+                object.personObject.callback.onDestroy.apply(this);
+                TweenMax.to(object.personObject.position,0.5,{y:"-=2000",ease: Back.easeIn});
+                TweenMax.to(object.personObject,1,{alpha:0,onComplete:function(){
+
+                }.bind(this)});
+                setTimeout(function(){
+                    object.personObject.renderable = false;
+                    object.personObject.visible = false;
+                    object.personObject.parent.removeChild(object.personObject);
+                }.bind(this),1000);
+
+            }.bind(this),3000));
+        }.bind(this));
+
+        this.Close.on('mouseover',fThrottle(function(){
+            TweenMax.to(this.Close.scale,0.125,{x:"+=0.1",y:"+=0.1",ease: Sine.easeOut, repeat:1, yoyo:true});
+        }.bind(this),250));
+
+        this.show = new TimelineMax({paused:true});
+
+        this.show.add(TweenMax.from(this.name.Container.position,1,{x:"+=200",ease:Sine.easeOut}),0);
+        this.show.add(TweenMax.from(this.name.Container,2,{alpha:0}),0);
+        this.show.add(TweenMax.from(this.content.Container.position,1,{x:"+=200",ease:Sine.easeOut}),0.5);
+        this.show.add(TweenMax.from(this.content.Container,2,{alpha:0}),0.5);
+        this.show.add(TweenMax.from(this.time.Container.position,1,{x:"+=200",ease:Sine.easeOut}),1);
+        this.show.add(TweenMax.from(this.time.Container,2,{alpha:0}),1);
+        this.show.add(TweenMax.from(this.backgroundContent.Container.position,1,{x:"+=200",ease:Sine.easeOut}),1.5);
+        this.show.add(TweenMax.from(this.backgroundContent.Container,2,{alpha:0}),1.5);
+        this.show.add(TweenMax.from(this.Close.scale,0.5,{x:0,y:0,ease:Back.easeOut}),2);
+        this.show.play(0);
+
         object.personObject.Stage.position.set(-object.personObject.Stage.width/2+50,0);
-
         object.personObject.addChild(this);
+
+
 
     };
 

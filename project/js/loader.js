@@ -1,7 +1,15 @@
+var assetsPath = 'assets/images/';
+var assetsClipPath = 'assets/images/clips/';
+var assetsClipSheetsPath = 'assets/images/clipsheets/';
+var assetsSoundPath = 'assets/sounds/'
+
 SoundUrls = [
-    './assets/sounds/Moving.mp3',
-    './assets/sounds/Click.mp3',
-    './assets/sounds/GD.mp3'
+    assetsSoundPath+'Moving.mp3',
+    assetsSoundPath+'Click.mp3',
+    assetsSoundPath+'GD.mp3',
+    assetsSoundPath+'Appear.mp3',
+    assetsSoundPath+'Brush.mp3',
+    assetsSoundPath+'Water.mp3'
 ];
 Sounds = {};
 
@@ -40,7 +48,7 @@ var LoadingAnimation = function(DisplayContainer) {
         // FOR V4 FONT
         this.titleSize = 28;
         this.titleFont = 'kg_summer_sunshineregular';
-        this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: this.titleSize});
+        this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: this.titleSize,fill: 0x000000});
         this.title.anchor.x = this.title.anchor.y = 0.5;
         this.title.scale.set(1);
         this.title.position.x = window.innerWidth/2;
@@ -165,10 +173,6 @@ loader.on('load', ...); // called once per loaded file
 loader.on('complete', ...); // called once when the queued resources all load.
 
 **/
-
-var assetsPath = 'assets/images/';
-var assetsClipPath = 'assets/images/clips/';
-var assetsClipSheetsPath = 'assets/images/clipsheets/'
 
 var filesLoader = [
 
@@ -358,19 +362,11 @@ var filesLoader = [
     assetsPath+'Success.png',
     assetsPath+'TC-Color-After.png',
     assetsPath+'TC-Color-Before.png',
-    assetsPath+'TC-Down-1.png',
-    assetsPath+'TC-Down-2.png',
     assetsPath+'TC-Down-Left.png',
-    assetsPath+'TC-Down-Right-1.png',
-    assetsPath+'TC-Down-Right-2.png',
     assetsPath+'TC-Down-Right.png',
     assetsPath+'TC-Down.png',
-    assetsPath+'TC-Left-1.png',
     assetsPath+'TC-Left.png',
-    assetsPath+'TC-Normal-1.png',
     assetsPath+'TC-Normal.png',
-    assetsPath+'TC-Right-1.png',
-    assetsPath+'TC-Right-2.png',
     assetsPath+'TC-Right.png',
     assetsPath+'TC-Sketch-0.png',
     assetsPath+'TC-Sketch-1.png',
@@ -696,8 +692,13 @@ var filesLoader = [
     'assets/Test/wave.png',
 
     // Sprite Sheet
-    assetsClipSheetsPath+'stuff.json'
-
+    assetsClipSheetsPath+'stuffs.json',
+    assetsClipSheetsPath+'decor.json',
+    assetsClipSheetsPath+'space.json',
+    assetsClipSheetsPath+'school.json',
+    assetsClipSheetsPath+'social.json',
+    assetsClipSheetsPath+'cook.json',
+    assetsClipSheetsPath+'park.json'
 ];
 
 

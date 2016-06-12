@@ -1,0 +1,115 @@
+{
+"frames": {
+	"school-01.png": {
+		"frame": {"x":244, "y":98, "w":24, "h":93},
+		"spriteSourceSize": {"x":26,"y":19,"w":65,"h":121},
+		"sourceSize": {"w":65,"h":121}
+	},
+	"school-02.png": {
+		"frame": {"x":132, "y":114, "w":40, "h":52},
+		"spriteSourceSize": {"x":3,"y":13,"w":52,"h":81},
+		"sourceSize": {"w":52,"h":81}
+	},
+	"school-03.png": {
+		"frame": {"x":157, "y":0, "w":37, "h":36},
+		"spriteSourceSize": {"x":7,"y":14,"w":47,"h":58},
+		"sourceSize": {"w":47,"h":58}
+	},
+	"school-04.png": {
+		"frame": {"x":154, "y":56, "w":40, "h":27},
+		"spriteSourceSize": {"x":17,"y":19,"w":65,"h":59},
+		"sourceSize": {"w":65,"h":59}
+	},
+	"school-05.png": {
+		"frame": {"x":105, "y":0, "w":51, "h":55},
+		"spriteSourceSize": {"x":18,"y":17,"w":79,"h":87},
+		"sourceSize": {"w":79,"h":87}
+	},
+	"school-06.png": {
+		"frame": {"x":195, "y":0, "w":35, "h":50},
+		"spriteSourceSize": {"x":8,"y":16,"w":51,"h":76},
+		"sourceSize": {"w":51,"h":76}
+	},
+	"school-07.png": {
+		"frame": {"x":211, "y":51, "w":34, "h":46},
+		"spriteSourceSize": {"x":10,"y":12,"w":51,"h":75},
+		"sourceSize": {"w":51,"h":75}
+	},
+	"school-08.png": {
+		"frame": {"x":131, "y":190, "w":44, "h":53},
+		"spriteSourceSize": {"x":11,"y":7,"w":63,"h":67},
+		"sourceSize": {"w":63,"h":67}
+	},
+	"school-09.png": {
+		"frame": {"x":105, "y":56, "w":48, "h":57},
+		"spriteSourceSize": {"x":10,"y":21,"w":66,"h":89},
+		"sourceSize": {"w":66,"h":89}
+	},
+	"school-10.png": {
+		"frame": {"x":176, "y":161, "w":36, "h":54},
+		"spriteSourceSize": {"x":23,"y":11,"w":66,"h":68},
+		"sourceSize": {"w":66,"h":68}
+	},
+	"school-11.png": {
+		"frame": {"x":213, "y":147, "w":30, "h":42},
+		"spriteSourceSize": {"x":8,"y":17,"w":49,"h":75},
+		"sourceSize": {"w":49,"h":75}
+	},
+	"school-12.png": {
+		"frame": {"x":173, "y":124, "w":36, "h":36},
+		"spriteSourceSize": {"x":17,"y":13,"w":58,"h":58},
+		"sourceSize": {"w":58,"h":58}
+	},
+	"school-13.png": {
+		"frame": {"x":0, "y":224, "w":49, "h":28},
+		"spriteSourceSize": {"x":17,"y":15,"w":82,"h":61},
+		"sourceSize": {"w":82,"h":61}
+	},
+	"school-14.png": {
+		"frame": {"x":173, "y":84, "w":37, "h":39},
+		"spriteSourceSize": {"x":33,"y":15,"w":84,"h":62},
+		"sourceSize": {"w":84,"h":62}
+	},
+	"school-15.png": {
+		"frame": {"x":176, "y":216, "w":30, "h":36},
+		"spriteSourceSize": {"x":16,"y":11,"w":60,"h":57},
+		"sourceSize": {"w":60,"h":57}
+	},
+	"school-16.png": {
+		"frame": {"x":207, "y":216, "w":29, "h":35},
+		"spriteSourceSize": {"x":14,"y":27,"w":59,"h":71},
+		"sourceSize": {"w":59,"h":71}
+	},
+	"school-17.png": {
+		"frame": {"x":76, "y":190, "w":54, "h":50},
+		"spriteSourceSize": {"x":24,"y":25,"w":95,"h":89},
+		"sourceSize": {"w":95,"h":89}
+	},
+	"school-18.png": {
+		"frame": {"x":0, "y":0, "w":104, "h":129},
+		"spriteSourceSize": {"x":29,"y":5,"w":147,"h":146},
+		"sourceSize": {"w":147,"h":146}
+	},
+	"school-19.png": {
+		"frame": {"x":0, "y":130, "w":75, "h":93},
+		"spriteSourceSize": {"x":17,"y":18,"w":104,"h":126},
+		"sourceSize": {"w":104,"h":126}
+	},
+	"school-20.png": {
+		"frame": {"x":76, "y":130, "w":55, "h":59},
+		"spriteSourceSize": {"x":18,"y":12,"w":93,"h":80},
+		"sourceSize": {"w":93,"h":80}
+	},
+	"school-21.png": {
+		"frame": {"x":211, "y":98, "w":31, "h":48},
+		"spriteSourceSize": {"x":11,"y":14,"w":53,"h":79},
+		"sourceSize": {"w":53,"h":79}
+	}
+
+},
+"meta": {
+	"image": "school.png",
+	"size": {"w": 512, "h": 256},
+	"scale": "1"
+}
+}
