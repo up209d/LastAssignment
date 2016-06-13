@@ -113,9 +113,9 @@ var Thing = function(DisplayContainer,Sketch,Color,xPos,yPos,scale, autoplay, de
     // Can change any state by access to matrix[0 to 19] here
     this.Stage = new PIXI.Container();
 
-    this.Stage.addChild(this.DisplacementSprite);
-    this.Stage.addChild(this.Container);
 
+    this.Stage.addChild(this.Container);
+    this.Stage.addChild(this.DisplacementSprite);
     //this.Stage.addChild(this.DisplacementSpriteAround);
 
     this.Stage.pivot.set(0,0);

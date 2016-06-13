@@ -422,6 +422,11 @@ PersonHead = function (PersonObject,
                 });
             }
 
+            if (PersonObject.isPlayingMusic) {
+                Sounds['Dance.mp3'].stop();
+                PersonObject.isPlayingMusic = false;
+            }
+
             PersonObject.Head.texture = PersonObject.Emotions.touched;
             PersonObject.Head.pivot.set(emotionsOffset['touched'].x, emotionsOffset['touched'].y);
             self.changeEmotion(2000, 'normal');
@@ -501,6 +506,7 @@ PersonHead = function (PersonObject,
             self.originXPos =  PersonObject.Head.position.x;
             self.originYPos =  PersonObject.Head.position.y;
         }
+
         self.rumble.rumbling = TweenMax.fromTo(PersonObject.Head.position,0.2,{
             x:self.originXPos-3,
             y:self.originYPos-3
@@ -556,7 +562,11 @@ var PersonDetail = function(object)
                 onClickTap: fThrottle(function() {
 
                     Sounds['Click.mp3'].play();
-                    // Sounds['GD.mp3'].play();
+
+                    if (!object.personObject.isPlayingMusic) {
+                        Sounds['Dance.mp3'].play();
+                        object.personObject.isPlayingMusic = true;
+                    }
 
                     TweenMax.to(this.Stage.scale,0.15,{x:"-=0.1",y:"-=0.1",yoyo:true,repeat:1});
                     TweenMax.to(this.Stage,0.15,{rotation:"+=0.1",yoyo:true,repeat:1});
@@ -670,6 +680,12 @@ var PersonDetail = function(object)
         ['click','tap'].forEach(function(e){
             this.Close.on(e,fThrottle(function(ev){
                 Sounds['Click.mp3'].play();
+
+                if (object.personObject.isPlayingMusic) {
+                    Sounds['Dance.mp3'].stop();
+                    object.personObject.isPlayingMusic = false;
+                }
+
                 object.personObject.callback.onDestroy.apply(this);
                 TweenMax.to(object.personObject.position,0.5,{y:"-=2000",ease: Back.easeIn});
                 TweenMax.to(object.personObject,1,{alpha:0,onComplete:function(){

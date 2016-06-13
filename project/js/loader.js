@@ -6,7 +6,7 @@ var assetsSoundPath = 'assets/sounds/'
 SoundUrls = [
     assetsSoundPath+'Moving.mp3',
     assetsSoundPath+'Click.mp3',
-    assetsSoundPath+'GD.mp3',
+    assetsSoundPath+'Dance.mp3',
     assetsSoundPath+'Appear.mp3',
     assetsSoundPath+'Brush.mp3',
     assetsSoundPath+'Water.mp3'

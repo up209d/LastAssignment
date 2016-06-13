@@ -67,7 +67,7 @@ function init() {
     // ---- END BUNNY ----
 
     circleScene = {
-        circleRadius: 1600,
+        circleRadius: 1000,
         circlePI: 3.14,
         circlePosition: []
     }
@@ -433,9 +433,8 @@ function init() {
                 },
                 type: 'Flexible',
                 name: 'Adam Owlen',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
-                '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '2:00 AM',
+                content: 'Adam Owlen, A graphic designer, his time is flexible as he is a freelancer designer. He choose to sleep in the morning and stay awake in the night. He feels more productive and easier to releaser his creativity out.\n\nSleeping in the morning is also his favorite, as almost all of his activities are in the night',
+                time: '12:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'space',
                 particleCount : 50,
@@ -490,7 +489,7 @@ function init() {
                 },
                 type: 'Health',
                 name: 'Lilo Erida',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                content: 'Lilo Erida is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
                 time: '6:00 AM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
@@ -547,9 +546,9 @@ function init() {
                 },
                 type: 'Health',
                 name: 'Lilo Erida',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                content: 'Lilo Erida is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '6:00 AM',
+                time: '5:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'stuffs',
                 particleCount : 50,
@@ -603,10 +602,10 @@ function init() {
                     }
                 },
                 type: 'Health',
-                name: 'Lilo Erida',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Gow Maren',
+                content: 'Gow Maren is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '6:00 AM',
+                time: '8:00 AM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'school',
                 particleCount : 50,
@@ -660,10 +659,10 @@ function init() {
                     }
                 },
                 type: 'Health',
-                name: 'Lilo Erida',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Gow Maren',
+                content: 'Gow Maren is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '6:00 AM',
+                time: '9:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'cook',
                 particleCount : 50,
@@ -718,7 +717,7 @@ function init() {
                 },
                 type: 'Intelligent',
                 name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                content: 'Leo Wilson is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
                 time: '11:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
@@ -775,9 +774,9 @@ function init() {
                 },
                 type: 'Intelligent',
                 name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                content: 'Leo Wilson is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '11:00 PM',
+                time: '11:00 AM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'space',
                 particleCount : 50,
@@ -831,10 +830,10 @@ function init() {
                     }
                 },
                 type: 'Social',
-                name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Alen Billy',
+                content: 'Alen Billy is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '11:00 PM',
+                time: '10:00 AM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'social',
                 particleCount : 50,
@@ -888,10 +887,10 @@ function init() {
                     }
                 },
                 type: 'Organize',
-                name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Alen Billy',
+                content: 'Alen Billy is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '11:00 PM',
+                time: '7:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'stuffs',
                 particleCount : 50,
@@ -945,10 +944,10 @@ function init() {
                     }
                 },
                 type: 'Organize',
-                name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Niva Melon',
+                content: 'Niva Melon is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '11:00 PM',
+                time: '4:00 AM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'school',
                 particleCount : 50,
@@ -1002,10 +1001,10 @@ function init() {
                     }
                 },
                 type: 'Organize',
-                name: 'Leo Wilson',
-                content: 'Adam Owlen is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
+                name: 'Niva Melon',
+                content: 'Niva Melon is a typical night owl. He s working mainly as a freelancer graphic designers. So actually he can control his time to work as long as the product will be finished before deadline. ' +
                 '\n\nHe choose his working time in the night, because it is the time that he is most productive at.',
-                time: '11:00 PM',
+                time: '2:00 PM',
                 backgroundContent: 'Adam Owlen is working in front of his desktop in his private room.\nHe is concentrating with his design.',
                 particle : 'decor',
                 particleCount : 200,
@@ -1095,7 +1094,7 @@ function init() {
 
     },3000);
 
-    PersonFull(stage,'GDS');
+    // PersonFull(stage,'GDS');
 
 
     GraphicDesigner = new Person(
@@ -1109,7 +1108,31 @@ function init() {
         {
             onClickTap: fThrottle(function(){
                 PersonFull(this,'GD');
-            },1500)
+            },1500),
+            onHoverIn: fThrottle(function(){
+                if (!this.PersonText) {
+                    this.PersonText = new Text(
+                        this.Container,
+                        'Adam Owlen',
+                        'title',
+                        120,
+                        0,
+                        400,
+                        1,
+                        0,
+                        false
+                    );
+                }
+                TweenMax.set(this.PersonText.Stage,{alpha:0});
+                TweenMax.from(this.PersonText.Stage.position,0.5,{y:"-=200"});
+                TweenMax.to(this.PersonText.Stage,0.5,{alpha:1});
+            },200),
+            onHoverOut: fThrottle(function(){
+                if (this.PersonText) {
+                    TweenMax.to(this.PersonText.Stage.position,0.5,{y:"-=200"});
+                    TweenMax.to(this.PersonText.Stage,1,{alpha:0});
+                }
+            },200)
         }
     );
 
@@ -1670,7 +1693,7 @@ function init() {
         //Quick Hack fix bug for v4
         DisplacmentFilter.glShaderKey = 6789;
 
-        //console.log(DisplacmentFilter);
+        // console.log(DisplacmentFilter);
 
 
         function DisSpriteRotation() {
@@ -1742,6 +1765,12 @@ function init() {
 
     var updatingRender, updatingObject;
 
+    rendering = function(){
+        if (!stop) {
+            RenderAnimation();
+        }
+    }
+
     function UpdateOnResizing() {
         updatingRender = setTimeout(function () {
             viewPort.width = window.innerWidth;
@@ -1770,11 +1799,7 @@ function init() {
                 stop = false;
             }, 500);
 
-            TweenMax.ticker.addEventListener('tick', function () {
-                if (!stop) {
-                    RenderAnimation();
-                }
-            });
+            TweenMax.ticker.addEventListener('tick', rendering);
 
 
         }, 100);
@@ -1785,7 +1810,9 @@ function init() {
         stop = true;
         clearTimeout(updatingRender);
         clearTimeout(updatingObject);
-        TweenMax.ticker.removeEventListener('tick');
+        if (rendering) {
+            TweenMax.ticker.removeEventListener('tick',rendering);
+        }
         UpdateOnResizing();
     });
 
