@@ -435,6 +435,8 @@ PersonHead = function (PersonObject,
 
     // console.log(PersonObject.Head);
 
+    PersonObject.currentEmotion = 'normal';
+
     ['mousemove','touchend','touchmove'].forEach(function(ev){
         window.addEventListener(ev, fThrottle(function (e) {
 
@@ -452,6 +454,7 @@ PersonHead = function (PersonObject,
             //console.log(angle);
 
             if (self.changeable) {
+
                 if ((distanceX<=-200 || distanceX>=200) || (distanceY<=-200 || distanceY>=200)) {
 
                     if ((angle > 0 && angle <= 22.5) || (angle>337.5 && angle <= 360)) {
@@ -495,8 +498,13 @@ PersonHead = function (PersonObject,
 
     self.changeEmotion = fDelay(function (delay, emotion) {
         emotion = typeof emotion !== 'undefined' ? emotion : 'normal';
-        PersonObject.Head.texture = PersonObject.Emotions[emotion];
-        PersonObject.Head.pivot.set(emotionsOffset[emotion].x, emotionsOffset[emotion].y);
+        if (PersonObject.currentEmotion != emotion) {
+            console.log('WTF');
+            Sounds['Change.mp3'].volume(0.3).play();
+            PersonObject.currentEmotion = emotion;
+            PersonObject.Head.texture = PersonObject.Emotions[emotion];
+            PersonObject.Head.pivot.set(emotionsOffset[emotion].x, emotionsOffset[emotion].y);
+        }
         self.changeable = true;
     });
 
@@ -584,9 +592,9 @@ var PersonDetail = function(object)
             'title',
             120,
             0,
-            -150,
+            -130,
             1,
-            0,
+            10,
             false
         );
 
@@ -607,11 +615,16 @@ var PersonDetail = function(object)
 
         this.content.Content.anchor.set(0,0);
         this.content.Content.style.wordWrap = true;
-        this.content.Content.style.wordWrapWidth = 500;
+        if (window.innerWidth/2 + 500 >= window.innerWidth) {
+            this.content.Content.style.wordWrapWidth = 500 - (window.innerWidth/2 + 500 - window.innerWidth)*2;
+        } else {
+            this.content.Content.style.wordWrapWidth = 500;
+        }
+
         this.content.Content.style.lineHeight = 44;
         this.content.Content.style.letterSpacing = 2;
 
-        // Reset Padding Ratio
+        // Reset Padding Ratio, cuz we just change the style, so scale y currently not correct anymore
         this.content.Content.scale.y = this.content.Content.height/(this.content.Content.height - (this.content.Content.style.padding*2));
 
         this.time = new Text(
@@ -681,6 +694,11 @@ var PersonDetail = function(object)
             this.Close.on(e,fThrottle(function(ev){
                 Sounds['Click.mp3'].play();
 
+                credit_scene.addChild(hamburger_menu);
+
+                ClickHere.appear.pause(0);
+                this.showInstruction.paused(true);
+
                 if (object.personObject.isPlayingMusic) {
                     Sounds['Dance.mp3'].stop();
                     object.personObject.isPlayingMusic = false;
@@ -720,9 +738,106 @@ var PersonDetail = function(object)
         object.personObject.Stage.position.set(-object.personObject.Stage.width/2+50,0);
         object.personObject.addChild(this);
 
+        if (window.innerHeight < object.personObject.height-300) {
+            object.personObject.scale.set((window.innerHeight/object.personObject.height),(window.innerHeight/object.personObject.height));
+        }
 
+        NVE.CurrentPerson = object.personObject;
+
+        this.showInstruction = TweenMax.delayedCall(3,function(){
+            ClickHere.position.set(window.innerWidth/2+150,window.innerHeight/2-450);
+            ClickHere.appear.restart(true);
+        });
 
     };
 
 PersonDetail.prototype = Object.create(PIXI.Container.prototype);
 PersonDetail.prototype.constructor = PersonDetail;
+
+Person.prototype.createTime = function(Prefix){
+    if (!this.PersonTextTime) {
+        this.PersonTextTime = new Text(
+            this.Container,
+            NVE[Prefix].time,
+            '3d',
+            33,
+            0,
+            -300,
+            1,
+            0,
+            false
+        );
+        this.PersonTextTime.Content.style.letterSpacing = 3;
+    }
+}
+
+Person.prototype.titleTransitionIn = fThrottle(function(name,job,time,size,xPos,yPos) {
+
+    if (!this.PersonTextName) {
+        this.PersonTextName = new Text(
+            this.Container,
+            name,
+            'title',
+            size,
+            0,
+            0,
+            1,
+            5,
+            false
+        );
+        this.PersonTextName.Content.style.letterSpacing = 3;
+    }
+
+    if (!this.PersonTextJob) {
+        this.PersonTextJob = new Text(
+            this.Container,
+            job,
+            'normal',
+            size/3,
+            0,
+            0,
+            1,
+            0,
+            false
+        );
+        this.PersonTextJob.Content.style.letterSpacing = 3;
+    }
+
+    // if (!this.PersonTextTime) {
+    //     this.PersonTextTime = new Text(
+    //         this.Container,
+    //         time,
+    //         '3d',
+    //         size/3,
+    //         0,
+    //         0,
+    //         1,
+    //         0,
+    //         false
+    //     );
+    //     this.PersonTextTime.Content.style.letterSpacing = 3;
+    // }
+
+    // TweenMax.set(this.PersonTextTime.Stage,{alpha:0});
+    // TweenMax.to(this.PersonTextTime.Stage.position,1,{x:xPos,y:-yPos,ease:Back.easeOut});
+    // TweenMax.to(this.PersonTextTime.Stage,0.5,{alpha:1});
+
+
+    TweenMax.set(this.PersonTextName.Stage,{alpha:0});
+    TweenMax.to(this.PersonTextName.Stage.position,1,{x:xPos,y:yPos,ease:Back.easeOut});
+    TweenMax.to(this.PersonTextName.Stage,0.5,{alpha:1});
+
+    TweenMax.set(this.PersonTextJob.Stage,{alpha:0});
+    TweenMax.to(this.PersonTextJob.Stage.position,1,{x:xPos,y:yPos+size/2,ease:Back.easeOut});
+    TweenMax.to(this.PersonTextJob.Stage,0.5,{alpha:0.75});
+},100);
+
+Person.prototype.titleTransitionOut = fThrottle(function() {
+    if (this.PersonTextName && this.PersonTextJob) {
+        TweenMax.to(this.PersonTextName.Stage.position,0.5,{x:0,y:0});
+        TweenMax.to(this.PersonTextName.Stage,0.5,{alpha:0});
+
+        TweenMax.to(this.PersonTextJob.Stage.position,0.5,{x:0,y:0});
+        TweenMax.to(this.PersonTextJob.Stage,0.5,{alpha:0});
+    }
+},100);

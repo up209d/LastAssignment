@@ -9,7 +9,8 @@ SoundUrls = [
     assetsSoundPath+'Dance.mp3',
     assetsSoundPath+'Appear.mp3',
     assetsSoundPath+'Brush.mp3',
-    assetsSoundPath+'Water.mp3'
+    assetsSoundPath+'Water.mp3',
+    assetsSoundPath+'Change.mp3'
 ];
 Sounds = {};
 
@@ -81,6 +82,7 @@ var LoadingAnimation = function(DisplayContainer) {
 
     }
 
+
     this.bgPaper = new PIXI.extras.TilingSprite(PIXI.Texture.fromImage(assetsPath+'paper.png'),window.innerWidth,window.innerHeight);
 
     this.bg = new PIXI.Sprite.fromImage(assetsPath + 'loading-bg.png');
@@ -96,6 +98,12 @@ var LoadingAnimation = function(DisplayContainer) {
     this.objects.addChild(this.bg);
     this.objects.addChild(this.title);
     this.objects.addChild(this.progressText);
+
+    this.loadingLine = new PIXI.Graphics();
+    this.loadingLine.beginFill(0x000000,1);
+    this.loadingLine.drawRect(0,0,window.innerWidth,5);
+    this.loadingLine.scale.x = 0;
+    this.objects.addChild(this.loadingLine);
 
     DisplayContainer.addChild(this.objects);
 
@@ -216,6 +224,28 @@ var filesLoader = [
     assetsPath+'GDS-Up-Left.png',
     assetsPath+'GDS-Up-Right.png',
     assetsPath+'GDS-Up.png',
+    assetsPath+'OwlArrow.png',
+    assetsPath+'BirdArrow.png',
+    assetsPath+'ClickHere-Left.png',
+
+    assetsPath+'Stamina-Color.png',
+    assetsPath+'Stamina.png',
+
+    assetsPath+'Productive-Color.png',
+    assetsPath+'Productive.png',
+
+    assetsPath+'Young-Color.png',
+    assetsPath+'Young.png',
+
+    assetsPath+'Proactive-Color.png',
+    assetsPath+'Proactive.png',
+
+    assetsPath+'Satisfy-Color.png',
+    assetsPath+'Satisfy.png',
+
+    assetsPath+'Optimistic-Color.png',
+    assetsPath+'Optimistic.png',
+
     assetsPath+'Health-Color.png',
     assetsPath+'Health.png',
     assetsPath+'Intelligent-Color.png',
@@ -715,6 +745,7 @@ Loader
     .add(filesLoader)
     .on('progress',function(e){
         LoadingObject.loading(e.progress);
+        TweenMax.to(LoadingObject.loadingLine.scale,0.2,{x:e.progress/100,immediateRender:false});
     })
     .once('complete',function(e){
         LoadingObject.done();
