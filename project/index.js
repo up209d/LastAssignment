@@ -994,49 +994,6 @@ function init() {
         {
             onHoverIn: fThrottle(function(){
                 this.Person = new Person(
-                    'STS',
-                    this.Stage,
-                    0,
-                    0,
-                    true,
-                    0.75, -140,
-                    80,
-                    {
-                        onCreate: function(){
-                            this.AnimationIn.play();
-                        }
-                    }
-                );
-                TweenMax.to(this.Container,1,{alpha:0});
-            },500),
-            onHoverOut: fThrottle(function(){
-                TweenMax.to(this.Container,0.5,{alpha:1});
-                if(this.Person) {
-                    this.Person.renderable = false;
-                    this.Person.visible = false;
-                    this.Stage.removeChild(this.Person);
-                }
-            },100),
-            onClickTap: fThrottle(function(){
-                if (scene.isInteractivable) {
-                    PersonFull(this,'STS');
-                }
-            },1500)
-        }
-    );
-
-    Young = new Thing(
-        scene_navigation_center,
-        resourceTexture[assetsPath + 'Young.png'].texture,
-        resourceTexture[assetsPath + 'Young-Color.png'].texture,
-        window.innerWidth / 2 +500,
-        window.innerHeight / 2 - 300,
-        0.4,
-        true,
-        0,
-        {
-            onHoverIn: fThrottle(function(){
-                this.Person = new Person(
                     'ST',
                     this.Stage,
                     0,
@@ -1063,6 +1020,49 @@ function init() {
             onClickTap: fThrottle(function(){
                 if (scene.isInteractivable) {
                     PersonFull(this,'ST');
+                }
+            },1500)
+        }
+    );
+
+    Young = new Thing(
+        scene_navigation_center,
+        resourceTexture[assetsPath + 'Young.png'].texture,
+        resourceTexture[assetsPath + 'Young-Color.png'].texture,
+        window.innerWidth / 2 +500,
+        window.innerHeight / 2 - 300,
+        0.4,
+        true,
+        0,
+        {
+            onHoverIn: fThrottle(function(){
+                this.Person = new Person(
+                    'STS',
+                    this.Stage,
+                    0,
+                    0,
+                    true,
+                    0.75, -140,
+                    80,
+                    {
+                        onCreate: function(){
+                            this.AnimationIn.play();
+                        }
+                    }
+                );
+                TweenMax.to(this.Container,1,{alpha:0});
+            },500),
+            onHoverOut: fThrottle(function(){
+                TweenMax.to(this.Container,0.5,{alpha:1});
+                if(this.Person) {
+                    this.Person.renderable = false;
+                    this.Person.visible = false;
+                    this.Stage.removeChild(this.Person);
+                }
+            },100),
+            onClickTap: fThrottle(function(){
+                if (scene.isInteractivable) {
+                    PersonFull(this,'STS');
                 }
             },1500)
         }
