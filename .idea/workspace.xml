@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
     </list>
     <ignored path="LastAssignment.iws" />
@@ -152,8 +151,8 @@
           <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="573">
-                  <caret line="1347" column="9" selection-start-line="1347" selection-start-column="9" selection-end-line="1347" selection-end-column="9" />
+                <state relative-caret-position="513">
+                  <caret line="1402" column="28" selection-start-line="1402" selection-start-column="28" selection-end-line="1402" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -458,7 +457,7 @@
       <workItem from="1465640825563" duration="79111000" />
       <workItem from="1465955300873" duration="1083000" />
       <workItem from="1466047378534" duration="2786000" />
-      <workItem from="1466074764905" duration="70000" />
+      <workItem from="1466074764905" duration="219000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1463565396489</created>
@@ -471,7 +470,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="546397000" />
+    <option name="totallyTimeSpent" value="546546000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
@@ -951,8 +950,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/project/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="1347" column="9" selection-start-line="1347" selection-start-column="9" selection-end-line="1347" selection-end-column="9" />
+        <state relative-caret-position="513">
+          <caret line="1402" column="28" selection-start-line="1402" selection-start-column="28" selection-end-line="1402" selection-end-column="28" />
           <folding />
         </state>
       </provider>
