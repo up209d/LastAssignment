@@ -47,21 +47,21 @@ var LoadingAnimation = function(DisplayContainer) {
     if (PixiV4) {
 
         // FOR V4 FONT
-        this.titleSize = 28;
+        this.titleSize = 56;
         this.titleFont = 'kg_summer_sunshineregular';
         this.title = new PIXI.Text('Loading',{fontFamily: 'kg_summer_sunshineregular',fontSize: this.titleSize,fill: 0x000000});
         this.title.anchor.x = this.title.anchor.y = 0.5;
-        this.title.scale.set(1);
+        this.title.scale.set(0.5);
         this.title.position.x = window.innerWidth/2;
-        this.title.position.y = window.innerHeight/2 - this.titleSize/2 - this.textMargin;
+        this.title.position.y = window.innerHeight/2 - this.titleSize/4 - this.textMargin;
 
-        this.progressTextSize = 48;
+        this.progressTextSize = 96;
         this.progressTextFont = 'kg_summer_sunshineregular';
         this.progressText = new PIXI.Text('0%',{fontFamily : 'kg_summer_sunshineregular',fontSize: this.progressTextSize});
         this.progressText.anchor.x = this.progressText.anchor.y = 0.5;
-        this.progressText.scale.set(1);
+        this.progressText.scale.set(0.5);
         this.progressText.position.x = window.innerWidth/2;
-        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/2 + this.textMargin;
+        this.progressText.position.y = window.innerHeight/2 + this.progressTextSize/4 + this.textMargin;
 
 
     } else {

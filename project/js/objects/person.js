@@ -504,7 +504,6 @@ PersonHead = function (PersonObject,
     self.changeEmotion = fDelay(function (delay, emotion) {
         emotion = typeof emotion !== 'undefined' ? emotion : 'normal';
         if (PersonObject.currentEmotion != emotion) {
-            console.log('WTF');
             Sounds['Change.mp3'].volume(0.3).play();
             PersonObject.currentEmotion = emotion;
             PersonObject.Head.texture = PersonObject.Emotions[emotion];
@@ -697,6 +696,10 @@ var PersonDetail = function(object)
 
         ['click','tap'].forEach(function(e){
             this.Close.on(e,fThrottle(function(ev){
+
+                // Disable Changing Head
+                object.personObject.PersonHead.changeable = false;
+
                 Sounds['Click.mp3'].play();
 
                 credit_scene.addChild(hamburger_menu);
@@ -743,9 +746,11 @@ var PersonDetail = function(object)
         object.personObject.Stage.position.set(-object.personObject.Stage.width/2+50,0);
         object.personObject.addChild(this);
 
-        if (window.innerHeight < object.personObject.height-300) {
-            object.personObject.scale.set((window.innerHeight/object.personObject.height),(window.innerHeight/object.personObject.height));
+        if (window.innerHeight < object.personObject.height+200) {
+            object.personObject.scale.set((window.innerHeight/(object.personObject.height+400)),(window.innerHeight/(object.personObject.height+400)));
         }
+
+        console.log(object.personObject.height);
 
         NVE.CurrentPerson = object.personObject;
 

@@ -2,269 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d322ae6a-b44a-4442-836a-14571f7da990" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Arrow.png" afterPath="$PROJECT_DIR$/project/assets/images/Arrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Bird-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Bird-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Bird.png" afterPath="$PROJECT_DIR$/project/assets/images/Bird.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/BirdArrow.png" afterPath="$PROJECT_DIR$/project/assets/images/BirdArrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/BirdText-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/BirdText-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/BirdText.png" afterPath="$PROJECT_DIR$/project/assets/images/BirdText.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ClickHere-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/ClickHere-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Close.png" afterPath="$PROJECT_DIR$/project/assets/images/Close.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Cloud.png" afterPath="$PROJECT_DIR$/project/assets/images/Cloud.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Flexible-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Flexible-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Flexible.png" afterPath="$PROJECT_DIR$/project/assets/images/Flexible.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GD-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/GD-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/GDS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/GDS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Health-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Health-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Health.png" afterPath="$PROJECT_DIR$/project/assets/images/Health.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Intelligent-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Intelligent-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Intelligent.png" afterPath="$PROJECT_DIR$/project/assets/images/Intelligent.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MD-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/MD-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/MDS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/MDS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Optimistic-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Optimistic-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Optimistic.png" afterPath="$PROJECT_DIR$/project/assets/images/Optimistic.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Organize-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Organize-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Organize.png" afterPath="$PROJECT_DIR$/project/assets/images/Organize.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Owl-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Owl-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Owl.png" afterPath="$PROJECT_DIR$/project/assets/images/Owl.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/OwlArrow.png" afterPath="$PROJECT_DIR$/project/assets/images/OwlArrow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/OwlText-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/OwlText-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/OwlText.png" afterPath="$PROJECT_DIR$/project/assets/images/OwlText.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Proactive-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Proactive-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Proactive.png" afterPath="$PROJECT_DIR$/project/assets/images/Proactive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Productive-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Productive-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Productive.png" afterPath="$PROJECT_DIR$/project/assets/images/Productive.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Down-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Down-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Normal-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Normal-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SC-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/SC-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SCS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/SCS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SM-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/SM-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Normal-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Normal-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/SMS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/SMS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Down-1.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Down-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ST-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/ST-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Normal-1.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Normal-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/STS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/STS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Satisfy-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Satisfy-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Satisfy.png" afterPath="$PROJECT_DIR$/project/assets/images/Satisfy.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ShakingDisplacement.png" afterPath="$PROJECT_DIR$/project/assets/images/ShakingDisplacement.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ShakingDisplacementAround.png" afterPath="$PROJECT_DIR$/project/assets/images/ShakingDisplacementAround.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Social-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Social-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Social.png" afterPath="$PROJECT_DIR$/project/assets/images/Social.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Stamina-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Stamina-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Stamina.png" afterPath="$PROJECT_DIR$/project/assets/images/Stamina.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Success-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Success-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Success.png" afterPath="$PROJECT_DIR$/project/assets/images/Success.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Left1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Down-Left1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Normal-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Normal-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Right-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Right-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Right-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Right-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Touched-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Touched-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Up-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Up-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Up-Right-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Up-Right-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TC-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/TC-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Color-After.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Color-After.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Color-Before.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Color-Before.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down-Right-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down-Right-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Down.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Down.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Normal-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Normal-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Normal-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Normal-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Normal-3.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Normal-3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Normal.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Normal.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Right-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Right-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-0.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-0.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Sketch.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Sketch.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Touched-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Touched-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Touched.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Touched.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left-2.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left-2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-Left.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-Right-1.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-Right-1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up-Right.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up-Right.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/TCS-Up.png" afterPath="$PROJECT_DIR$/project/assets/images/TCS-Up.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Young-Color.png" afterPath="$PROJECT_DIR$/project/assets/images/Young-Color.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/Young.png" afterPath="$PROJECT_DIR$/project/assets/images/Young.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/bunny.png" afterPath="$PROJECT_DIR$/project/assets/images/bunny.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/clock.png" afterPath="$PROJECT_DIR$/project/assets/images/clock.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/cloud2.png" afterPath="$PROJECT_DIR$/project/assets/images/cloud2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/glow.png" afterPath="$PROJECT_DIR$/project/assets/images/glow.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/loading-bg.png" afterPath="$PROJECT_DIR$/project/assets/images/loading-bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/paper.png" afterPath="$PROJECT_DIR$/project/assets/images/paper.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/paper3.png" afterPath="$PROJECT_DIR$/project/assets/images/paper3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/assets/images/ripple.png" afterPath="$PROJECT_DIR$/project/assets/images/ripple.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/index.js" afterPath="$PROJECT_DIR$/project/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/init.js" afterPath="$PROJECT_DIR$/project/js/init.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/loader.js" afterPath="$PROJECT_DIR$/project/js/loader.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project/js/objects/person.js" afterPath="$PROJECT_DIR$/project/js/objects/person.js" />
     </list>
@@ -318,8 +57,8 @@
           <file leaf-file-name="loader.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/loader.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="210">
-                  <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+                <state relative-caret-position="315">
+                  <caret line="55" column="89" selection-start-line="55" selection-start-column="89" selection-end-line="55" selection-end-column="89" />
                   <folding />
                 </state>
               </provider>
@@ -328,7 +67,7 @@
           <file leaf-file-name="floatthing.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1725">
+                <state relative-caret-position="571">
                   <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
                   <folding />
                 </state>
@@ -338,11 +77,11 @@
           <file leaf-file-name="person.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="140" column="27" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
+                <state relative-caret-position="439">
+                  <caret line="699" column="40" selection-start-line="699" selection-start-column="40" selection-end-line="699" selection-end-column="40" />
                   <folding>
                     <element signature="e#0#36#0" expanded="false" />
-                    <marker date="1466048509000" expanded="true" signature="9124:15487" placeholder="{...}" />
+                    <marker date="1466050143000" expanded="true" signature="9124:15487" placeholder="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -392,10 +131,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="thing.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="thing.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="311">
+                <state relative-caret-position="-1599">
                   <caret line="90" column="24" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="24" />
                   <folding />
                 </state>
@@ -412,11 +151,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/project/index.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="363">
-                  <caret line="1772" column="23" selection-start-line="1772" selection-start-column="23" selection-end-line="1772" selection-end-column="23" />
+                <state relative-caret-position="526">
+                  <caret line="1338" column="10" selection-start-line="1338" selection-start-column="10" selection-end-line="1338" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -466,9 +205,9 @@
         <option value="$PROJECT_DIR$/project/js/pixiv4/pixi.js" />
         <option value="$PROJECT_DIR$/project/js/objects/text.js" />
         <option value="$PROJECT_DIR$/project/js/objects/thing.js" />
-        <option value="$PROJECT_DIR$/project/index.js" />
-        <option value="$PROJECT_DIR$/project/js/loader.js" />
         <option value="$PROJECT_DIR$/project/js/init.js" />
+        <option value="$PROJECT_DIR$/project/js/loader.js" />
+        <option value="$PROJECT_DIR$/project/index.js" />
         <option value="$PROJECT_DIR$/project/js/objects/person.js" />
       </list>
     </option>
@@ -720,7 +459,7 @@
       <workItem from="1465487764578" duration="30494000" />
       <workItem from="1465640825563" duration="79111000" />
       <workItem from="1465955300873" duration="1083000" />
-      <workItem from="1466047378534" duration="1007000" />
+      <workItem from="1466047378534" duration="2548000" />
     </task>
     <task id="LOCAL-00001" summary="Change">
       <created>1463565396489</created>
@@ -733,7 +472,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="544548000" />
+    <option name="totallyTimeSpent" value="546089000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1600" height="900" extended-state="0" />
@@ -747,7 +486,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19156626" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18366055" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22596154" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22650602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1126,14 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/background.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="585">
@@ -1163,22 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/project/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="1772" column="23" selection-start-line="1772" selection-start-column="23" selection-end-line="1772" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/project/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6690">
@@ -1200,29 +915,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="12" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="12" />
+        <state relative-caret-position="-1599">
+          <caret line="90" column="24" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/project/js/objects/thing.js">
+    <entry file="file://$PROJECT_DIR$/project/js/objects/text.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="90" column="24" selection-start-line="90" selection-start-column="19" selection-end-line="90" selection-end-column="24" />
+        <state relative-caret-position="45">
+          <caret line="3" column="73" selection-start-line="3" selection-start-column="73" selection-end-line="3" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/objects/floatthing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="115" column="50" selection-start-line="115" selection-start-column="50" selection-end-line="115" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/js/loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="55" column="89" selection-start-line="55" selection-start-column="89" selection-end-line="55" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/project/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="526">
+          <caret line="1338" column="10" selection-start-line="1338" selection-start-column="10" selection-end-line="1338" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/project/js/objects/person.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="140" column="27" selection-start-line="140" selection-start-column="27" selection-end-line="140" selection-end-column="27" />
+        <state relative-caret-position="439">
+          <caret line="699" column="40" selection-start-line="699" selection-start-column="40" selection-end-line="699" selection-end-column="40" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
-            <marker date="1466048509000" expanded="true" signature="9124:15487" placeholder="{...}" />
+            <marker date="1466050143000" expanded="true" signature="9124:15487" placeholder="{...}" />
           </folding>
         </state>
       </provider>

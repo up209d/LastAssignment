@@ -1336,10 +1336,10 @@ function init() {
         Question_Scene,
         'WELCOME',
         '3d',
-        30,
+        80,
         window.innerWidth/2,
-        window.innerHeight/2,
-        0.5,0,false
+        window.innerHeight/2-5,
+        0.25,0,false
     );
 
     introOwl = new Text(
@@ -1476,7 +1476,6 @@ function init() {
 
     BirdArrow.appear = new TimelineMax({paused: true,delay:3});
 
-    console.log(BirdArrow.appear);
     BirdArrow.appear.add(TweenMax.to(BirdArrow,2,{alpha:1,ease: Sine.easeOut}));
     BirdArrow.appear.add(TweenMax.to(BirdArrow,0.5,{rotation:"+=0.05",ease: Sine.easeInOut,yoyo:true,repeat:20}),0);
     BirdArrow.appear.add(TweenMax.to(BirdArrow,2,{alpha:0,ease: Sine.easeOut}),"-=2");
@@ -1526,8 +1525,10 @@ function init() {
     hamburger_menu = new PIXI.Graphics();
     hamburger_menu.beginFill(0x000000,1);
     hamburger_menu.drawRect(0,0,30,5);
-    hamburger_menu.drawRect(0,10,30,5);
-    hamburger_menu.drawRect(0,20,30,5);
+    hamburger_menu.drawRect(0,0,5,30);
+    hamburger_menu.drawRect(25,0,5,30);
+    hamburger_menu.drawRect(0,25,30,5);
+    hamburger_menu.drawRect(10,10,10,10);
     hamburger_menu.endFill();
 
     hamburger_menu.beginFill(0xffffff,0.0000001);
@@ -1542,10 +1543,12 @@ function init() {
 
     hamburger_menu.interactive = true;
     hamburger_menu.buttonMode = true;
+    hamburger_menu.state = true;
 
     ['click','tap'].forEach(function(e){
         hamburger_menu.on(e,fThrottle(function(ev){
             TweenMax.to(hamburger_menu.scale,0.15,{x: "-=0.2",y:"-=0.2",immediateRender:false,yoyo:true,repeat:1});
+            TweenMax.to(hamburger_menu,0.5,{alpha:0,immediateRender:false});
         },500));
     });
 
@@ -1553,14 +1556,14 @@ function init() {
     credit_text = new Text(
         credit_content,
         'Thank to \n\n' +
-        'Mr Jeffrey Janet & Dr Tamara Jordan \n\n' +
+        'Mr Jeffrey Janet & Dr Tamara Jordan   \n\n' +
         'in helping me to complete this project.',
         'normal',
-        16,
+        24,
         window.innerWidth/2,
         window.innerHeight/2,
         1,
-        0,
+        10,
         false
     );
 
@@ -1587,9 +1590,11 @@ function init() {
             TweenMax.to(credit_content,2,{alpha:1});
         }),2500);
         credit_text.Stage.on(e,fThrottle(function(){
+
             credit_scene.removeChild(credit_content);
             TweenMax.to(scene_navigation,2,{alpha:1});
             TweenMax.to(credit_content,2,{alpha:0});
+            TweenMax.to(hamburger_menu,0.5,{alpha:1,immediateRender:false});
         }),2500);
     });
 
@@ -1777,12 +1782,12 @@ function init() {
         if (typeof auto_refresh != 'undefined') {
             auto_refresh = setInterval(function(){
                 window.location.reload();
-            },10*6000);
+            },600000);
         } else {
             clearInterval(auto_refresh);
             auto_refresh = setInterval(function(){
                 window.location.reload();
-            },10*6000);
+            },600000);
         }
     },1000));
 
