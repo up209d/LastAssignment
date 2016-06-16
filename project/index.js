@@ -1332,15 +1332,15 @@ function init() {
     Question_Scene = new PIXI.Container();
     scene.addChild(Question_Scene);
 
-    SelectText = new Text(
-        Question_Scene,
-        'WELCOME',
-        '3d',
-        80,
-        window.innerWidth/2,
-        window.innerHeight/2-5,
-        0.25,0,false
-    );
+    // SelectText = new Text(
+    //     Question_Scene,
+    //     'WELCOME',
+    //     '3d',
+    //     40,
+    //     window.innerWidth/2,
+    //     window.innerHeight/2-5,
+    //     0.25,0,false
+    // );
 
     introOwl = new Text(
         Question_Scene,
