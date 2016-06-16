@@ -1348,7 +1348,7 @@ function init() {
         'normal',
         20,
         window.innerWidth/2,
-        window.innerHeight/2,
+        window.innerHeight/2-10,
         0.5,0,false
     );
 
@@ -1400,7 +1400,7 @@ function init() {
         'normal',
         20,
         window.innerWidth/2,
-        window.innerHeight/2,
+        window.innerHeight/2+10,
         0.5,0,false
     );
 
