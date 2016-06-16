@@ -28,6 +28,11 @@
         };
 
     browserDetection = new MobileDetect(window.navigator.userAgent);
+    browserDetection.OSName="Unknown OS";
+    if (navigator.appVersion.indexOf("Win")!=-1) browserDetection.OSName="Windows";
+    if (navigator.appVersion.indexOf("Mac")!=-1) browserDetection.OSName="MacOS";
+    if (navigator.appVersion.indexOf("X11")!=-1) browserDetection.OSName="UNIX";
+    if (navigator.appVersion.indexOf("Linux")!=-1) browserDetection.OSName="Linux";
     console.log(browserDetection);
 
     browserDetection.isHandheld = function() {

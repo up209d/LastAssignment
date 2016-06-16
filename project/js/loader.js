@@ -22,7 +22,7 @@ WebFont.load({
     },
     active: function(){
         console.log('All Fonts Loaded!');
-        console.log('Loading Sounds ...');
+        console.log('Loading Sounds & Sprites ...');
         SoundUrls.forEach(function(e){
             stop = true;
             Sounds[e.match(/([^\/]*)$/)[0]] = new Howl({

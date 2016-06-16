@@ -1769,6 +1769,23 @@ function init() {
     animateBunny();
 
     console.log('Inited');
+
+    auto_refresh = null;
+
+    console.log('Presentation Mode: Refresh every 10 minutes');
+    window.addEventListener('mousemove',fThrottle(function(){
+        if (typeof auto_refresh != 'undefined') {
+            auto_refresh = setInterval(function(){
+                window.location.reload();
+            },10*6000);
+        } else {
+            clearInterval(auto_refresh);
+            auto_refresh = setInterval(function(){
+                window.location.reload();
+            },10*6000);
+        }
+    },1000));
+
 }
 
 

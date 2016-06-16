@@ -84,7 +84,9 @@ var Person = function(
         if(this.ColorBefore.filters) {
             this.ColorBefore.filters.push(this.ColorBeforeFilter);
         } else {
-            this.ColorBefore.filters = [this.ColorBeforeFilter];
+            if (browserDetection.OSName != 'Windows') {
+                this.ColorBefore.filters = [this.ColorBeforeFilter];
+            }
         }
     } else {
         this.ColorBefore.renderable = false;
@@ -107,11 +109,14 @@ var Person = function(
         0,0,0,1,0
     ];
 
+
     if (!browserDetection.isHandheld()) {
         if(this.ColorAfter.filters) {
             this.ColorAfter.filters.push(this.ColorAfterFilter);
         } else {
-            this.ColorAfter.filters = [this.ColorAfterFilter];
+            if (browserDetection.OSName != 'Windows') {
+                this.ColorAfter.filters = [this.ColorAfterFilter];
+            }
         }
     } else {
         this.ColorAfter.blendMode = PIXI.BLEND_MODES.MULTIPLY;
