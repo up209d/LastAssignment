@@ -1775,127 +1775,127 @@ function init() {
 
     console.log('Inited');
 
-    auto_refresh = null;
-
-    console.log('Presentation Mode: Refresh every 10 minutes');
-    window.addEventListener('mousemove',fThrottle(function(){
-        if (typeof auto_refresh != 'undefined') {
-            auto_refresh = setInterval(function(){
-                window.location.reload();
-            },600000);
-        } else {
-            clearInterval(auto_refresh);
-            auto_refresh = setInterval(function(){
-                window.location.reload();
-            },600000);
-        }
-    },1000));
+//    auto_refresh = null;
+//
+//    console.log('Presentation Mode: Refresh every 10 minutes');
+//    window.addEventListener('mousemove',fThrottle(function(){
+//        if (typeof auto_refresh != 'undefined') {
+//            auto_refresh = setInterval(function(){
+//                window.location.reload();
+//            },600000);
+//        } else {
+//            clearInterval(auto_refresh);
+//            auto_refresh = setInterval(function(){
+//                window.location.reload();
+//            },600000);
+//        }
+//    },1000));
 
 }
 
 
 
 
-
-
-
-function func1(x, y) {
-    Clock.ColorFilter.matrix[0] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func2(x, y) {
-    Clock.ColorFilter.matrix[1] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func3(x, y) {
-    Clock.ColorFilter.matrix[2] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func4(x, y) {
-    Clock.ColorFilter.matrix[3] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func5(x, y) {
-    Clock.ColorFilter.matrix[4] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func6(x, y) {
-    Clock.ColorFilter.matrix[5] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func7(x, y) {
-    Clock.ColorFilter.matrix[6] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func8(x, y) {
-    Clock.ColorFilter.matrix[7] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func9(x, y) {
-    Clock.ColorFilter.matrix[8] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func10(x, y) {
-    Clock.ColorFilter.matrix[9] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func11(x, y) {
-    Clock.ColorFilter.matrix[10] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func12(x, y) {
-    Clock.ColorFilter.matrix[11] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func13(x, y) {
-    Clock.ColorFilter.matrix[12] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func14(x, y) {
-    Clock.ColorFilter.matrix[13] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func15(x, y) {
-    Clock.ColorFilter.matrix[14] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func16(x, y) {
-    Clock.ColorFilter.matrix[15] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func17(x, y) {
-    Clock.ColorFilter.matrix[16] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func18(x, y) {
-    Clock.ColorFilter.matrix[17] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func19(x, y) {
-    Clock.ColorFilter.matrix[18] = x / 2000;
-    console.log(x / 2000);
-}
-
-function func20(x, y) {
-    Clock.ColorFilter.matrix[19] = x / 2000;
-    console.log(x / 2000);
-}
-
+//
+//
+//
+//function func1(x, y) {
+//    Clock.ColorFilter.matrix[0] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func2(x, y) {
+//    Clock.ColorFilter.matrix[1] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func3(x, y) {
+//    Clock.ColorFilter.matrix[2] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func4(x, y) {
+//    Clock.ColorFilter.matrix[3] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func5(x, y) {
+//    Clock.ColorFilter.matrix[4] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func6(x, y) {
+//    Clock.ColorFilter.matrix[5] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func7(x, y) {
+//    Clock.ColorFilter.matrix[6] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func8(x, y) {
+//    Clock.ColorFilter.matrix[7] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func9(x, y) {
+//    Clock.ColorFilter.matrix[8] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func10(x, y) {
+//    Clock.ColorFilter.matrix[9] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func11(x, y) {
+//    Clock.ColorFilter.matrix[10] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func12(x, y) {
+//    Clock.ColorFilter.matrix[11] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func13(x, y) {
+//    Clock.ColorFilter.matrix[12] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func14(x, y) {
+//    Clock.ColorFilter.matrix[13] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func15(x, y) {
+//    Clock.ColorFilter.matrix[14] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func16(x, y) {
+//    Clock.ColorFilter.matrix[15] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func17(x, y) {
+//    Clock.ColorFilter.matrix[16] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func18(x, y) {
+//    Clock.ColorFilter.matrix[17] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func19(x, y) {
+//    Clock.ColorFilter.matrix[18] = x / 2000;
+//    console.log(x / 2000);
+//}
+//
+//function func20(x, y) {
+//    Clock.ColorFilter.matrix[19] = x / 2000;
+//    console.log(x / 2000);
+//}
+//

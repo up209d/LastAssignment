@@ -750,7 +750,7 @@ var PersonDetail = function(object)
             object.personObject.scale.set((window.innerHeight/(object.personObject.height+400)),(window.innerHeight/(object.personObject.height+400)));
         }
 
-        console.log(object.personObject.height);
+//        console.log(object.personObject.height);
 
         NVE.CurrentPerson = object.personObject;
 
